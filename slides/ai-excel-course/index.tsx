@@ -1069,9 +1069,9 @@ const OwnerFlowDiagram: Page = () => (
       這不是一堆 Excel 工作表，而是把「開店做生意」拆解成幾張環環相扣的表格——你只要老實記錄「今天賣了什麼、進了什麼貨」，成本、庫存、毛利、儀表板全部自動算出來。
     </p>
     <div style={{ marginTop: 30 }}>
-      <Steps>
-        <Step>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
+        <Steps>
+          <Step>
             <FlowStageGroup
               color={partColor.p1}
               icon={<StackedCardsIcon color={partColor.p1} />}
@@ -1079,7 +1079,9 @@ const OwnerFlowDiagram: Page = () => (
               items={['商品主檔', '原物料主檔', '供應商主檔']}
               pain="沒有它：老闆只能「肉眼看冰箱」決定要不要叫貨"
             />
-            <FlowArrow />
+          </Step>
+          <FlowArrow />
+          <Step>
             <FlowStageGroup
               color={partColor.p1}
               icon={<FunnelIcon color={partColor.p1} />}
@@ -1087,7 +1089,9 @@ const OwnerFlowDiagram: Page = () => (
               items={['商品配方 BOM']}
               pain="沒有它：賣了 100 碗，也不知道到底賺不賺"
             />
-            <FlowArrow />
+          </Step>
+          <FlowArrow />
+          <Step>
             <FlowStageGroup
               color={partColor.p2}
               icon={<ReceiptIcon color={partColor.p2} />}
@@ -1095,7 +1099,9 @@ const OwnerFlowDiagram: Page = () => (
               items={['銷售紀錄', '進貨紀錄']}
               pain="事實紀錄——之後所有分析，都從這裡長出來"
             />
-            <FlowArrow />
+          </Step>
+          <FlowArrow />
+          <Step>
             <FlowStageGroup
               color={partColor.p3}
               icon={<MiniBarLineIcon color={partColor.p3} />}
@@ -1103,7 +1109,9 @@ const OwnerFlowDiagram: Page = () => (
               items={['商品成本', '庫存管理', '營收毛利']}
               pain="把原始資料，變成老闆看得懂的決策依據"
             />
-            <FlowArrow />
+          </Step>
+          <FlowArrow />
+          <Step>
             <FlowStageGroup
               color={partColor.p4}
               icon={<MiniKpiIcon color={partColor.p4} />}
@@ -1111,8 +1119,10 @@ const OwnerFlowDiagram: Page = () => (
               items={['儀表板']}
               pain="每天花 1 分鐘，不用再一張張表翻"
             />
-          </div>
-        </Step>
+          </Step>
+        </Steps>
+      </div>
+      <Steps>
         <Step>
           <div style={{ marginTop: 28 }}>
             <Callout color={design.palette.accent}>

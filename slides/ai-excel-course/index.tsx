@@ -1180,7 +1180,7 @@ const Part1Tables: Page = () => (
         <Step>
           <Callout color={taskColor}>
             <div style={{ fontWeight: 800 }}>任務 1：請 AI 產出三張主檔</div>
-            <div style={{ fontSize: 27, color: muted, marginTop: 6 }}>請同學打開操作手冊.doc 第 4 頁</div>
+            <div style={{ fontSize: 27, color: muted, marginTop: 6 }}>請同學打開操作手冊.doc 第 3 頁</div>
           </Callout>
         </Step>
       </Steps>

@@ -1006,16 +1006,16 @@ const EquationCard = ({ color, icon, label, sub }: { color: string; icon: string
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
-      gap: 10,
+      gap: 6,
       background: `${color}0F`,
       border: `2px solid ${color}`,
       borderRadius: 24,
-      padding: '30px 36px',
+      padding: '18px 30px',
       minWidth: 220,
     }}
   >
-    <span style={{ fontSize: 52 }}>{icon}</span>
-    <span style={{ fontSize: 36, fontWeight: 900, color }}>{label}</span>
+    <span style={{ fontSize: 42 }}>{icon}</span>
+    <span style={{ fontSize: 32, fontWeight: 900, color }}>{label}</span>
     <span style={{ fontSize: 25, color: muted, textAlign: 'center' }}>{sub}</span>
   </div>
 );
@@ -1032,17 +1032,17 @@ const BuildBlockCard = ({ color, icon, title, desc }: { color: string; icon: str
       border: `1px solid ${cardBorder}`,
       borderTop: `5px solid ${color}`,
       borderRadius: 18,
-      padding: '22px 24px',
+      padding: '12px 20px',
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
-      gap: 8,
+      gap: 5,
       textAlign: 'center',
     }}
   >
-    <span style={{ fontSize: 38 }}>{icon}</span>
-    <span style={{ fontSize: 31, fontWeight: 800, color }}>{title}</span>
-    <span style={{ fontSize: 25, color: muted, lineHeight: 1.5 }}>{desc}</span>
+    <span style={{ fontSize: 30 }}>{icon}</span>
+    <span style={{ fontSize: 28, fontWeight: 800, color }}>{title}</span>
+    <span style={{ fontSize: 25, color: muted, lineHeight: 1.4 }}>{desc}</span>
   </div>
 );
 
@@ -1051,11 +1051,11 @@ const OwnerMoneyBasics: Page = () => (
   <div style={page}>
     <Eyebrow color={design.palette.accent}>老闆視角</Eyebrow>
     <PageHeading maxWidth={1700}>開餐廳，最重要的事只有一個：賺錢！</PageHeading>
-    <p style={{ fontSize: 31, color: muted, margin: '18px 0 0' }}>要賺錢，你要先搞懂這條算式：</p>
-    <div style={{ marginTop: 28 }}>
+    <p style={{ fontSize: 28, color: muted, margin: '10px 0 0' }}>要賺錢，你要先搞懂這條算式：</p>
+    <div style={{ marginTop: 14 }}>
       <Steps>
         <Step>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 24 }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 20 }}>
             <EquationCard color="#1B84A8" icon="💰" label="收入" sub="賣多少錢" />
             <EquationSign>－</EquationSign>
             <EquationCard color={painRed} icon="🧾" label="成本" sub="花多少錢做出來" />
@@ -1064,14 +1064,14 @@ const OwnerMoneyBasics: Page = () => (
           </div>
         </Step>
         <Step>
-          <div style={{ marginTop: 26 }}>
+          <div style={{ marginTop: 14 }}>
             <Callout color={design.palette.accent}>
               舉例：一份鍋貼賣 <b>$60</b>，做一份要花 <b>$30</b> 的食材成本，賣一份就賺 <b>$30</b>。賣越多、成本抓得越準，賺越多。
             </Callout>
           </div>
         </Step>
         <Step>
-          <p style={{ fontSize: 25, fontWeight: 800, marginTop: 26, marginBottom: 14 }}>所以想開餐廳賺錢，你要先準備好三件事：</p>
+          <p style={{ fontSize: 24, fontWeight: 800, marginTop: 14, marginBottom: 8 }}>所以想開餐廳賺錢，你要先準備好三件事：</p>
           <div style={{ display: 'flex', gap: 20 }}>
             <BuildBlockCard color={partColor.p1} icon="🥟" title="商品" desc="你要賣什麼？（鍋貼、牛肉麵、飲料…）" />
             <BuildBlockCard color={partColor.p2} icon="🏷️" title="定價" desc="一份要賣多少錢？" />
@@ -1079,7 +1079,7 @@ const OwnerMoneyBasics: Page = () => (
           </div>
         </Step>
         <Step>
-          <div style={{ marginTop: 22 }}>
+          <div style={{ marginTop: 12 }}>
             <Callout color={muted}>
               想知道自己「到底賺不賺錢」，就要把商品、定價、成本通通「寫清楚」——這正是下一頁那些表格要做的事。
             </Callout>
@@ -6616,17 +6616,17 @@ const PptxProductMaster: Page = () => (
   <div style={page}>
     <Eyebrow color={refColor}>補充教材 · 主檔與報表範例</Eyebrow>
     <PageHeading>商品主檔／供應商主檔／原物料主檔範例</PageHeading>
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 14, marginTop: 20 }}>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginTop: 10 }}>
       <div>
-        <PptxShot src={pptx_s1_5} maxH={220} />
+        <PptxShot src={pptx_s1_5} maxH={160} />
         <PptxCaption>商品主檔</PptxCaption>
       </div>
       <div>
-        <PptxShot src={pptx_s1_7} maxH={260} />
+        <PptxShot src={pptx_s1_7} maxH={190} />
         <PptxCaption>供應商主檔</PptxCaption>
       </div>
       <div>
-        <PptxShot src={pptx_s1_9} maxH={220} />
+        <PptxShot src={pptx_s1_9} maxH={160} />
         <PptxCaption>原物料主檔</PptxCaption>
       </div>
     </div>

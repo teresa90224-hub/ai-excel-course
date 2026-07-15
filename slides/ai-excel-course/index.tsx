@@ -462,21 +462,23 @@ const PromptTechniqueCard = ({
   title,
   quote,
   desc,
+  couple,
 }: {
   num: string;
   title: string;
   quote: string;
   desc: string;
+  couple?: string;
 }) => (
   <div
     style={{
       background: cardBg,
       border: `1px solid ${cardBorder}`,
       borderRadius: 16,
-      padding: '22px 26px',
+      padding: '16px 22px',
       display: 'flex',
       flexDirection: 'column',
-      gap: 10,
+      gap: 7,
     }}
   >
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
@@ -497,10 +499,26 @@ const PromptTechniqueCard = ({
       >
         {num}
       </div>
-      <div style={{ fontSize: 34, fontWeight: 800 }}>{title}</div>
+      <div style={{ fontSize: 30, fontWeight: 800 }}>{title}</div>
     </div>
-    <div style={{ fontSize: 25, color: partColor.p1, fontStyle: 'italic', lineHeight: 1.4 }}>{quote}</div>
-    <div style={{ fontSize: 25, color: muted, lineHeight: 1.4 }}>{desc}</div>
+    <div style={{ fontSize: 25, color: partColor.p1, fontStyle: 'italic', lineHeight: 1.35 }}>{quote}</div>
+    <div style={{ fontSize: 25, color: muted, lineHeight: 1.35 }}>{desc}</div>
+    {couple && (
+      <div
+        style={{
+          background: '#FDEEF2',
+          border: '1px solid #F3C6D3',
+          borderRadius: 10,
+          padding: '7px 12px',
+          fontSize: 22,
+          color: '#B84768',
+          lineHeight: 1.35,
+          marginTop: 2,
+        }}
+      >
+        {couple}
+      </div>
+    )}
   </div>
 );
 
@@ -1225,7 +1243,7 @@ const Part1PromptTechniques: Page = () => (
   <div style={page}>
     <Eyebrow color={partColor.p1}>PART 1 · Prompt 技巧</Eyebrow>
     <PageHeading>同一份 Prompt，藏了 6 個「不會誤解」的技巧</PageHeading>
-    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24, marginTop: 40 }}>
+    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 18, marginTop: 24 }}>
       <Steps>
         <Step>
           <PromptTechniqueCard
@@ -1233,6 +1251,7 @@ const Part1PromptTechniques: Page = () => (
             title="先指定角色與任務"
             quote="「你是一位鍋貼店老闆，要產出 .xlsx」"
             desc="情境明確，輸出格式也不會變成 CSV 或文字表"
+            couple="💑 女友說「明天是情人節耶～」男友只回「喔對啊」——沒說清楚要幹嘛，對方只能瞎猜。"
           />
         </Step>
         <Step>
@@ -1241,6 +1260,7 @@ const Part1PromptTechniques: Page = () => (
             title="明確指定工作表數量與名稱"
             quote="「四個頁籤：商品主檔、原物料主檔、供應商主檔、設定選單」"
             desc="避免 AI 自己亂新增或漏掉工作表"
+            couple="💑「幫我訂位」——訂幾人？哪一家？沒講清楚，對方只好自己亂猜。"
           />
         </Step>
         <Step>
@@ -1249,6 +1269,7 @@ const Part1PromptTechniques: Page = () => (
             title="括號不是欄位名稱"
             quote="括號僅為選項說明，不要出現在標題文字中"
             desc="商品分類（鍋貼／湯品…）→ 標題只留「商品分類」"
+            couple="💑「隨便啦（其實想吃火鍋）」——括號是小聲的真心話，不是真的隨便。"
           />
         </Step>
         <Step>
@@ -1257,6 +1278,7 @@ const Part1PromptTechniques: Page = () => (
             title="括號內容當下拉選單來源"
             quote="後綴括號的項目，依括號內容建立下拉選單"
             desc="不用另外列清單，靠規則描述讓 AI 自動抽取"
+            couple="💑「巧克力、玫瑰、包包都可以」——這其實就是選項清單，不是碎念。"
           />
         </Step>
         <Step>
@@ -1265,6 +1287,7 @@ const Part1PromptTechniques: Page = () => (
             title="下拉選單來源集中管理"
             quote="「設定選單」第一列起，直排填入欄位＋清單項目"
             desc="選項要改只改一處，不用逐一修改下拉選單"
+            couple="💑 禮物清單貼滿冰箱、皮夾、手機——要改要跑三個地方，煩！"
           />
         </Step>
         <Step>
@@ -1273,6 +1296,7 @@ const Part1PromptTechniques: Page = () => (
             title="清楚的資料結構層次"
             quote="總任務 → 注意事項 → 分頁籤 → 列欄位 → 下拉規則"
             desc="由上而下鋪陳，AI 才不會漏看規則"
+            couple="💑 慶祝計畫先講「做什麼」→「幾點」→「去哪」→「訂位幾人」，一次全塞會漏聽。"
           />
         </Step>
       </Steps>

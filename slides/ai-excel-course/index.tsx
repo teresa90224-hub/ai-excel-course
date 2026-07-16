@@ -1388,6 +1388,36 @@ const ClaudeGuideSkills: Page = () => (
   </div>
 );
 
+// ─── Page 10a — 課堂練習：試用 Skill(audit-xls／clean-data-xls) ───────────────
+const ClaudeSkillsTry: Page = () => (
+  <div style={page}>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+      <Eyebrow color={claudeAccent}>Claude 介面導覽 · 任務 2-1</Eyebrow>
+      <Eyebrow color={taskColor}>課堂練習</Eyebrow>
+    </div>
+    <PageHeading>任務 2-1：試用 Skill（/audit-xls、/clean-data-xls）</PageHeading>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 20, marginTop: 24 }}>
+      <Steps>
+        <Step>
+          <FlowStep n={1} title="打開 Claude for Excel 的 Sidebar" desc="回到 Excel，點開側邊欄，準備輸入指令" />
+        </Step>
+        <Step>
+          <FlowStep
+            n={2}
+            title="貼上 Prompt 1-1"
+            desc="請 AI 先幫你造出兩組測試資料，一組故意留錯給 audit-xls 抓，一組故意留錯給 clean-data-xls 清"
+            prompt="我想試試看 skill：audit-xls 跟 clean-data-xls 的功能，你幫我 1. 新增一個工作表 2. 分別填幾個簡單的錯誤資料（要分左右邊，備註是 for audit-xls 和 for clean-data-xls），並備註是什麼錯誤。"
+          />
+        </Step>
+        <Step>
+          <FlowStep n={3} title="輸入 /audit-xls、/clean-data-xls" desc="分別對左右兩邊的測試資料執行，查看資料清理結果" />
+        </Step>
+      </Steps>
+    </div>
+    <PageFooter />
+  </div>
+);
+
 // ─── Page 4a-3 — Claude 介面導覽：二～六、輸入框工具列 ─────────────────────────
 const ClaudeGuideToolbar: Page = () => (
   <div style={page}>
@@ -6872,6 +6902,7 @@ export default [
   PptxProductMaster,
   Part1PromptTechniques,
   ClaudeGuideSkills,
+  ClaudeSkillsTry,
   PptxClaudeSidebar,
   ClaudeGuideToolbar,
   ClaudeGuideTopRight,

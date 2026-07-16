@@ -1393,7 +1393,7 @@ const ClaudeSkillsTry: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={claudeAccent}>Claude 介面導覽 · 任務 2-1</Eyebrow>
-      <Eyebrow color={taskColor}>課堂練習</Eyebrow>
+      <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.8</Eyebrow>
     </div>
     <PageHeading>任務 2-1：試用 Skill（/audit-xls、/clean-data-xls）</PageHeading>
     <div style={{ display: 'flex', flexDirection: 'column', gap: 20, marginTop: 24 }}>
@@ -1411,6 +1411,9 @@ const ClaudeSkillsTry: Page = () => (
         </Step>
         <Step>
           <FlowStep n={3} title="輸入 /audit-xls、/clean-data-xls" desc="分別對左右兩邊的測試資料執行，查看資料清理結果" />
+        </Step>
+        <Step>
+          <Callout color={muted}>備註：如果 Claude 詢問要處理哪一張工作表，選擇處理「當前這張工作表」即可。</Callout>
         </Step>
       </Steps>
     </div>

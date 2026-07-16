@@ -990,6 +990,34 @@ const ReceiptIcon = ({ color }: { color: string }) => (
   </svg>
 );
 
+// ─── Shared: cute stray-cat / chipped-pet icons (range vs table analogy) ──────
+const CatFaceIcon = ({ color }: { color: string }) => (
+  <svg width="52" height="48" viewBox="0 0 52 48">
+    <path d="M9,18 L3,3 L19,13 Z" fill={color} />
+    <path d="M43,18 L49,3 L33,13 Z" fill={color} />
+    <circle cx="26" cy="27" r="18" fill={color} />
+    <circle cx="19" cy="24" r="2.3" fill="#fff" />
+    <circle cx="33" cy="24" r="2.3" fill="#fff" />
+    <path d="M26,29 l-2.6,3.4 h5.2 Z" fill="#fff" />
+    <path d="M14,35 q12,7 24,0" fill="none" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" opacity="0.8" />
+  </svg>
+);
+
+const ChipPetIcon = ({ color }: { color: string }) => (
+  <svg width="56" height="52" viewBox="0 0 56 52">
+    <path d="M13,17 q-9,6 -7,19 q7,2 11,-7 Z" fill={color} opacity="0.85" />
+    <path d="M43,17 q9,6 7,19 q-7,2 -11,-7 Z" fill={color} opacity="0.85" />
+    <circle cx="28" cy="26" r="18" fill={color} />
+    <circle cx="21.5" cy="23" r="2.3" fill="#fff" />
+    <circle cx="34.5" cy="23" r="2.3" fill="#fff" />
+    <path d="M28,28 l-2.8,3.4 h5.6 Z" fill="#fff" />
+    <rect x="20" y="38" width="16" height="10" rx="2.5" fill="#fff" stroke={color} strokeWidth="1.5" />
+    <line x1="24.5" y1="41" x2="24.5" y2="45" stroke={color} strokeWidth="1.3" />
+    <line x1="28" y1="41" x2="28" y2="45" stroke={color} strokeWidth="1.3" />
+    <line x1="31.5" y1="41" x2="31.5" y2="45" stroke={color} strokeWidth="1.3" />
+  </svg>
+);
+
 const FlowStageGroup = ({
   color,
   icon,
@@ -1865,6 +1893,90 @@ const Part1Task8: Page = () => (
         <Step><StepCard num="2" color={taskColor} title="觀察新列" desc="商品分類、單位、狀態與下拉選單，還有作用嗎？" /></Step>
         <Step><StepCard num="3" color={taskColor} title="還原資料" desc="把新增的序號先刪掉" /></Step>
       </Steps>
+    </div>
+    <PageFooter />
+  </div>
+);
+
+// ─── Page 5a0 — 流浪貓 vs 晶片寵物：一般範圍 vs Excel 表格 ─────────────────────
+const RangeVsTableAnalogy: Page = () => (
+  <div style={page}>
+    <Eyebrow color={partColor.p1}>PART 1 · 資料庫基礎</Eyebrow>
+    <PageHeading>流浪貓 vs 晶片寵物：一般範圍和表格，差在哪？</PageHeading>
+    <div style={{ display: 'flex', gap: 28, marginTop: 32 }}>
+      <div
+        style={{
+          flex: 1,
+          background: `${painRed}0D`,
+          border: `1px solid ${painRed}33`,
+          borderRadius: 20,
+          padding: '24px 28px',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 12,
+        }}
+      >
+        <div style={{ display: 'flex', gap: 4 }}>
+          <CatFaceIcon color={painRed} />
+          <CatFaceIcon color={painRed} />
+          <CatFaceIcon color={painRed} />
+        </div>
+        <div style={{ fontSize: 34, fontWeight: 800, color: painRed }}>一般範圍 ＝ 一群流浪貓聚在巷口</div>
+        <div style={{ fontSize: 26, lineHeight: 1.5 }}>
+          牠們看起來聚在一起，像是「一群」，但沒有任何機構正式登記這是「一群」。今天巷口又跑來一隻新的貓，牠算不算這群的一份子？沒人知道，也沒人負責追蹤——巷口的里長（樞紐分析、公式）如果只認得原本那三隻，新來的就是自己晃來晃去，不會被自動算進任何統計。
+        </div>
+      </div>
+      <div
+        style={{
+          flex: 1,
+          background: `${partColor.p1}0D`,
+          border: `1px solid ${partColor.p1}33`,
+          borderRadius: 20,
+          padding: '24px 28px',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 12,
+        }}
+      >
+        <div style={{ display: 'flex', gap: 4 }}>
+          <ChipPetIcon color={partColor.p1} />
+          <ChipPetIcon color={partColor.p1} />
+        </div>
+        <div style={{ fontSize: 34, fontWeight: 800, color: partColor.p1 }}>Excel 表格 ＝ 有晶片登記的寵物家族</div>
+        <div style={{ fontSize: 26, lineHeight: 1.5 }}>
+          這個家族有正式的家族名字（表格名稱，例如「員工主檔」），每一隻都植入晶片、登記在案。新來一隻小狗，掃描器「嗶」一聲，牠立刻被系統認得是這個家族的一員——不用重新造冊，家族名冊自動更新，之後只要查「這個家族」，新成員一定被算進去。
+        </div>
+      </div>
+    </div>
+    <div
+      style={{
+        display: 'grid',
+        gridTemplateColumns: '1fr 1.3fr 1.3fr',
+        gap: 1,
+        background: cardBorder,
+        border: `1px solid ${cardBorder}`,
+        borderRadius: 12,
+        overflow: 'hidden',
+        marginTop: 24,
+      }}
+    >
+      <MatrixHead>對照項目</MatrixHead>
+      <MatrixHead>流浪貓聚會（一般範圍）</MatrixHead>
+      <MatrixHead>晶片家族（表格）</MatrixHead>
+      <MatrixCell>登記狀態</MatrixCell>
+      <MatrixCell>沒有正式登記，邊界模糊</MatrixCell>
+      <MatrixCell>家族名字明確，邊界系統全程追蹤</MatrixCell>
+      <MatrixCell>新成員加入</MatrixCell>
+      <MatrixCell>沒人自動算進統計</MatrixCell>
+      <MatrixCell>自動納入家族</MatrixCell>
+      <MatrixCell>查詢方式</MatrixCell>
+      <MatrixCell>要一隻隻數（=D2座標）</MatrixCell>
+      <MatrixCell>直接查「這個家族」（=員工主檔[@薪資]）</MatrixCell>
+    </div>
+    <div style={{ marginTop: 20 }}>
+      <Callout color={partColor.p1}>
+        流浪貓是「看起來像一群」，晶片寵物是「系統真的知道這是一群」。你們 HR 資料一直有新人加入，用表格就等於幫每個新人都先植好晶片，不用每次手動造冊。
+      </Callout>
     </div>
     <PageFooter />
   </div>
@@ -6930,6 +7042,7 @@ export default [
   Part1TaskDropdownFix,
   Part1Task567,
   Part1Task8,
+  RangeVsTableAnalogy,
   Part1Task9,
   Part1Task9Tools,
   Part1SupplierIntro,

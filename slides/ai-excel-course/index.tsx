@@ -705,7 +705,19 @@ const FeatureBlock = ({
   </div>
 );
 
-const FlowStep = ({ n, title, desc, prompt }: { n: number; title: string; desc: string; prompt?: string }) => (
+const FlowStep = ({
+  n,
+  title,
+  desc,
+  prompt,
+  promptLabel,
+}: {
+  n: number;
+  title: string;
+  desc: string;
+  prompt?: string;
+  promptLabel?: string;
+}) => (
   <div style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>
     <PinBadge n={n} />
     <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 4 }}>
@@ -723,7 +735,7 @@ const FlowStep = ({ n, title, desc, prompt }: { n: number; title: string; desc: 
           }}
         >
           <div style={{ fontSize: 25, fontWeight: 800, color: claudeAccent, letterSpacing: '0.06em', marginBottom: 4 }}>
-            PROMPT
+            {promptLabel ?? 'PROMPT'}
           </div>
           <div style={{ fontSize: 25, lineHeight: 1.45 }}>{prompt}</div>
         </div>
@@ -1407,6 +1419,7 @@ const ClaudeSkillsTry: Page = () => (
             title="貼上 Prompt 1-1"
             desc="請 AI 先幫你造出兩組測試資料，一組故意留錯給 audit-xls 抓，一組故意留錯給 clean-data-xls 清"
             prompt="我想試試看 skill：audit-xls 跟 clean-data-xls 的功能，你幫我 1. 新增一個工作表 2. 分別填幾個簡單的錯誤資料（要分左右邊，備註是 for audit-xls 和 for clean-data-xls），並備註是什麼錯誤。"
+            promptLabel="PROMPT 1-1"
           />
         </Step>
         <Step>
@@ -1642,6 +1655,7 @@ const ClaudeGuideConnectorsTask: Page = () => (
               title="用 Prompt 產生草稿"
               desc="回到 Excel，點擊一個表格，在對話框輸入："
               prompt="幫我寫一封草稿，內文是把這個表格轉成 html 後，寄給我自己的 gmail。"
+              promptLabel="PROMPT 2"
             />
           </Step>
           <Step>
@@ -1653,6 +1667,7 @@ const ClaudeGuideConnectorsTask: Page = () => (
               title="把流程存成 Skill"
               desc="回到 Excel，在對話框輸入："
               prompt="將這個寄信任務建成 skill，取名為 send-email，下次只要我呼叫 /send-email，就直接把我選取的表格轉成 html 表格後寄給我自己；在我沒有點選任何表格時詢問我，其他時候就直接執行流程不必詢問。"
+              promptLabel="PROMPT 3"
             />
           </Step>
           <Step>

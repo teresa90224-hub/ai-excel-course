@@ -32,6 +32,7 @@ import pptx_s19_5 from './assets/pptx/s19_5.png';
 import pptx_s20_5 from './assets/pptx/s20_5.png';
 import pptx_s21_5 from './assets/pptx/s21_5.png';
 import pptx_s22_5 from './assets/pptx/s22_5.png';
+import strayCatsVsChippedPets from './assets/stray-cats-vs-chipped-pets.png';
 
 // ─── Panel-tweakable design tokens ────────────────────────────────────────────
 export const design: DesignSystem = {
@@ -990,34 +991,6 @@ const ReceiptIcon = ({ color }: { color: string }) => (
   </svg>
 );
 
-// ─── Shared: cute stray-cat / chipped-pet icons (range vs table analogy) ──────
-const CatFaceIcon = ({ color }: { color: string }) => (
-  <svg width="52" height="48" viewBox="0 0 52 48">
-    <path d="M9,18 L3,3 L19,13 Z" fill={color} />
-    <path d="M43,18 L49,3 L33,13 Z" fill={color} />
-    <circle cx="26" cy="27" r="18" fill={color} />
-    <circle cx="19" cy="24" r="2.3" fill="#fff" />
-    <circle cx="33" cy="24" r="2.3" fill="#fff" />
-    <path d="M26,29 l-2.6,3.4 h5.2 Z" fill="#fff" />
-    <path d="M14,35 q12,7 24,0" fill="none" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" opacity="0.8" />
-  </svg>
-);
-
-const ChipPetIcon = ({ color }: { color: string }) => (
-  <svg width="56" height="52" viewBox="0 0 56 52">
-    <path d="M13,17 q-9,6 -7,19 q7,2 11,-7 Z" fill={color} opacity="0.85" />
-    <path d="M43,17 q9,6 7,19 q-7,2 -11,-7 Z" fill={color} opacity="0.85" />
-    <circle cx="28" cy="26" r="18" fill={color} />
-    <circle cx="21.5" cy="23" r="2.3" fill="#fff" />
-    <circle cx="34.5" cy="23" r="2.3" fill="#fff" />
-    <path d="M28,28 l-2.8,3.4 h5.6 Z" fill="#fff" />
-    <rect x="20" y="38" width="16" height="10" rx="2.5" fill="#fff" stroke={color} strokeWidth="1.5" />
-    <line x1="24.5" y1="41" x2="24.5" y2="45" stroke={color} strokeWidth="1.3" />
-    <line x1="28" y1="41" x2="28" y2="45" stroke={color} strokeWidth="1.3" />
-    <line x1="31.5" y1="41" x2="31.5" y2="45" stroke={color} strokeWidth="1.3" />
-  </svg>
-);
-
 const FlowStageGroup = ({
   color,
   icon,
@@ -1902,81 +1875,13 @@ const Part1Task8: Page = () => (
 const RangeVsTableAnalogy: Page = () => (
   <div style={page}>
     <Eyebrow color={partColor.p1}>PART 1 · 資料庫基礎</Eyebrow>
-    <PageHeading>流浪貓 vs 晶片寵物：一般範圍和表格，差在哪？</PageHeading>
-    <div style={{ display: 'flex', gap: 28, marginTop: 32 }}>
-      <div
-        style={{
-          flex: 1,
-          background: `${painRed}0D`,
-          border: `1px solid ${painRed}33`,
-          borderRadius: 20,
-          padding: '24px 28px',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 12,
-        }}
-      >
-        <div style={{ display: 'flex', gap: 4 }}>
-          <CatFaceIcon color={painRed} />
-          <CatFaceIcon color={painRed} />
-          <CatFaceIcon color={painRed} />
-        </div>
-        <div style={{ fontSize: 34, fontWeight: 800, color: painRed }}>一般範圍 ＝ 一群流浪貓聚在巷口</div>
-        <div style={{ fontSize: 26, lineHeight: 1.5 }}>
-          牠們看起來聚在一起，像是「一群」，但沒有任何機構正式登記這是「一群」。今天巷口又跑來一隻新的貓，牠算不算這群的一份子？沒人知道，也沒人負責追蹤——巷口的里長（樞紐分析、公式）如果只認得原本那三隻，新來的就是自己晃來晃去，不會被自動算進任何統計。
-        </div>
-      </div>
-      <div
-        style={{
-          flex: 1,
-          background: `${partColor.p1}0D`,
-          border: `1px solid ${partColor.p1}33`,
-          borderRadius: 20,
-          padding: '24px 28px',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 12,
-        }}
-      >
-        <div style={{ display: 'flex', gap: 4 }}>
-          <ChipPetIcon color={partColor.p1} />
-          <ChipPetIcon color={partColor.p1} />
-        </div>
-        <div style={{ fontSize: 34, fontWeight: 800, color: partColor.p1 }}>Excel 表格 ＝ 有晶片登記的寵物家族</div>
-        <div style={{ fontSize: 26, lineHeight: 1.5 }}>
-          這個家族有正式的家族名字（表格名稱，例如「員工主檔」），每一隻都植入晶片、登記在案。新來一隻小狗，掃描器「嗶」一聲，牠立刻被系統認得是這個家族的一員——不用重新造冊，家族名冊自動更新，之後只要查「這個家族」，新成員一定被算進去。
-        </div>
-      </div>
-    </div>
-    <div
-      style={{
-        display: 'grid',
-        gridTemplateColumns: '1fr 1.3fr 1.3fr',
-        gap: 1,
-        background: cardBorder,
-        border: `1px solid ${cardBorder}`,
-        borderRadius: 12,
-        overflow: 'hidden',
-        marginTop: 24,
-      }}
-    >
-      <MatrixHead>對照項目</MatrixHead>
-      <MatrixHead>流浪貓聚會（一般範圍）</MatrixHead>
-      <MatrixHead>晶片家族（表格）</MatrixHead>
-      <MatrixCell>登記狀態</MatrixCell>
-      <MatrixCell>沒有正式登記，邊界模糊</MatrixCell>
-      <MatrixCell>家族名字明確，邊界系統全程追蹤</MatrixCell>
-      <MatrixCell>新成員加入</MatrixCell>
-      <MatrixCell>沒人自動算進統計</MatrixCell>
-      <MatrixCell>自動納入家族</MatrixCell>
-      <MatrixCell>查詢方式</MatrixCell>
-      <MatrixCell>要一隻隻數（=D2座標）</MatrixCell>
-      <MatrixCell>直接查「這個家族」（=員工主檔[@薪資]）</MatrixCell>
-    </div>
-    <div style={{ marginTop: 20 }}>
-      <Callout color={partColor.p1}>
-        流浪貓是「看起來像一群」，晶片寵物是「系統真的知道這是一群」。你們 HR 資料一直有新人加入，用表格就等於幫每個新人都先植好晶片，不用每次手動造冊。
-      </Callout>
+    <PageHeading>儲存格 vs 表格 ＝ 流浪貓 vs 家貓</PageHeading>
+    <div style={{ flex: 1, minHeight: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: 16 }}>
+      <img
+        src={strayCatsVsChippedPets}
+        alt="流浪貓 vs 晶片寵物：一般範圍 vs Excel 表格"
+        style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain', borderRadius: 24, boxShadow: '0 12px 40px rgba(0,0,0,0.12)' }}
+      />
     </div>
     <PageFooter />
   </div>
@@ -4044,13 +3949,421 @@ const Part6Vba: Page = () => (
   </div>
 );
 
-// ─── Page 11a — 十七、牛刀小試：先用一句話試試看 ──────────────────────────────
-const Part6VbaLazyTry: Page = () => (
+// ─── Shared — dark VBA code block ─────────────────────────────────────────────
+const VbaCodeBlock = ({ children }: { children: React.ReactNode }) => (
+  <pre
+    style={{
+      margin: 0,
+      background: '#1E1E1E',
+      color: '#D4D4D4',
+      borderRadius: 10,
+      padding: '14px 16px',
+      fontFamily: 'Consolas, monospace',
+      fontSize: 25,
+      lineHeight: 1.5,
+      whiteSpace: 'pre-wrap',
+      overflowWrap: 'anywhere',
+    }}
+  >
+    {children}
+  </pre>
+);
+
+const VbaSyntaxRow = ({ code, desc }: { code: string; desc: React.ReactNode }) => (
+  <div style={{ display: 'flex', gap: 14, alignItems: 'flex-start' }}>
+    <span
+      style={{
+        fontFamily: 'Consolas, monospace',
+        fontSize: 25,
+        fontWeight: 700,
+        color: taskColor,
+        background: `${taskColor}14`,
+        border: `1px solid ${taskColor}33`,
+        borderRadius: 6,
+        padding: '3px 10px',
+        whiteSpace: 'nowrap',
+        flexShrink: 0,
+      }}
+    >
+      {code}
+    </span>
+    <span style={{ fontSize: 25, lineHeight: 1.45 }}>{desc}</span>
+  </div>
+);
+
+const VbaRunChip = () => (
+  <span
+    style={{
+      alignSelf: 'flex-start',
+      fontSize: 25,
+      fontWeight: 800,
+      color: '#1F7A4B',
+      background: '#1F7A4B14',
+      border: '1px solid #1F7A4B44',
+      borderRadius: 999,
+      padding: '4px 14px',
+    }}
+  >
+    ▶ 執行（F5）
+  </span>
+);
+
+const VbaNote = ({ children }: { children: React.ReactNode }) => (
+  <div
+    style={{
+      fontSize: 25,
+      fontWeight: 700,
+      color: taskColor,
+      background: `${taskColor}14`,
+      border: `1px solid ${taskColor}33`,
+      borderRadius: 8,
+      padding: '6px 12px',
+      lineHeight: 1.4,
+    }}
+  >
+    作用：{children}
+  </div>
+);
+
+// ─── Shared — mockup illustrations for the VBA first-try pages ───────────────
+const MsgBoxMock = ({ text }: { text: string }) => (
+  <div
+    style={{
+      width: 420,
+      margin: '0 auto',
+      borderRadius: 8,
+      overflow: 'hidden',
+      border: '1px solid #B8B8B4',
+      boxShadow: '0 10px 30px rgba(0,0,0,0.18)',
+      background: '#fff',
+    }}
+  >
+    <div
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        background: '#F1F1EF',
+        padding: '8px 14px',
+        borderBottom: '1px solid #DDDDD8',
+      }}
+    >
+      <span style={{ fontSize: 25, fontWeight: 700 }}>Microsoft Excel</span>
+      <span style={{ fontSize: 25, color: muted }}>✕</span>
+    </div>
+    <div style={{ padding: '26px 24px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 20 }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
+        <span
+          style={{
+            width: 34,
+            height: 34,
+            borderRadius: '50%',
+            background: '#2E6FBF',
+            color: '#fff',
+            fontSize: 25,
+            fontWeight: 800,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            flexShrink: 0,
+          }}
+        >
+          i
+        </span>
+        <span style={{ fontSize: 28, fontWeight: 700 }}>{text}</span>
+      </div>
+      <div
+        style={{
+          border: '1px solid #B8B8B4',
+          borderRadius: 4,
+          padding: '6px 30px',
+          fontSize: 25,
+          fontWeight: 700,
+          background: '#FAFAF8',
+        }}
+      >
+        確定
+      </div>
+    </div>
+  </div>
+);
+
+const miniHeadCell = {
+  background: '#F5F5F0',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  fontSize: 25,
+  fontWeight: 700,
+  color: muted,
+} as const;
+
+const MiniCell = ({ value, highlight }: { value: React.ReactNode; highlight?: boolean }) => (
+  <div
+    style={{
+      background: highlight ? `${partColor.p1}18` : '#fff',
+      border: highlight ? `2px solid ${partColor.p1}` : 'none',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      fontSize: 27,
+      fontWeight: 800,
+      color: highlight ? partColor.p1 : 'var(--osd-text)',
+    }}
+  >
+    {value}
+  </div>
+);
+
+const MiniSheetStrip = ({ col, row, value, highlight }: { col: string; row: number; value: React.ReactNode; highlight?: boolean }) => (
+  <div
+    style={{
+      display: 'inline-grid',
+      gridTemplateColumns: '36px 96px',
+      gridTemplateRows: '32px 44px',
+      border: `1px solid ${cardBorder}`,
+      borderRadius: 6,
+      overflow: 'hidden',
+    }}
+  >
+    <div style={{ ...miniHeadCell, borderRight: `1px solid ${cardBorder}`, borderBottom: `1px solid ${cardBorder}` }} />
+    <div style={{ ...miniHeadCell, borderBottom: `1px solid ${cardBorder}` }}>{col}</div>
+    <div style={{ ...miniHeadCell, borderRight: `1px solid ${cardBorder}` }}>{row}</div>
+    <MiniCell value={value} highlight={highlight} />
+  </div>
+);
+
+const MiniColumnStrip = ({ col, values }: { col: string; values: number[] }) => (
+  <div
+    style={{
+      display: 'inline-grid',
+      gridTemplateColumns: '36px 96px',
+      border: `1px solid ${cardBorder}`,
+      borderRadius: 6,
+      overflow: 'hidden',
+    }}
+  >
+    <div style={{ ...miniHeadCell, height: 32, borderRight: `1px solid ${cardBorder}`, borderBottom: `1px solid ${cardBorder}` }} />
+    <div style={{ ...miniHeadCell, height: 32, borderBottom: `1px solid ${cardBorder}` }}>{col}</div>
+    {values.flatMap((v, i) => [
+      <div
+        key={`r${i}`}
+        style={{ ...miniHeadCell, height: 40, borderRight: `1px solid ${cardBorder}`, borderTop: i > 0 ? `1px solid ${cardBorder}` : undefined }}
+      >
+        {i + 2}
+      </div>,
+      <div
+        key={`c${i}`}
+        style={{ height: 40, borderTop: i > 0 ? `1px solid ${cardBorder}` : undefined, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 27, fontWeight: 700 }}
+      >
+        {v}
+      </div>,
+    ])}
+  </div>
+);
+
+// ─── Page 11a0 — 一、試試看寫簡單的VBA（一）：MsgBox ───────────────────────────
+const Part6VbaFirstTryMsgBox: Page = () => (
   <div style={page}>
     <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.25</Eyebrow>
-    <PageHeading>一、牛刀小試：先用一句話試試看</PageHeading>
+    <PageHeading>一、試試看寫簡單的VBA：先讓巨集跳出一句話</PageHeading>
+    <div style={{ fontSize: 31, fontWeight: 800, color: taskColor, marginTop: 20 }}>
+      任務 27：建立 Module 1，貼上以下程式碼，點選執行（綠色三角形）或按 F5
+    </div>
+    <div style={{ display: 'flex', gap: 40, marginTop: 22, alignItems: 'flex-start' }}>
+      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 12 }}>
+        <Steps>
+          <Step>
+            <VbaNote>跳出訊息證明巨集有跑</VbaNote>
+          </Step>
+          <Step>
+            <VbaCodeBlock>{'Sub VBA練習()\nMsgBox"嗨，大家好"\nEnd Sub'}</VbaCodeBlock>
+          </Step>
+          <Step>
+            <VbaRunChip />
+          </Step>
+        </Steps>
+      </div>
+      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 14 }}>
+        <div style={{ fontSize: 27, fontWeight: 800, color: muted }}>語法拆解</div>
+        <Steps>
+          <Step>
+            <VbaSyntaxRow
+              code="Sub 名稱() ... End Sub"
+              desc="定義一個「巨集」（子程序），中間夾的程式碼會依序執行——這是 VBA 最基本的程式容器。"
+            />
+          </Step>
+          <Step>
+            <VbaSyntaxRow
+              code='MsgBox "文字"'
+              desc="跳出一個訊息框顯示指定文字，是最簡單的「證明程式真的有跑」的方式。"
+            />
+          </Step>
+        </Steps>
+      </div>
+    </div>
+    <Steps>
+      <Step>
+        <div style={{ marginTop: 22, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 10 }}>
+          <div style={{ fontSize: 25, fontWeight: 800, color: muted }}>執行結果</div>
+          <MsgBoxMock text="嗨，大家好" />
+        </div>
+      </Step>
+    </Steps>
+    <PageFooter />
+  </div>
+);
+
+// ─── Page 11a0-2 — 一、試試看寫簡單的VBA（二）：寫入儲存格 ─────────────────────
+const Part6VbaFirstTryRange: Page = () => (
+  <div style={page}>
+    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.25</Eyebrow>
+    <PageHeading>把固定值直接寫進儲存格</PageHeading>
+    <div style={{ fontSize: 31, fontWeight: 800, color: taskColor, marginTop: 20 }}>
+      任務 27（續）：覆蓋為以下程式碼，再次執行
+    </div>
+    <div style={{ display: 'flex', gap: 40, marginTop: 22, alignItems: 'flex-start' }}>
+      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 12 }}>
+        <Steps>
+          <Step>
+            <VbaNote>把固定值寫進儲存格</VbaNote>
+          </Step>
+          <Step>
+            <VbaCodeBlock>{'Sub VBA練習()\nWorksheets("商品主檔").Range("I1").Value = 100\nEnd Sub'}</VbaCodeBlock>
+          </Step>
+          <Step>
+            <VbaRunChip />
+          </Step>
+        </Steps>
+      </div>
+      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 14 }}>
+        <div style={{ fontSize: 27, fontWeight: 800, color: muted }}>語法拆解</div>
+        <Steps>
+          <Step>
+            <VbaSyntaxRow code='Worksheets("商品主檔")' desc="用工作表「名稱」取得該工作表物件。" />
+          </Step>
+          <Step>
+            <VbaSyntaxRow code='.Range("I1")' desc="在該工作表裡指定儲存格（這裡是單一儲存格 I1）。" />
+          </Step>
+          <Step>
+            <VbaSyntaxRow
+              code=".Value = 100"
+              desc={
+                <>
+                  把該儲存格的內容值設成 100——<code>.Value</code> 是儲存格的值屬性，用「=」賦值就是寫入資料。
+                </>
+              }
+            />
+          </Step>
+        </Steps>
+      </div>
+    </div>
+    <Steps>
+      <Step>
+        <div style={{ marginTop: 22, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 10 }}>
+          <div style={{ fontSize: 25, fontWeight: 800, color: muted }}>執行結果 — 商品主檔！I1</div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 32 }}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6 }}>
+              <span style={{ fontSize: 25, color: muted }}>執行前</span>
+              <MiniSheetStrip col="I" row={1} value="" />
+            </div>
+            <span style={{ fontSize: 34, color: muted }}>→</span>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6 }}>
+              <span style={{ fontSize: 25, color: muted }}>執行後</span>
+              <MiniSheetStrip col="I" row={1} value="100" highlight />
+            </div>
+          </div>
+        </div>
+      </Step>
+    </Steps>
+    <PageFooter />
+  </div>
+);
+
+// ─── Page 11a0-3 — 一、試試看寫簡單的VBA（三）：呼叫內建函數 ───────────────────
+const Part6VbaFirstTrySum: Page = () => (
+  <div style={page}>
+    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.25</Eyebrow>
+    <PageHeading>呼叫 Excel 內建函數，算出結果再寫回儲存格</PageHeading>
+    <div style={{ fontSize: 31, fontWeight: 800, color: taskColor, marginTop: 20 }}>
+      任務 27（續）：再次覆蓋為以下程式碼，執行後查看 I1
+    </div>
+    <div style={{ display: 'flex', gap: 40, marginTop: 22, alignItems: 'flex-start' }}>
+      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 12 }}>
+        <Steps>
+          <Step>
+            <VbaNote>呼叫 Excel 內建的 SUM 函數算出結果再寫回儲存格</VbaNote>
+          </Step>
+          <Step>
+            <VbaCodeBlock>
+              {
+                'Sub VBA練習()\nWorksheets("商品主檔").Range("I1").Value = Application.WorksheetFunction.Sum(Worksheets("商品主檔").Range("E:E"))\nEnd Sub'
+              }
+            </VbaCodeBlock>
+          </Step>
+          <Step>
+            <VbaRunChip />
+          </Step>
+        </Steps>
+      </div>
+      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 14 }}>
+        <div style={{ fontSize: 27, fontWeight: 800, color: muted }}>語法拆解</div>
+        <Steps>
+          <Step>
+            <VbaSyntaxRow code="Application" desc="代表整個 Excel 應用程式本身。" />
+          </Step>
+          <Step>
+            <VbaSyntaxRow
+              code=".WorksheetFunction.Sum(...)"
+              desc="讓 VBA 呼叫 Excel 內建的 SUM 函數（就是平常打 =SUM() 那個），對括號裡的範圍加總。"
+            />
+          </Step>
+          <Step>
+            <VbaSyntaxRow code='Range("E:E")' desc="商品主檔工作表的 E 整欄。" />
+          </Step>
+          <Step>
+            <VbaSyntaxRow
+              code="整句意思"
+              desc="把「E 欄加總」算出來的結果寫進 I1——效果跟在 I1 打 =SUM(E:E) 一樣，但寫進去的是算好的固定數值，不是公式本身。"
+            />
+          </Step>
+        </Steps>
+      </div>
+    </div>
+    <Steps>
+      <Step>
+        <div style={{ marginTop: 16, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 24 }}>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6 }}>
+            <span style={{ fontSize: 25, color: muted }}>商品主檔！E 欄</span>
+            <MiniColumnStrip col="E" values={[60, 70, 45, 25]} />
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2 }}>
+            <span style={{ fontSize: 32, fontWeight: 800, color: muted }}>Σ</span>
+            <span style={{ fontSize: 32, color: muted }}>→</span>
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6 }}>
+            <span style={{ fontSize: 25, color: muted }}>商品主檔！I1</span>
+            <MiniSheetStrip col="I" row={1} value="200" highlight />
+          </div>
+        </div>
+      </Step>
+    </Steps>
+    <div style={{ marginTop: 16 }}>
+      <Callout color={taskColor}>
+        每次覆蓋整段 Sub 重新貼上，Module 1 只保留最新一版，執行只會跑目前這版。
+      </Callout>
+    </div>
+    <PageFooter />
+  </div>
+);
+
+// ─── Page 11a — 二、牛刀小試：先用一句話試試看 ──────────────────────────────
+const Part6VbaLazyTry: Page = () => (
+  <div style={page}>
+    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.26</Eyebrow>
+    <PageHeading>二、牛刀小試：先用一句話試試看</PageHeading>
     <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginTop: 24 }}>
-      <div style={{ fontSize: 31, fontWeight: 800, color: taskColor }}>任務 27：分開輸入兩句話，要求 AI 產出結果</div>
+      <div style={{ fontSize: 31, fontWeight: 800, color: taskColor }}>任務 28：分開輸入兩句話，要求 AI 產出結果</div>
       <span
         style={{
           fontSize: 25,
@@ -4199,10 +4512,10 @@ const XlDataRow = ({ cols }: { cols: string[] }) => (
 // ─── Page 11a-2 — 三、銷售日報：打烊後，一鍵生出當天的營運報告 ────────────────
 const Part6VbaSalesReport: Page = () => (
   <div style={page}>
-    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.26</Eyebrow>
-    <PageHeading>二、銷售日報：打烊後，一鍵生出當天的營運報告</PageHeading>
+    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.27</Eyebrow>
+    <PageHeading>三、銷售日報：打烊後，一鍵生出當天的營運報告</PageHeading>
     <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginTop: 10 }}>
-      <div style={{ fontSize: 31, fontWeight: 800, color: taskColor }}>任務 28：一鍵產生銷售日報</div>
+      <div style={{ fontSize: 31, fontWeight: 800, color: taskColor }}>任務 29：一鍵產生銷售日報</div>
       <span
         style={{
           fontSize: 25,
@@ -4260,10 +4573,10 @@ const Part6VbaSalesReport: Page = () => (
 // ─── Page 11a-3 — 四、叫貨單：庫存不夠，訊息自動生好幫你傳 ───────────────────
 const Part6VbaPurchaseMessage: Page = () => (
   <div style={page}>
-    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.26-27</Eyebrow>
-    <PageHeading>三、叫貨單：庫存不夠，訊息自動生好幫你傳</PageHeading>
+    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.27-28</Eyebrow>
+    <PageHeading>四、叫貨單：庫存不夠，訊息自動生好幫你傳</PageHeading>
     <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginTop: 10 }}>
-      <div style={{ fontSize: 31, fontWeight: 800, color: taskColor }}>任務 29：一鍵產出叫貨單（給供應商的訊息）</div>
+      <div style={{ fontSize: 31, fontWeight: 800, color: taskColor }}>任務 30：一鍵產出叫貨單（給供應商的訊息）</div>
       <span
         style={{
           fontSize: 25,
@@ -4399,13 +4712,13 @@ const DialogInput = ({ value, highlight }: { value?: string; highlight?: boolean
   </div>
 );
 
-// ─── Page 11a-4 — 四、練習：讓叫貨單更聰明 ────────────────────────────────────
+// ─── Page 11a-4 — 練習：讓叫貨單更聰明 ────────────────────────────────────
 const Part6VbaPurchaseSmart: Page = () => (
   <div style={page}>
-    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.27-28</Eyebrow>
+    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.28-29</Eyebrow>
     <PageHeading>練習：讓叫貨單更聰明</PageHeading>
     <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginTop: 20 }}>
-      <div style={{ fontSize: 31, fontWeight: 800, color: taskColor }}>任務 30：[練習] 讓叫貨單更聰明</div>
+      <div style={{ fontSize: 31, fontWeight: 800, color: taskColor }}>任務 31：[練習] 讓叫貨單更聰明</div>
       <span
         style={{
           fontSize: 25,
@@ -4520,10 +4833,10 @@ const MiniStep = ({ n, children }: { n: number; children: React.ReactNode }) => 
 // ─── Page 11a-5 — 五、關檔前防呆檢查＋待補貨提醒 ──────────────────────────────
 const Part6VbaCloseCheck: Page = () => (
   <div style={page}>
-    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.28</Eyebrow>
-    <PageHeading>四、關檔前防呆檢查＋待補貨提醒</PageHeading>
+    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.29</Eyebrow>
+    <PageHeading>五、關檔前防呆檢查＋待補貨提醒</PageHeading>
     <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginTop: 10 }}>
-      <div style={{ fontSize: 31, fontWeight: 800, color: taskColor }}>任務 31：關閉前防呆檢查＋待補貨提醒</div>
+      <div style={{ fontSize: 31, fontWeight: 800, color: taskColor }}>任務 32：關閉前防呆檢查＋待補貨提醒</div>
       <span
         style={{
           fontSize: 25,
@@ -4699,8 +5012,8 @@ const RibbonButton = ({ glyph, label }: { glyph: string; label: string }) => (
 
 const Part6VbaRibbon: Page = () => (
   <div style={page}>
-    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.29</Eyebrow>
-    <PageHeading>五、把巨集設定成「自訂功能區」按鈕</PageHeading>
+    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.30</Eyebrow>
+    <PageHeading>六、把巨集設定成「自訂功能區」按鈕</PageHeading>
     <div style={{ marginTop: 8 }}>
       <Steps>
         <Step>
@@ -5036,10 +5349,10 @@ const CheckColumn = ({
 // ─── Page 12b — 六、月底跨檔案彙總，先把資料讀對、抓錯 ───────────────────────
 const Part7RollupRead: Page = () => (
   <div style={page}>
-    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.30</Eyebrow>
+    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.31</Eyebrow>
     <PageHeading>一、月底跨檔案彙總，先把資料讀對、抓錯</PageHeading>
     <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginTop: 16 }}>
-      <div style={{ fontSize: 31, fontWeight: 800, color: taskColor }}>任務 32：一鍵產出鍋貼店營業月報（讀取與檢查）</div>
+      <div style={{ fontSize: 31, fontWeight: 800, color: taskColor }}>任務 33：一鍵產出鍋貼店營業月報（讀取與檢查）</div>
       <span
         style={{
           fontSize: 25,
@@ -5108,10 +5421,10 @@ const Part7RollupRead: Page = () => (
 // ─── Page 12c — 七、一次產出七頁月報表，圖表也要跟著做好 ─────────────────────
 const Part7RollupReports: Page = () => (
   <div style={page}>
-    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.31</Eyebrow>
+    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.32</Eyebrow>
     <PageHeading>一次產出七頁月報表，圖表也要跟著做好</PageHeading>
     <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginTop: 16 }}>
-      <div style={{ fontSize: 31, fontWeight: 800, color: taskColor }}>任務 32（續）：彙總後自動產出的 7 份報表</div>
+      <div style={{ fontSize: 31, fontWeight: 800, color: taskColor }}>任務 33（續）：彙總後自動產出的 7 份報表</div>
       <span
         style={{
           fontSize: 25,
@@ -5591,10 +5904,10 @@ const MenuChip = ({ children, highlight }: { children: React.ReactNode; highligh
 // ─── Page 13a — 三、前置作業：上傳並轉換成 Google 試算表 ───────────────────────
 const Part5UploadConvert: Page = () => (
   <div style={page}>
-    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.33</Eyebrow>
+    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.34</Eyebrow>
     <PageHeading>三、前置作業：把 Excel 搬上雲端，變成 Google 試算表</PageHeading>
     <div style={{ fontSize: 31, fontWeight: 800, color: taskColor, marginTop: 20 }}>
-      任務 33：把 Excel 上傳到雲端，並轉換為 Google Sheets
+      任務 34：把 Excel 上傳到雲端，並轉換為 Google Sheets
     </div>
     <div style={{ marginTop: 22 }}>
       <MockChrome label="drive.google.com">
@@ -5640,10 +5953,10 @@ const Part5UploadConvert: Page = () => (
 // ─── Page 13b — 三、前置作業：安裝 ChatGPT for Google Sheets ──────────────────
 const Part5ChatGptSheets: Page = () => (
   <div style={page}>
-    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.33</Eyebrow>
+    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.34</Eyebrow>
     <PageHeading>安裝外掛，讓 ChatGPT 直接在 Google 試算表裡工作</PageHeading>
     <div style={{ fontSize: 31, fontWeight: 800, color: taskColor, marginTop: 20 }}>
-      任務 34：下載 ChatGPT for Google Sheets
+      任務 35：下載 ChatGPT for Google Sheets
     </div>
     <div style={{ display: 'flex', gap: 32, marginTop: 26, alignItems: 'stretch' }}>
       <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 16 }}>
@@ -6019,10 +6332,10 @@ const DarkSubmitButton = ({ label }: { label: string }) => (
 // ─── Page 13a — 讓 AI 修改公式與下拉清單 ───────────────────────────────────────
 const Part5FixFormulas: Page = () => (
   <div style={page}>
-    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.35</Eyebrow>
+    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.36</Eyebrow>
     <PageHeading>轉檔後先體檢：讓 AI 修好公式與下拉清單</PageHeading>
     <div style={{ fontSize: 31, fontWeight: 800, color: taskColor, marginTop: 18 }}>
-      任務 35：讓 AI 修改公式與下拉清單
+      任務 36：讓 AI 修改公式與下拉清單
     </div>
     <div style={{ marginTop: 16 }}>
       <Steps>
@@ -6097,10 +6410,10 @@ const Part5FixFormulas: Page = () => (
 // ─── Page 13b — 四、產生後端 Apps Script（一）：對齊試算表位置 ─────────────────
 const Part5BackendMap: Page = () => (
   <div style={page}>
-    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.35-36</Eyebrow>
+    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.36-37</Eyebrow>
     <PageHeading>四、產生後端 Apps Script：先把「位置」對齊</PageHeading>
     <div style={{ fontSize: 33, fontWeight: 800, color: taskColor, marginTop: 16 }}>
-      任務 36：讓 AI 產出後端 Apps Script（Code.gs）
+      任務 37：讓 AI 產出後端 Apps Script（Code.gs）
     </div>
     <div style={{ marginTop: 14 }}>
       <Callout color={painRed}>
@@ -6139,8 +6452,8 @@ const Part5BackendMap: Page = () => (
 // ─── Page 13c — 四、產生後端 Apps Script（二）：5 個核心函式 ───────────────────
 const Part5BackendFunctions: Page = () => (
   <div style={page}>
-    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.36</Eyebrow>
-    <PageHeading>任務 36（續）：Code.gs 要寫出的 5 個函式</PageHeading>
+    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.37</Eyebrow>
+    <PageHeading>任務 37（續）：Code.gs 要寫出的 5 個函式</PageHeading>
     <div style={{ display: 'flex', gap: 40, marginTop: 30, alignItems: 'flex-start' }}>
       <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 22 }}>
         <Steps>
@@ -6186,7 +6499,7 @@ const Part5BackendFunctions: Page = () => (
 // ─── Page 13d — 五、產生前端網頁（一）：視覺風格與版面 ─────────────────────────
 const Part5FrontendLayout: Page = () => (
   <div style={page}>
-    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.36-37</Eyebrow>
+    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.37-38</Eyebrow>
     <PageHeading>五、產生前端網頁：深色科技風儀表板長這樣</PageHeading>
     <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginTop: 8, flexWrap: 'wrap' }}>
       <RuleChip text="深藍底 #0D1B2A" />
@@ -6222,8 +6535,8 @@ const Part5FrontendLayout: Page = () => (
 // ─── Page 13e — 五、產生前端網頁（二）：三大區塊與互動行為 ─────────────────────
 const Part5FrontendSections: Page = () => (
   <div style={page}>
-    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.36-37</Eyebrow>
-    <PageHeading>任務 36（續）：商品／通路／庫存三大區塊</PageHeading>
+    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.37-38</Eyebrow>
+    <PageHeading>任務 37（續）：商品／通路／庫存三大區塊</PageHeading>
     <div style={{ marginTop: 12 }}>
       <DarkMock>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
@@ -6353,9 +6666,9 @@ const EmailItemRow = ({ name, status }: { name: string; status: '缺料' | '低�
 // ─── Page 13a — 六、部署步驟：讓網頁應用程式真正上線 ───────────────────────────
 const Part5Deploy: Page = () => (
   <div style={page}>
-    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.37</Eyebrow>
+    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.38</Eyebrow>
     <PageHeading>六、部署步驟：讓網頁應用程式真正上線</PageHeading>
-    <div style={{ fontSize: 30, fontWeight: 800, color: taskColor, marginTop: 16 }}>任務 38：部署網頁應用程式</div>
+    <div style={{ fontSize: 30, fontWeight: 800, color: taskColor, marginTop: 16 }}>任務 39：部署網頁應用程式</div>
     <div style={{ marginTop: 14 }}>
       <Steps>
         <Step>
@@ -6423,10 +6736,10 @@ const Part5Deploy: Page = () => (
 // ─── Page 13b — 七、進階：做一個把資料寫回試算表的輸入頁面 ─────────────────────
 const Part5WriteBack: Page = () => (
   <div style={page}>
-    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.38-39</Eyebrow>
+    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.39-40</Eyebrow>
     <PageHeading>七、進階：做一個把資料「寫回」試算表的輸入頁面</PageHeading>
     <div style={{ fontSize: 32, fontWeight: 800, color: taskColor, marginTop: 14 }}>
-      任務 39：[作業] 跟 AI 討論，做出一個能把資料寫回試算表的輸入頁面
+      任務 40：[作業] 跟 AI 討論，做出一個能把資料寫回試算表的輸入頁面
     </div>
     <div style={{ marginTop: 12 }}>
       <Callout color={partColor.p5}>
@@ -6508,7 +6821,7 @@ const Part5AutoEmail: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={partColor.p5}>PART 5 · 雲端 POS 系統</Eyebrow>
-      <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.40</Eyebrow>
+      <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.41</Eyebrow>
     </div>
     <PageHeading>九、缺料自動 Email 通知：主動預警，不用一直盯著看</PageHeading>
     <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginTop: 10 }}>
@@ -7068,10 +7381,13 @@ export default [
   Part6Vba,
   PptxMacroStep1,
   PptxMacroStep2,
-  PptxDailyReportSpec,
-  Part6VbaLazyTry,
   PptxMacroStep3,
   PptxMacroStep4,
+  Part6VbaFirstTryMsgBox,
+  Part6VbaFirstTryRange,
+  Part6VbaFirstTrySum,
+  PptxDailyReportSpec,
+  Part6VbaLazyTry,
   PptxMacroStep5,
   PptxMacroStep6,
   Part6VbaSalesReport,

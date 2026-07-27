@@ -260,8 +260,10 @@ const ConstraintCard = ({
       <span style={{ fontSize: 34, fontWeight: 800 }}>{title}</span>
     </div>
     <div style={{ display: 'flex', flexDirection: 'column', gap: 14, fontSize: 27, lineHeight: 1.45 }}>
-      <div style={{ display: 'flex', gap: 12 }}><span style={{ color }}>●</span><span>{a}</span></div>
-      <div style={{ display: 'flex', gap: 12 }}><span style={{ color }}>●</span><span>{b}</span></div>
+      <div style={{ display: 'flex', gap: 12 }}>
+        <span style={{ color }}>●</span><span>{a}</span></div>
+      <div style={{ display: 'flex', gap: 12 }}>
+        <span style={{ color }}>●</span><span>{b}</span></div>
       <div style={{ display: 'flex', gap: 12 }}><span style={{ color }}>●</span><span>{c}</span></div>
     </div>
   </div>
@@ -662,8 +664,8 @@ const Constraints: Page = () => (
             color={warnAmber}
             icon="⚖"
             title="法規面"
-            a="七休一——七天內至少一天例假"
-            b="單日正常工時上限"
+            a="七休一：不得連續工作超過 6 天"
+            b="單日正常工時上限8小時"
             c="超時要能被標示為加班"
           />
         </Step>
@@ -672,9 +674,9 @@ const Constraints: Page = () => (
             color={sheetColor.staff}
             icon="🏪"
             title="營運面"
-            a="假日、尖峰時段人力需求高於平日"
-            b="早班開店需要固定人數到場"
-            c="人力配置要對得起業績"
+            a="10:00–22:00 全年無休，每天至少 1 人排早班"
+            b="平日（一~五）每天 ≥3 人；例假日（六、日）每天 ≥4 人"
+            c="同一員工同一天最多 1 個班別，跳過該員工休假日"
           />
         </Step>
         <Step>

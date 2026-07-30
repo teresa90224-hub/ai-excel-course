@@ -1,6 +1,9 @@
 import type { DesignSystem, Page, SlideMeta } from '@open-slide/core';
 import { Step, Steps, useSlidePageNumber } from '@open-slide/core';
 import busAnalogyPeakHours from './assets/bus-analogy-peak-hours.png';
+import scheduleIllustrationTop from './assets/schedule-illustration-top.png';
+import scheduleIllustrationMiddle from './assets/schedule-illustration-middle.png';
+import scheduleIllustrationBottom from './assets/schedule-illustration-bottom.png';
 import vbaStep1FilePicker from './assets/vba-step1-filepicker.png';
 import vbaStep2DailyTrend from './assets/vba-step2-dailytrend.png';
 import vbaStep3Filtered from './assets/vba-step3-filtered.png';
@@ -9,8 +12,32 @@ import vbaStep5SalarySetting from './assets/vba-step5-salarysetting.png';
 import vbaBackgroundErrorFlow from './assets/vba-background-error-flow.png';
 import vbaStep6ScheduleFields from './assets/vba-step6-schedule-fields.png';
 import bonusInputFieldCallouts from './assets/bonus-input-field-callouts.png';
+import bonusSumByEmployee from './assets/bonus-sum-by-employee.png';
+import bonusTotalFormula from './assets/bonus-total-formula.png';
+import bonusTotalToSalary from './assets/bonus-total-to-salary.png';
+import overtimeSumToSalary from './assets/overtime-sum-to-salary.png';
+import salaryGrossPayFormula from './assets/salary-gross-pay-formula.png';
+import insuranceBracketTable2026 from './assets/insurance-bracket-table-2026.png';
+import insuranceBracketThreeZooms from './assets/insurance-bracket-three-zooms.png';
+import insuranceRulesThreeThings from './assets/insurance-rules-three-things.png';
+import insuranceAmountsToSalaryDetail from './assets/insurance-amounts-to-salary-detail.png';
+import leaveDeductToSalaryDetail from './assets/leave-deduct-to-salary-detail.png';
+import leaveDeductFormulaLogic from './assets/leave-deduct-formula-logic.png';
+import salaryDeductionsNetPayFormula from './assets/salary-deductions-net-pay-formula.png';
+import hoursSummaryFieldCallouts from './assets/hours-summary-field-callouts.png';
+import overtimeRateTimeline from './assets/overtime-rate-timeline.png';
+import overtimeCalculationFormula from './assets/overtime-calculation-formula.png';
+import overtimeDetailCalculationFlow from './assets/overtime-detail-calculation-flow.png';
+import salarySettingsOvertimeRates from './assets/salary-settings-overtime-rates.png';
 import asset from './assets/日期、營業額 大一點.jpg';
 import performanceBonusFlow from './assets/performance-bonus-flow.png';
+import salaryPrincipleMorePayLessDeduct from './assets/salary-principle-more-pay-less-deduct.png';
+import asset2 from './assets/排班圖解_中.png';
+import asset3 from './assets/排班圖解_下.png';
+import asset4 from './assets/排班圖解_上.png';
+
+
+
 
 
 // ─── Panel-tweakable design tokens (matches AI Excel 課程 exactly) ────────────
@@ -69,6 +96,11 @@ const page = {
   position: 'relative' as const,
   display: 'flex',
   flexDirection: 'column' as const,
+};
+
+// Let white-backed diagrams and screenshots inherit the slide's warm background.
+const imageOnSlideBackground = {
+  mixBlendMode: 'multiply' as const,
 };
 
 // ─── Shared background texture ────────────────────────────────────────────────
@@ -161,7 +193,6 @@ const Callout = ({ color, children }: { color: string; children: React.ReactNode
       color: 'var(--osd-text)',
     }}
   >
-    {/* @slide-comment id="c-38a6b4d0" ts="2026-07-29T07:00:13.107Z" text="eyJub3RlIjoi5Z-36KGM5b6M5YWI5qC45bCNIHRibF_njY7ph5HovLjlhaUg6LOH5paZ5q2j5LiN5q2j56K64oCU4oCU5pyJ5ZWP6aGM5bCx5oqK6Yyv6Kqk6KiK5oGv5Lif5Zue57WmIEFJIOS_ruato--8jOato-eiuuaJjee5vOe6jOS4i-S4gOatpeOAglxu6YCZ6YKK6KaB5o-b6KGMIn0" */}
     {children}
   </div>
 );
@@ -199,7 +230,6 @@ const TxCard = ({ color, title, children }: { color: string; title: string; chil
       gap: 16,
     }}
   >
-    {/* @slide-comment id="c-19711444" ts="2026-07-29T06:57:53.041Z" text="eyJub3RlIjoi5oqK542O6YeR5piO57Sw5Y2A5aGK6Lef6Jaq6LOH5piO57Sw5Y2A5aGK5YiG5oiQ5YWp6aCBIn0" */}
     <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
       <div style={{ width: 40, height: 40, borderRadius: 12, background: color, flexShrink: 0 }} />
       <div style={{ fontSize: 34, fontWeight: 800 }}>{title}</div>
@@ -478,29 +508,39 @@ const Agenda: Page = () => (
 // ─── Page 2 — 一、為什麼要有排班表模組？（打工經驗切入） ─────────────────────
 const WhyModule1: Page = () => (
   <div style={page}>
-    <Eyebrow color={design.palette.accent}>PART 1 · 排班表是什麼？</Eyebrow>
+    <Eyebrow color={design.palette.accent} style={{ lineHeight: '1.3' }}>PART 1 · 排班表是什麼？</Eyebrow>
     <PageHeading>你有餐飲業或服務業打工經驗嗎？</PageHeading>
-    <div style={{ marginTop: 36 }}>
+    <div src={asset4} style={{ marginTop: 18, display: 'flex', flexDirection: 'column', gap: 10 }}>
       <Steps>
         <Step>
-          <div style={{ fontSize: 30, lineHeight: 1.7, maxWidth: 1600 }}>
-            通常餐飲門市<b style={{ color: painRed }}>六日生意最好</b>，所以餐廳大多
-            <b style={{ color: painRed }}>六日不休息</b>，更可能週一到週日都不店休——
-            讓員工們<b>輪流上班、輪流休假</b>，這就是「排班」。
+          <div style={{ display: 'flex', justifyContent: 'center', lineHeight: '1.4' }}>
+            <img
+              src={asset4}
+              alt="餐飲門市六日不休息，員工輪流上班、輪流休假，這就是排班"
+              style={{ maxWidth: '100%', height: 240, objectFit: 'cover', objectPosition: '50% 50%', objectViewBox: 'inset(0% 3.69% 0% 3.69%)' }}
+            />
           </div>
         </Step>
+      </Steps>
+      <Steps>
         <Step>
-          <div style={{ fontSize: 30, lineHeight: 1.7, maxWidth: 1600, marginTop: 24 }}>
-            光是每天有人上班還不夠，餐廳每天都要決定
-            <b style={{ color: goodGreen }}>「哪個時段、要有誰在」</b>
-            ——開店有人顧、尖峰有人補、打烊有人收。
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <img
+              src={asset2}
+              alt="每天要決定哪個時段、要有誰在——開店有人顧、尖峰有人補、打烊有人收"
+              style={{ maxWidth: '100%', height: 320, objectFit: 'cover', objectPosition: '50% 50%', objectViewBox: 'inset(3.68% 2.09% 0.53% 2.1%)' }}
+            />
           </div>
         </Step>
-        <Step>
-          <div style={{ marginTop: 28 }}>
-            <Callout color={painRed}>
-              一旦人力沒接上，輕則<b>出餐變慢、客人抱怨</b>，重則<b>違反勞基法挨罰</b>。
-            </Callout>
+      </Steps>
+      <Steps>
+        <Step src={asset3}>
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <img
+              src={asset3}
+              alt="人力沒接上，輕則出餐變慢、客人抱怨，重則違反勞基法挨罰"
+              style={{ maxWidth: '100%', height: 175, objectFit: 'cover', objectPosition: '50% 50%', objectViewBox: 'inset(2.42% 2.19% 2.18% 2.44%)' }}
+            />
           </div>
         </Step>
       </Steps>
@@ -513,7 +553,7 @@ const WhyModule1: Page = () => (
 const WhyModule2: Page = () => (
   <div style={page}>
     <Eyebrow color={design.palette.accent}>PART 1 · 排班表是什麼？</Eyebrow>
-    <PageHeading>人力沒接上，出餐變慢、還可能挨罰</PageHeading>
+    <PageHeading>今天誰上班？</PageHeading>
     <div style={{ marginTop: 32 }}>
       <Steps>
         <Step>
@@ -827,7 +867,7 @@ const BusAnalogy: Page = () => (
       <img
         src={busAnalogyPeakHours}
         alt="就像公車一樣：離峰班次少、尖峰班次多，對應餐廳早班／餐期／離峰／人太多的人力配置"
-        style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain', borderRadius: 20, boxShadow: '0 12px 40px rgba(0,0,0,0.12)' }}
+        style={{ ...imageOnSlideBackground, maxWidth: '100%', maxHeight: '100%', objectFit: 'contain', borderRadius: 20, boxShadow: '0 12px 40px rgba(0,0,0,0.12)', lineHeight: '0.8', letterSpacing: '0.1px' }}
       />
     </div>
     <PageFooter />
@@ -1086,7 +1126,10 @@ const FiveSheets: Page = () => (
 // ─── Page 12 — 任務 1（一）：建立員工主檔欄位 ──────────────────────────────────
 const Task1EmployeeSetup: Page = () => (
   <div style={page}>
-    <Eyebrow color={sheetColor.staff}>PART 1 · 排班表實作</Eyebrow>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+      <Eyebrow color={sheetColor.staff}>PART 1 · 排班表實作</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · P.5 · Prompt 1</Eyebrow>
+    </div>
     <PageHeading maxWidth={1600}>任務 1：建立「員工主檔」欄位</PageHeading>
     <p style={{ fontSize: 27, color: muted, lineHeight: 1.5, margin: '16px 0 0', maxWidth: 1650 }}>
       先建好欄位結構，做成 Excel 表格 <b style={{ color: sheetColor.staff }}>tbl_員工</b>——員工ID 先排好，其他欄位留空，之後才批次貼資料。
@@ -1138,7 +1181,10 @@ const Task1EmployeeSetup: Page = () => (
 // ─── Page 13 — 任務 1（二）：排班設定的下拉選單來源 ─────────────────────────────
 const Task1SettingsDropdown: Page = () => (
   <div style={page}>
-    <Eyebrow color={sheetColor.settings}>PART 1 · 排班表實作</Eyebrow>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+      <Eyebrow color={sheetColor.settings}>PART 1 · 排班表實作</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · P.5 · Prompt 1</Eyebrow>
+    </div>
     <PageHeading maxWidth={1600}>「排班設定」：下拉選單集中管理</PageHeading>
     <p style={{ fontSize: 27, color: muted, lineHeight: 1.5, margin: '16px 0 0', maxWidth: 1650 }}>
       員工主檔裡「有括號備註」的欄位，都要在排班設定分頁建成下拉清單——欄位標題＋清單項目直排。
@@ -1161,7 +1207,10 @@ const Task1SettingsDropdown: Page = () => (
 // ─── Page 14 — 任務 1（三）：員工主檔 7 筆資料 ──────────────────────────────────
 const EmployeeDataTable: Page = () => (
   <div style={page}>
-    <Eyebrow color={sheetColor.staff}>PART 1 · 排班表實作</Eyebrow>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+      <Eyebrow color={sheetColor.staff}>PART 1 · 排班表實作</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · P.6</Eyebrow>
+    </div>
     <PageHeading maxWidth={1600}>7 位員工，各自能上哪些班？</PageHeading>
     <Steps>
       <Step>
@@ -1213,7 +1262,10 @@ const EmployeeDataTable: Page = () => (
 // ─── Page 15 — 任務 3（一）：休假申請表結構 ────────────────────────────────────
 const Task2LeaveSetup: Page = () => (
   <div style={page}>
-    <Eyebrow color={sheetColor.leave}>PART 1 · 排班表實作</Eyebrow>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+      <Eyebrow color={sheetColor.leave}>PART 1 · 排班表實作</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · P.7 · Prompt 2</Eyebrow>
+    </div>
     <PageHeading maxWidth={1600}>任務 3：休假是「事件」，獨立一張表</PageHeading>
     <p style={{ fontSize: 27, color: muted, lineHeight: 1.5, margin: '16px 0 0', maxWidth: 1650 }}>
       新增「休假申請」工作表，做成 Excel 表格 <b style={{ color: sheetColor.leave }}>tbl_休假</b>。
@@ -1237,7 +1289,10 @@ const Task2LeaveSetup: Page = () => (
 // ─── Page 16 — 任務 3（二）：休假申請 5 筆資料 ──────────────────────────────────
 const LeaveDataTable: Page = () => (
   <div style={page}>
-    <Eyebrow color={sheetColor.leave}>PART 1 · 排班表實作</Eyebrow>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+      <Eyebrow color={sheetColor.leave}>PART 1 · 排班表實作</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · P.7</Eyebrow>
+    </div>
     <PageHeading maxWidth={1600}>先填 5 筆休假申請，驗證下拉與公式</PageHeading>
     <div style={{ marginTop: 32, borderRadius: 16, overflow: 'hidden', border: `1px solid ${cardBorder}`, boxShadow: '0 4px 14px rgba(0,0,0,0.06)' }}>
       <div style={{ display: 'grid', gridTemplateColumns: '0.8fr 1fr 0.9fr 1.1fr 0.9fr' }}>
@@ -1287,7 +1342,10 @@ const LeaveDataTable: Page = () => (
 // ─── Page 17 — 任務 5（一）：排班表欄位與下拉設定 ───────────────────────────────
 const Task3ScheduleSetup: Page = () => (
   <div style={page}>
-    <Eyebrow color={sheetColor.schedule}>PART 1 · 排班表實作</Eyebrow>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+      <Eyebrow color={sheetColor.schedule}>PART 1 · 排班表實作</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · P.8-9 · Prompt 3</Eyebrow>
+    </div>
     <PageHeading maxWidth={1650}>任務 5：排班表——承先啟後的核心</PageHeading>
     <p style={{ fontSize: 26, color: muted, lineHeight: 1.5, margin: '14px 0 0', maxWidth: 1660 }}>
       不只記日期和誰上班，還要看得出幾號、平日還假日、上下班幾點、休息幾小時——之後排考勤、算薪資都要靠這張表。
@@ -1333,7 +1391,10 @@ const Task3ScheduleSetup: Page = () => (
 // ─── Page 18 — 任務 5（二）：班別對照表 tbl_班別 ───────────────────────────────
 const Task3ShiftRef: Page = () => (
   <div style={page}>
-    <Eyebrow color={sheetColor.settings}>PART 1 · 排班表實作</Eyebrow>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+      <Eyebrow color={sheetColor.settings}>PART 1 · 排班表實作</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · P.8-9 · Prompt 3</Eyebrow>
+    </div>
     <PageHeading maxWidth={1650}>班別對照表，四個欄位一次自動帶出</PageHeading>
     <div style={{ marginTop: 28, borderRadius: 16, overflow: 'hidden', border: `1px solid ${cardBorder}`, boxShadow: '0 4px 14px rgba(0,0,0,0.06)' }}>
       <div style={{ display: 'grid', gridTemplateColumns: '1.3fr 1fr 1fr 1fr 1fr' }}>
@@ -1379,7 +1440,10 @@ const Task3ShiftRef: Page = () => (
 // ─── Page 18a — 任務 6：試著排出 7/1 的班 ──────────────────────────────────────
 const Task6TryManual: Page = () => (
   <div style={page}>
-    <Eyebrow color={sheetColor.schedule}>PART 1 · 排班表實作</Eyebrow>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+      <Eyebrow color={sheetColor.schedule}>PART 1 · 排班表實作</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · P.9</Eyebrow>
+    </div>
     <PageHeading maxWidth={1650}>任務 6：先手動試排 7/1 的班</PageHeading>
     <p style={{ fontSize: 27, color: muted, lineHeight: 1.5, margin: '16px 0 0', maxWidth: 1650 }}>
       表格結構都好了，先自己動手排一天，感受一下排班要顧到哪些限制。
@@ -1405,7 +1469,10 @@ const Task6TryManual: Page = () => (
 // ─── Page 19 — 任務 7：新增星期欄 ───────────────────────────────────────────────
 const Task7Weekday: Page = () => (
   <div style={page}>
-    <Eyebrow color={sheetColor.schedule}>PART 1 · 排班表實作</Eyebrow>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+      <Eyebrow color={sheetColor.schedule}>PART 1 · 排班表實作</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · P.9 · Prompt 4</Eyebrow>
+    </div>
     <PageHeading maxWidth={1650}>任務 7：只看日期，很難判斷要排幾個人</PageHeading>
     <p style={{ fontSize: 27, color: muted, lineHeight: 1.5, margin: '16px 0 0', maxWidth: 1650 }}>
       在「排班日期」右邊新增一欄「星期」，用公式帶出（例：星期一、星期二）。
@@ -1430,7 +1497,10 @@ const Task7Weekday: Page = () => (
 // ─── Page 20 — 任務 8：每筆排班防呆檢查 ─────────────────────────────────────────
 const Task5CheckFormula: Page = () => (
   <div style={page}>
-    <Eyebrow color={sheetColor.schedule}>PART 1 · 排班表實作</Eyebrow>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+      <Eyebrow color={sheetColor.schedule}>PART 1 · 排班表實作</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · P.10 · Prompt 5</Eyebrow>
+    </div>
     <PageHeading maxWidth={1650}>任務 8：一條公式，同時檢查三種問題</PageHeading>
     <p style={{ fontSize: 26, color: muted, lineHeight: 1.5, margin: '14px 0 0', maxWidth: 1660 }}>
       新增「防呆檢查」欄，有問題就用分號串接顯示，都沒問題就空白——用結構化參照，套用到整欄。
@@ -1479,7 +1549,10 @@ const Task5CheckFormula: Page = () => (
 // ─── Page 21 — 任務 9（一）：排班規則 1～4 ──────────────────────────────────────
 const Task6RulesPart1: Page = () => (
   <div style={page}>
-    <Eyebrow color={sheetColor.schedule}>PART 1 · 排班表實作</Eyebrow>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+      <Eyebrow color={sheetColor.schedule}>PART 1 · 排班表實作</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · P.10 · Prompt 6</Eyebrow>
+    </div>
     <PageHeading maxWidth={1650}>任務 9：把排班規則整理成 Prompt（1／2）</PageHeading>
     <p style={{ fontSize: 26, color: muted, lineHeight: 1.5, margin: '14px 0 0' }}>資格與防重複——先確保排的班本身合法</p>
     <div style={{ display: 'flex', flexDirection: 'column', gap: 16, marginTop: 24 }}>
@@ -1497,7 +1570,10 @@ const Task6RulesPart1: Page = () => (
 // ─── Page 22 — 任務 9（二）：排班規則 5～8 ──────────────────────────────────────
 const Task6RulesPart2: Page = () => (
   <div style={page}>
-    <Eyebrow color={sheetColor.schedule}>PART 1 · 排班表實作</Eyebrow>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+      <Eyebrow color={sheetColor.schedule}>PART 1 · 排班表實作</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · P.10 · Prompt 6</Eyebrow>
+    </div>
     <PageHeading maxWidth={1650}>任務 9：把排班規則整理成 Prompt（2／2）</PageHeading>
     <p style={{ fontSize: 26, color: muted, lineHeight: 1.5, margin: '14px 0 0' }}>人力與休假天數——精準到人</p>
     <div style={{ display: 'flex', flexDirection: 'column', gap: 16, marginTop: 24 }}>
@@ -1520,7 +1596,10 @@ const Task6RulesPart2: Page = () => (
 // ─── Page 23 — 任務 10：把規則包裝成 /auto-schedule ────────────────────────────
 const Task7SkillResult: Page = () => (
   <div style={page}>
-    <Eyebrow color={design.palette.accent}>PART 1 · 排班表實作</Eyebrow>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+      <Eyebrow color={design.palette.accent}>PART 1 · 排班表實作</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · P.11 · Prompt 7</Eyebrow>
+    </div>
     <PageHeading maxWidth={1650}>任務 10：打一個指令，套用整套排班規則</PageHeading>
     <div style={{ display: 'flex', gap: 32, marginTop: 40 }}>
       <Steps>
@@ -1556,7 +1635,10 @@ const Task7SkillResult: Page = () => (
 // ─── Page 24 — 任務 11：每日人力防呆檢核 ────────────────────────────────────────
 const Task8DailyCheck: Page = () => (
   <div style={page}>
-    <Eyebrow color={sheetColor.schedule}>PART 1 · 排班表實作</Eyebrow>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+      <Eyebrow color={sheetColor.schedule}>PART 1 · 排班表實作</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · P.11 · Prompt 8</Eyebrow>
+    </div>
     <PageHeading maxWidth={1650}>任務 11：沒有 AI 額度時，也要能人工核對</PageHeading>
     <p style={{ fontSize: 26, color: muted, lineHeight: 1.5, margin: '14px 0 0', maxWidth: 1660 }}>
       排班表右側新增「每日人力防呆檢核」區塊，把每個不重複的日期各列一行。
@@ -1612,7 +1694,10 @@ const Task8DailyCheck: Page = () => (
 // ─── Page 25 — 任務 12（一）：為什麼要月班表 ────────────────────────────────────
 const Task9MonthlyWhy: Page = () => (
   <div style={page}>
-    <Eyebrow color={sheetColor.monthly}>PART 1 · 排班表實作</Eyebrow>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+      <Eyebrow color={sheetColor.monthly}>PART 1 · 排班表實作</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · P.12 · Prompt 9</Eyebrow>
+    </div>
     <PageHeading maxWidth={1650}>任務 12：排班表結構完成 8 成，最後一哩路</PageHeading>
     <div style={{ marginTop: 32 }}>
       <Steps>
@@ -1743,7 +1828,10 @@ const monthNightCount = ['4', '4', '4', '5', '5', '4', '4', '4'];
 
 const Task9MonthlyExample: Page = () => (
   <div style={page}>
-    <Eyebrow color={sheetColor.monthly}>PART 1 · 排班表實作</Eyebrow>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+      <Eyebrow color={sheetColor.monthly}>PART 1 · 排班表實作</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · P.12 · Prompt 9</Eyebrow>
+    </div>
     <PageHeading maxWidth={1650}>月班表長這樣——一眼看懂全月人力</PageHeading>
     <Steps>
       <Step>
@@ -1834,7 +1922,10 @@ const Task9MonthlyLogic: Page = () => (
 // ─── Page 27 — 任務 13（一）：突發請假，怎麼找人代班？ ────────────────────────
 const Task13ProxyScenarios: Page = () => (
   <div style={page}>
-    <Eyebrow color={sheetColor.leave}>PART 1 · 排班表實作</Eyebrow>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+      <Eyebrow color={sheetColor.leave}>PART 1 · 排班表實作</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · P.14</Eyebrow>
+    </div>
     <PageHeading maxWidth={1650}>任務 13：突發請假，誰能來代班？</PageHeading>
     <div style={{ display: 'flex', gap: 32, marginTop: 36 }}>
       <Steps>
@@ -1876,7 +1967,10 @@ const Task13ProxyScenarios: Page = () => (
 // ─── Page 28 — 任務 13（二）：休假申請表新增三欄 ───────────────────────────────
 const Task13LeaveFields: Page = () => (
   <div style={page}>
-    <Eyebrow color={sheetColor.leave}>PART 1 · 排班表實作</Eyebrow>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+      <Eyebrow color={sheetColor.leave}>PART 1 · 排班表實作</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · P.13</Eyebrow>
+    </div>
     <PageHeading maxWidth={1650}>先把「請多久的假」記清楚</PageHeading>
     <p style={{ fontSize: 27, color: muted, lineHeight: 1.5, margin: '16px 0 0', maxWidth: 1650 }}>
       在休假申請表新增三欄：<b style={{ color: sheetColor.leave }}>開始時間</b>、
@@ -1907,7 +2001,10 @@ const Task13LeaveFields: Page = () => (
 // ─── Page 29 — 任務 14（一）：候補建議工作表結構 ───────────────────────────────
 const Task14CandidateSetup: Page = () => (
   <div style={page}>
-    <Eyebrow color={sheetColor.leave}>PART 1 · 排班表實作</Eyebrow>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+      <Eyebrow color={sheetColor.leave}>PART 1 · 排班表實作</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · P.14 · Prompt 10</Eyebrow>
+    </div>
     <PageHeading maxWidth={1650}>任務 14：休假衝突自動偵測與候補建議</PageHeading>
     <p style={{ fontSize: 26, color: muted, lineHeight: 1.5, margin: '14px 0 0', maxWidth: 1660 }}>
       新增「候補建議」工作表，根據排班表、休假申請、員工主檔、排班設定，自動列出衝突與候補人選。
@@ -1948,7 +2045,10 @@ const Task14CandidateSetup: Page = () => (
 // ─── Page 30 — 任務 14（二）：候補人員的 5 個條件 ──────────────────────────────
 const Task14CandidateRules: Page = () => (
   <div style={page}>
-    <Eyebrow color={sheetColor.leave}>PART 1 · 排班表實作</Eyebrow>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+      <Eyebrow color={sheetColor.leave}>PART 1 · 排班表實作</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · P.15 · Prompt 10</Eyebrow>
+    </div>
     <PageHeading maxWidth={1650}>候補人員，要同時符合 5 個條件</PageHeading>
     <div style={{ display: 'flex', flexDirection: 'column', gap: 14, marginTop: 28 }}>
       <Steps>
@@ -2030,10 +2130,66 @@ const Part2OurCase: Page = () => (
   </div>
 );
 
+// ─── Page 35b — 薪資計算原則：只多發，不多扣 ───────────────────────────────────
+const SalaryPrincipleMorePayLessDeduct: Page = () => (
+  <div style={{ ...page, padding: 40, alignItems: 'center', justifyContent: 'flex-start' }}>
+    <div style={{ alignSelf: 'flex-start' }}>
+      <Eyebrow color={painRed}>PART 2 · 薪水怎麼算？</Eyebrow>
+    </div>
+    <div style={{ alignSelf: 'flex-start' }}>
+      <PageHeading maxWidth={1650}>最後一個扣項：請假扣薪</PageHeading>
+    </div>
+    <Steps>
+      <Step>
+        <div style={{ width: '100%', height: 770, marginTop: 20, display: 'flex', alignItems: 'flex-start', justifyContent: 'center', overflow: 'hidden' }}>
+          <img
+            src={salaryPrincipleMorePayLessDeduct}
+            alt="薪資計算原則：加班費納入本薪、全勤獎金與業績獎金；請假扣款只用本薪計算"
+            style={{ ...imageOnSlideBackground, width: '100%', height: '100%', objectFit: 'cover', objectPosition: '50% 50%', objectViewBox: 'inset(0.48% 0.33% 0.33% 0.48%)' }}
+          />
+        </div>
+      </Step>
+    </Steps>
+    <PageFooter />
+  </div>
+);
+
+const SalaryPrincipleMorePayLessDeduct2: Page = () => (
+  <div style={{ ...page, padding: 40, alignItems: 'center', justifyContent: 'flex-start' }}>
+    <div style={{ alignSelf: 'flex-start' }}>
+      <Eyebrow color={painRed}>PART 2 · 薪水怎麼算？</Eyebrow>
+    </div>
+    <div style={{ alignSelf: 'flex-start' }}>
+      <PageHeading maxWidth={1650}>最後一個扣項：請假扣薪</PageHeading>
+    </div>
+    <Steps>
+      <Step>
+        <div style={{ width: '100%', height: 770, marginTop: 20, display: 'flex', alignItems: 'flex-start', justifyContent: 'center', overflow: 'hidden' }}>
+          <img
+            src={salaryPrincipleMorePayLessDeduct}
+            alt="薪資計算原則：加班費納入本薪、全勤獎金與業績獎金；請假扣款只用本薪計算"
+            style={{
+              ...imageOnSlideBackground,
+              width: '100%',
+              height: '100%',
+              objectFit: 'contain',
+              objectPosition: 'top center',
+            }}
+          />
+        </div>
+      </Step>
+    </Steps>
+    <PageFooter />
+  </div>
+);
+
 // ─── Page 36 — 員工薪資設定 ─────────────────────────────────────────────────────
 const SalarySetup: Page = () => (
   <div style={page}>
-    <Eyebrow color={formulaBlue}>PART 2 · 薪水怎麼算？</Eyebrow>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+      <Eyebrow color={formulaBlue}>PART 2 · 薪水怎麼算？</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · P.21</Eyebrow>
+    </div>
     <PageHeading maxWidth={1650}>員工薪資設定：先把月薪／時薪記到主檔</PageHeading>
     <p style={{ fontSize: 26, color: muted, lineHeight: 1.5, margin: '14px 0 0', maxWidth: 1660 }}>
       在員工主檔 D 欄插入「月薪(正職)」、E 欄插入「時薪(兼職)」，貼上 7 位員工對應薪資。
@@ -2084,8 +2240,11 @@ const SalarySetup: Page = () => (
 // ─── Page 37 — 工時彙總表 ───────────────────────────────────────────────────────
 const HoursSummary: Page = () => (
   <div style={page}>
-    <Eyebrow color={formulaBlue}>PART 2 · 薪水怎麼算？</Eyebrow>
-    <PageHeading maxWidth={1650}>排班明細，彙總成「一人一整月」的總帳</PageHeading>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+      <Eyebrow color={formulaBlue}>PART 2 · 薪水怎麼算？</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · P.17-18 · Prompt 14</Eyebrow>
+    </div>
+    <PageHeading maxWidth={1650}>工時彙總，彙總成「一人一整月」的總時數</PageHeading>
     <div style={{ display: 'flex', gap: 32, marginTop: 20 }}>
       <Steps>
         <Step><MiniFeature color={formulaBlue} title="兼職：工時直接算錢" desc="工時 × 時薪 ＝ 薪資" /></Step>
@@ -2143,7 +2302,10 @@ const HoursSummary: Page = () => (
 // ─── Page 38 — 薪資明細表 ───────────────────────────────────────────────────────
 const SalaryDetail: Page = () => (
   <div style={page}>
-    <Eyebrow color={formulaBlue}>PART 2 · 薪水怎麼算？</Eyebrow>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+      <Eyebrow color={formulaBlue}>PART 2 · 薪水怎麼算？</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · P.22 · Prompt 16</Eyebrow>
+    </div>
     <PageHeading maxWidth={1650}>薪資明細：先算出員工每個月的底薪</PageHeading>
     <div style={{ display: 'flex', gap: 32, marginTop: 20 }}>
       <Steps>
@@ -2208,8 +2370,11 @@ const SalaryDetail: Page = () => (
 // ─── Page 39 — 加班明細表 ───────────────────────────────────────────────────────
 const OvertimeDetail: Page = () => (
   <div style={page}>
-    <Eyebrow color={formulaBlue}>PART 2 · 薪水怎麼算？</Eyebrow>
-    <PageHeading maxWidth={1650}>超出正常工時的部分，另外算加班費</PageHeading>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+      <Eyebrow color={formulaBlue}>PART 2 · 薪水怎麼算？</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · P.14-15 · Prompt 11</Eyebrow>
+    </div>
+    <PageHeading maxWidth={1650}>超出正常工時的部分，另外算加班</PageHeading>
     <p style={{ fontSize: 26, color: muted, lineHeight: 1.5, margin: '14px 0 0', maxWidth: 1660 }}>
       新增「加班明細」工作表（<b style={{ color: formulaBlue }}>tbl_加班</b>），手動登記加班／休息日出勤，避免與一般排班工時重複計算。
     </p>
@@ -2246,15 +2411,16 @@ const OvertimeDetail: Page = () => (
 // ─── Page 40 — 加班防呆：對應班表工時 + 工時/連勤提醒 ─────────────────────────
 const OvertimeCheck: Page = () => (
   <div style={page}>
-    <Eyebrow color={formulaBlue}>PART 2 · 薪水怎麼算？</Eyebrow>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+      <Eyebrow color={formulaBlue}>PART 2 · 薪水怎麼算？</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · P.16-17 · Prompt 12、13</Eyebrow>
+    </div>
     <PageHeading maxWidth={1650}>兩欄防呆：別讓工時被算兩次</PageHeading>
     <div style={{ display: 'flex', gap: 32, marginTop: 32 }}>
       <Steps>
         <Step>
           <TxCard color={sheetColor.schedule} title="對應班表工時">
-            <div style={{ fontSize: 27, color: muted, lineHeight: 1.5 }}>
-              依日期＋員工ID，查 tbl_排班[實際工時]——沒有排班紀錄就顯示 0，避免加班時數跟原班次工時重複計薪。
-            </div>
+            <div style={{ fontSize: 27, color: muted, lineHeight: 1.5 }}>查出員工當日正常工時，避免加班時數跟原班次工時重複計薪。</div>
             <div style={{ marginTop: 22 }}>
               <div style={{ fontSize: 22, color: muted, marginBottom: 8 }}>範例：班表 8h ＋ 加班 5h ＝ 13h，超過 12h 上限</div>
               <div style={{ position: 'relative', height: 36, background: '#F1EFE4', borderRadius: 8, overflow: 'hidden' }}>
@@ -2404,7 +2570,10 @@ const FullAttendanceRounding: Page = () => (
 // ─── Page 42 — 獎金明細表：結構與全勤公式邏輯 ──────────────────────────────────
 const BonusDetailSetup: Page = () => (
   <div style={page}>
-    <Eyebrow color={formulaBlue}>PART 2 · 薪水怎麼算？</Eyebrow>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+      <Eyebrow color={formulaBlue}>PART 2 · 薪水怎麼算？</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · P.25 · Prompt 17</Eyebrow>
+    </div>
     <PageHeading maxWidth={1650}>建立「獎金明細」，用動態陣列自動算全勤</PageHeading>
     <div style={{ marginTop: 24, borderRadius: 16, overflow: 'hidden', border: `1px solid ${cardBorder}`, boxShadow: '0 4px 14px rgba(0,0,0,0.06)' }}>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)' }}>
@@ -2501,6 +2670,7 @@ const PerformanceBonusIntro: Page = () => (
               src={performanceBonusFlow}
               alt="從營業月報的 tbl_DailyTrend 找出業績達標日，再對照排班並匯入 tbl_獎金輸入，每位當日出勤員工獲得 500 元"
               style={{
+                ...imageOnSlideBackground,
                 display: 'block',
                 width: '100%',
                 height: '100%',
@@ -2531,16 +2701,14 @@ const PerformanceBonusIntro: Page = () => (
 // ─── Page 44 — 獎金明細擴充 + 獎金輸入暫存表 ───────────────────────────────────
 const BonusDetailExpandTable: Page = () => (
   <div style={page}>
-    <Eyebrow color={formulaBlue}>PART 2 · 薪水怎麼算？</Eyebrow>
-    <PageHeading maxWidth={1650}>獎金明細表擴充：先把容器準備好</PageHeading>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+      <Eyebrow color={formulaBlue}>PART 2 · 薪水怎麼算？</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · P.32 · Prompt 28</Eyebrow>
+    </div>
+    <PageHeading maxWidth={1650}>「獎金合計」－－每個人總共領多少獎金？</PageHeading>
     <div style={{ position: 'relative', marginTop: 24 }}>
       <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
         <Steps>
-          <Step>
-            <div style={{ height: 58, display: 'flex', alignItems: 'center' }}>
-              <RuleChip text="E4「業績獎金」——只放欄位名稱，底下先空白" color={formulaBlue} />
-            </div>
-          </Step>
           <Step>
             <div style={{ height: 58, display: 'flex', alignItems: 'center' }}>
               <RuleChip text="F4「獎金合計」＝ D欄＋E欄，動態溢出" color={formulaBlue} />
@@ -2548,40 +2716,24 @@ const BonusDetailExpandTable: Page = () => (
           </Step>
         </Steps>
       </div>
-      <div style={{ marginTop: 24, borderRadius: 16, overflow: 'hidden', border: `1px solid ${cardBorder}`, boxShadow: '0 4px 14px rgba(0,0,0,0.06)' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)' }}>
-          <SheetHeaderCell label="月份" tiny />
-          <SheetHeaderCell label="員工ID" tiny />
-          <SheetHeaderCell label="員工姓名" tiny />
-          <SheetHeaderCell label="全勤獎金" tiny />
-          <SheetHeaderCell label="業績獎金" tiny />
-          <SheetHeaderCell label="獎金合計" tiny />
-        </div>
-        <Steps>
-          <Step>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)' }}>
-              <GridCell>2026/07</GridCell><GridCell>E001</GridCell><GridCell>王建民</GridCell>
-              <GridCell><b style={{ color: goodGreen }}>1,000</b></GridCell>
-              <GridCell>—</GridCell>
-              <GridCell><b style={{ color: formulaBlue }}>1,000</b></GridCell>
-            </div>
-          </Step>
-        </Steps>
-      </div>
-      <svg
-        width={1760}
-        height={150}
-        viewBox="0 0 1760 150"
-        style={{ position: 'absolute', top: 0, left: 0, pointerEvents: 'none' }}
-      >
-        <defs>
-          <marker id="bonusExpandArrow" markerWidth={8} markerHeight={8} refX={4} refY={4} orient="auto">
-            <path d="M0,0 L8,4 L0,8 Z" fill={formulaBlue} />
-          </marker>
-        </defs>
-        <path d="M 1720 29 Q 1600 68 1320 148" fill="none" stroke={formulaBlue} strokeWidth={2} strokeDasharray="4 3" markerEnd="url(#bonusExpandArrow)" />
-        <path d="M 1720 97 Q 1670 118 1613 148" fill="none" stroke={formulaBlue} strokeWidth={2} strokeDasharray="4 3" markerEnd="url(#bonusExpandArrow)" />
-      </svg>
+      <Steps>
+        <Step>
+          <div style={{ height: 610, marginTop: 18, display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
+            <img
+              src={bonusTotalFormula}
+              alt="全勤獎金加上業績獎金，等於獎金合計；以 967 元加 1,500 元等於 2,467 元為例"
+              style={{
+                ...imageOnSlideBackground,
+                width: '100%',
+                height: '100%',
+                objectFit: 'contain',
+                borderRadius: 14,
+                boxShadow: '0 10px 32px rgba(0,0,0,0.12)',
+              }}
+            />
+          </div>
+        </Step>
+      </Steps>
     </div>
     <PageFooter />
   </div>
@@ -2590,7 +2742,10 @@ const BonusDetailExpandTable: Page = () => (
 // ─── Page 44b — tbl_獎金輸入暫存表 ─────────────────────────────────────────────
 const BonusInputTable: Page = () => (
   <div style={page}>
-    <Eyebrow color={formulaBlue}>PART 2 · 薪水怎麼算？</Eyebrow>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+      <Eyebrow color={formulaBlue}>PART 2 · 薪水怎麼算？</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · P.27 · Prompt 18</Eyebrow>
+    </div>
     <PageHeading maxWidth={1650}>獎金輸入明細表（tbl_獎金輸入）</PageHeading>
     <p style={{ fontSize: 26, color: muted, lineHeight: 1.5, margin: '14px 0 0', maxWidth: 1660 }}>
       此區作為從月報表匯入獎金明細前的暫存區塊，用來存放已算好的獎金金額。
@@ -2635,6 +2790,7 @@ const VbaStepImage = ({ src, alt, scale }: { src: string; alt: string; scale?: n
       src={src}
       alt={alt}
       style={{
+        ...imageOnSlideBackground,
         maxWidth: `${(scale ?? 1) * 100}%`,
         maxHeight: `${(scale ?? 1) * 100}%`,
         objectFit: 'contain',
@@ -2648,7 +2804,10 @@ const VbaStepImage = ({ src, alt, scale }: { src: string; alt: string; scale?: n
 // ─── Page 46a — VBA 跨檔整合（一）：選擇月報檔案 ────────────────────────────
 const VbaStep1: Page = () => (
   <div style={page}>
-    <Eyebrow color={sheetColor.monthly}>PART 2 · 薪水怎麼算？</Eyebrow>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+      <Eyebrow color={sheetColor.monthly}>PART 2 · 薪水怎麼算？</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · P.28 · Prompt 19</Eyebrow>
+    </div>
     <PageHeading maxWidth={1650} marginTop={16}>任務23	讓AI產出第一段VBA－打開報表</PageHeading>
     <div style={{ fontSize: 27, fontWeight: 800, color: sheetColor.monthly, marginTop: 6 }}>
       ① 跳出視窗，選擇月報 .xlsx 檔案（唯讀開啟，背景不顯示）
@@ -2661,7 +2820,10 @@ const VbaStep1: Page = () => (
 // ─── Page 46b — VBA 跨檔整合（二）：讀取 tbl_DailyTrend ─────────────────────
 const VbaStep2: Page = () => (
   <div style={page}>
-    <Eyebrow color={sheetColor.monthly}>PART 2 · 薪水怎麼算？</Eyebrow>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+      <Eyebrow color={sheetColor.monthly}>PART 2 · 薪水怎麼算？</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · P.28 · Prompt 20</Eyebrow>
+    </div>
     <PageHeading maxWidth={1650} marginTop={16} style={{ fontSize: '51px' }}>任務24 產出第二段VBA－找到tbl_DailyTrend，<br />讀取日期與營業額</PageHeading>
     <div style={{ fontSize: 27, fontWeight: 800, color: sheetColor.monthly, marginTop: 6 }}>
       ② 在月報裡找到表格 tbl_DailyTrend，讀出「日期」與「營業額」
@@ -2674,7 +2836,10 @@ const VbaStep2: Page = () => (
 // ─── Page 46c — VBA 跨檔整合（三）：篩出達標日期 ────────────────────────────
 const VbaStep3: Page = () => (
   <div style={page}>
-    <Eyebrow color={sheetColor.monthly}>PART 2 · 薪水怎麼算？</Eyebrow>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+      <Eyebrow color={sheetColor.monthly}>PART 2 · 薪水怎麼算？</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · P.29 · Prompt 21</Eyebrow>
+    </div>
     <PageHeading maxWidth={1650} marginTop={16}>任務25 產出第三段VBA－找出達標日期</PageHeading>
     <div style={{ fontSize: 27, fontWeight: 800, color: sheetColor.monthly, marginTop: 6 }}>
       ③ 篩出營業額 ≥ $25,000 的達標日期
@@ -2687,7 +2852,10 @@ const VbaStep3: Page = () => (
 // ─── Page 50 — VBA 背景執行與錯誤示警 ─────────────────────────────────────
 const VbaBackgroundSafety: Page = () => (
   <div style={page}>
-    <Eyebrow color={sheetColor.monthly}>PART 2 · 薪水怎麼算？</Eyebrow>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+      <Eyebrow color={sheetColor.monthly}>PART 2 · 薪水怎麼算？</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · P.29 · Prompt 22</Eyebrow>
+    </div>
     <PageHeading maxWidth={1650} marginTop={16} style={{ fontSize: '51px' }}>
       任務26 產出第四段VBA－讓巨集背景執行與錯誤示警
     </PageHeading>
@@ -2705,7 +2873,10 @@ const VbaBackgroundSafety: Page = () => (
 // ─── Page 46d — VBA 跨檔整合（四）：比對排班表 ──────────────────────────────
 const VbaStep4: Page = () => (
   <div style={page}>
-    <Eyebrow color={sheetColor.monthly}>PART 2 · 薪水怎麼算？</Eyebrow>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+      <Eyebrow color={sheetColor.monthly}>PART 2 · 薪水怎麼算？</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · P.30 · Prompt 25</Eyebrow>
+    </div>
     <PageHeading maxWidth={1650} marginTop={16}>任務29 產出第七段VBA－抓出達標日有上班的員工</PageHeading>
     <div style={{ fontSize: 27, fontWeight: 800, color: sheetColor.monthly, marginTop: 6 }}>⑥ 比對 tbl_排班，找出達標日當天有上班的員工</div>
     <div
@@ -2723,7 +2894,7 @@ const VbaStep4: Page = () => (
         <img
           src={vbaStep3Filtered}
           alt="第49頁篩出的營業額達標日期"
-          style={{ width: '100%', flex: 1, minHeight: 0, objectFit: 'contain', borderRadius: 14, boxShadow: '0 10px 32px rgba(0,0,0,0.12)' }}
+          style={{ ...imageOnSlideBackground, width: '100%', flex: 1, minHeight: 0, objectFit: 'contain', borderRadius: 14, boxShadow: '0 10px 32px rgba(0,0,0,0.12)' }}
         />
       </div>
       <div style={{ minHeight: 0, display: 'flex', flexDirection: 'column', gap: 8 }}>
@@ -2731,7 +2902,7 @@ const VbaStep4: Page = () => (
         <img
           src={vbaStep4Schedule}
           alt="比對排班表找出達標日出勤員工"
-          style={{ width: '100%', flex: 1, minHeight: 0, objectFit: 'contain', borderRadius: 14, boxShadow: '0 10px 32px rgba(0,0,0,0.12)' }}
+          style={{ ...imageOnSlideBackground, width: '100%', flex: 1, minHeight: 0, objectFit: 'contain', borderRadius: 14, boxShadow: '0 10px 32px rgba(0,0,0,0.12)' }}
         />
       </div>
     </div>
@@ -2742,7 +2913,10 @@ const VbaStep4: Page = () => (
 // ─── Page 52 — VBA 抓出排班日期與員工資料 ──────────────────────────────────
 const VbaStep6ScheduleFields: Page = () => (
   <div style={page}>
-    <Eyebrow color={sheetColor.monthly}>PART 2 · 薪水怎麼算？</Eyebrow>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+      <Eyebrow color={sheetColor.monthly}>PART 2 · 薪水怎麼算？</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · P.30 · Prompt 24</Eyebrow>
+    </div>
     <PageHeading maxWidth={1650} marginTop={16} style={{ fontSize: '51px' }}>
       任務28 產出第六段VBA－抓出 tbl_排班 的<br />
       日期、員工ID、員工姓名
@@ -2761,7 +2935,10 @@ const VbaStep6ScheduleFields: Page = () => (
 // ─── Page 46e — VBA 跨檔整合（五）：套用獎金基數 ────────────────────────────
 const VbaStep5: Page = () => (
   <div style={page}>
-    <Eyebrow color={sheetColor.monthly}>PART 2 · 薪水怎麼算？</Eyebrow>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+      <Eyebrow color={sheetColor.monthly}>PART 2 · 薪水怎麼算？</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · P.30 · Prompt 23</Eyebrow>
+    </div>
     <PageHeading maxWidth={1650} marginTop={16}>任務27 產出第五段VBA－從薪資設定取得業績獎金金額</PageHeading>
     <div style={{ fontSize: 27, fontWeight: 800, color: sheetColor.monthly, marginTop: 6 }}>⑤ 從 薪資設定！C8 取得業績獎金金額</div>
     <VbaStepImage src={vbaStep5SalarySetting} alt="薪資設定頁籤的業績獎金基數" scale={1.2} />
@@ -2772,14 +2949,21 @@ const VbaStep5: Page = () => (
 // ─── Page 46 — VBA：把獎金資料寫回 tbl_獎金輸入 ───────────────────────────────
 const VbaWriteBack: Page = () => (
   <div style={page}>
-    <Eyebrow color={sheetColor.monthly}>PART 2 · 薪水怎麼算？</Eyebrow>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+      <Eyebrow color={sheetColor.monthly}>PART 2 · 薪水怎麼算？</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · P.31 · Prompt 26</Eyebrow>
+    </div>
     <PageHeading maxWidth={1650}>任務30 產出最後一段VBA－輸入業績獎金資料</PageHeading>
     <VbaStepImage
       src={bonusInputFieldCallouts}
       alt="獎金輸入明細表五個欄位的手繪引線標註：日期、員工ID、員工姓名、獎金項目與金額"
     />
     <div style={{ marginTop: 12 }}>
-      <Callout color={warnAmber}>缺少檔案或資料讀取失敗，都要以 MsgBox 明確指出。執行後先核對 tbl_獎金輸入 資料正不正確——有問題就把錯誤訊息丟回給 AI 修正，正確才繼續下一步。</Callout>
+      <Callout color={warnAmber}>
+        缺少檔案或資料讀取失敗，都要以 MsgBox 明確指出。
+        <br />
+        執行後先核對 tbl_獎金輸入 資料正不正確——有問題就把錯誤訊息丟回給 AI 修正，正確才繼續下一步。
+      </Callout>
     </div>
     <PageFooter />
   </div>
@@ -2788,26 +2972,49 @@ const VbaWriteBack: Page = () => (
 // ─── Page 47 — 業績獎金公式串接：獎金明細 → 薪資明細 ──────────────────────────
 const BonusFormulaLink: Page = () => (
   <div style={page}>
-    <Eyebrow color={formulaBlue}>PART 2 · 薪水怎麼算？</Eyebrow>
-    <PageHeading maxWidth={1650}>把算好的獎金，串回獎金明細與薪資明細</PageHeading>
-    <div style={{ display: 'flex', gap: 32, marginTop: 32 }}>
-      <Steps>
-        <Step>
-          <TxCard color={formulaBlue} title="獎金明細 E 欄：業績獎金">
-            <div style={{ fontSize: 26, color: muted, lineHeight: 1.5 }}>
-              依員工ID，從 tbl_獎金輸入 找出對應列，加總「金額」——動態公式向下溢出所有員工。
-            </div>
-          </TxCard>
-        </Step>
-        <Step>
-          <TxCard color={sheetColor.staff} title="薪資明細 E 欄：獎金合計">
-            <div style={{ fontSize: 26, color: muted, lineHeight: 1.5 }}>
-              依員工ID，從獎金明細 F 欄（獎金合計）取得對應金額——這樣薪資明細就能一眼看出每人當月領多少獎金。
-            </div>
-          </TxCard>
-        </Step>
-      </Steps>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+      <Eyebrow color={formulaBlue}>PART 2 · 薪水怎麼算？</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · P.32 · Prompt 27</Eyebrow>
     </div>
+    <PageHeading maxWidth={1650}>把算好的獎金，串回獎金明細</PageHeading>
+    <div style={{ fontSize: 27, fontWeight: 800, color: formulaBlue, marginTop: 6 }}>
+      依員工ID，從 tbl_獎金輸入加總「金額」，再回填業績獎金
+    </div>
+    <VbaStepImage
+      src={bonusSumByEmployee}
+      alt="獎金輸入明細表依員工ID加總後，回填獎金計算矩陣的業績獎金"
+    />
+    <PageFooter />
+  </div>
+);
+
+// ─── Page 47b — 業績獎金公式串接：獎金明細 → 薪資明細 ─────────────────────────
+const SalaryFormulaLink: Page = () => (
+  <div style={page}>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+      <Eyebrow color={formulaBlue}>PART 2 · 薪水怎麼算？</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · P.36 · Prompt 31</Eyebrow>
+    </div>
+    <PageHeading maxWidth={1650}>把算好的獎金合計，串回薪資明細</PageHeading>
+    <div style={{ fontSize: 27, fontWeight: 800, color: formulaBlue, marginTop: 6 }}>依員工ID，將獎金合計顯示在薪資明細</div>
+    <Steps>
+      <Step>
+        <div style={{ height: 690, marginTop: 14, display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
+          <img
+            src={bonusTotalToSalary}
+            alt="依員工ID，把獎金明細的獎金合計同步顯示在薪資明細；張奕的 2,467 元在左右兩表一致"
+            style={{
+              ...imageOnSlideBackground,
+              width: '100%',
+              height: '100%',
+              objectFit: 'contain',
+              borderRadius: 14,
+              boxShadow: '0 10px 32px rgba(0,0,0,0.12)',
+            }}
+          />
+        </div>
+      </Step>
+    </Steps>
     <PageFooter />
   </div>
 );
@@ -2816,28 +3023,87 @@ const BonusFormulaLink: Page = () => (
 const OvertimeThreeFactors: Page = () => (
   <div style={page}>
     <Eyebrow color={painRed}>PART 2 · 薪水怎麼算？</Eyebrow>
-    <PageHeading maxWidth={1650}>加班費 ＝ 基數 × 倍率 × 加班時數</PageHeading>
+    <PageHeading maxWidth={1650}>先算出每小時的加班費基數</PageHeading>
     <div style={{ display: 'flex', gap: 32, marginTop: 36 }}>
-      <Steps>
-        <Step>
-          <TxCard color={sheetColor.staff} title="正職的加班費基數">
-            <div style={{ fontSize: 27, color: muted, lineHeight: 1.5 }}>
-              （底薪 ＋ 獎金合計）÷ 月天數 ÷ 日時數
-            </div>
-          </TxCard>
-        </Step>
-        <Step>
-          <TxCard color={formulaBlue} title="兼職的加班費基數">
-            <div style={{ fontSize: 27, color: muted, lineHeight: 1.5 }}>
-              時薪 ＋（獎金合計 ÷ 月天數 ÷ 日時數）
-            </div>
-          </TxCard>
-        </Step>
-      </Steps>
+      <div style={{ flex: 1 }}>
+        <Steps>
+          <Step>
+            <TxCard color={sheetColor.staff} title="正職的加班費基數">
+              <div style={{ fontSize: 27, color: muted, lineHeight: 1.5 }}>
+                （底薪 ＋ 獎金合計）÷ 月天數 ÷ 日時數
+              </div>
+            </TxCard>
+          </Step>
+        </Steps>
+      </div>
+      <div style={{ flex: 1 }}>
+        <Steps>
+          <Step>
+            <TxCard color={formulaBlue} title="兼職的加班費基數">
+              <div style={{ fontSize: 27, color: muted, lineHeight: 1.5 }}>
+                時薪 ＋（獎金合計 ÷ 月天數 ÷ 日時數）
+              </div>
+            </TxCard>
+          </Step>
+        </Steps>
+      </div>
     </div>
-    <div style={{ marginTop: 28 }}>
+    <div style={{ display: 'flex', gap: 32, marginTop: 28 }}>
+      <div style={{ flex: 1 }}>
+        <Steps>
+          <Step>
+            <TxCard color={sheetColor.staff} title="正職王建民">
+              <div style={{ fontSize: 25, color: muted, lineHeight: 1.6 }}>
+                底薪 $36,000 ＋獎金 $1,500 → 基數 (36,000+1,500)÷30÷8 ＝ <b style={{ color: 'var(--osd-text)' }}>156.25</b> 元/時
+              </div>
+            </TxCard>
+          </Step>
+        </Steps>
+      </div>
+      <div style={{ flex: 1 }}>
+        <Steps>
+          <Step>
+            <TxCard color={formulaBlue} title="兼職林襄">
+              <div style={{ fontSize: 25, color: muted, lineHeight: 1.6 }}>
+                時薪 $200＋獎金 $480 → 基數 $200+($480÷30÷8) ＝ <b style={{ color: 'var(--osd-text)' }}>206.25</b> 元/時
+              </div>
+            </TxCard>
+          </Step>
+        </Steps>
+      </div>
+    </div>
+    <div style={{ marginTop: 20 }}>
       <Callout color={painRed}>基數算出來之後，再依「工作日」或「休息日」乘上對應的倍率。</Callout>
     </div>
+    <PageFooter />
+  </div>
+);
+
+const OvertimeCalculationFormula: Page = () => (
+  <div style={{ ...page, padding: 40, alignItems: 'center', justifyContent: 'flex-start' }}>
+    <div style={{ width: '100%', position: 'relative', zIndex: 1 }}>
+      <Eyebrow color={painRed}>PART 2 · 薪水怎麼算？</Eyebrow>
+    </div>
+    <div style={{ alignSelf: 'flex-start' }}>
+      <PageHeading maxWidth={1650}>加班費基數怎麼算？</PageHeading>
+    </div>
+    <Steps>
+      <Step>
+        <div style={{ width: '100%', height: 800, marginTop: 12, display: 'flex', alignItems: 'flex-start', justifyContent: 'center' }}>
+          <img
+            src={overtimeCalculationFormula}
+            alt="加班費等於基數乘以倍率再乘以加班時數，並說明工作日與休息日各時段的倍率"
+            style={{
+              ...imageOnSlideBackground,
+              width: '100%',
+              height: '100%',
+              objectFit: 'contain',
+              objectPosition: 'top center',
+            }}
+          />
+        </div>
+      </Step>
+    </Steps>
     <PageFooter />
   </div>
 );
@@ -2873,6 +3139,24 @@ const OvertimeRateTable: Page = () => (
         </Step>
       </Steps>
     </div>
+    <Steps>
+      <Step>
+        <div style={{ height: 520, marginTop: 18, display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
+          <img
+            src={overtimeRateTimeline}
+            alt="以早上九點開始上班為例，對照工作日與休息日不同時段的正常工時及加班倍率"
+            style={{
+              ...imageOnSlideBackground,
+              width: '100%',
+              height: '100%',
+              objectFit: 'contain',
+              borderRadius: 14,
+              boxShadow: '0 10px 32px rgba(0,0,0,0.12)',
+            }}
+          />
+        </div>
+      </Step>
+    </Steps>
     <PageFooter />
   </div>
 );
@@ -2885,25 +3169,43 @@ const OvertimeExamples: Page = () => (
     <div style={{ display: 'flex', gap: 32, marginTop: 32 }}>
       <Steps>
         <Step>
-          <TxCard color={sheetColor.staff} title="正職張奕：工作日加班 3 小時">
+          <TxCard color={sheetColor.staff} title="正職王建民：工作日加班 3 小時">
             <div style={{ fontSize: 25, color: muted, lineHeight: 1.6 }}>
-              底薪 35,000 元＋獎金 1,000 元 → 基數 (35,000+1,000)÷30÷8 ＝ <b style={{ color: sheetColor.staff }}>150 元/時</b>
-              <br />
-              150×1.34×2 ＋ 150×1.67×1 ＝ 402＋250.5 → 無條件進位 ＝ <b style={{ color: sheetColor.staff }}>653 元</b>
+              底薪 $36,000 ＋獎金 $1,500 → 基數 (36,000+1,500)÷30÷8 ＝ <b style={{ color: 'var(--osd-text)' }}>156.25</b> 元/時<br />
+              $<b style={{ color: 'var(--osd-text)' }}>156.25</b>{' ('}<span style={{ color: '#e69ab3' }}>1.34</span>{'×2 ＋ '}<span style={{ color: '#ff0000' }}>1.67</span>{'×1) ＝ $679.69'}<b style={{ color: '#C15A82' }}>{''}</b>{''}<b style={{ color: 'var(--osd-text)' }}>{''}</b>{''}<b style={{ color: painRed }}>{''}</b>{''}<br />
+              → 無條件進位 ＝ <span style={{ fontWeight: '700' }}>$680</span>
             </div>
           </TxCard>
         </Step>
         <Step>
           <TxCard color={formulaBlue} title="兼職林襄：休息日加班 4 小時">
             <div style={{ fontSize: 25, color: muted, lineHeight: 1.6 }}>
-              時薪 200 元＋獎金 480 元 → 基數 200+(480÷30÷8) ＝ <b style={{ color: formulaBlue }}>202 元/時</b>
-              <br />
-              202×1.34×2 ＋ 202×1.67×2 ＝ 541.36＋674.68 → 無條件進位 ＝ <b style={{ color: formulaBlue }}>1,217 元</b>
+              時薪 $200＋獎金 $480 → 基數 $200+($480÷30÷8) ＝ <b style={{ color: 'var(--osd-text)' }}>206.25元/時<br />$206.25<span style={{ fontWeight: '400' }}>{' ('}</span><span style={{ fontWeight: '400' }}><span style={{ color: '#f39696' }}>1.34</span>×2 ＋ <span style={{ color: '#ff0000' }}>1.67</span>×2) ＝ $1241.63</span></b>{''}
+              {''}<b style={{ color: 'var(--osd-text)' }}>{''}</b>{''}<b style={{ color: '#C15A82' }}>{''}</b>{''}<b style={{ color: 'var(--osd-text)' }}>{''}</b>{''}<b style={{ color: painRed }}>{''}</b>{''}<br />
+              → 無條件進位 ＝ <span style={{ fontWeight: '700' }}>$1,242</span>
             </div>
           </TxCard>
         </Step>
       </Steps>
     </div>
+    <Steps>
+      <Step>
+        <div style={{ height: 430, marginTop: 18, display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
+          <img
+            src={overtimeRateTimeline}
+            alt="工作日與休息日依上班第幾小時適用不同的正常工時及加班倍率"
+            style={{
+              ...imageOnSlideBackground,
+              width: '100%',
+              height: '100%',
+              objectFit: 'contain',
+              borderRadius: 14,
+              boxShadow: '0 10px 32px rgba(0,0,0,0.12)',
+            }}
+          />
+        </div>
+      </Step>
+    </Steps>
     <PageFooter />
   </div>
 );
@@ -2911,25 +3213,143 @@ const OvertimeExamples: Page = () => (
 // ─── Page 51 — 加班明細：加班費基數與加班費公式 ────────────────────────────────
 const OvertimeBaseFormula: Page = () => (
   <div style={page}>
-    <Eyebrow color={painRed}>PART 2 · 薪水怎麼算？</Eyebrow>
-    <PageHeading maxWidth={1650}>把三大要素，接回 tbl_加班 表格</PageHeading>
-    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 20, marginTop: 32 }}>
-      <Steps>
-        <Step><MiniFeature color={sheetColor.staff} title="H 欄：加班費基數(元/時)" desc="依僱用類型分別計算，正職／兼職公式不同，顯示到小數後 2 位" /></Step>
-        <Step><MiniFeature color={painRed} title="I 欄：加班費" desc="判斷工作日／休息日，依時數對應倍率分段計算，無條件進位至整數" /></Step>
-      </Steps>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+      <Eyebrow color={painRed}>PART 2 · 薪水怎麼算？</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · P.35、36 · Prompt 29、30</Eyebrow>
     </div>
-    <div style={{ marginTop: 24 }}>
+    <PageHeading maxWidth={1650}>把三大要素，接回 tbl_加班 表格</PageHeading>
+    <Steps>
+      <Step>
+        <div style={{ marginTop: 20 }}>
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: 24,
+              padding: '14px 24px',
+              borderRadius: 14,
+              background: `${formulaBlue}0F`,
+              border: `1px solid ${formulaBlue}33`,
+              fontSize: 25,
+              lineHeight: 1.45,
+            }}
+          >
+            <span><b>H 欄：加班費基數</b>依僱用類型計算，保留小數後 2 位。</span>
+            <span><b>I 欄：加班費</b>依加班類型與時數分段計算，無條件進位至整數。</span>
+          </div>
+        </div>
+      </Step>
+      <Step>
+        <div style={{ height: 535, marginTop: 14, display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
+          <img
+            src={overtimeDetailCalculationFlow}
+            alt="tbl_加班的加班類型與加班時數、加班費基數及加班費計算關係"
+            style={{
+              ...imageOnSlideBackground,
+              width: '100%',
+              height: '100%',
+              objectFit: 'contain',
+              borderRadius: 14,
+              boxShadow: '0 10px 32px rgba(0,0,0,0.12)',
+            }}
+          />
+        </div>
+      </Step>
+    </Steps>
+    <PageFooter />
+  </div>
+);
+
+// ─── Page 51b — 加班費公式串接：加班明細 → 薪資明細 ───────────────────────────
+const OvertimeToSalaryLink: Page = () => (
+  <div style={page}>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+      <Eyebrow color={painRed}>PART 2 · 薪水怎麼算？</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · P.37 · Prompt 32</Eyebrow>
+    </div>
+    <PageHeading maxWidth={1650}>把算好的加班費，串回薪資明細</PageHeading>
+    <div style={{ fontSize: 27, fontWeight: 800, color: formulaBlue, marginTop: 6 }}>
+      在薪資明細新增「加班費」欄，依員工ID加總 tbl_加班[加班費] 後回填
+    </div>
+    <Steps>
+      <Step>
+        <div style={{ height: 690, marginTop: 14, display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
+          <img
+            src={overtimeSumToSalary}
+            alt="依員工ID加總加班明細表的加班費，回填薪資明細表新增的加班費欄"
+            style={{
+              ...imageOnSlideBackground,
+              width: '100%',
+              height: '100%',
+              objectFit: 'contain',
+              borderRadius: 14,
+              boxShadow: '0 10px 32px rgba(0,0,0,0.12)',
+            }}
+          />
+        </div>
+      </Step>
+    </Steps>
+    <PageFooter />
+  </div>
+);
+
+// ─── 應發合計：本薪＋獎金合計＋加班費 ───────────────────────────────────────
+const SalaryGrossPayFormula: Page = () => (
+  <div style={page}>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+      <Eyebrow color={painRed}>PART 2 · 薪水怎麼算？</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · P.37 · Prompt 33</Eyebrow>
+    </div>
+    <PageHeading maxWidth={1650}>三個欄位加起來，就是應發合計</PageHeading>
+    <Steps>
+      <Step>
+        <div style={{ height: 720, marginTop: 16, display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
+          <img
+            src={salaryGrossPayFormula}
+            alt="本薪加上獎金合計與加班費，得到薪資明細表的應發合計"
+            style={{
+              ...imageOnSlideBackground,
+              width: '100%',
+              height: '100%',
+              objectFit: 'contain',
+              borderRadius: 14,
+            }}
+          />
+        </div>
+      </Step>
+    </Steps>
+    <PageFooter />
+  </div>
+);
+
+// ─── Page 51c — 加班費率倍率，統一引用「薪資設定」 ────────────────────────────
+const OvertimeRateSource: Page = () => (
+  <div style={page}>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+      <Eyebrow color={painRed}>PART 2 · 薪水怎麼算？</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · P.36 · Prompt 30</Eyebrow>
+    </div>
+    <PageHeading maxWidth={1650}>費率倍率，統一引用「薪資設定」，不寫死在公式裡</PageHeading>
+    <div style={{ marginTop: 32 }}>
       <Callout color={formulaBlue}>
         費率倍率（1.34／1.67／2.67）都引用「薪資設定」頁籤（C10~C14），不寫死在公式裡——之後要調整費率，改一處就好。
       </Callout>
     </div>
     <Steps>
       <Step>
-        <div style={{ marginTop: 20 }}>
-          <Callout color={sheetColor.schedule}>
-            最後在<b>薪資明細 F 欄「加班費」</b>，依員工ID 從 tbl_加班[加班費] 加總——薪資明細就完整串起本薪、獎金、加班費了。
-          </Callout>
+        <div style={{ height: 620, marginTop: 18, display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
+          <img
+            src={salarySettingsOvertimeRates}
+            alt="薪資設定頁籤中的工作日與休息日加班費率參數，紅框標示 C10 到 C14"
+            style={{
+              ...imageOnSlideBackground,
+              width: '100%',
+              height: '100%',
+              objectFit: 'contain',
+              borderRadius: 14,
+              boxShadow: '0 10px 32px rgba(0,0,0,0.12)',
+            }}
+          />
         </div>
       </Step>
     </Steps>
@@ -2942,21 +3362,24 @@ const InsuranceRules: Page = () => (
   <div style={page}>
     <Eyebrow color={painRed}>PART 2 · 薪水怎麼算？</Eyebrow>
     <PageHeading maxWidth={1650}>應發合計算完，接下來設定扣項：勞健保</PageHeading>
-    <p style={{ fontSize: 26, color: muted, lineHeight: 1.5, margin: '14px 0 0', maxWidth: 1660 }}>
-      薪資明細 G 欄「應發合計」＝ D＋E＋F。接著設定勞健保：
-    </p>
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 12, marginTop: 20 }}>
-      <Steps>
-        <Step><RuleChip text="員工人數達 5 人以上，正職、兼職都須投保勞保" color={painRed} /></Step>
-        <Step><RuleChip text="健保單一投保：同時受僱多雇主，以主要工作單位投保" color={painRed} /></Step>
-        <Step><RuleChip text="負擔比例：勞保雇主70%／員工20%；健保雇主60%／員工30%" color={painRed} /></Step>
-      </Steps>
-    </div>
-    <div style={{ marginTop: 24 }}>
-      <Callout color={warnAmber}>
-        投保級距不能低於常態性薪資——「高薪低報」違法，將面臨罰鍰、賠償與刑事責任。
-      </Callout>
-    </div>
+    <Steps>
+      <Step>
+        <div style={{ height: 720, marginTop: 14, display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
+          <img
+            src={insuranceRulesThreeThings}
+            alt="勞健保三個重點：五人以上投勞保、健保由主要工作單位投保，以及雇主與員工負擔比例"
+            style={{
+              ...imageOnSlideBackground,
+              width: '100%',
+              height: '100%',
+              objectFit: 'contain',
+              borderRadius: 14,
+              boxShadow: '0 10px 32px rgba(0,0,0,0.12)',
+            }}
+          />
+        </div>
+      </Step>
+    </Steps>
     <PageFooter />
   </div>
 );
@@ -2965,34 +3388,129 @@ const InsuranceRules: Page = () => (
 const InsuranceExample: Page = () => (
   <div style={page}>
     <Eyebrow color={painRed}>PART 2 · 薪水怎麼算？</Eyebrow>
-    <PageHeading maxWidth={1650}>我們的投保級距，員工各負擔多少？</PageHeading>
-    <div style={{ display: 'flex', gap: 32, marginTop: 32 }}>
-      <Steps>
-        <Step>
-          <TxCard color={sheetColor.staff} title="正職（月薪36,000＋全勤1,000）">
-            <div style={{ fontSize: 25, color: muted, lineHeight: 1.6 }}>
-              月薪＋固定獎金 ＝ 37,000（業績獎金不固定，先不列入）
-              <br />
-              投保級距 <b style={{ color: sheetColor.staff }}>38,200</b> → 勞保自付 <b style={{ color: sheetColor.staff }}>$955</b>、健保自付 <b style={{ color: sheetColor.staff }}>$592</b>
+    <PageHeading maxWidth={1650}>投保級距怎麼選？正職與兼職分開看</PageHeading>
+    <Steps>
+      <Step>
+        <div style={{ marginTop: 14 }}>
+          <Callout color={warnAmber}>
+            投保級距不能低於常態性薪資——「高薪低報」違法，將面臨罰鍰、賠償與刑事責任。
+          </Callout>
+        </div>
+      </Step>
+    </Steps>
+    <div style={{ display: 'grid', gridTemplateColumns: '1.18fr 0.82fr', gap: 28, marginTop: 18, minHeight: 0 }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
+        <Steps>
+          <Step>
+            <TxCard color={sheetColor.staff} title="正職｜固定薪資決定投保級距">
+              <div style={{ fontSize: 24, color: muted, lineHeight: 1.45 }}>
+                月薪加上每月固定發放的獎金或全勤
+                <div style={{ fontSize: 31, fontWeight: 900, color: sheetColor.staff, margin: '8px 0' }}>
+                  $36,000 ＋ $1,000（全勤）＝ $37,000
+                </div>
+                <div style={{ padding: '8px 12px', borderRadius: 10, background: `${warnAmber}12`, color: 'var(--osd-text)', fontSize: 21 }}>
+                  業績獎金達標才有，屬於不固定發放，入職投保時先不列入投保級距。
+                </div>
+                <div style={{ marginTop: 10 }}>
+                  → 勞保、健保投保級距皆為 <b style={{ color: sheetColor.staff }}>38,200</b>
+                  <br />
+                  → 員工負擔：勞保 <b>$955</b>、健保 <b>$592</b>
+                </div>
+              </div>
+            </TxCard>
+          </Step>
+          <Step>
+            <TxCard color={formulaBlue} title="兼職｜薪資不固定，先採最低級距">
+              <div style={{ fontSize: 24, color: muted, lineHeight: 1.5 }}>
+                → 勞保投保級距 <b style={{ color: formulaBlue }}>11,100</b>
+                <br />
+                → 健保投保級距 <b style={{ color: formulaBlue }}>29,500</b>
+                <br />
+                → 員工負擔：勞保 <b>$277</b>、健保 <b>$458</b>
+              </div>
+            </TxCard>
+          </Step>
+        </Steps>
+      </div>
+      <div
+        style={{
+          position: 'relative',
+          height: 620,
+          overflow: 'hidden',
+          borderRadius: 14,
+          boxShadow: '0 10px 32px rgba(0,0,0,0.12)',
+        }}
+      >
+        <img
+          src={insuranceBracketTable2026}
+          alt="115年度完整勞健保級距金額表"
+          style={{
+            ...imageOnSlideBackground,
+            width: '100%',
+            height: '100%',
+            objectFit: 'contain',
+            objectPosition: 'top center',
+          }}
+        />
+        {/* Keep this Steps block last on the slide: the zoom graphic must be the final reveal. */}
+        <Steps>
+          <Step>
+            <div
+              style={{
+                position: 'absolute',
+                inset: 0,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                background: 'var(--osd-bg)',
+              }}
+            >
+              <img
+                src={insuranceBracketThreeZooms}
+                alt="放大顯示正職 38,200、兼職勞保 11,100 與兼職健保 29,500 三個級距"
+                style={{
+                  ...imageOnSlideBackground,
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'contain',
+                  objectPosition: 'center',
+                }}
+              />
             </div>
-          </TxCard>
-        </Step>
-        <Step>
-          <TxCard color={formulaBlue} title="兼職（薪資不固定）">
-            <div style={{ fontSize: 25, color: muted, lineHeight: 1.6 }}>
-              先以最低級距投保
-              <br />
-              勞保級距 11,100 → 自付 <b style={{ color: formulaBlue }}>$277</b>；健保級距 29,500 → 自付 <b style={{ color: formulaBlue }}>$458</b>
-            </div>
-          </TxCard>
-        </Step>
-      </Steps>
+          </Step>
+        </Steps>
+      </div>
     </div>
-    <div style={{ marginTop: 24 }}>
-      <Callout color={painRed}>
-        薪資明細 <b>H 欄「勞保自付」</b>、<b>I 欄「健保自付」</b>：依僱用類型，從「薪資設定」查對應金額（正職 C16／C17，兼職 C18／C19）。
-      </Callout>
+    <PageFooter />
+  </div>
+);
+
+// ─── Page 65b — 依僱用類型回填勞健保自付額 ────────────────────────────────────
+const InsuranceAmountsToSalaryDetail: Page = () => (
+  <div style={{ ...page, padding: 40, alignItems: 'center', justifyContent: 'flex-start' }}>
+    <div style={{ width: '100%', position: 'relative', zIndex: 1 }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+        <Eyebrow color={painRed}>PART 2 · 薪水怎麼算？</Eyebrow>
+        <Eyebrow color={taskColor}>操作手冊 · P.41 · Prompt 36、37</Eyebrow>
+      </div>
     </div>
+    <Steps>
+      <Step>
+        <div style={{ width: '100%', height: 870, display: 'flex', alignItems: 'flex-start', justifyContent: 'center', overflow: 'hidden' }}>
+          <img
+            src={insuranceAmountsToSalaryDetail}
+            alt="依薪資明細第三欄僱用類型，回填新增的勞保自付與健保自付兩欄"
+            style={{
+              ...imageOnSlideBackground,
+              width: '100%',
+              height: '100%',
+              objectFit: 'contain',
+              objectPosition: 'top center',
+            }}
+          />
+        </div>
+      </Step>
+    </Steps>
     <PageFooter />
   </div>
 );
@@ -3001,32 +3519,161 @@ const InsuranceExample: Page = () => (
 const LeaveDeductRules: Page = () => (
   <div style={page}>
     <Eyebrow color={painRed}>PART 2 · 薪水怎麼算？</Eyebrow>
-    <PageHeading maxWidth={1650}>最後一個扣項：請假扣薪</PageHeading>
-    <p style={{ fontSize: 26, color: muted, lineHeight: 1.5, margin: '14px 0 0', maxWidth: 1660 }}>
-      只有正職員工需要請假扣薪；兼職不做請假申請，也不扣薪。
-    </p>
-    <div style={{ marginTop: 24, borderRadius: 16, overflow: 'hidden', border: `1px solid ${cardBorder}`, boxShadow: '0 4px 14px rgba(0,0,0,0.06)', maxWidth: 900 }}>
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
-        <SheetHeaderCell label="假別" />
-        <SheetHeaderCell label="扣薪比例" />
+    <PageHeading maxWidth={1650}>請假扣薪怎麼算？</PageHeading>
+    <div style={{ marginTop: 24, display: 'flex', borderRadius: 16, overflow: 'hidden', border: `1px solid ${cardBorder}`, boxShadow: '0 4px 14px rgba(0,0,0,0.06)' }}>
+      <div style={{ flex: 0.7, display: 'flex', flexDirection: 'column' }}>
+        <SheetHeaderCell label="假別" tiny />
+        <GridCell>排休</GridCell>
+        <GridCell band>特休</GridCell>
+        <GridCell>病假</GridCell>
+        <GridCell band>事假</GridCell>
       </div>
-      <Steps>
-        <Step><div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}><GridCell>排休</GridCell><GridCell><b style={{ color: goodGreen }}>0%</b></GridCell></div></Step>
-        <Step><div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}><GridCell band>特休</GridCell><GridCell band><b style={{ color: goodGreen }}>0%</b></GridCell></div></Step>
-        <Step><div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}><GridCell>病假</GridCell><GridCell><b style={{ color: warnAmber }}>50%</b></GridCell></div></Step>
-        <Step><div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}><GridCell band>事假</GridCell><GridCell band><b style={{ color: painRed }}>100%</b></GridCell></div></Step>
-      </Steps>
+      <div style={{ flex: 0.9, display: 'flex', flexDirection: 'column' }}>
+        <SheetHeaderCell label="扣薪比例" tiny />
+        <GridCell><b style={{ color: goodGreen }}>0%</b></GridCell>
+        <GridCell band><b style={{ color: goodGreen }}>0%</b></GridCell>
+        <GridCell><b style={{ color: warnAmber }}>50%</b></GridCell>
+        <GridCell band><b style={{ color: painRed }}>100%</b></GridCell>
+      </div>
+      <div style={{ flex: 1.2 }}>
+        <Steps>
+          <Step>
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+              <SheetHeaderCell label="例：正職，月薪36,000（換算時薪$150）" tiny />
+              <GridCell>$0</GridCell>
+              <GridCell band>$0</GridCell>
+              <GridCell>$75</GridCell>
+              <GridCell band>$150</GridCell>
+            </div>
+          </Step>
+        </Steps>
+      </div>
+      <div style={{ flex: 1.2 }}>
+        <div style={{ position: 'relative', display: 'flex', flexDirection: 'column' }}>
+          <Steps>
+            <Step>
+              <>
+                <SheetHeaderCell label="例：兼職，時薪200" tiny />
+                <GridCell>$0</GridCell>
+                <GridCell band>$0</GridCell>
+                <GridCell>$100</GridCell>
+                <GridCell band>$200</GridCell>
+              </>
+            </Step>
+          </Steps>
+          <Steps>
+            <Step>
+              <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}>
+                <div style={{ position: 'absolute', left: 14, right: 14, top: 73.5, height: 2, background: painRed }} />
+                <div style={{ position: 'absolute', left: 14, right: 14, top: 130.5, height: 2, background: painRed }} />
+                <div style={{ position: 'absolute', left: 14, right: 14, top: 187.5, height: 2, background: painRed }} />
+                <div style={{ position: 'absolute', left: 14, right: 14, top: 244.5, height: 2, background: painRed }} />
+              </div>
+            </Step>
+          </Steps>
+        </div>
+      </div>
     </div>
-    <div style={{ marginTop: 20 }}>
-      <Callout color={formulaBlue}>
-        扣薪基數 ＝ 月薪 ÷ 30 ÷ 8。例：月薪 36,000 → 基數 $150/時——請 1 小時事假扣 $150、病假扣 $75、特休扣 $0。以 0.5 小時為單位計算。
-      </Callout>
-    </div>
+    <Steps>
+      <Step>
+        <div style={{ marginTop: 14 }}>
+          <Callout color={painRed}>兼職僅以出勤時數計算薪資，請假不另扣款——上表槓掉的金額都不會真的扣。</Callout>
+        </div>
+      </Step>
+    </Steps>
     <PageFooter />
   </div>
 );
 
 // ─── Page 55 — 請假扣薪公式串接 ─────────────────────────────────────────────────
+// Leave deductions: aggregate by employee ID, then write back to salary details.
+const LeaveDeductToSalaryDetail: Page = () => (
+  <div style={{ ...page, padding: 40, alignItems: 'center', justifyContent: 'flex-start' }}>
+    <div style={{ width: '100%', position: 'relative', zIndex: 1 }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+        <Eyebrow color={painRed}>PART 2 · 薪水怎麼算？</Eyebrow>
+        <Eyebrow color={taskColor}>操作手冊 · P.42 · Prompt 38</Eyebrow>
+      </div>
+    </div>
+    <Steps>
+      <Step>
+        <div style={{ width: '100%', height: 870, display: 'flex', alignItems: 'flex-start', justifyContent: 'center' }}>
+          <img
+            src={leaveDeductToSalaryDetail}
+            alt="請假明細依員工ID加總請假扣薪，再回填至薪資明細的請假扣薪欄位"
+            style={{
+              ...imageOnSlideBackground,
+              width: '100%',
+              height: '100%',
+              objectFit: 'contain',
+              objectPosition: 'top center',
+            }}
+          />
+        </div>
+      </Step>
+    </Steps>
+    <PageFooter />
+  </div>
+);
+
+const LeaveDeductFormulaLogic: Page = () => (
+  <div style={{ ...page, padding: 40, alignItems: 'center', justifyContent: 'flex-start' }}>
+    <div style={{ width: '100%', position: 'relative', zIndex: 1 }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+        <Eyebrow color={painRed}>PART 2 · 薪水怎麼算？</Eyebrow>
+        <Eyebrow color={taskColor}>操作手冊 · P.40、41 · Prompt 34、35</Eyebrow>
+      </div>
+    </div>
+    <Steps>
+      <Step>
+        <div style={{ width: '100%', height: 850, marginTop: 12, display: 'flex', alignItems: 'flex-start', justifyContent: 'center' }}>
+          <img
+            src={leaveDeductFormulaLogic}
+            alt="休假申請新增正職請假扣薪基數與請假扣薪兩欄的公式邏輯"
+            style={{
+              ...imageOnSlideBackground,
+              width: '100%',
+              height: '100%',
+              objectFit: 'contain',
+              objectPosition: 'top center',
+            }}
+          />
+        </div>
+      </Step>
+    </Steps>
+    <PageFooter />
+  </div>
+);
+
+const SalaryDeductionsNetPayFormula: Page = () => (
+  <div style={{ ...page, padding: 40, alignItems: 'center', justifyContent: 'flex-start' }}>
+    <div style={{ width: '100%', position: 'relative', zIndex: 1 }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+        <Eyebrow color={painRed}>PART 2 · 薪水怎麼算？</Eyebrow>
+        <Eyebrow color={taskColor}>操作手冊 · P.42 · Prompt 39、40</Eyebrow>
+      </div>
+    </div>
+    <Steps>
+      <Step>
+        <div style={{ width: '100%', height: 850, marginTop: 12, display: 'flex', alignItems: 'flex-start', justifyContent: 'center' }}>
+          <img
+            src={salaryDeductionsNetPayFormula}
+            alt="應扣合計等於勞保自付加健保自付加請假扣薪，實發薪資等於應發合計減應扣合計"
+            style={{
+              ...imageOnSlideBackground,
+              width: '100%',
+              height: '100%',
+              objectFit: 'contain',
+              objectPosition: 'top center',
+            }}
+          />
+        </div>
+      </Step>
+    </Steps>
+    <PageFooter />
+  </div>
+);
+
 const LeaveDeductFormula: Page = () => (
   <div style={page}>
     <Eyebrow color={painRed}>PART 2 · 薪水怎麼算？</Eyebrow>
@@ -3052,18 +3699,31 @@ const LeaveDeductFormula: Page = () => (
 
 // ─── Page 56 — 工時彙總表補完 ───────────────────────────────────────────────────
 const HoursSummaryComplete: Page = () => (
-  <div style={page}>
-    <Eyebrow color={formulaBlue}>PART 2 · 薪水怎麼算？</Eyebrow>
-    <PageHeading maxWidth={1650}>回頭補完「工時彙總」，變成完整出勤報表</PageHeading>
-    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 18, marginTop: 32 }}>
-      <Steps>
-        <Step><MiniFeature color={formulaBlue} title="E 欄：加班時數合計" desc="動態加總 tbl_加班[加班/出勤時數]" /></Step>
-        <Step><MiniFeature color={sheetColor.schedule} title="F 欄：出勤天數" desc="動態加總 tbl_排班[員工ID] 出現次數" /></Step>
-        <Step><MiniFeature color={goodGreen} title="G 欄：特休時數" desc="加總 tbl_休假 假別＝特休的請假時數" /></Step>
-        <Step><MiniFeature color={painRed} title="H 欄：事假時數" desc="加總 tbl_休假 假別＝事假的請假時數" /></Step>
-        <Step><MiniFeature color={warnAmber} title="I 欄：病假時數" desc="加總 tbl_休假 假別＝病假的請假時數" /></Step>
-      </Steps>
+  <div style={{ ...page, padding: 40, alignItems: 'center', justifyContent: 'flex-start' }}>
+    <div style={{ width: '100%', position: 'relative', zIndex: 1 }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+        <Eyebrow color={formulaBlue}>PART 2 · 薪水怎麼算？</Eyebrow>
+        <Eyebrow color={taskColor}>操作手冊 · P.18 · Prompt 15</Eyebrow>
+      </div>
+      <PageHeading maxWidth={1650}>回頭補完「工時彙總」，變成完整出勤報表</PageHeading>
     </div>
+    <Steps>
+      <Step>
+        <div style={{ width: '100%', height: 700, marginTop: 8, display: 'flex', alignItems: 'flex-start', justifyContent: 'center' }}>
+          <img
+            src={hoursSummaryFieldCallouts}
+            alt="工時彙總表五個統計欄位，以捲曲引線標示加班時數、出勤天數、特休、事假與病假時數的動態加總來源"
+            style={{
+              ...imageOnSlideBackground,
+              width: '100%',
+              height: '100%',
+              objectFit: 'contain',
+              objectPosition: 'top center',
+            }}
+          />
+        </div>
+      </Step>
+    </Steps>
     <PageFooter />
   </div>
 );
@@ -3110,7 +3770,6 @@ export default [
   StaffingLimits,
   WorkHoursTable,
   AntiErrorNeeds,
-  FiveSheets,
   Task1EmployeeSetup,
   Task1SettingsDropdown,
   EmployeeDataTable,
@@ -3127,23 +3786,22 @@ export default [
   Task8DailyCheck,
   Task9MonthlyWhy,
   Task9MonthlyExample,
-  Task9MonthlyLogic,
   Task13ProxyScenarios,
   Task13LeaveFields,
   Task14CandidateSetup,
   Task14CandidateRules,
+  OvertimeDetail,
+  OvertimeCheck,
+  HoursSummary,
+  HoursSummaryComplete,
   Part2Logic,
   Part2OurCase,
   SalarySetup,
-  HoursSummary,
   SalaryDetail,
-  OvertimeDetail,
-  OvertimeCheck,
   FullAttendanceExamples,
   FullAttendanceRounding,
   BonusDetailSetup,
   PerformanceBonusIntro,
-  BonusDetailExpandTable,
   BonusInputTable,
   VbaStep1,
   VbaStep2,
@@ -3154,14 +3812,24 @@ export default [
   VbaStep4,
   VbaWriteBack,
   BonusFormulaLink,
+  BonusDetailExpandTable,
+  OvertimeCalculationFormula,
+  SalaryPrincipleMorePayLessDeduct2,
   OvertimeThreeFactors,
   OvertimeRateTable,
   OvertimeExamples,
   OvertimeBaseFormula,
+  OvertimeRateSource,
+  SalaryFormulaLink,
+  OvertimeToSalaryLink,
+  SalaryGrossPayFormula,
   InsuranceRules,
   InsuranceExample,
+  SalaryPrincipleMorePayLessDeduct,
   LeaveDeductRules,
-  LeaveDeductFormula,
-  HoursSummaryComplete,
+  LeaveDeductFormulaLogic,
+  InsuranceAmountsToSalaryDetail,
+  LeaveDeductToSalaryDetail,
+  SalaryDeductionsNetPayFormula,
   Closing,
 ] satisfies Page[];

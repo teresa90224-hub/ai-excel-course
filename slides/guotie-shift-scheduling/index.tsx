@@ -2241,7 +2241,7 @@ const SalarySetup: Page = () => (
 const HoursSummary: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-      <Eyebrow color={formulaBlue}>PART 2 · 薪水怎麼算？</Eyebrow>
+      <Eyebrow color={formulaBlue}>PART 1 · 排班表實作</Eyebrow>
       <Eyebrow color={taskColor}>操作手冊 · P.17-18 · Prompt 14</Eyebrow>
     </div>
     <PageHeading maxWidth={1650}>工時彙總，彙總成「一人一整月」的總時數</PageHeading>
@@ -2371,7 +2371,7 @@ const SalaryDetail: Page = () => (
 const OvertimeDetail: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-      <Eyebrow color={formulaBlue}>PART 2 · 薪水怎麼算？</Eyebrow>
+      <Eyebrow color={formulaBlue}>PART 1 · 排班表實作</Eyebrow>
       <Eyebrow color={taskColor}>操作手冊 · P.14-15 · Prompt 11</Eyebrow>
     </div>
     <PageHeading maxWidth={1650}>超出正常工時的部分，另外算加班</PageHeading>
@@ -2412,7 +2412,7 @@ const OvertimeDetail: Page = () => (
 const OvertimeCheck: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-      <Eyebrow color={formulaBlue}>PART 2 · 薪水怎麼算？</Eyebrow>
+      <Eyebrow color={formulaBlue}>PART 1 · 排班表實作</Eyebrow>
       <Eyebrow color={taskColor}>操作手冊 · P.16-17 · Prompt 12、13</Eyebrow>
     </div>
     <PageHeading maxWidth={1650}>兩欄防呆：別讓工時被算兩次</PageHeading>
@@ -3702,7 +3702,7 @@ const HoursSummaryComplete: Page = () => (
   <div style={{ ...page, padding: 40, alignItems: 'center', justifyContent: 'flex-start' }}>
     <div style={{ width: '100%', position: 'relative', zIndex: 1 }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-        <Eyebrow color={formulaBlue}>PART 2 · 薪水怎麼算？</Eyebrow>
+        <Eyebrow color={formulaBlue}>PART 1 · 排班表實作</Eyebrow>
         <Eyebrow color={taskColor}>操作手冊 · P.18 · Prompt 15</Eyebrow>
       </div>
       <PageHeading maxWidth={1650}>回頭補完「工時彙總」，變成完整出勤報表</PageHeading>

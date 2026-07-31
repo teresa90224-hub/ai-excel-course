@@ -33,6 +33,28 @@ import pptx_s20_5 from './assets/pptx/s20_5.png';
 import pptx_s21_5 from './assets/pptx/s21_5.png';
 import pptx_s22_5 from './assets/pptx/s22_5.png';
 import strayCatsVsChippedPets from './assets/stray-cats-vs-chipped-pets.png';
+import bomSampleDataRules from './assets/bom-sample-data-rules.png';
+import threeMasterTablesMapping from './assets/three-master-tables-mapping.png';
+import dynamicDropdownBeforeAfter from './assets/dynamic-dropdown-before-after.png';
+import rangeNewRowProblems from './assets/range-new-row-problems.png';
+import convertRangeToTable from './assets/convert-range-to-table.png';
+import tableToolsGuide from './assets/table-tools-guide.png';
+import supplierMasterLink from './assets/supplier-master-link.png';
+import smartSupplierDropdown from './assets/smart-supplier-dropdown.png';
+import salesRecordFlow from './assets/sales-record-flow.png';
+import purchaseRecordFlow from './assets/purchase-record-flow.png';
+import salesSampleDataGuide from './assets/sales-sample-data-guide.png';
+import purchaseSampleDataGuide from './assets/purchase-sample-data-guide.png';
+import productCostGuide from './assets/product-cost-guide.png';
+import inventoryManagementGuide from './assets/inventory-management-guide.png';
+import revenueMarginGuide from './assets/revenue-margin-guide.png';
+import productCostTableGuide from './assets/product-cost-table-guide.png';
+import inventoryTableGuide from './assets/inventory-table-guide.png';
+import revenueMarginTableGuide from './assets/revenue-margin-table-guide.png';
+import dashboardFilterMaskVisual from './assets/dashboard-filter-mask-visual.png';
+import monthlyRollupVisual from './assets/monthly-rollup-visual.png';
+import backendDataMapVisual from './assets/backend-data-map-visual.png';
+import writebackFlowVisual from './assets/writeback-flow-visual.png';
 
 // ─── Panel-tweakable design tokens ────────────────────────────────────────────
 export const design: DesignSystem = {
@@ -1744,102 +1766,38 @@ const Part1TaskDropdownCheck: Page = () => (
 // ─── Page 4c — 課堂練習：讓 AI 修正下拉選單公式 ───────────────────────────────
 const Part1TaskDropdownFix: Page = () => (
   <div style={page}>
-    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.9</Eyebrow>
-    <PageHeading>讓 AI 修正下拉選單公式</PageHeading>
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 32, marginTop: 44 }}>
-      <Steps>
-        <Step>
-          <TaskCard
-            num="6"
-            title="讓 AI 修正下拉選單公式"
-            desc="Prompt 4：請檢查所有資料驗證的下拉選單來源，如果是絕對範圍參照，請改成可依清單長度自動判斷的動態範圍。"
-          />
-        </Step>
-        <Step>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 14 }}>
-            <RuleChip text="從清單第一筆資料所在儲存格開始抓取" />
-            <RuleChip text="依該欄目前實際筆數，決定往下抓幾列" />
-            <RuleChip text="標題列不納入下拉選單" />
-            <RuleChip text="來源不抓到多餘空白儲存格" />
-            <RuleChip text="清單新增資料時，範圍自動延伸" />
-            <RuleChip text="保留原本工作表與欄位位置" />
-          </div>
-        </Step>
-      </Steps>
-    </div>
-    <PageFooter />
-  </div>
-);
-
-// ─── Page 5 — Part 1b：表格化・下拉・XLOOKUP・好處 ─────────────────────────────
-const Part1Tools: Page = () => (
-  <div style={page}>
-    <Eyebrow color={partColor.p1}>PART 1 · 資料庫基礎</Eyebrow>
-    <PageHeading>把範圍變成「表格」，公式跟著資料自動長大</PageHeading>
-    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24, marginTop: 32 }}>
-      <Steps>
-        <Step><StepCard num="1" color={partColor.p1} title="Ctrl + T 轉換表格" desc="命名為 tbl_商品，勾選「我的表格有標題」" /></Step>
-        <Step><StepCard num="2" color={partColor.p1} title="tbl[欄位] 結構化參照" desc="比 A:A 快、比 B:B 安全，欄位怎麼移都不怕" /></Step>
-        <Step><StepCard num="3" color={partColor.p1} title="動態下拉選單" desc="OFFSET＋COUNTA，只列出「啟用」的供應商" /></Step>
-        <Step><StepCard num="4" color={partColor.p1} title="XLOOKUP 自動帶名稱" desc="選 ID，自動查出對應名稱，不用複製貼上" /></Step>
-      </Steps>
-    </div>
-    <div
-      style={{
-        marginTop: 28,
-        background: `${partColor.p1}0D`,
-        border: `1px solid ${partColor.p1}33`,
-        borderRadius: 20,
-        padding: '24px 32px',
-      }}
-    >
-      <div style={{ fontSize: 31, fontWeight: 800, color: partColor.p1, marginBottom: 16 }}>重點：為什麼要這麼做？</div>
-      <div style={{ display: 'flex', gap: 56 }}>
-        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 14 }}>
-          <div style={{ fontSize: 34, fontWeight: 800 }}>表格工具的功能</div>
-          <Steps>
-            <Step>
-              <RuleLine
-                label="表格名稱"
-                value={<>改成<b style={{ color: partColor.p1 }}>有意義的名稱</b>，方便寫公式</>}
-              />
-            </Step>
-            <Step>
-              <RuleLine label="樞紐分析" value={<>可<b style={{ color: partColor.p1 }}>快速排列、摘要</b>資料</>} />
-            </Step>
-            <Step>
-              <RuleLine label="合計列" value={<>快速<b style={{ color: partColor.p1 }}>加總／平均／計數</b></>} />
-            </Step>
-            <Step>
-              <RuleLine label="帶狀列" value={<>方便閱讀的<b style={{ color: partColor.p1 }}>隔行底色</b></>} />
-            </Step>
-            <Step>
-              <RuleLine label="篩選按鈕" value={<>標題列<b style={{ color: partColor.p1 }}>自動出現</b>篩選箭頭</>} />
-            </Step>
-          </Steps>
-        </div>
-        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 14 }}>
-          <div style={{ fontSize: 34, fontWeight: 800 }}>為什麼選 tbl[欄位名稱]？</div>
-          <Steps>
-            <Step>
-              <RuleLine
-                label="效能極佳"
-                value={<>只搜尋表格內實際資料列，<b style={{ color: partColor.p1 }}>不用整欄</b></>}
-              />
-            </Step>
-            <Step>
-              <RuleLine label="自動延伸" value={<>新增／刪除資料，範圍<b style={{ color: partColor.p1 }}>自動縮放</b></>} />
-            </Step>
-            <Step>
-              <RuleLine label="易讀性高" value={<><b style={{ color: partColor.p1 }}>一眼看出</b>查的是哪個欄位</>} />
-            </Step>
-            <Step>
-              <RuleLine label="安全防錯" value={<>欄位怎麼移動，都能<b style={{ color: partColor.p1 }}>精準鎖定</b></>} />
-            </Step>
-          </Steps>
-        </div>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
+      <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.9</Eyebrow>
+      <div
+        style={{
+          display: 'inline-flex',
+          alignItems: 'center',
+          padding: '10px 20px',
+          borderRadius: 999,
+          background: `${partColor.p1}14`,
+          border: `1px solid ${partColor.p1}40`,
+          color: partColor.p1,
+          fontSize: 25,
+          fontWeight: 800,
+          letterSpacing: '0.04em',
+        }}
+      >
+        PROMPT 4
       </div>
     </div>
+    <PageHeading>讓 AI 修正下拉選單公式</PageHeading>
+    <div style={{ fontSize: 31, fontWeight: 800, color: taskColor, marginTop: 20 }}>任務 6：把固定範圍改成動態範圍</div>
+    <Steps>
+      <Step>
+        <div style={{ height: 690, marginTop: 14, display: 'flex', alignItems: 'flex-start', justifyContent: 'center', overflow: 'hidden' }}>
+          <img
+            src={dynamicDropdownBeforeAfter}
+            alt="固定範圍與動態範圍的下拉選單比較：新增資料後自動延伸，且不含標題與空白"
+            style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'top center', mixBlendMode: 'multiply' }}
+          />
+        </div>
+      </Step>
+    </Steps>
     <PageFooter />
   </div>
 );
@@ -1849,24 +1807,18 @@ const Part1Task8: Page = () => (
   <div style={page}>
     <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.11</Eyebrow>
     <PageHeading>五、動手認識表格</PageHeading>
-    <p style={{ fontSize: 33, color: muted, lineHeight: 1.6, maxWidth: 1650, margin: '32px 0 0' }}>
-      儲存格資料彼此獨立，沒有「物件」概念——新增一列時，格式、下拉選單、公式都不會自動延伸，
-      公式或樞紐分析也只能寫死範圍，資料一多就對不上。
-    </p>
-    <div style={{ marginTop: 36 }}>
-      <Steps>
-        <Step>
-          <div style={{ fontSize: 33, fontWeight: 800, color: taskColor }}>任務 10：在商品主檔新增項目</div>
-        </Step>
-      </Steps>
-    </div>
-    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 28, marginTop: 24 }}>
-      <Steps>
-        <Step><StepCard num="1" color={taskColor} title="新增序號" desc="在商品ID欄位，往下新增一個序號" /></Step>
-        <Step><StepCard num="2" color={taskColor} title="觀察新列" desc="商品分類、單位、狀態與下拉選單，還有作用嗎？" /></Step>
-        <Step><StepCard num="3" color={taskColor} title="還原資料" desc="把新增的序號先刪掉" /></Step>
-      </Steps>
-    </div>
+    <div style={{ fontSize: 31, fontWeight: 800, color: taskColor, marginTop: 20 }}>任務 10：在商品主檔新增項目，觀察一般範圍的問題</div>
+    <Steps>
+      <Step>
+        <div style={{ height: 700, marginTop: 12, display: 'flex', alignItems: 'flex-start', justifyContent: 'center', overflow: 'hidden' }}>
+          <img
+            src={rangeNewRowProblems}
+            alt="一般儲存格範圍新增商品ID後，格式、下拉選單與公式不會自動延伸"
+            style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'top center', mixBlendMode: 'multiply' }}
+          />
+        </div>
+      </Step>
+    </Steps>
     <PageFooter />
   </div>
 );
@@ -1892,65 +1844,18 @@ const Part1Task9: Page = () => (
   <div style={page}>
     <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.12</Eyebrow>
     <PageHeading>設定表格實作</PageHeading>
-    <div style={{ marginTop: 44 }}>
-      <Steps>
-        <Step>
-          <TaskCard num="11" title="設定表格" desc="把範圍轉換成 Excel 表格，體驗自動延伸與正確命名" />
-        </Step>
-      </Steps>
-    </div>
-    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24, marginTop: 32 }}>
-      <Steps>
-        <Step><StepCard num="1" color={taskColor} title="選取儲存格" desc="點選資料範圍內任一儲存格" /></Step>
-        <Step>
-          <StepCard
-            num="2"
-            color={taskColor}
-            title="Ctrl + T 轉換"
-            desc={
-              <>
-                務必勾選「我的表格有標題」，
-                <br />
-                否則標題列會被當成資料
-              </>
-            }
+    <div style={{ fontSize: 31, fontWeight: 800, color: taskColor, marginTop: 20 }}>任務 11：把範圍轉成 Excel 表格並正確命名</div>
+    <Steps>
+      <Step>
+        <div style={{ height: 700, marginTop: 12, display: 'flex', alignItems: 'flex-start', justifyContent: 'center', overflow: 'hidden' }}>
+          <img
+            src={convertRangeToTable}
+            alt="選取儲存格、按 Ctrl 加 T、勾選我的表格有標題、觀察自動延伸並重新命名三張主檔"
+            style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'top center', mixBlendMode: 'multiply' }}
           />
-        </Step>
-        <Step>
-          <StepCard
-            num="3"
-            color={taskColor}
-            title="觀察自動延伸"
-            desc="新增一列，格式、框線、公式自動跟著長（結構化參照）"
-          />
-        </Step>
-        <Step>
-          <StepCard
-            num="4"
-            color={taskColor}
-            title="重新命名"
-            desc={
-              <>
-                商品主檔 → tbl_商品
-                <br />
-                供應商主檔 → tbl_供應商
-                <br />
-                原物料主檔 → tbl_原物料
-              </>
-            }
-          />
-        </Step>
-      </Steps>
-    </div>
-    <div style={{ marginTop: 28 }}>
-      <Steps>
-        <Step>
-          <Callout color={taskColor}>
-            表格名稱可以直接用在公式裡，例如 =SUM(表格1[售價])——之後的動態下拉選單、樞紐分析，都會用表格當資料來源。
-          </Callout>
-        </Step>
-      </Steps>
-    </div>
+        </div>
+      </Step>
+    </Steps>
     <PageFooter />
   </div>
 );
@@ -2166,22 +2071,12 @@ const Part1Task9Tools: Page = () => (
   <div style={page}>
     <Eyebrow color={taskColor}>課堂練習 · Step 3</Eyebrow>
     <PageHeading>認識「表格工具」——一張會自己長大的智慧表</PageHeading>
-    <div style={{ display: 'flex', gap: 56, marginTop: 32, alignItems: 'flex-start' }}>
-      <div style={{ flex: 1 }}>
-        <SheetMock />
-      </div>
-      <div style={{ flex: 0.78 }}>
-        <PivotMock />
-      </div>
-    </div>
-    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 16, marginTop: 32 }}>
-      <Steps>
-        <Step><FeatureChip n="1" title="表格名稱" desc="改成 tbl_商品，公式好寫" /></Step>
-        <Step><FeatureChip n="2" title="樞紐分析" desc="一鍵排列、摘要資料（右表）" /></Step>
-        <Step><FeatureChip n="3" title="合計列" desc="快速加總／平均／計數" /></Step>
-        <Step><FeatureChip n="4" title="帶狀列" desc="隔行底色，方便閱讀" /></Step>
-        <Step><FeatureChip n="5" title="篩選按鈕" desc="標題列自動出現篩選箭頭" /></Step>
-      </Steps>
+    <div style={{ flex: 1, minHeight: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: 16 }}>
+      <img
+        src={tableToolsGuide}
+        alt="Excel 表格工具教學圖：表格名稱、篩選按鈕、帶狀列、自動延伸與合計樞紐"
+        style={{ width: '100%', height: '100%', objectFit: 'contain', mixBlendMode: 'multiply' }}
+      />
     </div>
     <PageFooter />
   </div>
@@ -2192,40 +2087,12 @@ const Part1SupplierIntro: Page = () => (
   <div style={page}>
     <Eyebrow color={taskColor}>PART 1 · 資料庫基礎</Eyebrow>
     <PageHeading>六、告別手動複製貼上－主要供應商資料</PageHeading>
-    <p style={{ fontSize: 33, color: muted, lineHeight: 1.6, maxWidth: 1560, margin: '26px 0 0' }}>
-      「原物料主檔」每項物料都要填「主要供應商ID」。每次回頭查供應商主檔、再複製貼上——資料一多，就是這種下場：
-    </p>
-    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 44, marginTop: 34 }}>
-      <MiniTable title="供應商主檔">
-        <MiniRow a="S001" b="麵皮行" />
-        <MiniRow a="S002" b="肉品商" />
-        <MiniRow a="S003" b="蔬果行" tone="hi" />
-        <MiniRow a="S004" b="飲料材料" />
-      </MiniTable>
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6, color: painRed }}>
-        <div style={{ fontSize: 31, fontWeight: 800 }}>手動複製貼上</div>
-        <div style={{ fontSize: 40, lineHeight: 1 }}>⇢</div>
-        <div style={{ fontSize: 25, fontWeight: 700 }}>⚠ 容易出錯</div>
-      </div>
-      <MiniTable title="原物料主檔　主要供應商ID">
-        <MiniRow a="M001" b="S003　✓" />
-        <MiniRow a="M002" b="S30　✕ 貼錯" tone="bad" />
-        <MiniRow a="M003" b="—　✕ 漏填" tone="bad" />
-        <MiniRow a="M004" b="S002　✓" />
-      </MiniTable>
-    </div>
-    <div
-      style={{
-        marginTop: 34,
-        background: `${partColor.p1}0F`,
-        border: `1px solid ${partColor.p1}33`,
-        borderRadius: 16,
-        padding: '22px 30px',
-        fontSize: 32,
-        lineHeight: 1.5,
-      }}
-    >
-      <b style={{ color: partColor.p1 }}>✓ 解法：</b>在「主要供應商ID」欄建立下拉選單，從清單點選就好——不會貼錯，也不會漏填。
+    <div style={{ flex: 1, minHeight: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: 16 }}>
+      <img
+        src={supplierMasterLink}
+        alt="主要供應商資料教學圖：從供應商主檔選擇 ID，避免手動貼錯並自動帶出名稱"
+        style={{ width: '100%', height: '100%', objectFit: 'contain', mixBlendMode: 'multiply' }}
+      />
     </div>
     <PageFooter />
   </div>
@@ -2236,39 +2103,12 @@ const Part1SupplierTasks: Page = () => (
   <div style={page}>
     <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.13–14</Eyebrow>
     <PageHeading>下拉選單，讓它一路變聰明</PageHeading>
-    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 28, marginTop: 44 }}>
-      <Steps>
-        <Step>
-          <ProgressTaskCard
-            num="12"
-            promptNum="7"
-            title="建立下拉清單"
-            note="手動複製貼上，易貼錯"
-            noteKind="pain"
-            prompt="在「主要供應商ID」欄套用下拉選單，來源抓「供應商主檔」A 欄所有供應商ID，加上 OFFSET＋COUNTA，確保不抓到空白。"
-          />
-        </Step>
-        <Step>
-          <ProgressTaskCard
-            num="13"
-            promptNum="8"
-            title="篩掉停用供應商"
-            note="S005 停用，卻仍可被選取"
-            noteKind="pain"
-            prompt="動態篩選只留「啟用」供應商，命名為「啟用供應商ID」，寫在設定選單 H 欄；下拉來源指向 H 欄並用 # 抓取動態內容。"
-          />
-        </Step>
-        <Step>
-          <ProgressTaskCard
-            num="14"
-            promptNum="9"
-            title="自動帶出名稱"
-            note="選 ID，自動帶出供應商名稱"
-            noteKind="goal"
-            prompt="依供應商ID 從 tbl_供應商[供應商名稱] 查出對應名稱。"
-          />
-        </Step>
-      </Steps>
+    <div style={{ flex: 1, minHeight: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: 16 }}>
+      <img
+        src={smartSupplierDropdown}
+        alt="供應商下拉選單教學圖：建立下拉、只保留啟用供應商並依 ID 自動帶出名稱"
+        style={{ width: '100%', height: '100%', objectFit: 'contain', mixBlendMode: 'multiply' }}
+      />
     </div>
     <PageFooter />
   </div>
@@ -2476,43 +2316,23 @@ const Part1BomSampleData: Page = () => (
     <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.15</Eyebrow>
     <PageHeading>讓 AI 填入「商品配方BOM」範例資料</PageHeading>
     <div style={{ fontSize: 31, fontWeight: 800, color: taskColor, marginTop: 24 }}>任務 16：請 AI 填入範例資料</div>
-    <div
-      style={{
-        marginTop: 18,
-        background: `${taskColor}0D`,
-        border: `1px solid ${taskColor}33`,
-        borderLeft: `4px solid ${taskColor}`,
-        borderRadius: 12,
-        padding: '20px 26px',
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 14,
-      }}
-    >
-      <Steps>
-        <Step>
-          <div>
-            <div style={{ fontSize: 25, fontWeight: 800, color: taskColor, letterSpacing: '0.08em', marginBottom: 4 }}>
-              PROMPT 11
-            </div>
-            <div style={{ fontSize: 32, lineHeight: 1.4 }}>請幫「商品配方BOM」表填入範例資料，規則如下：</div>
-          </div>
-        </Step>
-        <Step>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 12 }}>
-            <RuleChip text="商品ID／物料ID 只能用主檔既有 ID（如 P001～P006、M001～M012）" />
-            <RuleChip text="每個商品配 2～3 樣合理原物料，用量與單位合理" />
-            <RuleChip text="BOM_ID 依序編號（B001、B002…）" />
-            <RuleChip text="適用通路只能填下拉選項：僅內用／僅外帶／通用" />
-            <RuleChip text="已是查表公式的欄位保留公式，不覆蓋成文字" />
-            <RuleChip text="每份用量填實際數字，備註可留空" />
-          </div>
-        </Step>
-        <Step>
-          <div style={{ fontSize: 25, color: muted }}>填完請確認：無 #N/A、下拉值合法、與主檔對得起來。</div>
-        </Step>
-      </Steps>
-    </div>
+    <Steps>
+      <Step>
+        <div style={{ height: 650, marginTop: 16, display: 'flex', alignItems: 'flex-start', justifyContent: 'center', overflow: 'hidden' }}>
+          <img
+            src={bomSampleDataRules}
+            alt="商品配方BOM範例表，以標註說明BOM編號、主檔ID、原物料配置、公式欄位、每份用量與適用通路規則"
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'contain',
+              objectPosition: 'top center',
+              mixBlendMode: 'multiply',
+            }}
+          />
+        </div>
+      </Step>
+    </Steps>
     <PageFooter />
   </div>
 );
@@ -2631,43 +2451,12 @@ const Part1SalesSampleData: Page = () => (
   <div style={page}>
     <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.16</Eyebrow>
     <PageHeading>讓 AI 填入「銷售紀錄」範例資料</PageHeading>
-    <div style={{ fontSize: 31, fontWeight: 800, color: taskColor, marginTop: 24 }}>任務 18：請 AI 填入範例資料</div>
-    <div
-      style={{
-        marginTop: 18,
-        background: `${taskColor}0D`,
-        border: `1px solid ${taskColor}33`,
-        borderLeft: `4px solid ${taskColor}`,
-        borderRadius: 12,
-        padding: '20px 26px',
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 14,
-      }}
-    >
-      <Steps>
-        <Step>
-          <div>
-            <div style={{ fontSize: 25, fontWeight: 800, color: taskColor, letterSpacing: '0.08em', marginBottom: 4 }}>
-              PROMPT 13
-            </div>
-            <div style={{ fontSize: 32, lineHeight: 1.4 }}>請在「銷售紀錄」表新增若干筆銷售紀錄，規則如下：</div>
-          </div>
-        </Step>
-        <Step>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 12 }}>
-            <RuleChip text="銷售日期：2024／2025 年各 5 筆，2026 年 6 月每天 3 筆" />
-            <RuleChip text="編號格式：訂單 O+日期+序號、明細 D+三位數（D005…）" />
-            <RuleChip text="商品ID 只能用主檔既有 ID（P001～P006），分散不同商品" />
-            <RuleChip text="商品名稱、銷售單價、銷售金額 保留查表／計算公式" />
-            <RuleChip text="銷售數量填 1～12；2～3 筆給合理折扣（不超 5%）" />
-            <RuleChip text="銷售通路只能填下拉選項：內用／外帶／電話預訂／外送平台" />
-          </div>
-        </Step>
-        <Step>
-          <div style={{ fontSize: 25, color: muted }}>填完請確認：下拉值合法、無 #N/A、金額公式正確、編號不重複。</div>
-        </Step>
-      </Steps>
+    <div style={{ flex: 1, minHeight: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: 16 }}>
+      <img
+        src={salesSampleDataGuide}
+        alt="銷售紀錄範例資料教學圖：日期分布、編號規則、公式驗證與合法下拉值"
+        style={{ width: '100%', height: '100%', objectFit: 'contain', mixBlendMode: 'multiply' }}
+      />
     </div>
     <PageFooter />
   </div>
@@ -2787,43 +2576,12 @@ const Part1PurchaseSampleData: Page = () => (
   <div style={page}>
     <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.18</Eyebrow>
     <PageHeading>讓 AI 填入「進貨紀錄」範例資料</PageHeading>
-    <div style={{ fontSize: 31, fontWeight: 800, color: taskColor, marginTop: 24 }}>任務 20：請 AI 填入範例資料</div>
-    <div
-      style={{
-        marginTop: 18,
-        background: `${taskColor}0D`,
-        border: `1px solid ${taskColor}33`,
-        borderLeft: `4px solid ${taskColor}`,
-        borderRadius: 12,
-        padding: '20px 26px',
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 14,
-      }}
-    >
-      <Steps>
-        <Step>
-          <div>
-            <div style={{ fontSize: 25, fontWeight: 800, color: taskColor, letterSpacing: '0.08em', marginBottom: 4 }}>
-              PROMPT 15
-            </div>
-            <div style={{ fontSize: 32, lineHeight: 1.4 }}>請在「進貨紀錄」新增 10 筆進貨紀錄，規則如下：</div>
-          </div>
-        </Step>
-        <Step>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 12 }}>
-            <RuleChip text="進貨日期落在近一個月內；單號延續 PO+三位數，不重複" />
-            <RuleChip text="供應商ID／物料ID 只能用主檔中「啟用」的實際 ID" />
-            <RuleChip text="供應商與所進物料需對應（如麵皮行進麵皮、肉品商進豬絞肉）" />
-            <RuleChip text="供應商名稱、物料名稱、進貨金額 保留查表／計算公式" />
-            <RuleChip text="入庫狀態只能填下拉選項，多數為「已入庫」" />
-            <RuleChip text="入庫日期需等於或稍晚於進貨日期；備註大多留空" />
-          </div>
-        </Step>
-        <Step>
-          <div style={{ fontSize: 25, color: muted }}>填完請確認：下拉值合法、查表無 #N/A、進貨金額公式正確、單號不重複。</div>
-        </Step>
-      </Steps>
+    <div style={{ flex: 1, minHeight: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: 16 }}>
+      <img
+        src={purchaseSampleDataGuide}
+        alt="進貨紀錄範例資料教學圖：日期單號、主檔合法性、供應商物料對應與入庫追蹤"
+        style={{ width: '100%', height: '100%', objectFit: 'contain', mixBlendMode: 'multiply' }}
+      />
     </div>
     <PageFooter />
   </div>
@@ -2833,43 +2591,161 @@ const Part1PurchaseSampleData: Page = () => (
 const Part2Transactions: Page = () => (
   <div style={page}>
     <Eyebrow color={partColor.p2}>PART 2 · 交易紀錄</Eyebrow>
-    <PageHeading>兩張交易表，把每天的買與賣都記下來</PageHeading>
-    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 32, marginTop: 44 }}>
-      <Steps>
-        <Step>
-          <TxCard color={partColor.p2} title="銷售紀錄">
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
-              <Tag>銷售日期</Tag>
-              <Tag>商品ID</Tag>
-              <Tag>銷售數量</Tag>
-              <Tag>銷售金額</Tag>
-            </div>
-            <RuleLine label="下拉規則" value="商品ID 只列「上架中」商品" />
-            <RuleLine label="自動帶出" value="商品名稱、單價（XLOOKUP）" />
-            <RuleLine label="計算公式" value="銷售金額 ＝ 數量 × 單價 − 折扣" />
-          </TxCard>
-        </Step>
-        <Step>
-          <TxCard color={partColor.p2} title="進貨紀錄">
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
-              <Tag>進貨日期</Tag>
-              <Tag>供應商ID</Tag>
-              <Tag>物料ID</Tag>
-              <Tag>進貨數量</Tag>
-            </div>
-            <RuleLine label="下拉規則" value="供應商／物料只列「啟用」狀態" />
-            <RuleLine label="自動帶出" value="供應商名稱、物料名稱（XLOOKUP）" />
-            <RuleLine label="計算公式" value="進貨金額 ＝ 數量 × 單價" />
-          </TxCard>
-        </Step>
-      </Steps>
+    <PageHeading>銷售紀錄：一筆訂單，完整留下「賣了什麼」</PageHeading>
+    <div style={{ flex: 1, minHeight: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: 16 }}>
+      <img
+        src={salesRecordFlow}
+        alt="銷售紀錄教學圖：下拉選商品 ID，自動取得名稱與單價，計算每筆銷售金額"
+        style={{ width: '100%', height: '100%', objectFit: 'contain', mixBlendMode: 'multiply' }}
+      />
     </div>
-    <div style={{ marginTop: 36 }}>
-      <Steps>
-        <Step>
-          <Callout color={partColor.p2}>每一筆銷售，都是看懂營收的起點。每一筆進貨，都是控管成本與庫存的依據。</Callout>
-        </Step>
-      </Steps>
+    <PageFooter />
+  </div>
+);
+
+const TeachingPill = ({ color, children, width }: { color: string; children: React.ReactNode; width?: number }) => (
+  <div
+    style={{
+      width: width ?? 260,
+      minHeight: 78,
+      borderRadius: 12,
+      background: color,
+      color: '#fff',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      textAlign: 'center',
+      fontSize: 30,
+      fontWeight: 900,
+      lineHeight: 1.2,
+      padding: '10px 18px',
+      boxShadow: `0 7px 18px ${color}35`,
+    }}
+  >
+    {children}
+  </div>
+);
+
+const SupplierHeader = () => (
+  <div style={{ display: 'grid', gridTemplateColumns: '0.8fr 1.15fr 1.1fr 0.82fr 1.05fr 0.9fr 0.66fr' }}>
+    <div style={visualHeaderCell}>供應商ID</div>
+    <div style={visualHeaderCell}>供應商名稱</div>
+    <div style={visualHeaderCell}>主要供應品項</div>
+    <div style={visualHeaderCell}>聯絡人</div>
+    <div style={visualHeaderCell}>電話</div>
+    <div style={visualHeaderCell}>付款方式</div>
+    <div style={visualHeaderCell}>狀態</div>
+  </div>
+);
+
+const visualHeaderCell = {
+  background: '#2F6FBE',
+  color: '#fff',
+  borderRight: '1px solid #194D8D',
+  padding: '12px 10px',
+  fontSize: 25,
+  fontWeight: 800,
+  textAlign: 'center' as const,
+};
+
+const visualCell = {
+  borderRight: '1px solid #AEB6C2',
+  borderBottom: '1px solid #AEB6C2',
+  padding: '9px 12px',
+  fontSize: 23,
+  lineHeight: 1.15,
+  whiteSpace: 'nowrap' as const,
+};
+
+const SupplierRow = ({ id, name, item, contact, phone, pay, status, shade, danger }: {
+  id: string; name: string; item: string; contact: string; phone: string; pay: string; status: string; shade?: boolean; danger?: boolean;
+}) => (
+  <div style={{ display: 'grid', gridTemplateColumns: '0.8fr 1.15fr 1.1fr 0.82fr 1.05fr 0.9fr 0.66fr', background: shade ? '#DDE9F6' : '#fff' }}>
+    <div style={{ ...visualCell, color: '#16802B', fontWeight: 800 }}>{id}</div>
+    <div style={visualCell}>{name}</div>
+    <div style={visualCell}>{item}</div>
+    <div style={visualCell}>{contact}</div>
+    <div style={visualCell}>{phone}</div>
+    <div style={visualCell}>{pay}</div>
+    <div style={{ ...visualCell, color: danger ? painRed : '#16802B', fontWeight: 800 }}>{status}</div>
+  </div>
+);
+
+const SupplierVisualTable = ({ compact }: { compact?: boolean }) => (
+  <div style={{ border: '1px solid #8D98A6', background: '#fff', boxShadow: '0 8px 22px rgba(28,35,31,0.10)' }}>
+    <SupplierHeader />
+    <SupplierRow id="S001" name="北區麵皮行" item="麵皮" contact="王先生" phone="02-0000-0001" pay="月結" status="啟用" shade />
+    <SupplierRow id="S002" name="安心肉品" item="豬肉、湯料" contact="林小姐" phone="02-0000-0002" pay="月結" status="啟用" />
+    <SupplierRow id="S003" name="新鮮蔬果商行" item="蔬菜" contact="陳先生" phone="02-0000-0003" pay="貨到付款" status="啟用" shade />
+    <SupplierRow id="S004" name="飲品原料行" item="豆漿、紅茶" contact="李小姐" phone="02-0000-0004" pay="月結" status="啟用" />
+    {!compact && <SupplierRow id="S005" name="飲品原料行" item="湯料" contact="朱先生" phone="02-0000-0014" pay="月結" status="停用" shade danger />}
+    {!compact && <SupplierRow id="S006" name="包材世界" item="外帶盒、醬料包" contact="黃先生" phone="02-0000-0005" pay="貨到付款" status="啟用" />}
+  </div>
+);
+
+const SalesRow = ({ date, order, product, name, qty, price, discount, amount, channel, shade }: {
+  date: string; order: string; product: string; name: string; qty: string; price: string; discount: string; amount: string; channel: string; shade?: boolean;
+}) => (
+  <div style={{ display: 'grid', gridTemplateColumns: '0.92fr 1.15fr 0.6fr 0.72fr 1.2fr 0.66fr 0.74fr 0.78fr 0.84fr 0.9fr', background: shade ? '#DDE9F6' : '#fff' }}>
+    <div style={visualCell}>{date}</div><div style={visualCell}>{order}</div><div style={visualCell}>D{order.slice(-3)}</div>
+    <div style={{ ...visualCell, color: '#1559A4', fontWeight: 800 }}>{product}</div><div style={visualCell}>{name}</div>
+    <div style={{ ...visualCell, textAlign: 'right' }}>{qty}</div><div style={{ ...visualCell, textAlign: 'right' }}>{price}</div>
+    <div style={{ ...visualCell, textAlign: 'right' }}>{discount}</div><div style={{ ...visualCell, textAlign: 'right', fontWeight: 800 }}>{amount}</div><div style={visualCell}>{channel}</div>
+  </div>
+);
+
+const SalesVisualTable = () => (
+  <div style={{ border: '1px solid #8D98A6', background: '#fff', boxShadow: '0 8px 22px rgba(28,35,31,0.10)' }}>
+    <div style={{ display: 'grid', gridTemplateColumns: '0.92fr 1.15fr 0.6fr 0.72fr 1.2fr 0.66fr 0.74fr 0.78fr 0.84fr 0.9fr' }}>
+      <div style={visualHeaderCell}>銷售日期</div><div style={visualHeaderCell}>訂單編號</div><div style={visualHeaderCell}>明細ID</div>
+      <div style={visualHeaderCell}>商品ID</div><div style={visualHeaderCell}>商品名稱</div><div style={visualHeaderCell}>數量</div>
+      <div style={visualHeaderCell}>單價</div><div style={visualHeaderCell}>折扣</div><div style={visualHeaderCell}>銷售金額</div><div style={visualHeaderCell}>通路</div>
+    </div>
+    <SalesRow date="2026/01/20" order="O20260120001" product="P001" name="招牌鍋貼(10顆)" qty="11" price="70" discount="30" amount="740" channel="內用" shade />
+    <SalesRow date="2026/03/08" order="O20260308001" product="P002" name="韭菜鍋貼(10顆)" qty="3" price="70" discount="0" amount="210" channel="電話預訂" />
+    <SalesRow date="2026/04/17" order="O20260417001" product="P003" name="玉米鍋貼(10顆)" qty="6" price="80" discount="0" amount="480" channel="外送平台" shade />
+    <SalesRow date="2026/05/25" order="O20260525001" product="P004" name="酸辣湯" qty="4" price="35" discount="0" amount="140" channel="外帶" />
+    <SalesRow date="2026/06/02" order="O20260602002" product="P005" name="豆漿" qty="10" price="25" discount="0" amount="250" channel="內用" shade />
+  </div>
+);
+
+const PurchaseRow = ({ date, po, sid, supplier, mid, material, qty, price, amount, state, inDate, shade }: {
+  date: string; po: string; sid: string; supplier: string; mid: string; material: string; qty: string; price: string; amount: string; state: string; inDate: string; shade?: boolean;
+}) => (
+  <div style={{ display: 'grid', gridTemplateColumns: '0.9fr 0.82fr 0.68fr 1.08fr 0.62fr 0.92fr 0.72fr 0.72fr 0.78fr 0.84fr 0.9fr', background: shade ? '#DDE9F6' : '#fff' }}>
+    <div style={visualCell}>{date}</div><div style={visualCell}>{po}</div><div style={{ ...visualCell, color: '#1559A4', fontWeight: 800 }}>{sid}</div>
+    <div style={visualCell}>{supplier}</div><div style={{ ...visualCell, color: '#1559A4', fontWeight: 800 }}>{mid}</div><div style={visualCell}>{material}</div>
+    <div style={{ ...visualCell, textAlign: 'right' }}>{qty}</div><div style={{ ...visualCell, textAlign: 'right' }}>{price}</div>
+    <div style={{ ...visualCell, textAlign: 'right', fontWeight: 800 }}>{amount}</div><div style={visualCell}>{state}</div><div style={visualCell}>{inDate}</div>
+  </div>
+);
+
+const PurchaseVisualTable = () => (
+  <div style={{ border: '1px solid #8D98A6', background: '#fff', boxShadow: '0 8px 22px rgba(28,35,31,0.10)' }}>
+    <div style={{ display: 'grid', gridTemplateColumns: '0.9fr 0.82fr 0.68fr 1.08fr 0.62fr 0.92fr 0.72fr 0.72fr 0.78fr 0.84fr 0.9fr' }}>
+      <div style={visualHeaderCell}>進貨日期</div><div style={visualHeaderCell}>進貨單號</div><div style={visualHeaderCell}>供應商ID</div>
+      <div style={visualHeaderCell}>供應商名稱</div><div style={visualHeaderCell}>物料ID</div><div style={visualHeaderCell}>物料名稱</div>
+      <div style={visualHeaderCell}>數量</div><div style={visualHeaderCell}>單價</div><div style={visualHeaderCell}>進貨金額</div>
+      <div style={visualHeaderCell}>入庫狀態</div><div style={visualHeaderCell}>入庫日期</div>
+    </div>
+    <PurchaseRow date="2026/06/05" po="PO001" sid="S001" supplier="北區麵皮行" mid="M001" material="麵皮" qty="300" price="1" amount="360" state="已入庫" inDate="2026/06/05" shade />
+    <PurchaseRow date="2026/06/08" po="PO002" sid="S002" supplier="安心肉品" mid="M002" material="豬絞肉" qty="30" price="180" amount="5,400" state="已入庫" inDate="2026/06/09" />
+    <PurchaseRow date="2026/06/10" po="PO003" sid="S003" supplier="新鮮蔬果商行" mid="M003" material="高麗菜" qty="40" price="45" amount="1,800" state="已入庫" inDate="2026/06/10" shade />
+    <PurchaseRow date="2026/06/22" po="PO007" sid="S006" supplier="包材世界" mid="M009" material="外帶盒" qty="500" price="3" amount="1,500" state="已入庫" inDate="2026/06/23" />
+    <PurchaseRow date="2026/07/01" po="PO010" sid="S003" supplier="新鮮蔬果商行" mid="M005" material="玉米粒" qty="10" price="65" amount="650" state="待入庫" inDate="—" shade />
+  </div>
+);
+
+const Part2Purchases: Page = () => (
+  <div style={page}>
+    <Eyebrow color={partColor.p2}>PART 2 · 交易紀錄</Eyebrow>
+    <PageHeading>進貨紀錄：從供應商到入庫，成本一路有跡可循</PageHeading>
+    <div style={{ flex: 1, minHeight: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: 16 }}>
+      <img
+        src={purchaseRecordFlow}
+        alt="進貨紀錄教學圖：選擇供應商與物料，自動帶出名稱、計算進貨金額並追蹤入庫"
+        style={{ width: '100%', height: '100%', objectFit: 'contain', mixBlendMode: 'multiply' }}
+      />
     </div>
     <PageFooter />
   </div>
@@ -3319,6 +3195,96 @@ const Part3RevenueSetup: Page = () => (
           <div style={{ fontSize: 25, color: muted, marginTop: 6 }}>完成後請驗證：無 #N/A、遮罩與清單能隨資料更新。</div>
         </Step>
       </Steps>
+    </div>
+    <PageFooter />
+  </div>
+);
+
+const Part3CostGuide: Page = () => (
+  <div style={page}>
+    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.19</Eyebrow>
+    <PageHeading>一、每份商品的成本，從 BOM 自動算出來</PageHeading>
+    <div style={{ flex: 1, minHeight: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: 16 }}>
+      <img
+        src={productCostGuide}
+        alt="商品成本教學圖：BOM、原料成本與適用通路共同算出內用及外帶成本"
+        style={{ width: '100%', height: '100%', objectFit: 'contain', mixBlendMode: 'multiply' }}
+      />
+    </div>
+    <PageFooter />
+  </div>
+);
+
+const Part3InventoryGuide: Page = () => (
+  <div style={page}>
+    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.20</Eyebrow>
+    <PageHeading>二、庫存不用兜帳，公式自動幫你算好</PageHeading>
+    <div style={{ flex: 1, minHeight: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: 16 }}>
+      <img
+        src={inventoryManagementGuide}
+        alt="庫存管理教學圖：期初庫存加進貨減銷售消耗，得到目前庫存與建議補貨量"
+        style={{ width: '100%', height: '100%', objectFit: 'contain', mixBlendMode: 'multiply' }}
+      />
+    </div>
+    <PageFooter />
+  </div>
+);
+
+const Part3RevenueGuide: Page = () => (
+  <div style={page}>
+    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.22</Eyebrow>
+    <PageHeading>三、每一筆銷售，自動算出賺多少</PageHeading>
+    <div style={{ flex: 1, minHeight: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: 16 }}>
+      <img
+        src={revenueMarginGuide}
+        alt="營收毛利教學圖：銷售金額、單品成本、銷售成本、毛利與毛利率自動計算"
+        style={{ width: '100%', height: '100%', objectFit: 'contain', mixBlendMode: 'multiply' }}
+      />
+    </div>
+    <PageFooter />
+  </div>
+);
+
+const Part3CostTableGuide: Page = () => (
+  <div style={page}>
+    <Eyebrow color={partColor.p3}>PART 3 · 真實表格對照</Eyebrow>
+    <PageHeading>商品成本：概念怎麼落到 Excel 欄位</PageHeading>
+    <div style={{ flex: 1, minHeight: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: 16 }}>
+      <img
+        src={productCostTableGuide}
+        alt="真實商品成本表格：內用與外帶成本、毛利及毛利率公式結果"
+        style={{ width: '100%', height: '100%', objectFit: 'contain', mixBlendMode: 'multiply' }}
+      />
+    </div>
+    <PageFooter />
+  </div>
+);
+
+const Part3InventoryTableGuide: Page = () => (
+  <div style={page}>
+    <Eyebrow color={partColor.p3}>PART 3 · 真實表格對照</Eyebrow>
+    <PageHeading>庫存管理：概念怎麼落到 Excel 欄位</PageHeading>
+    <div style={{ flex: 1, minHeight: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: 16 }}>
+      <img
+        src={inventoryTableGuide}
+        alt="真實庫存管理表格：目前庫存、安全庫存、補貨量與庫存狀態"
+        style={{ width: '100%', height: '100%', objectFit: 'contain', mixBlendMode: 'multiply' }}
+      />
+    </div>
+    <PageFooter />
+  </div>
+);
+
+const Part3RevenueTableGuide: Page = () => (
+  <div style={page}>
+    <Eyebrow color={partColor.p3}>PART 3 · 真實表格對照</Eyebrow>
+    <PageHeading>營收毛利：概念怎麼落到 Excel 欄位</PageHeading>
+    <div style={{ flex: 1, minHeight: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: 16 }}>
+      <img
+        src={revenueMarginTableGuide}
+        alt="真實營收毛利表格：銷售金額、單品成本、銷售成本、毛利與毛利率"
+        style={{ width: '100%', height: '100%', objectFit: 'contain', mixBlendMode: 'multiply' }}
+      />
     </div>
     <PageFooter />
   </div>
@@ -7112,21 +7078,18 @@ const PptxSingleShot = ({
 const PptxProductMaster: Page = () => (
   <div style={page}>
     <Eyebrow color={refColor}>補充教材 · 主檔與報表範例</Eyebrow>
-    <PageHeading>商品主檔／供應商主檔／原物料主檔範例</PageHeading>
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginTop: 10 }}>
-      <div>
-        <PptxShot src={pptx_s1_5} maxH={160} />
-        <PptxCaption>商品主檔</PptxCaption>
-      </div>
-      <div>
-        <PptxShot src={pptx_s1_7} maxH={190} />
-        <PptxCaption>供應商主檔</PptxCaption>
-      </div>
-      <div>
-        <PptxShot src={pptx_s1_9} maxH={160} />
-        <PptxCaption>原物料主檔</PptxCaption>
-      </div>
-    </div>
+    <PageHeading>三張主檔的實際欄位，對應前一頁的用途</PageHeading>
+    <Steps>
+      <Step>
+        <div style={{ height: 760, marginTop: 14, display: 'flex', alignItems: 'flex-start', justifyContent: 'center', overflow: 'hidden' }}>
+          <img
+            src={threeMasterTablesMapping}
+            alt="商品主檔、供應商主檔與原物料主檔的實際表格，標示各自的ID與關鍵欄位用途"
+            style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'top center', mixBlendMode: 'multiply' }}
+          />
+        </div>
+      </Step>
+    </Steps>
     <PageFooter />
   </div>
 );
@@ -7329,6 +7292,800 @@ const Closing: Page = () => (
   </div>
 );
 
+// ─── Priority split pages: one concept per page ─────────────────────────────
+const SplitNote = ({ children, color }: { children: React.ReactNode; color: string }) => (
+  <div
+    style={{
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: 12,
+      fontSize: 27,
+      fontWeight: 800,
+      color,
+      background: `${color}12`,
+      border: `1px solid ${color}35`,
+      borderRadius: 999,
+      padding: '8px 18px',
+    }}
+  >
+    {children}
+  </div>
+);
+
+const MetricBox = ({
+  label,
+  value,
+  formula,
+  color,
+}: {
+  label: string;
+  value: string;
+  formula: string;
+  color: string;
+}) => (
+  <div
+    style={{
+      background: '#fff',
+      border: `1px solid ${cardBorder}`,
+      borderTop: `7px solid ${color}`,
+      borderRadius: 18,
+      padding: '24px 26px',
+      minHeight: 180,
+      boxShadow: '0 8px 24px rgba(30,50,40,0.06)',
+    }}
+  >
+    <div style={{ fontSize: 28, color: muted, fontWeight: 700 }}>{label}</div>
+    <div style={{ fontSize: 48, lineHeight: 1.1, fontWeight: 900, color, marginTop: 12 }}>{value}</div>
+    <div style={{ fontSize: 23, lineHeight: 1.35, color: muted, marginTop: 14 }}>{formula}</div>
+  </div>
+);
+
+const FunctionPanel = ({
+  name,
+  plain,
+  before,
+  after,
+  color,
+}: {
+  name: string;
+  plain: string;
+  before: React.ReactNode;
+  after: React.ReactNode;
+  color: string;
+}) => (
+  <div
+    style={{
+      flex: 1,
+      background: '#fff',
+      border: `1px solid ${cardBorder}`,
+      borderRadius: 22,
+      padding: '28px 30px',
+      boxShadow: '0 8px 24px rgba(30,50,40,0.06)',
+    }}
+  >
+    <div style={{ display: 'flex', alignItems: 'baseline', gap: 18 }}>
+      <div style={{ fontSize: 44, fontWeight: 900, color }}>{name}</div>
+      <div style={{ fontSize: 28, fontWeight: 700, color: muted }}>{plain}</div>
+    </div>
+    <div style={{ display: 'grid', gridTemplateColumns: '1fr 70px 1fr', alignItems: 'center', gap: 18, marginTop: 26 }}>
+      <div style={{ minHeight: 210 }}>{before}</div>
+      <div style={{ fontSize: 46, color, textAlign: 'center' }}>›</div>
+      <div style={{ minHeight: 210 }}>{after}</div>
+    </div>
+  </div>
+);
+
+const DataLine = ({ text, active, color }: { text: string; active?: boolean; color: string }) => (
+  <div
+    style={{
+      fontSize: 26,
+      fontWeight: active ? 800 : 600,
+      color: active ? color : muted,
+      background: active ? `${color}12` : '#F7F5EF',
+      border: `1px solid ${active ? `${color}45` : cardBorder}`,
+      borderRadius: 10,
+      padding: '10px 14px',
+      marginBottom: 8,
+    }}
+  >
+    {text}
+  </div>
+);
+
+const CheckTile = ({
+  icon,
+  title,
+  desc,
+  color,
+}: {
+  icon: string;
+  title: string;
+  desc: string;
+  color: string;
+}) => (
+  <div
+    style={{
+      flex: 1,
+      background: '#fff',
+      border: `1px solid ${cardBorder}`,
+      borderRadius: 20,
+      padding: '26px 24px',
+      minHeight: 250,
+      boxShadow: '0 8px 24px rgba(30,50,40,0.05)',
+    }}
+  >
+    <div style={{ fontSize: 48 }}>{icon}</div>
+    <div style={{ fontSize: 31, fontWeight: 900, color, marginTop: 14 }}>{title}</div>
+    <div style={{ fontSize: 25, color: muted, lineHeight: 1.45, marginTop: 12 }}>{desc}</div>
+  </div>
+);
+
+const StockAlertRow = ({
+  id,
+  name,
+  current,
+  safe,
+  reorder,
+  supplier,
+}: {
+  id: string;
+  name: string;
+  current: string;
+  safe: string;
+  reorder: string;
+  supplier: string;
+}) => (
+  <div
+    style={{
+      display: 'grid',
+      gridTemplateColumns: '0.7fr 1.1fr 0.9fr 0.9fr 0.9fr 1.4fr',
+      gap: 12,
+      alignItems: 'center',
+      background: '#fff',
+      border: `1px solid ${cardBorder}`,
+      borderLeft: `8px solid ${painRed}`,
+      borderRadius: 16,
+      padding: '18px 22px',
+      marginTop: 14,
+      boxShadow: '0 6px 18px rgba(30,50,40,0.04)',
+    }}
+  >
+    <div style={{ fontSize: 28, fontWeight: 900 }}>{id}</div>
+    <div style={{ fontSize: 29, fontWeight: 800 }}>{name}</div>
+    <div style={{ fontSize: 26, color: painRed, fontWeight: 900 }}>目前 {current}</div>
+    <div style={{ fontSize: 25, color: muted }}>安全 {safe}</div>
+    <div style={{ fontSize: 26, color: partColor.p6, fontWeight: 900 }}>補 {reorder}</div>
+    <div style={{ fontSize: 25, color: muted }}>{supplier}</div>
+  </div>
+);
+
+const BranchPanel = ({
+  status,
+  title,
+  items,
+  color,
+}: {
+  status: string;
+  title: string;
+  items: React.ReactNode;
+  color: string;
+}) => (
+  <div
+    style={{
+      flex: 1,
+      background: '#fff',
+      border: `1px solid ${cardBorder}`,
+      borderTop: `8px solid ${color}`,
+      borderRadius: 20,
+      padding: '26px 28px',
+      minHeight: 480,
+      boxShadow: '0 8px 24px rgba(30,50,40,0.05)',
+    }}
+  >
+    <div style={{ fontSize: 25, fontWeight: 900, color }}>{status}</div>
+    <div style={{ fontSize: 34, fontWeight: 900, marginTop: 10 }}>{title}</div>
+    <div style={{ fontSize: 25, lineHeight: 1.55, color: muted, marginTop: 22 }}>{items}</div>
+  </div>
+);
+
+const ReportSheet = ({
+  no,
+  title,
+  subtitle,
+  color,
+  visual,
+}: {
+  no: string;
+  title: string;
+  subtitle: string;
+  color: string;
+  visual: React.ReactNode;
+}) => (
+  <div
+    style={{
+      flex: 1,
+      minHeight: 330,
+      background: '#fff',
+      border: `1px solid ${cardBorder}`,
+      borderRadius: 20,
+      padding: '24px',
+      boxShadow: '0 10px 28px rgba(30,50,40,0.06)',
+    }}
+  >
+    <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
+      <div
+        style={{
+          width: 48,
+          height: 48,
+          borderRadius: 14,
+          display: 'grid',
+          placeItems: 'center',
+          background: color,
+          color: '#fff',
+          fontSize: 25,
+          fontWeight: 900,
+        }}
+      >
+        {no}
+      </div>
+      <div>
+        <div style={{ fontSize: 31, fontWeight: 900 }}>{title}</div>
+        <div style={{ fontSize: 24, color: muted, marginTop: 2 }}>{subtitle}</div>
+      </div>
+    </div>
+    <div style={{ height: 160, marginTop: 22, borderRadius: 14, background: `${color}0D`, display: 'grid', placeItems: 'center' }}>
+      {visual}
+    </div>
+  </div>
+);
+
+const SheetRange = ({
+  label,
+  range,
+  color,
+}: {
+  label: string;
+  range: string;
+  color: string;
+}) => (
+  <div
+    style={{
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      gap: 18,
+      background: `${color}0D`,
+      border: `1px solid ${color}35`,
+      borderRadius: 14,
+      padding: '15px 18px',
+    }}
+  >
+    <span style={{ fontSize: 27, fontWeight: 800 }}>{label}</span>
+    <span style={{ fontSize: 25, fontWeight: 900, color, fontFamily: 'Consolas, monospace' }}>{range}</span>
+  </div>
+);
+
+const FormRow = ({ label, value, dropdown }: { label: string; value: string; dropdown?: boolean }) => (
+  <div style={{ marginTop: 12 }}>
+    <div style={{ fontSize: 22, color: '#BFC7D5', marginBottom: 5 }}>{label}</div>
+    <div
+      style={{
+        height: 48,
+        borderRadius: 10,
+        border: '1px solid #526077',
+        background: '#1C2635',
+        color: '#F5F7FB',
+        padding: '0 15px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        fontSize: 24,
+      }}
+    >
+      <span>{value}</span>
+      {dropdown && <span style={{ color: '#93A4BE' }}>▼</span>}
+    </div>
+  </div>
+);
+
+const Part4DashboardMaskSplit: Page = () => (
+  <div style={page}>
+    <div style={{ display: 'flex', gap: 12 }}>
+      <Eyebrow color={partColor.p4}>PART 4 · 儀表板</Eyebrow>
+      <Eyebrow color={taskColor}>拆頁 1／2</Eyebrow>
+    </div>
+    <PageHeading>先看懂「篩選遮罩」：每一筆銷售只會得到 1 或 0</PageHeading>
+    <div style={{ display: 'grid', gridTemplateColumns: '1.18fr 0.82fr', gap: 34, marginTop: 26, flex: 1, minHeight: 0 }}>
+      <div
+        style={{
+          borderRadius: 24,
+          overflow: 'hidden',
+          border: `1px solid ${cardBorder}`,
+          background: '#fff',
+          boxShadow: '0 10px 30px rgba(30,50,40,0.07)',
+        }}
+      >
+        <img src={dashboardFilterMaskVisual} alt="年月日篩選、遮罩與儀表板更新的視覺圖" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+      </div>
+      <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 18 }}>
+        <SplitNote color={partColor.p4}>① 儀表板 B3:B5 選年、月、日</SplitNote>
+        <SplitNote color={partColor.p4}>② 營收毛利 N 欄逐筆判斷</SplitNote>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginTop: 4 }}>
+          <div style={{ borderRadius: 18, padding: '24px', background: '#EAF6EF', border: '1px solid #A9D8BB' }}>
+            <div style={{ fontSize: 58, fontWeight: 900, color: '#1F7A4B' }}>1</div>
+            <div style={{ fontSize: 27, fontWeight: 800 }}>符合目前篩選</div>
+          </div>
+          <div style={{ borderRadius: 18, padding: '24px', background: '#F0F1EE', border: `1px solid ${cardBorder}` }}>
+            <div style={{ fontSize: 58, fontWeight: 900, color: muted }}>0</div>
+            <div style={{ fontSize: 27, fontWeight: 800 }}>不納入這次計算</div>
+          </div>
+        </div>
+        <div style={{ fontSize: 27, color: muted, lineHeight: 1.5, marginTop: 8 }}>
+          重點不是背公式，而是知道：<b style={{ color: partColor.p4 }}>遮罩像一排開關</b>，只讓符合條件的銷售資料進入統計。
+        </div>
+      </div>
+    </div>
+    <PageFooter />
+  </div>
+);
+
+const Part4DashboardKpiSplit: Page = () => (
+  <div style={page}>
+    <div style={{ display: 'flex', gap: 12 }}>
+      <Eyebrow color={partColor.p4}>PART 4 · 儀表板</Eyebrow>
+      <Eyebrow color={taskColor}>拆頁 2／2</Eyebrow>
+    </div>
+    <PageHeading>遮罩套進公式後，六個 KPI 會一起更新</PageHeading>
+    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 22, marginTop: 34 }}>
+      <MetricBox label="營業額" value="NT$16,050" formula="SUMPRODUCT（遮罩 × 銷售金額）" color={partColor.p4} />
+      <MetricBox label="總毛利" value="NT$3,406.10" formula="SUMPRODUCT（遮罩 × 毛利）" color="#1B84A8" />
+      <MetricBox label="平均毛利率" value="21.22%" formula="總毛利 ÷ 營業額" color="#6A5FCB" />
+      <MetricBox label="來客數" value="43 單" formula="篩選後的不重複訂單數" color="#1E9076" />
+      <MetricBox label="銷售數量" value="310 份" formula="SUMPRODUCT（遮罩 × 數量）" color="#C0902E" />
+      <MetricBox label="客單價" value="NT$373.26" formula="營業額 ÷ 來客數" color="#B5502E" />
+    </div>
+    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 28 }}>
+      <SplitNote color={partColor.p4}>真實位置：儀表板 A8:F9</SplitNote>
+      <div style={{ fontSize: 28, color: muted }}>換一個篩選條件，六張數字卡同步重算。</div>
+    </div>
+    <PageFooter />
+  </div>
+);
+
+const Part4FunctionsUniqueFilterSplit: Page = () => (
+  <div style={page}>
+    <div style={{ display: 'flex', gap: 12 }}>
+      <Eyebrow color={partColor.p4}>公式名詞快速理解</Eyebrow>
+      <Eyebrow color={taskColor}>拆頁 1／2</Eyebrow>
+    </div>
+    <PageHeading>UNIQUE 找名單，FILTER 挑出符合條件的資料</PageHeading>
+    <div style={{ display: 'flex', gap: 28, marginTop: 34 }}>
+      <FunctionPanel
+        name="UNIQUE"
+        plain="去除重複"
+        color={partColor.p4}
+        before={
+          <div>
+            <DataLine text="酸辣湯" color={partColor.p4} />
+            <DataLine text="鍋貼" color={partColor.p4} />
+            <DataLine text="酸辣湯" color={partColor.p4} />
+            <DataLine text="豆漿" color={partColor.p4} />
+          </div>
+        }
+        after={
+          <div>
+            <DataLine text="酸辣湯" active color={partColor.p4} />
+            <DataLine text="鍋貼" active color={partColor.p4} />
+            <DataLine text="豆漿" active color={partColor.p4} />
+          </div>
+        }
+      />
+      <FunctionPanel
+        name="FILTER"
+        plain="只留下符合條件"
+        color="#1E9076"
+        before={
+          <div>
+            <DataLine text="內用｜招牌鍋貼" color="#1E9076" />
+            <DataLine text="外帶｜酸辣湯" active color="#1E9076" />
+            <DataLine text="電話預訂｜豆漿" color="#1E9076" />
+            <DataLine text="外帶｜韭菜鍋貼" active color="#1E9076" />
+          </div>
+        }
+        after={
+          <div>
+            <DataLine text="外帶｜酸辣湯" active color="#1E9076" />
+            <DataLine text="外帶｜韭菜鍋貼" active color="#1E9076" />
+          </div>
+        }
+      />
+    </div>
+    <div style={{ fontSize: 29, color: muted, marginTop: 28 }}>
+      先用 UNIQUE 建立不重複清單，再用 FILTER 依條件縮小範圍。
+    </div>
+    <PageFooter />
+  </div>
+);
+
+const Part4FunctionsSortLetSplit: Page = () => (
+  <div style={page}>
+    <div style={{ display: 'flex', gap: 12 }}>
+      <Eyebrow color={partColor.p4}>公式名詞快速理解</Eyebrow>
+      <Eyebrow color={taskColor}>拆頁 2／2</Eyebrow>
+    </div>
+    <PageHeading>SORTBY 負責排名，LET 把複雜步驟取名字</PageHeading>
+    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 30, marginTop: 34 }}>
+      <div style={{ background: '#fff', border: `1px solid ${cardBorder}`, borderRadius: 22, padding: 30 }}>
+        <div style={{ fontSize: 44, fontWeight: 900, color: '#6A5FCB' }}>SORTBY</div>
+        <div style={{ fontSize: 28, color: muted, marginTop: 6 }}>依銷售金額由高到低排列</div>
+        <div style={{ marginTop: 24 }}>
+          <DataLine text="① 招牌鍋貼　NT$4,870" active color="#6A5FCB" />
+          <DataLine text="② 韭菜鍋貼　NT$4,120" active color="#6A5FCB" />
+          <DataLine text="③ 玉米鍋貼　NT$2,930" active color="#6A5FCB" />
+          <DataLine text="④ 酸辣湯　　NT$2,070" color="#6A5FCB" />
+          <DataLine text="⑤ 豆漿　　　NT$2,060" color="#6A5FCB" />
+        </div>
+      </div>
+      <div style={{ background: '#fff', border: `1px solid ${cardBorder}`, borderRadius: 22, padding: 30 }}>
+        <div style={{ fontSize: 44, fontWeight: 900, color: '#C0902E' }}>LET</div>
+        <div style={{ fontSize: 28, color: muted, marginTop: 6 }}>讓公式像一段有名字的工作流程</div>
+        <div style={{ marginTop: 28, display: 'flex', flexDirection: 'column', gap: 14 }}>
+          <SheetRange label="遮罩" range="mask" color="#C0902E" />
+          <SheetRange label="商品清單" range="items" color="#C0902E" />
+          <SheetRange label="銷售額" range="sales" color="#C0902E" />
+          <SheetRange label="排序後前 5 名" range="top5" color="#C0902E" />
+        </div>
+      </div>
+    </div>
+    <div style={{ marginTop: 28, display: 'flex', alignItems: 'center', gap: 18 }}>
+      <SplitNote color={partColor.p4}>FILTER 選資料</SplitNote>
+      <span style={{ fontSize: 36, color: muted }}>›</span>
+      <SplitNote color="#6A5FCB">SORTBY 排順序</SplitNote>
+      <span style={{ fontSize: 36, color: muted }}>›</span>
+      <SplitNote color="#C0902E">LET 管理中間步驟</SplitNote>
+    </div>
+    <PageFooter />
+  </div>
+);
+
+const PptxDailyReportOnlySplit: Page = () => (
+  <div style={page}>
+    <div style={{ display: 'flex', gap: 12 }}>
+      <Eyebrow color={refColor}>銷售日報規格</Eyebrow>
+      <Eyebrow color={taskColor}>拆頁 1／2</Eyebrow>
+    </div>
+    <PageHeading>銷售日報：一天的營運結果要能快速看懂</PageHeading>
+    <div style={{ display: 'grid', gridTemplateColumns: '1.35fr 0.65fr', gap: 32, marginTop: 26, flex: 1 }}>
+      <div style={{ display: 'grid', placeItems: 'center', background: '#fff', border: `1px solid ${cardBorder}`, borderRadius: 22, padding: 20 }}>
+        <PptxShot src={pptx_s3_5} maxH={610} />
+      </div>
+      <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 18 }}>
+        <CheckTile icon="①" title="當日摘要" desc="營業額、毛利、訂單數與銷售數量。" color={partColor.p6} />
+        <CheckTile icon="②" title="營運拆解" desc="各通路小計、熱銷商品排行與銷售明細。" color={partColor.p6} />
+      </div>
+    </div>
+    <PageFooter />
+  </div>
+);
+
+const PptxPurchaseOrderOnlySplit: Page = () => (
+  <div style={page}>
+    <div style={{ display: 'flex', gap: 12 }}>
+      <Eyebrow color={refColor}>叫貨單規格</Eyebrow>
+      <Eyebrow color={taskColor}>拆頁 2／2</Eyebrow>
+    </div>
+    <PageHeading>叫貨單：只列需要補貨的品項，依供應商整理</PageHeading>
+    <div style={{ display: 'grid', gridTemplateColumns: '0.7fr 1.3fr', gap: 34, marginTop: 32, flex: 1 }}>
+      <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 18 }}>
+        <CheckTile icon="①" title="抓異常" desc="只處理「缺料」或「低於安全庫存」。" color={painRed} />
+        <CheckTile icon="②" title="依店家分組" desc="同一供應商的品項放進同一則訊息。" color={partColor.p6} />
+        <CheckTile icon="③" title="形成可傳送文字" desc="品項、數量、到貨日與聯絡資訊一次備齊。" color="#1E9076" />
+      </div>
+      <div style={{ display: 'grid', placeItems: 'center', background: '#fff', border: `1px solid ${cardBorder}`, borderRadius: 22, padding: 30 }}>
+        <PptxShot src={pptx_s3_7} maxH={560} />
+      </div>
+    </div>
+    <PageFooter />
+  </div>
+);
+
+const Part6CloseCheckOnlySplit: Page = () => (
+  <div style={page}>
+    <div style={{ display: 'flex', gap: 12 }}>
+      <Eyebrow color={partColor.p6}>VBA · 關檔前防呆</Eyebrow>
+      <Eyebrow color={taskColor}>拆頁 1／2</Eyebrow>
+    </div>
+    <PageHeading>先擋下錯誤資料，再允許關閉檔案</PageHeading>
+    <div style={{ display: 'flex', gap: 22, marginTop: 40 }}>
+      <CheckTile icon="ID" title="商品 ID" desc="不可空白，而且必須存在於商品主檔。" color={partColor.p6} />
+      <CheckTile icon="×2" title="明細編號" desc="同一個銷售明細編號不能重複。" color="#6A5FCB" />
+      <CheckTile icon="0" title="銷售數量" desc="必須大於 0，避免把零或負數寫進交易紀錄。" color={painRed} />
+      <CheckTile icon="▼" title="銷售通路" desc="只能使用設定選單內允許的合法值。" color="#1E9076" />
+    </div>
+    <div
+      style={{
+        marginTop: 34,
+        background: '#fff',
+        border: `1px solid ${cardBorder}`,
+        borderRadius: 20,
+        padding: '24px 30px',
+        display: 'grid',
+        gridTemplateColumns: '0.7fr 0.8fr 0.8fr 1fr 1.7fr',
+        gap: 14,
+        alignItems: 'center',
+      }}
+    >
+      <b style={{ fontSize: 25 }}>D012</b>
+      <b style={{ fontSize: 25 }}>P003</b>
+      <b style={{ fontSize: 25, color: painRed }}>0</b>
+      <b style={{ fontSize: 25 }}>外送平台</b>
+      <span style={{ fontSize: 25, color: painRed, fontWeight: 900 }}>銷售數量必須大於 0</span>
+    </div>
+    <div style={{ fontSize: 28, color: muted, marginTop: 24 }}>發現錯誤時：標紅儲存格、顯示原因、回到資料列修正。</div>
+    <PageFooter />
+  </div>
+);
+
+const Part6ReorderReminderSplit: Page = () => (
+  <div style={page}>
+    <div style={{ display: 'flex', gap: 12 }}>
+      <Eyebrow color={partColor.p6}>VBA · 待補貨提醒</Eyebrow>
+      <Eyebrow color={taskColor}>拆頁 2／2</Eyebrow>
+    </div>
+    <PageHeading>銷售資料檢查完成後，再提醒真正缺料的三個品項</PageHeading>
+    <div style={{ marginTop: 30 }}>
+      <StockAlertRow id="M001" name="麵皮" current="-1,170" safe="500" reorder="1,500" supplier="北區麵皮行" />
+      <StockAlertRow id="M005" name="玉米粒" current="-0.14" safe="3" reorder="10" supplier="新鮮蔬果商行" />
+      <StockAlertRow id="M010" name="外帶碗" current="-3" safe="100" reorder="250" supplier="包材世界" />
+    </div>
+    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 26, marginTop: 34 }}>
+      <div style={{ borderRadius: 20, background: '#EAF6EF', border: '1px solid #A9D8BB', padding: '26px 30px' }}>
+        <div style={{ fontSize: 31, fontWeight: 900, color: '#1F7A4B' }}>有異常品項</div>
+        <div style={{ fontSize: 27, lineHeight: 1.45, marginTop: 10 }}>預覽待補貨清單，再呼叫既有「產生叫貨單」巨集。</div>
+      </div>
+      <div style={{ borderRadius: 20, background: '#F5F3EC', border: `1px solid ${cardBorder}`, padding: '26px 30px' }}>
+        <div style={{ fontSize: 31, fontWeight: 900, color: muted }}>沒有異常品項</div>
+        <div style={{ fontSize: 27, lineHeight: 1.45, marginTop: 10 }}>結束檢查，不產生空白叫貨單。</div>
+      </div>
+    </div>
+    <PageFooter />
+  </div>
+);
+
+const Part7RollupFlowSplit: Page = () => (
+  <div style={page}>
+    <div style={{ display: 'flex', gap: 12 }}>
+      <Eyebrow color={partColor.p7}>跨檔案彙總</Eyebrow>
+      <Eyebrow color={taskColor}>拆頁 1／2</Eyebrow>
+    </div>
+    <PageHeading>月報不是把檔案疊起來，而是逐份讀取、檢查、再彙總</PageHeading>
+    <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: 34, marginTop: 28, flex: 1 }}>
+      <div style={{ overflow: 'hidden', borderRadius: 24, border: `1px solid ${cardBorder}`, background: '#fff' }}>
+        <img src={monthlyRollupVisual} alt="日報檔案經過檢查後產生月報的視覺圖" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+      </div>
+      <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 15 }}>
+        <SplitNote color={partColor.p7}>1　選擇整月日報資料夾</SplitNote>
+        <SplitNote color={partColor.p7}>2　逐一讀日期、摘要與明細</SplitNote>
+        <SplitNote color={partColor.p7}>3　做品質檢查</SplitNote>
+        <SplitNote color={partColor.p7}>4　計算成本與毛利</SplitNote>
+        <SplitNote color={partColor.p7}>5　輸出七張月報</SplitNote>
+      </div>
+    </div>
+    <PageFooter />
+  </div>
+);
+
+const Part7RollupErrorsSplit: Page = () => (
+  <div style={page}>
+    <div style={{ display: 'flex', gap: 12 }}>
+      <Eyebrow color={partColor.p7}>跨檔案彙總</Eyebrow>
+      <Eyebrow color={taskColor}>拆頁 2／2</Eyebrow>
+    </div>
+    <PageHeading>遇到異常時，不是全部停掉：分成跳過、警告與缺漏</PageHeading>
+    <div style={{ display: 'flex', gap: 24, marginTop: 38 }}>
+      <BranchPanel
+        status="不納入彙總"
+        title="跳過該檔"
+        color={muted}
+        items={
+          <>
+            • 找不到「日報」工作表<br />
+            • 日期讀不到或不在指定月份<br />
+            • 同一天的日報已經彙總過
+          </>
+        }
+      />
+      <BranchPanel
+        status="仍納入，但留下紀錄"
+        title="加入警告"
+        color="#C0902E"
+        items={
+          <>
+            • 明細金額與日報營業額不一致<br />
+            • 明細數量與銷售總數量不同<br />
+            • 明細筆數與銷售筆數不一致
+          </>
+        }
+      />
+      <BranchPanel
+        status="整月掃描後補查"
+        title="列為缺漏"
+        color={painRed}
+        items={
+          <>
+            • 某一天完全找不到日報檔<br />
+            • 在檢查清單標出缺少日期<br />
+            • 不用空白資料硬湊完整月份
+          </>
+        }
+      />
+    </div>
+    <div style={{ fontSize: 29, color: muted, marginTop: 28 }}>月報可信的前提，是錯誤有被留下來，而不是被悄悄忽略。</div>
+    <PageFooter />
+  </div>
+);
+
+const Part7ReportsDecisionSplit: Page = () => (
+  <div style={page}>
+    <div style={{ display: 'flex', gap: 12 }}>
+      <Eyebrow color={partColor.p7}>七張營業月報</Eyebrow>
+      <Eyebrow color={taskColor}>拆頁 1／2</Eyebrow>
+    </div>
+    <PageHeading>前四張先回答老闆最常問的營運問題</PageHeading>
+    <div style={{ display: 'flex', gap: 20, marginTop: 34 }}>
+      <ReportSheet no="1" title="月報摘要" subtitle="KPI 總覽" color={partColor.p7} visual={<MiniKpiIcon color={partColor.p7} />} />
+      <ReportSheet no="2" title="每日趨勢" subtitle="長條＋雙軸折線" color="#C0902E" visual={<MiniBarLineIcon color="#C0902E" />} />
+      <ReportSheet no="3" title="商品排行" subtitle="Pareto 圖" color="#1B84A8" visual={<MiniParetoIcon color="#1B84A8" />} />
+      <ReportSheet
+        no="4"
+        title="通路分析"
+        subtitle="圓餅圖"
+        color="#6A5FCB"
+        visual={<MiniPieIcon slices={[{ color: partColor.p7, pct: 46 }, { color: '#D08A34', pct: 33 }, { color: '#E0C9A6', pct: 21 }]} />}
+      />
+    </div>
+    <div style={{ fontSize: 30, fontWeight: 800, color: muted, marginTop: 30 }}>看規模、看趨勢、看明星商品、看主要通路。</div>
+    <PageFooter />
+  </div>
+);
+
+const Part7ReportsControlSplit: Page = () => (
+  <div style={page}>
+    <div style={{ display: 'flex', gap: 12 }}>
+      <Eyebrow color={partColor.p7}>七張營業月報</Eyebrow>
+      <Eyebrow color={taskColor}>拆頁 2／2</Eyebrow>
+    </div>
+    <PageHeading>後三張負責追原因、查明細與確認資料品質</PageHeading>
+    <div style={{ display: 'flex', gap: 24, marginTop: 36 }}>
+      <ReportSheet no="5" title="毛利分析" subtitle="低於 20% 標紅" color={painRed} visual={<MiniBarLineIcon color={painRed} />} />
+      <ReportSheet no="6" title="銷售明細彙總" subtitle="全月逐筆總表" color={taskColor} visual={<MiniListIcon color={taskColor} />} />
+      <ReportSheet no="7" title="檢查清單" subtitle="紅／黃警示" color="#C0902E" visual={<MiniListIcon color="#C0902E" />} />
+    </div>
+    <div style={{ display: 'flex', gap: 18, marginTop: 34 }}>
+      <SplitNote color={painRed}>哪裡賺太少？</SplitNote>
+      <SplitNote color={taskColor}>是哪一筆交易？</SplitNote>
+      <SplitNote color="#C0902E">資料是否完整可信？</SplitNote>
+    </div>
+    <PageFooter />
+  </div>
+);
+
+const Part5BackendRangesSplit: Page = () => (
+  <div style={page}>
+    <div style={{ display: 'flex', gap: 12 }}>
+      <Eyebrow color={partColor.p5}>Apps Script 後端</Eyebrow>
+      <Eyebrow color={taskColor}>拆頁 1／2</Eyebrow>
+    </div>
+    <PageHeading>先把工作表位置對齊：後端才知道去哪裡讀資料</PageHeading>
+    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 30, marginTop: 32 }}>
+      <div style={{ background: '#fff', border: `1px solid ${cardBorder}`, borderRadius: 22, padding: 28 }}>
+        <div style={{ fontSize: 34, fontWeight: 900, color: partColor.p4 }}>「儀表板」工作表</div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 11, marginTop: 20 }}>
+          <SheetRange label="年／月／日篩選" range="B3:B5" color={partColor.p4} />
+          <SheetRange label="六個 KPI" range="A8:F9" color="#1F7A4B" />
+          <SheetRange label="商品排行" range="A12:E17" color="#1B84A8" />
+          <SheetRange label="通路排行" range="A20:D23" color="#1E9076" />
+          <SheetRange label="庫存統計" range="A25:B29" color="#C0902E" />
+          <SheetRange label="待補貨清單" range="A31:H35" color={painRed} />
+        </div>
+      </div>
+      <div style={{ background: '#fff', border: `1px solid ${cardBorder}`, borderRadius: 22, padding: 28 }}>
+        <div style={{ fontSize: 34, fontWeight: 900, color: partColor.p5 }}>「營收毛利」工作表</div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 16, marginTop: 24 }}>
+          <SheetRange label="篩選遮罩" range="N2:N" color={partColor.p5} />
+          <SheetRange label="年份清單" range="P2:P" color="#6A5FCB" />
+          <SheetRange label="月份清單" range="Q2:Q" color="#6A5FCB" />
+          <SheetRange label="日期清單" range="R2:R" color="#6A5FCB" />
+        </div>
+        <div style={{ marginTop: 34, borderRadius: 16, padding: '22px 24px', background: '#F4F1FB', border: '1px solid #D8D1EE' }}>
+          <div style={{ fontSize: 27, fontWeight: 900, color: partColor.p5 }}>再提供試算表 ID</div>
+          <div style={{ fontSize: 25, color: muted, lineHeight: 1.5, marginTop: 8 }}>
+            Code.gs 才能開啟正確檔案，不必猜工作表名稱或固定位置。
+          </div>
+        </div>
+      </div>
+    </div>
+    <PageFooter />
+  </div>
+);
+
+const Part5BackendFlowSplit: Page = () => (
+  <div style={page}>
+    <div style={{ display: 'flex', gap: 12 }}>
+      <Eyebrow color={partColor.p5}>Apps Script 後端</Eyebrow>
+      <Eyebrow color={taskColor}>拆頁 2／2</Eyebrow>
+    </div>
+    <PageHeading>工作表提供資料，Code.gs 整理後交給網頁</PageHeading>
+    <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: 34, marginTop: 28, flex: 1 }}>
+      <div style={{ overflow: 'hidden', borderRadius: 24, border: `1px solid ${cardBorder}`, background: '#fff' }}>
+        <img src={backendDataMapVisual} alt="試算表、雲端後端與網頁儀表板的資料關係圖" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+      </div>
+      <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 13 }}>
+        <SplitNote color={partColor.p5}>doGet()　開啟網頁</SplitNote>
+        <SplitNote color={partColor.p5}>getFilterOptions()　讀下拉清單</SplitNote>
+        <SplitNote color={partColor.p5}>setFilter()　寫入篩選條件</SplitNote>
+        <SplitNote color={partColor.p5}>getCurrentFilter()　讀目前條件</SplitNote>
+        <SplitNote color={partColor.p5}>getDashboardData()　整理儀表板資料</SplitNote>
+      </div>
+    </div>
+    <PageFooter />
+  </div>
+);
+
+const Part5WriteBackFlowSplit: Page = () => (
+  <div style={page}>
+    <div style={{ display: 'flex', gap: 12 }}>
+      <Eyebrow color={partColor.p5}>網頁寫回試算表</Eyebrow>
+      <Eyebrow color={taskColor}>拆頁 1／2</Eyebrow>
+    </div>
+    <PageHeading>送出表單後，一筆銷售資料如何安全寫回 Excel 結構？</PageHeading>
+    <div style={{ display: 'grid', gridTemplateColumns: '1.25fr 0.75fr', gap: 34, marginTop: 28, flex: 1 }}>
+      <div style={{ overflow: 'hidden', borderRadius: 24, border: `1px solid ${cardBorder}`, background: '#fff' }}>
+        <img src={writebackFlowVisual} alt="網頁表單驗證後寫回試算表並更新儀表板的視覺圖" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+      </div>
+      <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 16 }}>
+        <SplitNote color={partColor.p5}>1　前端蒐集日期、商品、數量、通路</SplitNote>
+        <SplitNote color="#1B84A8">2　後端驗證必填、合法值與資料型別</SplitNote>
+        <SplitNote color="#1E9076">3　在 tbl_銷售新增一列</SplitNote>
+        <SplitNote color="#C0902E">4　公式與儀表板自動更新</SplitNote>
+        <div style={{ fontSize: 27, color: muted, lineHeight: 1.5, marginTop: 8 }}>
+          寫回不是「改畫面」；真正的成功是<b style={{ color: partColor.p5 }}>資料列已進入銷售紀錄</b>。
+        </div>
+      </div>
+    </div>
+    <PageFooter />
+  </div>
+);
+
+const Part5WriteBackFormSplit: Page = () => (
+  <div style={page}>
+    <div style={{ display: 'flex', gap: 12 }}>
+      <Eyebrow color={partColor.p5}>網頁寫回試算表</Eyebrow>
+      <Eyebrow color={taskColor}>拆頁 2／2</Eyebrow>
+    </div>
+    <PageHeading>輸入頁面只讓使用者填必要資料，其餘交給主檔與公式</PageHeading>
+    <div style={{ display: 'grid', gridTemplateColumns: '0.82fr 1.18fr', gap: 42, marginTop: 28, flex: 1 }}>
+      <div style={{ borderRadius: 24, background: '#111827', padding: '26px 30px', boxShadow: '0 16px 38px rgba(20,28,40,0.18)' }}>
+        <div style={{ fontSize: 30, fontWeight: 900, color: '#fff' }}>新增銷售</div>
+        <FormRow label="銷售日期" value="2026/06/30" />
+        <FormRow label="商品" value="酸辣湯（P004）" dropdown />
+        <FormRow label="銷售數量" value="2" />
+        <FormRow label="折扣金額" value="0" />
+        <FormRow label="銷售通路" value="外帶" dropdown />
+        <div style={{ marginTop: 18, height: 54, borderRadius: 12, display: 'grid', placeItems: 'center', color: '#fff', background: partColor.p5, fontSize: 27, fontWeight: 900 }}>
+          送出並更新儀表板
+        </div>
+      </div>
+      <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 22 }}>
+        <CheckTile icon="▼" title="主檔控制選項" desc="商品與通路使用下拉，避免拼字不同造成統計失敗。" color={partColor.p5} />
+        <CheckTile icon="✓" title="後端再次驗證" desc="即使畫面有下拉，Code.gs 仍要檢查必填值與數字範圍。" color="#1E9076" />
+        <CheckTile icon="↻" title="成功後重新讀取" desc="寫入完成後回傳訊息，再更新 KPI、排行與庫存畫面。" color="#C0902E" />
+      </div>
+    </div>
+    <PageFooter />
+  </div>
+);
+
 export const meta: SlideMeta = {
   title: 'AI Excel 課程',
   createdAt: '2026-07-07T13:18:15.886Z',
@@ -7360,23 +8117,28 @@ export default [
   Part1Task9Tools,
   Part1SupplierIntro,
   Part1SupplierTasks,
-  Part1Tools,
   Part1BomSetup,
   Part1BomSampleData,
   Part2Transactions,
+  Part2Purchases,
   Part1SalesSetup,
   Part1SalesSampleData,
   Part1PurchaseSetup,
   Part1PurchaseSampleData,
   Part3Engine,
-  Part3CostSetup,
-  Part3InventorySetup,
-  Part3RevenueSetup,
+  Part3CostGuide,
+  Part3CostTableGuide,
+  Part3InventoryGuide,
+  Part3InventoryTableGuide,
+  Part3RevenueGuide,
+  Part3RevenueTableGuide,
   Part3Style,
-  Part4DashboardSetup,
+  Part4DashboardMaskSplit,
+  Part4DashboardKpiSplit,
   Part4DashboardRanking,
   Part4DashboardInventoryDrill,
-  Part4DashboardGlossary,
+  Part4FunctionsUniqueFilterSplit,
+  Part4FunctionsSortLetSplit,
   Part4DashboardCascade,
   Part6Vba,
   PptxMacroStep1,
@@ -7386,14 +8148,16 @@ export default [
   Part6VbaFirstTryMsgBox,
   Part6VbaFirstTryRange,
   Part6VbaFirstTrySum,
-  PptxDailyReportSpec,
+  PptxDailyReportOnlySplit,
+  PptxPurchaseOrderOnlySplit,
   Part6VbaLazyTry,
   PptxMacroStep5,
   PptxMacroStep6,
   Part6VbaSalesReport,
   Part6VbaPurchaseMessage,
   Part6VbaPurchaseSmart,
-  Part6VbaCloseCheck,
+  Part6CloseCheckOnlySplit,
+  Part6ReorderReminderSplit,
   PptxMacroStep7,
   Part6VbaRibbon,
   PptxRibbonStep1,
@@ -7401,8 +8165,10 @@ export default [
   PptxRibbonStep3,
   PptxRibbonStep4,
   Part7RollupIntro,
-  Part7RollupRead,
-  Part7RollupReports,
+  Part7RollupFlowSplit,
+  Part7RollupErrorsSplit,
+  Part7ReportsDecisionSplit,
+  Part7ReportsControlSplit,
   Part7RollupRecap,
   Part5Cloud,
   Part5FrontBack,
@@ -7414,7 +8180,8 @@ export default [
   Part5ChatGptSheets,
   PptxCloudStep3,
   Part5FixFormulas,
-  Part5BackendMap,
+  Part5BackendRangesSplit,
+  Part5BackendFlowSplit,
   Part5BackendFunctions,
   Part5FrontendLayout,
   Part5FrontendSections,
@@ -7424,7 +8191,8 @@ export default [
   PptxCloudStep6,
   PptxCloudStep7,
   PptxCloudStep8,
-  Part5WriteBack,
+  Part5WriteBackFlowSplit,
+  Part5WriteBackFormSplit,
   Part5Debug,
   Part5AutoEmail,
   Part5VbaVsGas,

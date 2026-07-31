@@ -51,10 +51,54 @@ import revenueMarginGuide from './assets/revenue-margin-guide.png';
 import productCostTableGuide from './assets/product-cost-table-guide.png';
 import inventoryTableGuide from './assets/inventory-table-guide.png';
 import revenueMarginTableGuide from './assets/revenue-margin-table-guide.png';
-import dashboardFilterMaskVisual from './assets/dashboard-filter-mask-visual.png';
 import monthlyRollupVisual from './assets/monthly-rollup-visual.png';
 import backendDataMapVisual from './assets/backend-data-map-visual.png';
 import writebackFlowVisual from './assets/writeback-flow-visual.png';
+import adventure01 from './assets/adventure-01-format-slime.png';
+import adventure02 from './assets/adventure-02-fog-goblin.png';
+import adventure03 from './assets/adventure-03-arithmetic-gargoyle.png';
+import adventure04 from './assets/adventure-04-copy-skeleton.png';
+import adventure05 from './assets/adventure-05-judgement-griffin.png';
+import adventure06 from './assets/adventure-06-stat-troll.png';
+import adventure07 from './assets/adventure-07-mimic.png';
+import adventure08 from './assets/adventure-08-stock-slime.png';
+import adventure09 from './assets/adventure-09-pivot-dragon.png';
+import adventure10 from './assets/adventure-10-data-boss.png';
+import qs01a from './assets/adventure-solutions/step-01_pic1.png';
+import qs01b from './assets/adventure-solutions/step-01_pic2.png';
+import qs02 from './assets/adventure-solutions/step-02_pic1.png';
+import qs03 from './assets/adventure-solutions/step-03_pic1.png';
+import qs04 from './assets/adventure-solutions/step-04_pic1.png';
+import qs05a from './assets/adventure-solutions/step-05_pic1.png';
+import qs05b from './assets/adventure-solutions/step-05_pic2.png';
+import qs06 from './assets/adventure-solutions/step-06_pic1.png';
+import qs07 from './assets/adventure-solutions/step-07_pic1.png';
+import qs08 from './assets/adventure-solutions/step-08_pic1.png';
+import qs09 from './assets/adventure-solutions/step-09_pic1.png';
+import qs10 from './assets/adventure-solutions/step-10_pic1.png';
+import qs11 from './assets/adventure-solutions/step-11_pic1.png';
+import qs12 from './assets/adventure-solutions/step-12_pic1.png';
+import qs13 from './assets/adventure-solutions/step-13_pic1.png';
+import qs14 from './assets/adventure-solutions/step-14_pic1.png';
+import qs15 from './assets/adventure-solutions/step-15_pic1.png';
+import qs16 from './assets/adventure-solutions/step-16_pic1.png';
+import qs17 from './assets/adventure-solutions/step-17_pic1.png';
+import qs18 from './assets/adventure-solutions/step-18_pic1.png';
+import qs19 from './assets/adventure-solutions/step-19_pic1.png';
+import qs20 from './assets/adventure-solutions/step-20_pic1.png';
+import qs21 from './assets/adventure-solutions/step-21_pic1.png';
+import qs22 from './assets/adventure-solutions/step-22_pic1.png';
+import qs23 from './assets/adventure-solutions/step-23_pic1.png';
+import qs24 from './assets/adventure-solutions/step-24_pic1.png';
+import qs25 from './assets/adventure-solutions/step-25_pic1.png';
+import qs26 from './assets/adventure-solutions/step-26_pic1.png';
+import qs27 from './assets/adventure-solutions/step-27_pic1.png';
+import qs28 from './assets/adventure-solutions/step-28_pic1.png';
+import qs29 from './assets/adventure-solutions/step-29_pic1.png';
+import qs30 from './assets/adventure-solutions/step-30_pic1.png';
+import qs31 from './assets/adventure-solutions/step-31_pic1.png';
+import qs32 from './assets/adventure-solutions/step-32_pic1.png';
+import qs33 from './assets/adventure-solutions/step-33_pic1.png';
 
 // ─── Panel-tweakable design tokens ────────────────────────────────────────────
 export const design: DesignSystem = {
@@ -2319,17 +2363,68 @@ const Part1BomSampleData: Page = () => (
     <Steps>
       <Step>
         <div style={{ height: 650, marginTop: 16, display: 'flex', alignItems: 'flex-start', justifyContent: 'center', overflow: 'hidden' }}>
-          <img
-            src={bomSampleDataRules}
-            alt="商品配方BOM範例表，以標註說明BOM編號、主檔ID、原物料配置、公式欄位、每份用量與適用通路規則"
+          <div
             style={{
               width: '100%',
               height: '100%',
-              objectFit: 'contain',
-              objectPosition: 'top center',
-              mixBlendMode: 'multiply',
+              position: 'relative',
             }}
-          />
+          >
+            <img
+              src={bomSampleDataRules}
+              alt="商品配方BOM範例表，以標註說明BOM編號、主檔ID、原物料配置、公式欄位、每份用量與適用通路規則"
+              style={{
+                position: 'absolute',
+                inset: 0,
+                width: '100%',
+                height: '100%',
+                objectFit: 'contain',
+                objectPosition: 'top center',
+                mixBlendMode: 'multiply',
+              }}
+            />
+            <svg
+              viewBox="0 0 1680 941"
+              preserveAspectRatio="xMidYMin meet"
+              aria-hidden="true"
+              style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', pointerEvents: 'none' }}
+            >
+              <rect x="0" y="619" width="1680" height="70" fill="#F7F5F3" />
+
+              <g stroke="#E85A12" strokeWidth="3" fill="none" strokeLinecap="round">
+                <path d="M 561 644 L 561 622" />
+                <path d="M 1018 644 L 1018 622" />
+                <path d="M 1371 644 L 1371 622" />
+              </g>
+              <g fill="#E85A12">
+                <path d="M 554 627 L 561 618 L 568 627 Z" />
+                <path d="M 1011 627 L 1018 618 L 1025 627 Z" />
+                <path d="M 1364 627 L 1371 618 L 1378 627 Z" />
+                <circle cx="561" cy="663" r="18" />
+                <circle cx="1018" cy="663" r="18" />
+                <circle cx="1371" cy="663" r="18" />
+              </g>
+              <g fill="#FFFFFF" fontFamily="Segoe UI, Microsoft JhengHei, sans-serif" fontSize="23" fontWeight="800" textAnchor="middle">
+                <text x="561" y="671">4</text>
+                <text x="1018" y="671">4</text>
+                <text x="1371" y="671">4</text>
+              </g>
+
+              <g stroke="#57218C" strokeWidth="3" fill="none" strokeLinecap="round">
+                <path d="M 1212 644 L 1212 622" />
+              </g>
+              <path d="M 1205 627 L 1212 618 L 1219 627 Z" fill="#57218C" />
+              <circle cx="1212" cy="663" r="18" fill="#57218C" />
+              <text x="1212" y="671" fill="#FFFFFF" fontFamily="Segoe UI, Microsoft JhengHei, sans-serif" fontSize="23" fontWeight="800" textAnchor="middle">5</text>
+
+              <g stroke="#12489A" strokeWidth="3" fill="none" strokeLinecap="round">
+                <path d="M 1541 644 L 1541 622" />
+              </g>
+              <path d="M 1534 627 L 1541 618 L 1548 627 Z" fill="#12489A" />
+              <circle cx="1541" cy="663" r="18" fill="#12489A" />
+              <text x="1541" y="671" fill="#FFFFFF" fontFamily="Segoe UI, Microsoft JhengHei, sans-serif" fontSize="23" fontWeight="800" textAnchor="middle">6</text>
+            </svg>
+          </div>
         </div>
       </Step>
     </Steps>
@@ -2357,90 +2452,12 @@ const Part1SalesSetup: Page = () => (
         依 PROMPT 12 建立
       </span>
     </div>
-    <div style={{ marginTop: 20 }}>
-      <Steps>
-        <Step>
-          <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
-              <span style={{ fontSize: 25, fontWeight: 700, color: muted }}>表格名稱</span>
-              <span
-                style={{
-                  fontSize: 25,
-                  fontWeight: 800,
-                  color: taskColor,
-                  background: `${taskColor}14`,
-                  border: `1px solid ${taskColor}44`,
-                  borderRadius: 8,
-                  padding: '4px 12px',
-                }}
-              >
-                tbl_銷售
-              </span>
-            </div>
-            <div
-              style={{
-                borderRadius: 14,
-                overflow: 'hidden',
-                border: `1px solid ${cardBorder}`,
-                boxShadow: '0 4px 14px rgba(0,0,0,0.06)',
-                display: 'grid',
-                gridTemplateColumns: '1.3fr 0.7fr 1.1fr 0.8fr 0.8fr 0.8fr 0.8fr 0.9fr',
-              }}
-            >
-              <BomHeaderCell label="訂單編號" />
-              <BomHeaderCell label="商品ID" dropdown />
-              <BomHeaderCell label="商品名稱" />
-              <BomHeaderCell label="銷售數量" />
-              <BomHeaderCell label="銷售單價" />
-              <BomHeaderCell label="折扣金額" />
-              <BomHeaderCell label="銷售金額" />
-              <BomHeaderCell label="銷售通路" dropdown />
-
-              <BomCell value="O20260601001" />
-              <BomCell value="P001" />
-              <BomCell value="原味鍋貼" formula />
-              <BomCell value="5" />
-              <BomCell value="60" formula />
-              <BomCell value="0" />
-              <BomCell value="300" formula />
-              <BomCell value="內用" />
-
-              <BomCell value="O20260601002" band />
-              <BomCell value="P002" band />
-              <BomCell value="韓式泡菜鍋貼" formula band />
-              <BomCell value="3" band />
-              <BomCell value="70" formula band />
-              <BomCell value="10" band />
-              <BomCell value="200" formula band />
-              <BomCell value="外帶" band />
-
-              <BomCell value="O20260602001" />
-              <BomCell value="P003" />
-              <BomCell value="玉米濃湯" formula />
-              <BomCell value="8" />
-              <BomCell value="45" formula />
-              <BomCell value="0" />
-              <BomCell value="360" formula />
-              <BomCell value="外送平台" />
-            </div>
-          </div>
-        </Step>
-        <Step>
-          <div style={{ display: 'flex', gap: 32, marginTop: 20 }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-              <span style={{ width: 20, height: 20, borderRadius: 5, background: taskColor, flexShrink: 0 }} />
-              <span style={{ fontSize: 25 }}>▼ 下拉選單——商品ID（僅上架中）／銷售通路</span>
-            </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-              <span style={{ width: 20, height: 20, borderRadius: 5, background: bomBlue, flexShrink: 0 }} />
-              <span style={{ fontSize: 25 }}>公式自動帶出——商品名稱／銷售單價／銷售金額</span>
-            </div>
-          </div>
-        </Step>
-        <Step>
-          <div style={{ fontSize: 25, color: muted, marginTop: 16 }}>完成後請驗證下拉合法、查表無 #N/A、金額公式正確。</div>
-        </Step>
-      </Steps>
+    <div style={{ flex: 1, minHeight: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: 16 }}>
+      <img
+        src={salesRecordFlow}
+        alt="銷售紀錄教學圖：下拉選商品 ID，自動取得名稱與單價，計算每筆銷售金額"
+        style={{ width: '100%', height: '100%', objectFit: 'contain', mixBlendMode: 'multiply' }}
+      />
     </div>
     <PageFooter />
   </div>
@@ -2482,90 +2499,12 @@ const Part1PurchaseSetup: Page = () => (
         依 PROMPT 14 建立
       </span>
     </div>
-    <div style={{ marginTop: 20 }}>
-      <Steps>
-        <Step>
-          <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
-              <span style={{ fontSize: 25, fontWeight: 700, color: muted }}>表格名稱</span>
-              <span
-                style={{
-                  fontSize: 25,
-                  fontWeight: 800,
-                  color: taskColor,
-                  background: `${taskColor}14`,
-                  border: `1px solid ${taskColor}44`,
-                  borderRadius: 8,
-                  padding: '4px 12px',
-                }}
-              >
-                tbl_進貨
-              </span>
-            </div>
-            <div
-              style={{
-                borderRadius: 14,
-                overflow: 'hidden',
-                border: `1px solid ${cardBorder}`,
-                boxShadow: '0 4px 14px rgba(0,0,0,0.06)',
-                display: 'grid',
-                gridTemplateColumns: '1fr 0.8fr 1fr 0.8fr 0.9fr 0.8fr 0.8fr 0.9fr',
-              }}
-            >
-              <BomHeaderCell label="進貨單號" />
-              <BomHeaderCell label="供應商ID" dropdown />
-              <BomHeaderCell label="供應商名稱" />
-              <BomHeaderCell label="物料ID" dropdown />
-              <BomHeaderCell label="物料名稱" />
-              <BomHeaderCell label="進貨數量" />
-              <BomHeaderCell label="進貨金額" />
-              <BomHeaderCell label="入庫狀態" dropdown />
-
-              <BomCell value="PO001" />
-              <BomCell value="S001" />
-              <BomCell value="麵皮行" formula />
-              <BomCell value="M001" />
-              <BomCell value="麵皮" formula />
-              <BomCell value="50" />
-              <BomCell value="1500" formula />
-              <BomCell value="已入庫" />
-
-              <BomCell value="PO002" band />
-              <BomCell value="S002" band />
-              <BomCell value="肉品商" formula band />
-              <BomCell value="M002" band />
-              <BomCell value="豬絞肉" formula band />
-              <BomCell value="30" band />
-              <BomCell value="4500" formula band />
-              <BomCell value="已入庫" band />
-
-              <BomCell value="PO003" />
-              <BomCell value="S003" />
-              <BomCell value="蔬果行" formula />
-              <BomCell value="M003" />
-              <BomCell value="高麗菜" formula />
-              <BomCell value="20" />
-              <BomCell value="600" formula />
-              <BomCell value="待入庫" />
-            </div>
-          </div>
-        </Step>
-        <Step>
-          <div style={{ display: 'flex', gap: 32, marginTop: 20 }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-              <span style={{ width: 20, height: 20, borderRadius: 5, background: taskColor, flexShrink: 0 }} />
-              <span style={{ fontSize: 25 }}>▼ 下拉選單——供應商ID／物料ID（僅啟用）／入庫狀態</span>
-            </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-              <span style={{ width: 20, height: 20, borderRadius: 5, background: bomBlue, flexShrink: 0 }} />
-              <span style={{ fontSize: 25 }}>公式自動帶出——供應商名稱／物料名稱／進貨金額</span>
-            </div>
-          </div>
-        </Step>
-        <Step>
-          <div style={{ fontSize: 25, color: muted, marginTop: 16 }}>完成後請驗證：下拉合法、查表無 #N/A、進貨金額公式正確。</div>
-        </Step>
-      </Steps>
+    <div style={{ flex: 1, minHeight: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: 16 }}>
+      <img
+        src={purchaseRecordFlow}
+        alt="進貨紀錄教學圖：選擇供應商與物料，自動帶出名稱、計算進貨金額並追蹤入庫"
+        style={{ width: '100%', height: '100%', objectFit: 'contain', mixBlendMode: 'multiply' }}
+      />
     </div>
     <PageFooter />
   </div>
@@ -2752,46 +2691,386 @@ const Part2Purchases: Page = () => (
 );
 
 // ─── Page 7 — Part 3a：動態陣列計算表 ─────────────────────────────────────────
-const Part3Engine: Page = () => (
+const SpillReportCard = ({ title, result, color }: { title: string; result: string; color: string }) => (
+  <div
+    style={{
+      minHeight: 108,
+      borderRadius: 16,
+      border: `1px solid ${color}55`,
+      borderLeft: `8px solid ${color}`,
+      background: '#FFFFFF',
+      padding: '18px 22px',
+      boxShadow: '0 7px 18px rgba(28,35,31,0.07)',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      gap: 18,
+    }}
+  >
+    <div>
+      <div style={{ fontSize: 29, fontWeight: 900 }}>{title}</div>
+      <div style={{ fontSize: 23, color: muted, marginTop: 4 }}>{result}</div>
+    </div>
+    <div style={{ minWidth: 72, height: 48, borderRadius: 999, background: `${color}18`, color, fontSize: 24, fontWeight: 900, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      ＋1 列
+    </div>
+  </div>
+);
+
+const Part3EngineLegacy: Page = () => (
   <div style={page}>
     <Eyebrow color={partColor.p3}>PART 3 · 成本與利潤</Eyebrow>
-    <PageHeading>三張「只溢出、不手 key」的計算表</PageHeading>
-    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 32, marginTop: 48 }}>
-      <Steps>
-        <Step>
-          <FeatureCard color={partColor.p3} title="商品成本" subtitle="內用／外帶分開算">
-            <Tag>BOM × 進貨成本</Tag>
-            <Tag>毛利率</Tag>
-          </FeatureCard>
-        </Step>
-        <Step>
-          <FeatureCard color={partColor.p3} title="庫存管理" subtitle="期初＋進貨－銷售消耗">
-            <Tag>目前庫存</Tag>
-            <Tag>缺料 / 低於安全庫存</Tag>
-          </FeatureCard>
-        </Step>
-        <Step>
-          <FeatureCard color={partColor.p3} title="營收毛利" subtitle="每筆銷售的毛利與毛利率">
-            <Tag>毛利率</Tag>
-            <Tag>年／月／日篩選清單</Tag>
-          </FeatureCard>
-        </Step>
-      </Steps>
+    <PageHeading>為什麼用「#」？資料新增，計算表自動長大</PageHeading>
+    <p style={{ fontSize: 29, color: muted, margin: '12px 0 0' }}>
+      公式只寫在第一格；結果會向下展開，其他公式再用 <b style={{ color: partColor.p3 }}>A2#</b> 取得整段結果。
+    </p>
+    <div style={{ display: 'grid', gridTemplateColumns: '390px 58px 560px 58px 1fr', alignItems: 'center', gap: 12, marginTop: 24, flex: 1, minHeight: 0 }}>
+      <div style={{ borderRadius: 22, border: `1px solid ${cardBorder}`, background: '#FFFFFF', overflow: 'hidden', boxShadow: '0 10px 28px rgba(28,35,31,0.08)' }}>
+        <div style={{ height: 58, background: '#1F6F43', color: '#FFFFFF', fontSize: 26, fontWeight: 900, display: 'flex', alignItems: 'center', padding: '0 20px' }}>
+          銷售紀錄
+        </div>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 0.8fr', background: '#EAF1F7', color: '#40566A', fontSize: 23, fontWeight: 800, padding: '12px 18px' }}>
+          <span>商品ID</span><span>銷售數量</span>
+        </div>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 0.8fr', padding: '13px 18px', fontSize: 25, borderTop: '1px solid #DDE3E7' }}><span>P001</span><span>11</span></div>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 0.8fr', padding: '13px 18px', fontSize: 25, borderTop: '1px solid #DDE3E7', background: '#F6F8F8' }}><span>P002</span><span>3</span></div>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 0.8fr', padding: '13px 18px', fontSize: 25, borderTop: '1px solid #DDE3E7' }}><span>P003</span><span>6</span></div>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 0.8fr', padding: '13px 18px', fontSize: 25, fontWeight: 900, color: '#1F7A4B', background: '#E3F3E9', borderTop: '2px solid #7ABB91' }}>
+          <span>＋ P004</span><span>4</span>
+        </div>
+        <div style={{ padding: '16px 20px', fontSize: 25, color: '#1F7A4B', fontWeight: 900, borderTop: '1px solid #C4E0CE' }}>
+          新增一筆銷售
+        </div>
+      </div>
+
+      <div style={{ fontSize: 50, color: partColor.p3, textAlign: 'center' }}>→</div>
+
+      <div style={{ borderRadius: 22, border: `2px solid ${partColor.p3}66`, background: '#F5FBFD', padding: 22, boxShadow: '0 12px 30px rgba(27,132,168,0.10)' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+          <div style={{ fontSize: 29, fontWeight: 900, color: partColor.p3 }}>① A2 先產生清單</div>
+          <div style={{ fontSize: 23, color: partColor.p3, background: '#E0F2F7', borderRadius: 999, padding: '6px 14px', fontWeight: 900 }}>產生溢出</div>
+        </div>
+        <div style={{ marginTop: 14, borderRadius: 12, background: '#FFFFFF', border: `2px solid ${partColor.p3}`, padding: '12px 15px', fontFamily: 'monospace', fontSize: 24, fontWeight: 800, color: '#D92D20' }}>
+          =UNIQUE(tbl_銷售[商品ID])
+        </div>
+        <div style={{ marginTop: 12, display: 'grid', gridTemplateColumns: '82px 1fr' }}>
+          <div style={{ background: '#EAF1F7', border: '1px solid #C9D5DE', padding: 10, textAlign: 'center', fontSize: 22, fontWeight: 900 }}>A2</div>
+          <div style={{ background: '#DDF2E5', border: '2px solid #4C9A69', padding: 10, fontSize: 24, fontWeight: 900 }}>P001</div>
+          <div style={{ background: '#F4F6F6', border: '1px solid #D7DFE1', padding: 10, textAlign: 'center', fontSize: 22 }}>A3</div>
+          <div style={{ background: '#EAF6EF', border: '1px dashed #79B28C', padding: 10, fontSize: 24 }}>P002</div>
+          <div style={{ background: '#F4F6F6', border: '1px solid #D7DFE1', padding: 10, textAlign: 'center', fontSize: 22 }}>A4</div>
+          <div style={{ background: '#EAF6EF', border: '1px dashed #79B28C', padding: 10, fontSize: 24 }}>P003</div>
+          <div style={{ background: '#F4F6F6', border: '1px solid #D7DFE1', padding: 10, textAlign: 'center', fontSize: 22 }}>A5</div>
+          <div style={{ background: '#EAF6EF', border: '1px dashed #79B28C', padding: 10, fontSize: 24, fontWeight: 900, color: '#1F7A4B' }}>P004　← 自動新增</div>
+        </div>
+        <div style={{ marginTop: 13, borderRadius: 12, background: '#FFF4F1', border: '2px solid #D92D20', padding: '11px 15px' }}>
+          <div style={{ fontSize: 22, fontWeight: 900, color: '#A84235' }}>② 其他地方引用整段結果</div>
+          <div style={{ marginTop: 4, fontFamily: 'monospace', fontSize: 32, fontWeight: 900, color: '#D92D20' }}>
+            =A2<span style={{ fontSize: 38 }}>#</span>
+          </div>
+          <div style={{ fontSize: 22, color: muted }}>
+            「#」不是產生清單，而是一次抓住 A2 向下溢出的所有儲存格。
+          </div>
+        </div>
+      </div>
+
+      <div style={{ fontSize: 50, color: partColor.p3, textAlign: 'center' }}>→</div>
+
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+        <div style={{ fontSize: 27, fontWeight: 900, color: muted, marginBottom: 2 }}>三張計算表同步更新</div>
+        <SpillReportCard title="商品成本" result="用 A2# 取得整段商品清單" color={partColor.p3} />
+        <SpillReportCard title="庫存管理" result="引用 A2#，自動增加計算列" color="#1E9076" />
+        <SpillReportCard title="營收毛利" result="引用溢出結果，自動算毛利" color="#C0902E" />
+      </div>
     </div>
-    <div style={{ marginTop: 40 }}>
-      <Steps>
-        <Step>
-          <Callout color={partColor.p3}>
-            全部用「#」動態陣列溢出——新增一筆銷售，三張報表自動跟著長，不用手動複製公式。
-          </Callout>
-        </Step>
-      </Steps>
+    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, marginTop: 20 }}>
+      <div style={{ borderRadius: 16, padding: '18px 24px', background: '#FCEFEB', border: '1px solid #EDB9AB', fontSize: 26 }}>
+        <b style={{ color: '#B5502E' }}>手動複製公式：</b>新增資料後還要往下貼，容易漏掉或貼錯列。
+      </div>
+      <div style={{ borderRadius: 16, padding: '18px 24px', background: '#EAF6EF', border: '1px solid #A9D8BB', fontSize: 26 }}>
+        <b style={{ color: '#1F7A4B' }}># 溢出公式：</b>來源資料一增加，結果範圍與三張計算表自動延伸。
+      </div>
     </div>
     <PageFooter />
   </div>
 );
 
 // ─── Page 7a — 十、新增「商品成本」計算表 ─────────────────────────────────────
+const Part3EngineHashSimple: Page = () => (
+  <div style={page}>
+    <Eyebrow color={partColor.p3}>PART 3 · 成本與利潤</Eyebrow>
+    <PageHeading>沒有「#」拿一格；加上「#」拿整串</PageHeading>
+    <p style={{ fontSize: 31, color: muted, margin: '12px 0 0' }}>
+      把 <b style={{ color: partColor.p3 }}>A2</b> 想成這串資料的起點。
+    </p>
+
+    <div style={{ display: 'grid', gridTemplateColumns: '500px 1fr 1fr', gap: 30, marginTop: 30, flex: 1, minHeight: 0 }}>
+      <div style={{ borderRadius: 24, border: `1px solid ${cardBorder}`, background: '#FFFFFF', overflow: 'hidden', boxShadow: '0 12px 30px rgba(28,35,31,0.08)' }}>
+        <div style={{ height: 62, background: '#1F4E78', color: '#FFFFFF', display: 'grid', gridTemplateColumns: '110px 1fr', alignItems: 'center', padding: '0 26px', fontSize: 27, fontWeight: 900 }}>
+          <span>儲存格</span><span>商品ID</span>
+        </div>
+        <div style={{ padding: 18, background: '#F7F9FA' }}>
+          <div style={{ border: '4px solid #42A565', borderRadius: 16, overflow: 'hidden', boxShadow: '0 0 0 7px rgba(66,165,101,0.10)' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: '110px 1fr', background: '#DDF2E5', fontSize: 29, fontWeight: 900 }}>
+              <div style={{ padding: '16px 18px', borderRight: '1px solid #B9D9C4' }}>A2</div>
+              <div style={{ padding: '16px 22px' }}>P001</div>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: '110px 1fr', background: '#FFFFFF', borderTop: '1px solid #DCE4E7', fontSize: 29 }}>
+              <div style={{ padding: '16px 18px', borderRight: '1px solid #DCE4E7', color: muted }}>A3</div>
+              <div style={{ padding: '16px 22px' }}>P002</div>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: '110px 1fr', background: '#F5F7F8', borderTop: '1px solid #DCE4E7', fontSize: 29 }}>
+              <div style={{ padding: '16px 18px', borderRight: '1px solid #DCE4E7', color: muted }}>A4</div>
+              <div style={{ padding: '16px 22px' }}>P003</div>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: '110px 1fr', background: '#FFFFFF', borderTop: '1px solid #DCE4E7', fontSize: 29 }}>
+              <div style={{ padding: '16px 18px', borderRight: '1px solid #DCE4E7', color: muted }}>A5</div>
+              <div style={{ padding: '16px 22px' }}>P004</div>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: '110px 1fr', background: '#FFF3D6', borderTop: '2px solid #E6B64E', fontSize: 29, fontWeight: 900, color: '#9A6700' }}>
+              <div style={{ padding: '16px 18px', borderRight: '1px solid #E6C778' }}>A6</div>
+              <div style={{ padding: '16px 22px' }}>＋ P005</div>
+            </div>
+          </div>
+          <div style={{ marginTop: 20, borderRadius: 14, background: '#EAF6EF', color: '#1F7A4B', padding: '14px 18px', textAlign: 'center', fontSize: 27, fontWeight: 900 }}>
+            A2 開始的整串資料
+          </div>
+        </div>
+      </div>
+
+      <div style={{ borderRadius: 24, border: '2px solid #E0AAA0', background: '#FFF8F6', padding: 28, boxShadow: '0 12px 30px rgba(164,74,57,0.08)', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <div style={{ borderRadius: 999, background: '#F5DED8', color: '#A84235', padding: '8px 22px', fontSize: 27, fontWeight: 900 }}>
+          沒有 #
+        </div>
+        <div style={{ marginTop: 24, borderRadius: 16, background: '#FFFFFF', border: '2px solid #D67F6D', padding: '15px 34px', fontFamily: 'monospace', fontSize: 42, fontWeight: 900, color: '#D92D20' }}>
+          =A2
+        </div>
+        <div style={{ margin: '24px 0 18px', fontSize: 48, color: '#C16E5D' }}>↓</div>
+        <div style={{ width: '76%', border: '4px solid #D67F6D', background: '#FFFFFF', padding: '20px 24px', textAlign: 'center', fontSize: 34, fontWeight: 900 }}>
+          P001
+        </div>
+        <div style={{ marginTop: 28, fontSize: 32, fontWeight: 900, color: '#A84235' }}>只拿第一格</div>
+      </div>
+
+      <div style={{ borderRadius: 24, border: '3px solid #4C9A69', background: '#F3FBF6', padding: 28, boxShadow: '0 14px 34px rgba(45,126,76,0.12)', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <div style={{ borderRadius: 999, background: '#DDF2E5', color: '#1F7A4B', padding: '8px 22px', fontSize: 27, fontWeight: 900 }}>
+          加上 #
+        </div>
+        <div style={{ marginTop: 18, borderRadius: 16, background: '#FFFFFF', border: '3px solid #4C9A69', padding: '12px 34px', fontFamily: 'monospace', fontSize: 42, fontWeight: 900, color: '#D92D20' }}>
+          =A2#
+        </div>
+        <div style={{ margin: '10px 0 8px', fontSize: 42, color: '#378554' }}>↓</div>
+        <div style={{ width: '76%', border: '4px solid #4C9A69', background: '#FFFFFF', overflow: 'hidden', textAlign: 'center', fontSize: 25, fontWeight: 800 }}>
+          <div style={{ padding: 5 }}>P001</div>
+          <div style={{ padding: 5, borderTop: '1px solid #CDE4D5', background: '#F5FAF7' }}>P002</div>
+          <div style={{ padding: 5, borderTop: '1px solid #CDE4D5' }}>P003</div>
+          <div style={{ padding: 5, borderTop: '1px solid #CDE4D5', background: '#F5FAF7' }}>P004</div>
+          <div style={{ padding: 5, borderTop: '2px solid #E6B64E', background: '#FFF3D6', color: '#9A6700' }}>P005</div>
+        </div>
+        <div style={{ marginTop: 10, fontSize: 28, fontWeight: 900, color: '#1F7A4B' }}>整串一起拿走</div>
+      </div>
+    </div>
+
+    <div style={{ marginTop: 24, borderRadius: 18, padding: '18px 30px', background: '#173B2B', color: '#FFFFFF', textAlign: 'center', fontSize: 34, fontWeight: 900, letterSpacing: 1 }}>
+      記憶口訣：沒有 # 拿一格；有 # 拿整串。
+    </div>
+    <PageFooter />
+  </div>
+);
+
+const Part3Engine: Page = () => (
+  <div style={page}>
+    <Eyebrow color={partColor.p3}>PART 3 · 成本與利潤</Eyebrow>
+    <PageHeading>溢出公式是什麼？輸入一次，自動填滿整欄</PageHeading>
+    <p style={{ fontSize: 29, color: muted, margin: '10px 0 0' }}>
+      公式會抓出來源表「指定欄位的所有資料」，並從第一格往下展開。
+    </p>
+
+    <div style={{ display: 'grid', gridTemplateColumns: '1fr 430px', gap: 28, marginTop: 24, flex: 1, minHeight: 0 }}>
+      <div style={{ borderRadius: 22, border: `1px solid ${cardBorder}`, background: '#FFFFFF', padding: 20, boxShadow: '0 12px 30px rgba(28,35,31,0.08)' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '150px 1fr 1fr 1.14fr', gap: 10, marginBottom: 14 }}>
+          <div />
+          <div style={{ borderRadius: 12, background: '#EAF3FF', border: '1px solid #98BDEB', padding: '10px 12px', color: '#1859A8', fontSize: 20, fontWeight: 900, textAlign: 'center' }}>
+            E2：=tbl_原物料[期初庫存]
+          </div>
+          <div style={{ borderRadius: 12, background: '#EAF3FF', border: '1px solid #98BDEB', padding: '10px 12px', color: '#1859A8', fontSize: 20, fontWeight: 900, textAlign: 'center' }}>{''}</div>
+          <div style={{ borderRadius: 12, background: '#EAF3FF', border: '1px solid #98BDEB', padding: '10px 12px', color: '#1859A8', fontSize: 20, fontWeight: 900, textAlign: 'center' }}>{''}</div>
+        </div>
+
+        <div style={{ display: 'grid', gridTemplateColumns: '100px 54px 1fr', alignItems: 'center', border: '1px solid #BFC9D0', background: '#F4F6F7', height: 58, marginBottom: 12 }}>
+          <div style={{ height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRight: '1px solid #BFC9D0', background: '#FFFFFF', fontSize: 24, fontWeight: 900 }}>E4</div>
+          <div style={{ fontSize: 25, fontStyle: 'italic', color: '#52626D', textAlign: 'center' }}>fx</div>
+          <div style={{ color: '#98A2AA', fontFamily: 'monospace', fontSize: 25, fontWeight: 800 }}>
+            =tbl_原物料[期初庫存]
+          </div>
+        </div>
+
+        <div style={{ display: 'grid', gridTemplateColumns: '150px 1fr 1fr 1.14fr', position: 'relative' }}>
+          <div style={{ background: '#1F4E78', color: '#FFFFFF', padding: '14px 16px', fontSize: 24, fontWeight: 900, borderRight: '1px solid #FFFFFF' }}>物料ID</div>
+          <div style={{ background: '#1F4E78', color: '#FFFFFF', padding: '14px 12px', fontSize: 24, fontWeight: 900, textAlign: 'center', borderRight: '1px solid #FFFFFF' }}>期初庫存</div>
+          <div style={{ background: '#1F4E78', color: '#FFFFFF', padding: '14px 12px', fontSize: 24, fontWeight: 900, textAlign: 'center', borderRight: '1px solid #FFFFFF' }}>累積進貨</div>
+          <div style={{ background: '#1F4E78', color: '#FFFFFF', padding: '14px 12px', fontSize: 24, fontWeight: 900, textAlign: 'center' }}>累積消耗量</div>
+
+          <div style={{ background: '#FFFFFF', padding: '14px 16px', fontSize: 25, border: '1px solid #D7DFE3' }}>M001</div>
+          <div style={{ background: '#E8F2FF', padding: '14px 12px', fontSize: 25, fontWeight: 900, textAlign: 'right', border: '4px solid #3B82D0', borderBottom: '1px solid #B8D2F0' }}>100</div>
+          <div style={{ background: '#FFFFFF', padding: '14px 12px', fontSize: 25, textAlign: 'right', border: '1px solid #D7DFE3' }}>300</div>
+          <div style={{ background: '#FFFFFF', padding: '14px 12px', fontSize: 25, textAlign: 'right', border: '1px solid #D7DFE3' }}>220</div>
+
+          <div style={{ background: '#F6F8F9', padding: '14px 16px', fontSize: 25, border: '1px solid #D7DFE3' }}>M002</div>
+          <div style={{ background: '#F3F8FF', padding: '14px 12px', fontSize: 25, textAlign: 'right', borderLeft: '4px solid #3B82D0', borderRight: '4px solid #3B82D0', borderBottom: '1px solid #B8D2F0' }}>20,000</div>
+          <div style={{ background: '#F6F8F9', padding: '14px 12px', fontSize: 25, textAlign: 'right', border: '1px solid #D7DFE3' }}>4,500</div>
+          <div style={{ background: '#F6F8F9', padding: '14px 12px', fontSize: 25, textAlign: 'right', border: '1px solid #D7DFE3' }}>18,000</div>
+
+          <div style={{ background: '#FFFFFF', padding: '14px 16px', fontSize: 25, border: '1px solid #D7DFE3' }}>M003</div>
+          <div style={{ background: '#DCEBFF', padding: '14px 12px', fontSize: 25, fontWeight: 900, textAlign: 'right', border: '4px solid #165EAF' }}>40</div>
+          <div style={{ background: '#FFFFFF', padding: '14px 12px', fontSize: 25, textAlign: 'right', border: '1px solid #D7DFE3' }}>120</div>
+          <div style={{ background: '#FFFFFF', padding: '14px 12px', fontSize: 25, textAlign: 'right', border: '1px solid #D7DFE3' }}>95</div>
+
+          <div style={{ background: '#F6F8F9', padding: '14px 16px', fontSize: 25, border: '1px solid #D7DFE3' }}>M004</div>
+          <div style={{ background: '#F3F8FF', padding: '14px 12px', fontSize: 25, textAlign: 'right', borderLeft: '4px solid #3B82D0', borderRight: '4px solid #3B82D0', borderTop: '1px solid #B8D2F0', borderBottom: '1px solid #B8D2F0' }}>30</div>
+          <div style={{ background: '#F6F8F9', padding: '14px 12px', fontSize: 25, textAlign: 'right', border: '1px solid #D7DFE3' }}>60</div>
+          <div style={{ background: '#F6F8F9', padding: '14px 12px', fontSize: 25, textAlign: 'right', border: '1px solid #D7DFE3' }}>42</div>
+
+          <div style={{ background: '#FFFFFF', padding: '14px 16px', fontSize: 25, border: '1px solid #D7DFE3' }}>M005</div>
+          <div style={{ background: '#F3F8FF', padding: '14px 12px', fontSize: 25, textAlign: 'right', borderLeft: '4px solid #3B82D0', borderRight: '4px solid #3B82D0', borderBottom: '4px solid #3B82D0' }}>500</div>
+          <div style={{ background: '#FFFFFF', padding: '14px 12px', fontSize: 25, textAlign: 'right', border: '1px solid #D7DFE3' }}>0</div>
+          <div style={{ background: '#FFFFFF', padding: '14px 12px', fontSize: 25, textAlign: 'right', border: '1px solid #D7DFE3' }}>620</div>
+        </div>
+        <div style={{ marginTop: 14, display: 'flex', gap: 12, alignItems: 'center', fontSize: 24, color: '#1859A8', fontWeight: 900 }}>
+          <span style={{ width: 28, height: 28, border: '4px solid #3B82D0', background: '#E8F2FF', display: 'inline-block' }} />
+          藍色浮框＝這一整段都是同一個溢出結果
+        </div>
+      </div>
+
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+        <div style={{ borderRadius: 18, background: '#EEF5FF', border: '1px solid #AFC9EA', padding: '15px 20px' }}>
+          <div style={{ fontSize: 24, fontWeight: 900, color: '#1859A8' }}>① 第一格輸入公式</div>
+          <div style={{ marginTop: 5, fontSize: 23, lineHeight: 1.4 }}>E2、F2、G2 各輸入一次。</div>
+        </div>
+        <div style={{ borderRadius: 18, background: '#FFF5E5', border: '1px solid #E8C77F', padding: '15px 20px' }}>
+          <div style={{ fontSize: 24, fontWeight: 900, color: '#9A6700' }}>② 下面由 Excel 管理</div>
+          <div style={{ marginTop: 5, fontSize: 23, lineHeight: 1.4 }}>
+            自動顯示數字；點任一格會看到藍框與灰色公式，不能單獨修改。
+          </div>
+        </div>
+        <div style={{ borderRadius: 18, background: '#EAF6EF', border: '2px solid #76B98E', padding: '16px 20px' }}>
+          <div style={{ fontSize: 24, fontWeight: 900, color: '#1F7A4B' }}>③ 來源表新增資料</div>
+          <div style={{ marginTop: 5, fontSize: 23, lineHeight: 1.4 }}>
+            這一串結果會自動變長，不用重新複製公式。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style={{ marginTop: 20, borderRadius: 18, padding: '17px 28px', background: '#173B2B', color: '#FFFFFF', textAlign: 'center', fontSize: 31, fontWeight: 900 }}>
+      一句話記住：第一格放公式，下面整串由 Excel 自動管理。
+    </div>
+    <PageFooter />
+  </div>
+);
+
+const Part3SpillHash: Page = () => (
+  <div style={page}>
+    <Eyebrow color={partColor.p3}>PART 3 · 成本與利潤</Eyebrow>
+    <PageHeading>「#」的作用：讓目前庫存一次算完整欄</PageHeading>
+    <p style={{ fontSize: 29, color: muted, margin: '10px 0 0' }}>
+      沒有 # 只讀一格；加上 # 就會讀取「從這格開始的整段溢出資料」。
+    </p>
+
+    <div style={{ display: 'grid', gridTemplateColumns: '610px 1fr', gap: 28, marginTop: 24, flex: 1, minHeight: 0 }}>
+      <div style={{ borderRadius: 22, border: '2px solid #E0AAA0', background: '#FFF8F6', padding: 24, boxShadow: '0 12px 30px rgba(164,74,57,0.08)' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+          <div style={{ fontSize: 30, fontWeight: 900, color: '#A84235' }}>沒有 #：只算這一列</div>
+          <div style={{ borderRadius: 999, background: '#F5DED8', color: '#A84235', padding: '7px 17px', fontSize: 22, fontWeight: 900 }}>單格計算</div>
+        </div>
+        <div style={{ marginTop: 18, borderRadius: 14, background: '#FFFFFF', border: '2px solid #D67F6D', padding: '15px 20px', fontFamily: 'monospace', fontSize: 31, fontWeight: 900, color: '#D92D20', textAlign: 'center' }}>
+          =E2+F2-G2
+        </div>
+
+        <div style={{ marginTop: 22, display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr', border: '1px solid #D7DFE3' }}>
+          <div style={{ background: '#1F4E78', color: '#FFFFFF', padding: '12px 8px', fontSize: 21, fontWeight: 900, textAlign: 'center' }}>期初庫存</div>
+          <div style={{ background: '#1F4E78', color: '#FFFFFF', padding: '12px 8px', fontSize: 21, fontWeight: 900, textAlign: 'center', borderLeft: '1px solid #FFFFFF' }}>累計進貨</div>
+          <div style={{ background: '#1F4E78', color: '#FFFFFF', padding: '12px 8px', fontSize: 21, fontWeight: 900, textAlign: 'center', borderLeft: '1px solid #FFFFFF' }}>銷售消耗量</div>
+          <div style={{ background: '#1F6F43', color: '#FFFFFF', padding: '12px 8px', fontSize: 21, fontWeight: 900, textAlign: 'center', borderLeft: '1px solid #FFFFFF' }}>目前庫存</div>
+
+          <div style={{ background: '#FFFFFF', padding: '15px 8px', fontSize: 26, textAlign: 'center' }}>100</div>
+          <div style={{ background: '#FFFFFF', padding: '15px 8px', fontSize: 26, textAlign: 'center', borderLeft: '1px solid #D7DFE3' }}>300</div>
+          <div style={{ background: '#FFFFFF', padding: '15px 8px', fontSize: 26, textAlign: 'center', borderLeft: '1px solid #D7DFE3' }}>220</div>
+          <div style={{ background: '#EAF6EF', padding: '15px 8px', fontSize: 28, fontWeight: 900, textAlign: 'center', borderLeft: '1px solid #A9D8BB' }}>180</div>
+
+          <div style={{ gridColumn: '1 / 4', background: '#F4F6F7', padding: '15px 14px', fontSize: 24, color: muted, borderTop: '1px solid #D7DFE3' }}>下一列資料……</div>
+          <div style={{ background: '#FFFFFF', padding: '15px 8px', fontSize: 28, fontWeight: 900, textAlign: 'center', color: '#B5502E', borderTop: '1px solid #D7DFE3', borderLeft: '1px solid #D7DFE3' }}>空白</div>
+          <div style={{ gridColumn: '1 / 4', background: '#FFFFFF', padding: '15px 14px', fontSize: 24, color: muted, borderTop: '1px solid #D7DFE3' }}>新增一列資料……</div>
+          <div style={{ background: '#FFFFFF', padding: '15px 8px', fontSize: 28, fontWeight: 900, textAlign: 'center', color: '#B5502E', borderTop: '1px solid #D7DFE3', borderLeft: '1px solid #D7DFE3' }}>空白</div>
+        </div>
+
+        <div style={{ marginTop: 22, borderRadius: 14, background: '#F5DED8', color: '#A84235', padding: '15px 18px', textAlign: 'center', fontSize: 26, fontWeight: 900 }}>
+          還要下拉公式，下面才會計算
+        </div>
+      </div>
+
+      <div style={{ borderRadius: 22, border: '3px solid #4C9A69', background: '#F3FBF6', padding: 24, boxShadow: '0 14px 34px rgba(45,126,76,0.12)' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+          <div style={{ fontSize: 30, fontWeight: 900, color: '#1F7A4B' }}>加上 #：整欄逐列計算</div>
+          <div style={{ borderRadius: 999, background: '#DDF2E5', color: '#1F7A4B', padding: '7px 17px', fontSize: 22, fontWeight: 900 }}>自動延伸</div>
+        </div>
+        <div style={{ marginTop: 18, borderRadius: 14, background: '#FFFFFF', border: '3px solid #4C9A69', padding: '14px 20px', fontFamily: 'monospace', fontSize: 31, fontWeight: 900, color: '#D92D20', textAlign: 'center' }}>
+          =E2#+F2#-G2#
+        </div>
+
+        <div style={{ marginTop: 18, display: 'grid', gridTemplateColumns: '0.8fr 1fr 1fr 1fr 1fr', border: '1px solid #BFD7C7' }}>
+          <div style={{ background: '#1F4E78', color: '#FFFFFF', padding: '10px 8px', fontSize: 20, fontWeight: 900, textAlign: 'center' }}>物料ID</div>
+          <div style={{ background: '#1F4E78', color: '#FFFFFF', padding: '10px 8px', fontSize: 20, fontWeight: 900, textAlign: 'center', borderLeft: '1px solid #FFFFFF' }}>期初庫存</div>
+          <div style={{ background: '#1F4E78', color: '#FFFFFF', padding: '10px 8px', fontSize: 20, fontWeight: 900, textAlign: 'center', borderLeft: '1px solid #FFFFFF' }}>累計進貨</div>
+          <div style={{ background: '#1F4E78', color: '#FFFFFF', padding: '10px 8px', fontSize: 20, fontWeight: 900, textAlign: 'center', borderLeft: '1px solid #FFFFFF' }}>銷售消耗量</div>
+          <div style={{ background: '#1F6F43', color: '#FFFFFF', padding: '10px 8px', fontSize: 20, fontWeight: 900, textAlign: 'center', borderLeft: '1px solid #FFFFFF' }}>目前庫存</div>
+
+          <div style={{ padding: '10px 8px', fontSize: 22, background: '#FFFFFF' }}>M001</div>
+          <div style={{ padding: '10px 8px', fontSize: 22, textAlign: 'right', background: '#FFFFFF' }}>100</div>
+          <div style={{ padding: '10px 8px', fontSize: 22, textAlign: 'right', background: '#FFFFFF' }}>300</div>
+          <div style={{ padding: '10px 8px', fontSize: 22, textAlign: 'right', background: '#FFFFFF' }}>220</div>
+          <div style={{ padding: '10px 8px', fontSize: 23, fontWeight: 900, textAlign: 'right', background: '#EAF6EF' }}>180</div>
+
+          <div style={{ padding: '10px 8px', fontSize: 22, background: '#F6F8F9', borderTop: '1px solid #D7DFE3' }}>M002</div>
+          <div style={{ padding: '10px 8px', fontSize: 22, textAlign: 'right', background: '#F6F8F9', borderTop: '1px solid #D7DFE3' }}>20,000</div>
+          <div style={{ padding: '10px 8px', fontSize: 22, textAlign: 'right', background: '#F6F8F9', borderTop: '1px solid #D7DFE3' }}>4,500</div>
+          <div style={{ padding: '10px 8px', fontSize: 22, textAlign: 'right', background: '#F6F8F9', borderTop: '1px solid #D7DFE3' }}>18,000</div>
+          <div style={{ padding: '10px 8px', fontSize: 23, fontWeight: 900, textAlign: 'right', background: '#E3F3E9', borderTop: '1px solid #BFD7C7' }}>6,500</div>
+
+          <div style={{ padding: '10px 8px', fontSize: 22, background: '#FFFFFF', borderTop: '1px solid #D7DFE3' }}>M003</div>
+          <div style={{ padding: '10px 8px', fontSize: 22, textAlign: 'right', background: '#FFFFFF', borderTop: '1px solid #D7DFE3' }}>40</div>
+          <div style={{ padding: '10px 8px', fontSize: 22, textAlign: 'right', background: '#FFFFFF', borderTop: '1px solid #D7DFE3' }}>120</div>
+          <div style={{ padding: '10px 8px', fontSize: 22, textAlign: 'right', background: '#FFFFFF', borderTop: '1px solid #D7DFE3' }}>95</div>
+          <div style={{ padding: '10px 8px', fontSize: 23, fontWeight: 900, textAlign: 'right', background: '#EAF6EF', borderTop: '1px solid #BFD7C7' }}>65</div>
+
+          <div style={{ padding: '10px 8px', fontSize: 22, background: '#F6F8F9', borderTop: '1px solid #D7DFE3' }}>M005</div>
+          <div style={{ padding: '10px 8px', fontSize: 22, textAlign: 'right', background: '#F6F8F9', borderTop: '1px solid #D7DFE3' }}>500</div>
+          <div style={{ padding: '10px 8px', fontSize: 22, textAlign: 'right', background: '#F6F8F9', borderTop: '1px solid #D7DFE3' }}>0</div>
+          <div style={{ padding: '10px 8px', fontSize: 22, textAlign: 'right', background: '#F6F8F9', borderTop: '1px solid #D7DFE3' }}>620</div>
+          <div style={{ padding: '10px 8px', fontSize: 23, fontWeight: 900, textAlign: 'right', color: '#B5502E', background: '#FFF0EC', borderTop: '1px solid #EDB9AB' }}>-120</div>
+
+          <div style={{ padding: '10px 8px', fontSize: 22, fontWeight: 900, color: '#9A6700', background: '#FFF3D6', borderTop: '2px solid #E6B64E' }}>＋ M006</div>
+          <div style={{ padding: '10px 8px', fontSize: 22, textAlign: 'right', fontWeight: 900, color: '#9A6700', background: '#FFF3D6', borderTop: '2px solid #E6B64E' }}>200</div>
+          <div style={{ padding: '10px 8px', fontSize: 22, textAlign: 'right', fontWeight: 900, color: '#9A6700', background: '#FFF3D6', borderTop: '2px solid #E6B64E' }}>80</div>
+          <div style={{ padding: '10px 8px', fontSize: 22, textAlign: 'right', fontWeight: 900, color: '#9A6700', background: '#FFF3D6', borderTop: '2px solid #E6B64E' }}>50</div>
+          <div style={{ padding: '10px 8px', fontSize: 23, textAlign: 'right', fontWeight: 900, color: '#1F7A4B', background: '#DDF2E5', borderTop: '2px solid #E6B64E' }}>230</div>
+        </div>
+
+        <div style={{ marginTop: 16, borderRadius: 14, background: '#DDF2E5', color: '#1F7A4B', padding: '13px 18px', textAlign: 'center', fontSize: 25, fontWeight: 900 }}>
+          新增 M006，結果 230 自動出現，不用下拉公式
+        </div>
+      </div>
+    </div>
+
+    <div style={{ marginTop: 20, display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 14 }}>
+      <div style={{ borderRadius: 14, background: '#EAF3FF', padding: '14px 18px', fontSize: 23, textAlign: 'center' }}><b style={{ color: '#1859A8' }}>E2#</b>＝整段期初庫存</div>
+      <div style={{ borderRadius: 14, background: '#EAF3FF', padding: '14px 18px', fontSize: 23, textAlign: 'center' }}><b style={{ color: '#1859A8' }}>F2#</b>＝整段累計進貨</div>
+      <div style={{ borderRadius: 14, background: '#EAF3FF', padding: '14px 18px', fontSize: 23, textAlign: 'center' }}><b style={{ color: '#1859A8' }}>G2#</b>＝整段銷售消耗量</div>
+    </div>
+    <PageFooter />
+  </div>
+);
+
 const Part3CostSetup: Page = () => (
   <div style={page}>
     <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.19-20</Eyebrow>
@@ -3290,55 +3569,185 @@ const Part3RevenueTableGuide: Page = () => (
   </div>
 );
 
-// ─── Page 8 — Part 3b：格式與治理規範 ─────────────────────────────────────────
-const Part3Style: Page = () => (
+// ─── Page 8 — Part 3b：格式規則 ───────────────────────────────────────────────
+const FormatExampleRow = ({
+  icon,
+  label,
+  example,
+  note,
+  accent,
+  underline,
+}: {
+  icon: string;
+  label: string;
+  example: React.ReactNode;
+  note: string;
+  accent: string;
+  underline?: boolean;
+}) => (
+  <div
+    style={{
+      minHeight: 92,
+      display: 'grid',
+      gridTemplateColumns: '74px 280px 390px 1fr',
+      alignItems: 'center',
+      borderTop: '1px solid #DCE3EA',
+      background: '#FFFFFF',
+    }}
+  >
+    <div
+      style={{
+        width: 48,
+        height: 48,
+        marginLeft: 14,
+        borderRadius: 14,
+        background: `${accent}18`,
+        color: accent,
+        fontSize: 27,
+        fontWeight: 900,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
+    >
+      {icon}
+    </div>
+    <div style={{ fontSize: 30, fontWeight: 800 }}>{label}</div>
+    <div
+      style={{
+        width: 340,
+        minHeight: 56,
+        padding: '8px 18px',
+        border: '2px solid #9FB6CC',
+        background: '#F8FBFD',
+        fontSize: 31,
+        fontWeight: 700,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        textDecoration: underline ? 'underline' : undefined,
+        textUnderlineOffset: underline ? 5 : undefined,
+      }}
+    >
+      {example}
+    </div>
+    <div style={{ fontSize: 28, color: muted }}>{note}</div>
+  </div>
+);
+
+const Part3FormatRules: Page = () => (
   <div style={page}>
     <Eyebrow color={partColor.p3}>PART 3 · 成本與利潤</Eyebrow>
-    <PageHeading>讓報表一眼就懂：格式與顏色的規則</PageHeading>
+    <PageHeading>格式規則：同一種資料，就用同一種樣子</PageHeading>
     <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginTop: 12 }}>
-      <div style={{ fontSize: 31, fontWeight: 800, color: taskColor }}>任務 24：讓 AI 幫你把表格套用醒目格式與顏色</div>
-      <span
-        style={{
-          fontSize: 25,
-          fontWeight: 800,
-          color: taskColor,
-          background: `${taskColor}14`,
-          borderRadius: 999,
-          padding: '5px 14px',
-        }}
-      >
+      <div style={{ fontSize: 31, fontWeight: 800, color: taskColor }}>任務 24：讓 AI 套用一致的儲存格格式</div>
+      <span style={{ fontSize: 25, fontWeight: 800, color: taskColor, background: `${taskColor}14`, borderRadius: 999, padding: '5px 14px' }}>
         依 PROMPT 19 建立
       </span>
     </div>
-    <p style={{ fontSize: 30, color: muted, margin: '10px 0 0' }}>
-      格式一致，才看得出重點；顏色一致，才不會找錯頁籤。
+    <p style={{ fontSize: 29, color: muted, margin: '10px 0 18px' }}>
+      不必讀公式，光看儲存格的樣子，就知道它是選項、計算結果、金額、日期或比例。
     </p>
-    <div style={{ display: 'flex', gap: 64, marginTop: 18 }}>
-      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 12 }}>
-        <div style={{ fontSize: 32, fontWeight: 800 }}>格式規則</div>
-        <Steps>
-          <Step>
-            <RuleLine label="下拉儲存格" value={<span style={{ textDecoration: 'underline' }}>加上字型底線</span>} />
-          </Step>
-          <Step>
-            <RuleLine
-              label="公式儲存格"
-              value={<span style={{ color: bomBlue, fontWeight: 700 }}>套用字型色彩 #3072C2</span>}
-            />
-          </Step>
-          <Step><RuleLine label="金額儲存格" value="貨幣格式（整數，如 $1,234）" /></Step>
-          <Step><RuleLine label="日期儲存格" value="日期格式（YYYY/MM/DD）" /></Step>
-          <Step><RuleLine label="毛利率儲存格" value="百分比格式（如 65%）" /></Step>
-        </Steps>
+    <div style={{ border: '1px solid #D7DEE5', borderRadius: 18, overflow: 'hidden', boxShadow: '0 12px 32px rgba(32,52,68,0.08)' }}>
+      <div style={{ height: 54, background: '#1F6F43', color: '#FFFFFF', display: 'flex', alignItems: 'center', padding: '0 24px', gap: 12 }}>
+        <span style={{ width: 13, height: 13, borderRadius: '50%', background: '#FFCC66' }} />
+        <span style={{ width: 13, height: 13, borderRadius: '50%', background: '#E7F0EA' }} />
+        <span style={{ fontSize: 25, fontWeight: 800, marginLeft: 10 }}>格式規則預覽.xlsx</span>
       </div>
-      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 12 }}>
-        <div style={{ fontSize: 32, fontWeight: 800 }}>頁籤順序與顏色</div>
-        <Steps>
-          <Step><Badge color="#9AA0A6" label="① 設定（流程架構／設定選單）" /></Step>
-          <Step><Badge color={partColor.p4} label="② 主檔（商品／供應商／原物料／BOM）" /></Step>
-          <Step><Badge color={partColor.p2} label="③ 交易（銷售／進貨）" /></Step>
-          <Step><Badge color="#D08A34" label="④ 計算（商品成本／庫存／營收毛利）" /></Step>
-        </Steps>
+      <div style={{ display: 'grid', gridTemplateColumns: '74px 280px 390px 1fr', alignItems: 'center', minHeight: 54, background: '#EAF1F7', color: '#3C5266', fontSize: 25, fontWeight: 800 }}>
+        <div />
+        <div>資料類型</div>
+        <div>Excel 顯示</div>
+        <div>看懂規則</div>
+      </div>
+      <FormatExampleRow icon="▼" label="下拉儲存格" example={<><span>外帶</span><span style={{ color: '#70777E' }}>▼</span></>} note="加上字型底線" accent="#5E7A2F" underline />
+      <FormatExampleRow icon="fx" label="公式儲存格" example={<span style={{ color: bomBlue }}>=D9*F9</span>} note="字型色彩 #3072C2" accent={bomBlue} />
+      <FormatExampleRow icon="$" label="金額儲存格" example="$1,234" note="貨幣格式、整數" accent="#C58A24" />
+      <FormatExampleRow icon="日" label="日期儲存格" example="2026/06/05" note="YYYY/MM/DD" accent="#4D7B91" />
+      <FormatExampleRow icon="%" label="毛利率儲存格" example="65%" note="百分比格式" accent="#A44A69" />
+    </div>
+    <PageFooter />
+  </div>
+);
+
+const TabGroupLabel = ({ n, title, detail, color }: { n: string; title: string; detail: string; color: string }) => (
+  <div style={{ flex: 1, minWidth: 0, borderTop: `8px solid ${color}`, background: '#FFFFFF', borderRadius: 14, padding: '18px 20px', boxShadow: '0 8px 22px rgba(32,52,68,0.07)' }}>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+      <div style={{ width: 42, height: 42, borderRadius: '50%', background: color, color: '#FFFFFF', fontSize: 25, fontWeight: 900, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>{n}</div>
+      <div style={{ fontSize: 31, fontWeight: 900 }}>{title}</div>
+    </div>
+    <div style={{ fontSize: 24, color: muted, marginTop: 10, lineHeight: 1.4 }}>{detail}</div>
+  </div>
+);
+
+const SheetTab = ({ label, color }: { label: string; color: string }) => (
+  <div
+    style={{
+      height: 58,
+      padding: '0 18px',
+      borderRadius: '12px 12px 0 0',
+      border: '1px solid #D9DDD8',
+      borderBottom: `7px solid ${color}`,
+      background: '#FFFFFF',
+      fontSize: 22,
+      fontWeight: 800,
+      whiteSpace: 'nowrap',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+    }}
+  >
+    {label}
+  </div>
+);
+
+const Part3TabOrder: Page = () => (
+  <div style={page}>
+    <Eyebrow color={partColor.p3}>PART 3 · 成本與利潤</Eyebrow>
+    <PageHeading>頁籤順序與顏色：先分類，再固定位置</PageHeading>
+    <div style={{ fontSize: 31, fontWeight: 800, color: taskColor, marginTop: 12 }}>任務 24：讓 AI 整理工作表頁籤</div>
+    <p style={{ fontSize: 29, color: muted, margin: '10px 0 22px' }}>
+      開檔後由左到右閱讀：先設定、再查主檔、接著輸入交易，最後看計算結果。
+    </p>
+    <div style={{ display: 'flex', alignItems: 'stretch', gap: 16 }}>
+      <TabGroupLabel n="1" title="設定" detail="流程架構／設定選單" color="#9AA0A6" />
+      <div style={{ fontSize: 42, color: '#B8B9B5', display: 'flex', alignItems: 'center' }}>›</div>
+      <TabGroupLabel n="2" title="主檔" detail="商品／供應商／原物料／BOM" color={partColor.p4} />
+      <div style={{ fontSize: 42, color: '#B8B9B5', display: 'flex', alignItems: 'center' }}>›</div>
+      <TabGroupLabel n="3" title="交易" detail="銷售／進貨" color={partColor.p2} />
+      <div style={{ fontSize: 42, color: '#B8B9B5', display: 'flex', alignItems: 'center' }}>›</div>
+      <TabGroupLabel n="4" title="計算" detail="商品成本／庫存／營收毛利" color="#D08A34" />
+    </div>
+    <div style={{ marginTop: 30, border: '1px solid #D7DEE5', borderRadius: 18, overflow: 'hidden', background: '#FFFFFF', boxShadow: '0 12px 32px rgba(32,52,68,0.08)' }}>
+      <div style={{ height: 64, background: '#1F6F43', color: '#FFFFFF', display: 'flex', alignItems: 'center', padding: '0 24px', fontSize: 26, fontWeight: 800 }}>
+        AI Excel 課程－營業用表格
+      </div>
+      <div
+        style={{
+          height: 210,
+          backgroundImage: 'linear-gradient(#E5EBEE 1px, transparent 1px), linear-gradient(90deg, #E5EBEE 1px, transparent 1px)',
+          backgroundSize: '82px 42px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <div style={{ background: '#FFFFFFE8', border: '1px solid #DCE2E5', borderRadius: 14, padding: '18px 28px', fontSize: 29, fontWeight: 800, color: '#486156' }}>
+          顏色看分類，位置看流程
+        </div>
+      </div>
+      <div style={{ minHeight: 128, padding: '22px 20px 0', background: '#F2F3F0', display: 'flex', gap: 6, alignItems: 'flex-end', overflow: 'hidden' }}>
+        <SheetTab label="流程架構" color="#9AA0A6" />
+        <SheetTab label="設定選單" color="#9AA0A6" />
+        <SheetTab label="商品主檔" color={partColor.p4} />
+        <SheetTab label="供應商主檔" color={partColor.p4} />
+        <SheetTab label="原物料主檔" color={partColor.p4} />
+        <SheetTab label="商品配方BOM" color={partColor.p4} />
+        <SheetTab label="銷售紀錄" color={partColor.p2} />
+        <SheetTab label="進貨紀錄" color={partColor.p2} />
+        <SheetTab label="商品成本" color="#D08A34" />
+        <SheetTab label="庫存管理" color="#D08A34" />
+        <SheetTab label="營收毛利" color="#D08A34" />
       </div>
     </div>
     <PageFooter />
@@ -7588,12 +7997,58 @@ const FormRow = ({ label, value, dropdown }: { label: string; value: string; dro
   </div>
 );
 
+const MaskEvidenceRow = ({
+  date,
+  order,
+  channel,
+  mask,
+  shade,
+}: {
+  date: string;
+  order: string;
+  channel: string;
+  mask: '0' | '1';
+  shade?: boolean;
+}) => (
+  <div
+    style={{
+      minHeight: 62,
+      display: 'grid',
+      gridTemplateColumns: '230px 320px 90px 220px 120px',
+      alignItems: 'center',
+      background: mask === '1' ? (shade ? '#EAF6EF' : '#F5FBF7') : shade ? '#F3F5F6' : '#FFFFFF',
+      borderTop: '1px solid #DDE3E7',
+      fontSize: 27,
+      color: '#2D69B2',
+    }}
+  >
+    <div style={{ paddingLeft: 20 }}>{date}</div>
+    <div>{order}</div>
+    <div style={{ textAlign: 'center', color: '#98A1A8', fontSize: 32 }}>⋯</div>
+    <div>{channel}</div>
+    <div
+      style={{
+        justifySelf: 'center',
+        width: 48,
+        height: 42,
+        borderRadius: 10,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        fontWeight: 900,
+        color: mask === '1' ? '#1F7A4B' : '#6E7268',
+        background: mask === '1' ? '#DDF2E5' : '#ECEFEE',
+        border: `1px solid ${mask === '1' ? '#9DD0AE' : '#CCD1CF'}`,
+      }}
+    >
+      {mask}
+    </div>
+  </div>
+);
+
 const Part4DashboardMaskSplit: Page = () => (
   <div style={page}>
-    <div style={{ display: 'flex', gap: 12 }}>
-      <Eyebrow color={partColor.p4}>PART 4 · 儀表板</Eyebrow>
-      <Eyebrow color={taskColor}>拆頁 1／2</Eyebrow>
-    </div>
+    <Eyebrow color={partColor.p4}>PART 4 · 儀表板</Eyebrow>
     <PageHeading>先看懂「篩選遮罩」：每一筆銷售只會得到 1 或 0</PageHeading>
     <div style={{ display: 'grid', gridTemplateColumns: '1.18fr 0.82fr', gap: 34, marginTop: 26, flex: 1, minHeight: 0 }}>
       <div
@@ -7605,23 +8060,65 @@ const Part4DashboardMaskSplit: Page = () => (
           boxShadow: '0 10px 30px rgba(30,50,40,0.07)',
         }}
       >
-        <img src={dashboardFilterMaskVisual} alt="年月日篩選、遮罩與儀表板更新的視覺圖" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+        <div
+          style={{
+            minHeight: 76,
+            padding: '0 24px',
+            background: '#F2F6F8',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            borderBottom: '1px solid #D7E0E5',
+          }}
+        >
+          <div style={{ fontSize: 27, fontWeight: 900, color: '#1F4E78' }}>營收毛利｜實際表格</div>
+          <div style={{ fontSize: 25, fontWeight: 900, color: '#1F7A4B', background: '#E3F3E9', border: '1px solid #A9D8BB', borderRadius: 999, padding: '8px 18px' }}>
+            目前篩選：年份＝2026
+          </div>
+        </div>
+        <div
+          style={{
+            minHeight: 58,
+            display: 'grid',
+            gridTemplateColumns: '230px 320px 90px 220px 120px',
+            alignItems: 'center',
+            background: '#1F4E78',
+            color: '#FFFFFF',
+            fontSize: 25,
+            fontWeight: 900,
+          }}
+        >
+          <div style={{ paddingLeft: 20 }}>銷售日期</div>
+          <div>訂單編號</div>
+          <div style={{ textAlign: 'center' }}>⋯</div>
+          <div>銷售通路</div>
+          <div style={{ textAlign: 'center' }}>篩選遮罩</div>
+        </div>
+        <MaskEvidenceRow date="2024/02/15" order="O20240215001" channel="內用" mask="0" />
+        <MaskEvidenceRow date="2024/11/28" order="O20241128001" channel="內用" mask="0" shade />
+        <MaskEvidenceRow date="2025/03/22" order="O20250322001" channel="內用" mask="0" />
+        <MaskEvidenceRow date="2025/10/03" order="O20251003001" channel="外帶" mask="0" shade />
+        <MaskEvidenceRow date="2026/01/20" order="O20260120001" channel="內用" mask="1" />
+        <MaskEvidenceRow date="2026/06/02" order="O20260602002" channel="內用" mask="1" shade />
+        <MaskEvidenceRow date="2026/06/15" order="O20260615001" channel="外送平台" mask="1" />
       </div>
       <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 18 }}>
-        <SplitNote color={partColor.p4}>① 儀表板 B3:B5 選年、月、日</SplitNote>
-        <SplitNote color={partColor.p4}>② 營收毛利 N 欄逐筆判斷</SplitNote>
+        <SplitNote color={partColor.p4}>① 儀表板選擇「2026 年」</SplitNote>
+        <SplitNote color={partColor.p4}>② N 欄逐筆比較銷售日期</SplitNote>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginTop: 4 }}>
           <div style={{ borderRadius: 18, padding: '24px', background: '#EAF6EF', border: '1px solid #A9D8BB' }}>
             <div style={{ fontSize: 58, fontWeight: 900, color: '#1F7A4B' }}>1</div>
-            <div style={{ fontSize: 27, fontWeight: 800 }}>符合目前篩選</div>
+            <div style={{ fontSize: 27, fontWeight: 800 }}>2026 年</div>
+            <div style={{ fontSize: 23, color: muted, marginTop: 4 }}>納入報表</div>
           </div>
           <div style={{ borderRadius: 18, padding: '24px', background: '#F0F1EE', border: `1px solid ${cardBorder}` }}>
             <div style={{ fontSize: 58, fontWeight: 900, color: muted }}>0</div>
-            <div style={{ fontSize: 27, fontWeight: 800 }}>不納入這次計算</div>
+            <div style={{ fontSize: 27, fontWeight: 800 }}>其他年份</div>
+            <div style={{ fontSize: 23, color: muted, marginTop: 4 }}>暫時排除</div>
           </div>
         </div>
         <div style={{ fontSize: 27, color: muted, lineHeight: 1.5, marginTop: 8 }}>
-          重點不是背公式，而是知道：<b style={{ color: partColor.p4 }}>遮罩像一排開關</b>，只讓符合條件的銷售資料進入統計。
+          中間的商品、數量與金額欄先用「⋯」省略；這一頁只看<b style={{ color: partColor.p4 }}>日期如何決定遮罩是 1 還是 0</b>。
         </div>
       </div>
     </div>
@@ -7631,10 +8128,7 @@ const Part4DashboardMaskSplit: Page = () => (
 
 const Part4DashboardKpiSplit: Page = () => (
   <div style={page}>
-    <div style={{ display: 'flex', gap: 12 }}>
-      <Eyebrow color={partColor.p4}>PART 4 · 儀表板</Eyebrow>
-      <Eyebrow color={taskColor}>拆頁 2／2</Eyebrow>
-    </div>
+    <Eyebrow color={partColor.p4}>PART 4 · 儀表板</Eyebrow>
     <PageHeading>遮罩套進公式後，六個 KPI 會一起更新</PageHeading>
     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 22, marginTop: 34 }}>
       <MetricBox label="營業額" value="NT$16,050" formula="SUMPRODUCT（遮罩 × 銷售金額）" color={partColor.p4} />
@@ -7654,10 +8148,7 @@ const Part4DashboardKpiSplit: Page = () => (
 
 const Part4FunctionsUniqueFilterSplit: Page = () => (
   <div style={page}>
-    <div style={{ display: 'flex', gap: 12 }}>
-      <Eyebrow color={partColor.p4}>公式名詞快速理解</Eyebrow>
-      <Eyebrow color={taskColor}>拆頁 1／2</Eyebrow>
-    </div>
+    <Eyebrow color={partColor.p4}>公式名詞快速理解</Eyebrow>
     <PageHeading>UNIQUE 找名單，FILTER 挑出符合條件的資料</PageHeading>
     <div style={{ display: 'flex', gap: 28, marginTop: 34 }}>
       <FunctionPanel
@@ -7709,10 +8200,7 @@ const Part4FunctionsUniqueFilterSplit: Page = () => (
 
 const Part4FunctionsSortLetSplit: Page = () => (
   <div style={page}>
-    <div style={{ display: 'flex', gap: 12 }}>
-      <Eyebrow color={partColor.p4}>公式名詞快速理解</Eyebrow>
-      <Eyebrow color={taskColor}>拆頁 2／2</Eyebrow>
-    </div>
+    <Eyebrow color={partColor.p4}>公式名詞快速理解</Eyebrow>
     <PageHeading>SORTBY 負責排名，LET 把複雜步驟取名字</PageHeading>
     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 30, marginTop: 34 }}>
       <div style={{ background: '#fff', border: `1px solid ${cardBorder}`, borderRadius: 22, padding: 30 }}>
@@ -7750,10 +8238,7 @@ const Part4FunctionsSortLetSplit: Page = () => (
 
 const PptxDailyReportOnlySplit: Page = () => (
   <div style={page}>
-    <div style={{ display: 'flex', gap: 12 }}>
-      <Eyebrow color={refColor}>銷售日報規格</Eyebrow>
-      <Eyebrow color={taskColor}>拆頁 1／2</Eyebrow>
-    </div>
+    <Eyebrow color={refColor}>銷售日報規格</Eyebrow>
     <PageHeading>銷售日報：一天的營運結果要能快速看懂</PageHeading>
     <div style={{ display: 'grid', gridTemplateColumns: '1.35fr 0.65fr', gap: 32, marginTop: 26, flex: 1 }}>
       <div style={{ display: 'grid', placeItems: 'center', background: '#fff', border: `1px solid ${cardBorder}`, borderRadius: 22, padding: 20 }}>
@@ -7770,10 +8255,7 @@ const PptxDailyReportOnlySplit: Page = () => (
 
 const PptxPurchaseOrderOnlySplit: Page = () => (
   <div style={page}>
-    <div style={{ display: 'flex', gap: 12 }}>
-      <Eyebrow color={refColor}>叫貨單規格</Eyebrow>
-      <Eyebrow color={taskColor}>拆頁 2／2</Eyebrow>
-    </div>
+    <Eyebrow color={refColor}>叫貨單規格</Eyebrow>
     <PageHeading>叫貨單：只列需要補貨的品項，依供應商整理</PageHeading>
     <div style={{ display: 'grid', gridTemplateColumns: '0.7fr 1.3fr', gap: 34, marginTop: 32, flex: 1 }}>
       <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 18 }}>
@@ -7791,10 +8273,7 @@ const PptxPurchaseOrderOnlySplit: Page = () => (
 
 const Part6CloseCheckOnlySplit: Page = () => (
   <div style={page}>
-    <div style={{ display: 'flex', gap: 12 }}>
-      <Eyebrow color={partColor.p6}>VBA · 關檔前防呆</Eyebrow>
-      <Eyebrow color={taskColor}>拆頁 1／2</Eyebrow>
-    </div>
+    <Eyebrow color={partColor.p6}>VBA · 關檔前防呆</Eyebrow>
     <PageHeading>先擋下錯誤資料，再允許關閉檔案</PageHeading>
     <div style={{ display: 'flex', gap: 22, marginTop: 40 }}>
       <CheckTile icon="ID" title="商品 ID" desc="不可空白，而且必須存在於商品主檔。" color={partColor.p6} />
@@ -7828,10 +8307,7 @@ const Part6CloseCheckOnlySplit: Page = () => (
 
 const Part6ReorderReminderSplit: Page = () => (
   <div style={page}>
-    <div style={{ display: 'flex', gap: 12 }}>
-      <Eyebrow color={partColor.p6}>VBA · 待補貨提醒</Eyebrow>
-      <Eyebrow color={taskColor}>拆頁 2／2</Eyebrow>
-    </div>
+    <Eyebrow color={partColor.p6}>VBA · 待補貨提醒</Eyebrow>
     <PageHeading>銷售資料檢查完成後，再提醒真正缺料的三個品項</PageHeading>
     <div style={{ marginTop: 30 }}>
       <StockAlertRow id="M001" name="麵皮" current="-1,170" safe="500" reorder="1,500" supplier="北區麵皮行" />
@@ -7854,10 +8330,7 @@ const Part6ReorderReminderSplit: Page = () => (
 
 const Part7RollupFlowSplit: Page = () => (
   <div style={page}>
-    <div style={{ display: 'flex', gap: 12 }}>
-      <Eyebrow color={partColor.p7}>跨檔案彙總</Eyebrow>
-      <Eyebrow color={taskColor}>拆頁 1／2</Eyebrow>
-    </div>
+    <Eyebrow color={partColor.p7}>跨檔案彙總</Eyebrow>
     <PageHeading>月報不是把檔案疊起來，而是逐份讀取、檢查、再彙總</PageHeading>
     <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: 34, marginTop: 28, flex: 1 }}>
       <div style={{ overflow: 'hidden', borderRadius: 24, border: `1px solid ${cardBorder}`, background: '#fff' }}>
@@ -7877,10 +8350,7 @@ const Part7RollupFlowSplit: Page = () => (
 
 const Part7RollupErrorsSplit: Page = () => (
   <div style={page}>
-    <div style={{ display: 'flex', gap: 12 }}>
-      <Eyebrow color={partColor.p7}>跨檔案彙總</Eyebrow>
-      <Eyebrow color={taskColor}>拆頁 2／2</Eyebrow>
-    </div>
+    <Eyebrow color={partColor.p7}>跨檔案彙總</Eyebrow>
     <PageHeading>遇到異常時，不是全部停掉：分成跳過、警告與缺漏</PageHeading>
     <div style={{ display: 'flex', gap: 24, marginTop: 38 }}>
       <BranchPanel
@@ -7927,10 +8397,7 @@ const Part7RollupErrorsSplit: Page = () => (
 
 const Part7ReportsDecisionSplit: Page = () => (
   <div style={page}>
-    <div style={{ display: 'flex', gap: 12 }}>
-      <Eyebrow color={partColor.p7}>七張營業月報</Eyebrow>
-      <Eyebrow color={taskColor}>拆頁 1／2</Eyebrow>
-    </div>
+    <Eyebrow color={partColor.p7}>七張營業月報</Eyebrow>
     <PageHeading>前四張先回答老闆最常問的營運問題</PageHeading>
     <div style={{ display: 'flex', gap: 20, marginTop: 34 }}>
       <ReportSheet no="1" title="月報摘要" subtitle="KPI 總覽" color={partColor.p7} visual={<MiniKpiIcon color={partColor.p7} />} />
@@ -7951,10 +8418,7 @@ const Part7ReportsDecisionSplit: Page = () => (
 
 const Part7ReportsControlSplit: Page = () => (
   <div style={page}>
-    <div style={{ display: 'flex', gap: 12 }}>
-      <Eyebrow color={partColor.p7}>七張營業月報</Eyebrow>
-      <Eyebrow color={taskColor}>拆頁 2／2</Eyebrow>
-    </div>
+    <Eyebrow color={partColor.p7}>七張營業月報</Eyebrow>
     <PageHeading>後三張負責追原因、查明細與確認資料品質</PageHeading>
     <div style={{ display: 'flex', gap: 24, marginTop: 36 }}>
       <ReportSheet no="5" title="毛利分析" subtitle="低於 20% 標紅" color={painRed} visual={<MiniBarLineIcon color={painRed} />} />
@@ -7972,10 +8436,7 @@ const Part7ReportsControlSplit: Page = () => (
 
 const Part5BackendRangesSplit: Page = () => (
   <div style={page}>
-    <div style={{ display: 'flex', gap: 12 }}>
-      <Eyebrow color={partColor.p5}>Apps Script 後端</Eyebrow>
-      <Eyebrow color={taskColor}>拆頁 1／2</Eyebrow>
-    </div>
+    <Eyebrow color={partColor.p5}>Apps Script 後端</Eyebrow>
     <PageHeading>先把工作表位置對齊：後端才知道去哪裡讀資料</PageHeading>
     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 30, marginTop: 32 }}>
       <div style={{ background: '#fff', border: `1px solid ${cardBorder}`, borderRadius: 22, padding: 28 }}>
@@ -8011,10 +8472,7 @@ const Part5BackendRangesSplit: Page = () => (
 
 const Part5BackendFlowSplit: Page = () => (
   <div style={page}>
-    <div style={{ display: 'flex', gap: 12 }}>
-      <Eyebrow color={partColor.p5}>Apps Script 後端</Eyebrow>
-      <Eyebrow color={taskColor}>拆頁 2／2</Eyebrow>
-    </div>
+    <Eyebrow color={partColor.p5}>Apps Script 後端</Eyebrow>
     <PageHeading>工作表提供資料，Code.gs 整理後交給網頁</PageHeading>
     <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: 34, marginTop: 28, flex: 1 }}>
       <div style={{ overflow: 'hidden', borderRadius: 24, border: `1px solid ${cardBorder}`, background: '#fff' }}>
@@ -8034,10 +8492,7 @@ const Part5BackendFlowSplit: Page = () => (
 
 const Part5WriteBackFlowSplit: Page = () => (
   <div style={page}>
-    <div style={{ display: 'flex', gap: 12 }}>
-      <Eyebrow color={partColor.p5}>網頁寫回試算表</Eyebrow>
-      <Eyebrow color={taskColor}>拆頁 1／2</Eyebrow>
-    </div>
+    <Eyebrow color={partColor.p5}>網頁寫回試算表</Eyebrow>
     <PageHeading>送出表單後，一筆銷售資料如何安全寫回 Excel 結構？</PageHeading>
     <div style={{ display: 'grid', gridTemplateColumns: '1.25fr 0.75fr', gap: 34, marginTop: 28, flex: 1 }}>
       <div style={{ overflow: 'hidden', borderRadius: 24, border: `1px solid ${cardBorder}`, background: '#fff' }}>
@@ -8059,10 +8514,7 @@ const Part5WriteBackFlowSplit: Page = () => (
 
 const Part5WriteBackFormSplit: Page = () => (
   <div style={page}>
-    <div style={{ display: 'flex', gap: 12 }}>
-      <Eyebrow color={partColor.p5}>網頁寫回試算表</Eyebrow>
-      <Eyebrow color={taskColor}>拆頁 2／2</Eyebrow>
-    </div>
+    <Eyebrow color={partColor.p5}>網頁寫回試算表</Eyebrow>
     <PageHeading>輸入頁面只讓使用者填必要資料，其餘交給主檔與公式</PageHeading>
     <div style={{ display: 'grid', gridTemplateColumns: '0.82fr 1.18fr', gap: 42, marginTop: 28, flex: 1 }}>
       <div style={{ borderRadius: 24, background: '#111827', padding: '26px 30px', boxShadow: '0 16px 38px rgba(20,28,40,0.18)' }}>
@@ -8091,16 +8543,1039 @@ export const meta: SlideMeta = {
   createdAt: '2026-07-07T13:18:15.886Z',
 };
 
+const AdventureQuestCard = ({
+  num,
+  src,
+  name,
+  skill,
+  color,
+}: {
+  num: string;
+  src: string;
+  name: string;
+  skill: string;
+  color: string;
+}) => (
+  <div
+    style={{
+      height: 236,
+      borderRadius: 20,
+      background: '#fff',
+      border: `1px solid ${cardBorder}`,
+      boxShadow: '0 8px 20px rgba(28,35,31,0.08)',
+      overflow: 'hidden',
+      position: 'relative',
+      display: 'flex',
+      flexDirection: 'column',
+    }}
+  >
+    <div style={{ height: 148, overflow: 'hidden', background: `${color}10`, position: 'relative' }}>
+      <img
+        src={src}
+        style={{
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+          objectPosition: 'center 88%',
+          display: 'block',
+        }}
+      />
+      <div
+        style={{
+          position: 'absolute',
+          top: 10,
+          left: 12,
+          width: 42,
+          height: 42,
+          borderRadius: 14,
+          display: 'grid',
+          placeItems: 'center',
+          background: color,
+          color: '#fff',
+          fontSize: 24,
+          fontWeight: 900,
+          boxShadow: '0 4px 10px rgba(0,0,0,0.14)',
+        }}
+      >
+        {num}
+      </div>
+    </div>
+    <div style={{ padding: '12px 16px 14px', display: 'flex', flexDirection: 'column', gap: 3 }}>
+      <div style={{ fontSize: 27, lineHeight: 1.15, fontWeight: 900, color }}>{name}</div>
+      <div style={{ fontSize: 22, lineHeight: 1.25, color: muted }}>{skill}</div>
+    </div>
+  </div>
+);
+
+const AdventureSectionTitle: Page = () => (
+  <div
+    style={{
+      ...page,
+      justifyContent: 'center',
+      background: 'linear-gradient(135deg, #FBF8F1 0%, #F5F1FA 54%, #EEF5F1 100%)',
+      overflow: 'hidden',
+    }}
+  >
+    <GridTexture />
+    <div style={{ position: 'absolute', width: 760, height: 760, borderRadius: '50%', background: 'rgba(96,66,148,0.08)', right: -150, top: -210 }} />
+    <div style={{ position: 'absolute', width: 480, height: 480, borderRadius: '50%', background: 'rgba(31,111,67,0.07)', right: 320, bottom: -260 }} />
+
+    <div style={{ position: 'relative', display: 'grid', gridTemplateColumns: '1.05fr 0.95fr', gap: 70, alignItems: 'center', height: '100%' }}>
+      <div>
+        <div style={{ display: 'inline-flex', alignItems: 'center', gap: 12, borderRadius: 999, background: '#EEE7F7', color: '#604294', border: '1px solid #CDBEE2', padding: '10px 22px', fontSize: 25, fontWeight: 900, letterSpacing: 1 }}>
+          CHAPTER 01 · 基礎操作
+        </div>
+        <div style={{ width: 100, height: 8, borderRadius: 99, background: '#604294', marginTop: 34 }} />
+        <h1 style={{ margin: '28px 0 0', fontFamily: 'var(--osd-font-display)', fontSize: 86, lineHeight: 1.08, fontWeight: 900, color: '#2B2730' }}>
+          冒險者公會
+        </h1>
+        <div style={{ marginTop: 18, fontSize: 50, lineHeight: 1.18, fontWeight: 900, color: '#604294' }}>
+          Excel 練習基礎操作
+        </div>
+        <p style={{ margin: '28px 0 0', maxWidth: 760, fontSize: 30, lineHeight: 1.55, color: muted }}>
+          從第一個儲存格出發，完成格式、篩選、公式、查找與分析任務。
+        </p>
+        <div style={{ display: 'flex', gap: 14, marginTop: 34 }}>
+          <Tag>10 個關卡</Tag>
+          <Tag>邊做邊學</Tag>
+          <Tag>累積 XP 挑戰魔王</Tag>
+        </div>
+      </div>
+
+      <div style={{ position: 'relative', height: 700 }}>
+        <div style={{ position: 'absolute', left: 18, top: 150, width: 330, height: 360, borderRadius: 34, overflow: 'hidden', background: '#EAF4D8', border: '8px solid #FFFFFF', boxShadow: '0 24px 54px rgba(42,38,47,0.18)', transform: 'rotate(-7deg)' }}>
+          <img src={adventure01} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 98%', display: 'block' }} />
+        </div>
+        <div style={{ position: 'absolute', right: 10, top: 118, width: 330, height: 360, borderRadius: 34, overflow: 'hidden', background: '#E9E2F4', border: '8px solid #FFFFFF', boxShadow: '0 24px 54px rgba(42,38,47,0.18)', transform: 'rotate(7deg)' }}>
+          <img src={adventure09} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 98%', display: 'block' }} />
+        </div>
+        <div style={{ position: 'absolute', left: '50%', top: 260, width: 390, height: 390, borderRadius: 42, overflow: 'hidden', background: '#EFE6E5', border: '10px solid #FFFFFF', boxShadow: '0 30px 70px rgba(42,38,47,0.24)', transform: 'translateX(-50%)' }}>
+          <img src={adventure10} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 98%', display: 'block' }} />
+        </div>
+        <div style={{ position: 'absolute', left: '50%', bottom: 2, transform: 'translateX(-50%)', borderRadius: 999, background: '#2B2730', color: '#FFFFFF', padding: '12px 28px', fontSize: 25, fontWeight: 900, letterSpacing: 2, boxShadow: '0 12px 28px rgba(42,38,47,0.20)' }}>
+          READY · START
+        </div>
+      </div>
+    </div>
+    <PageFooter />
+  </div>
+);
+
+const CourseSectionTitle = ({
+  chapter,
+  title,
+  subtitle,
+  color,
+  symbol,
+  kicker,
+  chips,
+}: {
+  chapter: string;
+  title: string;
+  subtitle?: string;
+  color: string;
+  symbol: string;
+  kicker: string;
+  chips: string[];
+}) => (
+  <div
+    style={{
+      ...page,
+      justifyContent: 'center',
+      background: `linear-gradient(135deg, #FBF9F3 0%, ${color}0C 58%, ${color}18 100%)`,
+      overflow: 'hidden',
+    }}
+  >
+    <GridTexture />
+    <div style={{ position: 'absolute', width: 780, height: 780, borderRadius: '50%', background: `${color}0D`, right: -180, top: -250 }} />
+    <div style={{ position: 'absolute', width: 430, height: 430, borderRadius: '50%', background: `${color}0A`, right: 330, bottom: -260 }} />
+
+    <div style={{ position: 'relative', display: 'grid', gridTemplateColumns: '1.08fr 0.92fr', gap: 78, alignItems: 'center', height: '100%' }}>
+      <div>
+        <div style={{ display: 'inline-flex', alignItems: 'center', borderRadius: 999, background: `${color}14`, color, border: `1px solid ${color}45`, padding: '10px 22px', fontSize: 25, fontWeight: 900, letterSpacing: 1 }}>
+          {chapter}
+        </div>
+        <div style={{ width: 100, height: 8, borderRadius: 99, background: color, marginTop: 34 }} />
+        <h1 style={{ margin: '28px 0 0', fontFamily: 'var(--osd-font-display)', fontSize: 78, lineHeight: 1.08, fontWeight: 900, color: '#2B2D2B' }}>
+          {title}
+        </h1>
+        {subtitle ? (
+          <div style={{ marginTop: 18, fontSize: 48, lineHeight: 1.18, fontWeight: 900, color }}>
+            {subtitle}
+          </div>
+        ) : null}
+        <p style={{ margin: '28px 0 0', maxWidth: 790, fontSize: 30, lineHeight: 1.55, color: muted }}>
+          {kicker}
+        </p>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 14, marginTop: 34 }}>
+          {chips.map((chip) => <Tag key={chip}>{chip}</Tag>)}
+        </div>
+      </div>
+
+      <div style={{ position: 'relative', height: 650 }}>
+        <div style={{ position: 'absolute', inset: '34px 10px 34px 44px', borderRadius: 44, background: '#FFFFFF', border: `2px solid ${color}38`, boxShadow: '0 28px 70px rgba(39,45,42,0.15)', overflow: 'hidden' }}>
+          <div style={{ height: 72, background: color, color: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 28px', fontSize: 24, fontWeight: 900, letterSpacing: 1 }}>
+            <span>NEXT SECTION</span>
+            <span>AI Excel</span>
+          </div>
+          <div style={{ position: 'relative', height: 'calc(100% - 72px)', background: `linear-gradient(155deg, #FFFFFF 0%, ${color}0D 100%)` }}>
+            <div style={{ position: 'absolute', width: 350, height: 350, borderRadius: '50%', background: `${color}16`, left: '50%', top: 42, transform: 'translateX(-50%)', display: 'grid', placeItems: 'center', border: `2px solid ${color}28` }}>
+              <div style={{ fontFamily: 'var(--osd-font-display)', fontSize: symbol.length > 4 ? 92 : symbol.length > 2 ? 120 : 170, fontWeight: 900, color, letterSpacing: -4 }}>
+                {symbol}
+              </div>
+            </div>
+
+            <div style={{ position: 'absolute', left: 34, right: 34, bottom: 30, display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12 }}>
+              {chips.slice(0, 3).map((chip, index) => (
+                <div key={chip} style={{ borderRadius: 16, background: '#FFFFFF', border: `1px solid ${color}35`, boxShadow: '0 8px 20px rgba(39,45,42,0.08)', padding: '14px 10px', textAlign: 'center' }}>
+                  <div style={{ width: 34, height: 34, margin: '0 auto 7px', borderRadius: 10, background: `${color}18`, color, display: 'grid', placeItems: 'center', fontSize: 19, fontWeight: 900 }}>
+                    {index + 1}
+                  </div>
+                  <div style={{ fontSize: 21, fontWeight: 900, color: '#3A423E' }}>{chip}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <PageFooter />
+  </div>
+);
+
+const OperationsRecapTitle: Page = () => (
+  <CourseSectionTitle
+    chapter="CHAPTER 02 · 情境導入"
+    title="鍋貼店營運"
+    subtitle="前情提要"
+    color="#B56A2B"
+    symbol="序"
+    kicker="從經營情境與常見痛點出發，理解這套營運表格要解決什麼問題。"
+    chips={['經營情境', '表格痛點', '課程任務']}
+  />
+);
+
+const MasterDataTitle: Page = () => (
+  <CourseSectionTitle
+    chapter="CHAPTER 03 · 資料庫基礎"
+    title="資料庫基礎"
+    subtitle="三張主檔"
+    color="#1F6F43"
+    symbol="ID"
+    kicker="先建立商品、物料與供應商主檔，讓後續資料都有一致的名稱與編號。"
+    chips={['商品主檔', '物料主檔', '供應商主檔']}
+  />
+);
+
+const AiToolsTitle: Page = () => (
+  <CourseSectionTitle
+    chapter="CHAPTER 04 · AI 工具"
+    title="Excel 內使用 AI"
+    subtitle="工具介紹"
+    color="#8A5A2B"
+    symbol="AI"
+    kicker="認識 Excel 裡可搭配使用的 AI 工具，以及如何把需求說清楚。"
+    chips={['增益集', '提示詞', '操作介面']}
+  />
+);
+
+const BackToMastersTitle: Page = () => (
+  <CourseSectionTitle
+    chapter="CHAPTER 05 · 實際操作"
+    title="回到三張主檔"
+    color="#2C7A61"
+    symbol="↩"
+    kicker="把剛認識的 AI 工具實際用進商品、物料與供應商主檔。"
+    chips={['檢查欄位', '建立下拉', '修正資料']}
+  />
+);
+
+const BomSectionTitle: Page = () => (
+  <CourseSectionTitle
+    chapter="CHAPTER 06 · 資料庫基礎"
+    title="資料庫基礎"
+    subtitle="BOM 表"
+    color="#2D6F9D"
+    symbol="BOM"
+    kicker="把一項商品拆成需要的原物料、用量與適用通路，建立成本計算的基礎。"
+    chips={['商品', '原物料', '每份用量']}
+  />
+);
+
+const TransactionsTitle: Page = () => (
+  <CourseSectionTitle
+    chapter="CHAPTER 07 · 交易紀錄"
+    title="資料庫基礎"
+    subtitle="銷售與進貨紀錄"
+    color="#3D7196"
+    symbol="↕"
+    kicker="主檔建立完成後，開始記錄每天真正發生的銷售與進貨。"
+    chips={['銷售明細', '進貨明細', '資料驗證']}
+  />
+);
+
+const ReportsTitle: Page = () => (
+  <CourseSectionTitle
+    chapter="CHAPTER 08 · 營業報表"
+    title="營業報表"
+    subtitle="成本、庫存與毛利"
+    color="#1B84A8"
+    symbol="Σ"
+    kicker="把主檔與交易紀錄串起來，讓成本、庫存與毛利自動更新。"
+    chips={['成本計算', '庫存管理', '毛利分析']}
+  />
+);
+
+const FormattingTitle: Page = () => (
+  <CourseSectionTitle
+    chapter="CHAPTER 09 · 輔助判讀"
+    title="輔助判讀"
+    subtitle="顏色與格式"
+    color="#C0902E"
+    symbol="Aa"
+    kicker="使用顏色、格式與頁籤順序，讓重要狀態更容易被看見。"
+    chips={['條件格式', '欄位格式', '頁籤整理']}
+  />
+);
+
+const DashboardTitle: Page = () => (
+  <CourseSectionTitle
+    chapter="CHAPTER 10 · 管理視角"
+    title="管理視角"
+    subtitle="儀表板"
+    color="#604294"
+    symbol="▦"
+    kicker="把大量明細整理成主管能快速判讀的 KPI、排行與異常提醒。"
+    chips={['KPI', '商品排行', '庫存警示']}
+  />
+);
+
+const VbaSectionTitle: Page = () => (
+  <CourseSectionTitle
+    chapter="CHAPTER 11 · 自動化工具"
+    title="自動化工具"
+    subtitle="Excel × VBA 與巨集"
+    color="#35785A"
+    symbol="VBA"
+    kicker="把每天重複的整理、產表與提醒工作，交給按鈕和巨集完成。"
+    chips={['錄製巨集', 'VBA', '一鍵執行']}
+  />
+);
+
+const CloudSectionTitle: Page = () => (
+  <CourseSectionTitle
+    chapter="CHAPTER 12 · 雲端部署"
+    title="雲端部署"
+    subtitle="Google AppScript"
+    color="#2B72B8"
+    symbol="</>"
+    kicker="把 Excel 的營運邏輯搬到 Google Sheets，並部署成可使用的網頁工具。"
+    chips={['Google Sheets', 'AppScript', '網頁部署']}
+  />
+);
+
+const AdventureExcelIntro: Page = () => (
+  <div style={page}>
+    <GridTexture />
+    <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', height: '100%' }}>
+      <Eyebrow color="#604294">課前基礎任務</Eyebrow>
+      <PageHeading maxWidth={1700}>先完成 10 關 Excel 冒險，練習基礎操作</PageHeading>
+      <p style={{ fontSize: 31, lineHeight: 1.45, color: muted, margin: '18px 0 0', maxWidth: 1660 }}>
+        從輸入、排序、公式一路打到 XLOOKUP 與樞紐分析表；每過一關獲得 XP，最後挑戰資料魔王。
+      </p>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 18, marginTop: 26 }}>
+        <AdventureQuestCard num="01" src={adventure01} name="格式史萊姆" skill="輸入・填滿・格式" color="#75A928" />
+        <AdventureQuestCard num="02" src={adventure02} name="迷霧哥布林" skill="排序・篩選・尋找" color="#567A32" />
+        <AdventureQuestCard num="03" src={adventure03} name="算術石像鬼" skill="SUM・AVERAGE" color="#68717B" />
+        <AdventureQuestCard num="04" src={adventure04} name="複製骷髏王" skill="相對・絕對參照" color="#68478D" />
+        <AdventureQuestCard num="05" src={adventure05} name="審判獅鷲" skill="IF・AND 判斷" color="#B07B24" />
+        <AdventureQuestCard num="06" src={adventure06} name="統計巨魔" skill="COUNTIF・SUMIF" color="#56743C" />
+        <AdventureQuestCard num="07" src={adventure07} name="幻影模仿獸" skill="XLOOKUP" color="#6E5B91" />
+        <AdventureQuestCard num="08" src={adventure08} name="囤貨黏液怪" skill="格式・資料驗證" color="#2E83A7" />
+        <AdventureQuestCard num="09" src={adventure09} name="樞紐魔龍" skill="樞紐分析・圖表" color="#58427C" />
+        <AdventureQuestCard num="10" src={adventure10} name="資料魔王" skill="綜合應用" color="#8B3C3C" />
+      </div>
+    </div>
+    <PageFooter />
+  </div>
+);
+
+// ─── Adventure quest solutions — one page per walkthrough screenshot ────────
+const QuestFormula = ({ color, size, children }: { color: string; size?: number; children: React.ReactNode }) => (
+  <span
+    style={{
+      fontFamily: 'monospace',
+      fontSize: size ?? 23,
+      fontWeight: 700,
+      color: '#D92D20',
+      background: `${color}12`,
+      border: `1px solid ${color}44`,
+      borderRadius: 8,
+      padding: '6px 14px',
+      whiteSpace: 'nowrap',
+    }}
+  >
+    {children}
+  </span>
+);
+
+const QuestStep = ({
+  color,
+  stage,
+  step,
+  formulas,
+  formulaScale,
+  src,
+  src2,
+  srcWidth,
+  src2Width,
+  srcScale,
+  alt,
+}: {
+  color: string;
+  stage: string;
+  step: string[];
+  formulas?: string[];
+  formulaScale?: number;
+  src: string;
+  src2?: string;
+  srcWidth?: number;
+  src2Width?: number;
+  srcScale?: number;
+  alt: string;
+}) => (
+  <div style={page}>
+    <Eyebrow color={color}>課前基礎任務 · {stage}</Eyebrow>
+    <div style={{ marginTop: 20, display: 'flex', flexDirection: 'column', gap: 4 }}>
+      {step.map((line) => (
+        <div key={line} style={{ fontSize: 36, fontWeight: 800, lineHeight: 1.3, maxWidth: 1740, color: 'var(--osd-text)' }}>
+          {line}
+        </div>
+      ))}
+    </div>
+    {formulas && formulas.length > 0 && (
+      <div style={{ display: 'flex', gap: 10, marginTop: 14, flexWrap: 'wrap' }}>
+        {formulas.map((f) => (
+          <QuestFormula key={f} color={color} size={formulaScale ? 23 * formulaScale : undefined}>
+            {f}
+          </QuestFormula>
+        ))}
+      </div>
+    )}
+    <div style={{ flex: 1, minHeight: 0, display: 'flex', gap: 24, alignItems: 'center', justifyContent: 'center', marginTop: 16 }}>
+      <img
+        src={src}
+        alt={alt}
+        style={{
+          width: srcWidth,
+          maxWidth: srcWidth ? undefined : src2 ? '65%' : '100%',
+          maxHeight: '100%',
+          objectFit: 'contain',
+          transform: srcScale ? `scale(${srcScale})` : undefined,
+          transformOrigin: 'center center',
+        }}
+      />
+      {src2 && (
+        <img
+          src={src2}
+          alt={alt}
+          style={{ width: src2Width, maxWidth: src2Width ? undefined : '30%', maxHeight: '100%', objectFit: 'contain' }}
+        />
+      )}
+    </div>
+    <PageFooter />
+  </div>
+);
+
+const questColor = {
+  s01: '#75A928',
+  s02: '#567A32',
+  s03: '#68717B',
+  s04: '#68478D',
+  s05: '#B07B24',
+  s06: '#56743C',
+  s07: '#6E5B91',
+  s08: '#2E83A7',
+  s09: '#58427C',
+  s10: '#8B3C3C',
+};
+
+const AdventureIntroRules: Page = () => (
+  <QuestStep
+    color={taskColor}
+    stage="前情提要"
+    step={[
+      '你是一位冒險者，每一關會有一個怪物坐鎮，你需要打敗他',
+      '關卡狀態、怪物HP、可得XP會依照你解題的進度變化',
+      '怪物說的話可能是解題的線索',
+      '通關後，關卡狀態會變為「CLEAR」、怪物HP會歸零',
+    ]}
+    src={qs01a}
+    src2={qs01b}
+    alt="前情提要：冒險者與怪物的關卡機制說明，關卡狀態、怪物HP、可得XP會依解題進度變化"
+  />
+);
+
+const AdventureQuest02: Page = () => (
+  <QuestStep
+    color={questColor.s01}
+    stage="01_新手村"
+    step={['任務①在 A9:A18 用填滿控點建立 A101～A110', '任務②將缺漏的分會名稱補成「北境分會」']}
+    src={qs02}
+    alt="新手村任務①②：用填滿控點建立編號 A101～A110，並補齊缺漏的分會名稱"
+  />
+);
+
+const AdventureQuest03: Page = () => (
+  <QuestStep
+    color={questColor.s01}
+    stage="01_新手村"
+    step={['任務③把標題列設為粗體、置中並加底色']}
+    src={qs03}
+    alt="新手村任務③：把標題列設為粗體、置中並加底色"
+  />
+);
+
+const AdventureQuest04: Page = () => (
+  <QuestStep
+    color={questColor.s01}
+    stage="01_新手村"
+    step={['任務④凍結第 8 列以上的畫面']}
+    src={qs04}
+    alt="新手村任務④：凍結第 8 列以上的畫面"
+  />
+);
+
+const AdventureQuest05: Page = () => (
+  <QuestStep
+    color={questColor.s01}
+    stage="01_新手村"
+    step={['完成③④後，請在右側人工檢核選擇「完成」', '檢查一下，關卡狀態是否「CLEAR」、怪物HP是否歸零']}
+    src={qs05a}
+    src2={qs05b}
+    srcWidth={823}
+    src2Width={761}
+    alt="新手村檢核：人工檢核選擇完成後，關卡狀態變為 CLEAR、怪物HP歸零"
+  />
+);
+
+const AdventureQuest06: Page = () => (
+  <QuestStep
+    color={questColor.s02}
+    stage="02_真實之眼"
+    step={['任務①請同時篩選「職業＝法師、地區＝北境、狀態＝出勤」']}
+    src={qs06}
+    alt="真實之眼任務①②：同時篩選職業＝法師、地區＝北境、狀態＝出勤"
+  />
+);
+
+const AdventureQuest07: Page = () => (
+  <QuestStep
+    color={questColor.s02}
+    stage="02_真實之眼"
+    step={['任務②將符合者依等級由高到低排序', '任務③把五個編號填入上方答案區']}
+    src={qs07}
+    srcScale={1}
+    alt="真實之眼任務②③：符合條件者依等級由高到低排序，前五名編號填入答案區"
+  />
+);
+
+const AdventureQuest08: Page = () => (
+  <QuestStep
+    color={questColor.s03}
+    stage="03_戰力鑑定"
+    step={['任務①算出總戰力']}
+    formulas={['=SUM(C9:F9)']}
+    formulaScale={1.5}
+    src={qs08}
+    alt="戰力鑑定任務①：用 SUM 算出總戰力，公式輸入中的儲存格畫面"
+  />
+);
+
+const AdventureQuest09: Page = () => (
+  <QuestStep
+    color={questColor.s03}
+    stage="03_戰力鑑定"
+    step={['任務②算出平均能力']}
+    formulas={['=AVERAGE(C9:F9)']}
+    formulaScale={1.5}
+    src={qs09}
+    alt="戰力鑑定任務②：用 AVERAGE 算出平均能力"
+  />
+);
+
+const AdventureQuest10: Page = () => (
+  <QuestStep
+    color={questColor.s03}
+    stage="03_戰力鑑定"
+    step={['任務③算出最高能力']}
+    formulas={['=MAX(C9:F9)']}
+    formulaScale={1.5}
+    src={qs10}
+    alt="戰力鑑定任務③：用 MAX 算出最高能力"
+  />
+);
+
+const AdventureQuest11: Page = () => (
+  <QuestStep
+    color={questColor.s03}
+    stage="03_戰力鑑定"
+    step={['任務④算出最低能力']}
+    formulas={['=MIN(C9:F9)']}
+    formulaScale={1.5}
+    src={qs11}
+    alt="戰力鑑定任務④：用 MIN 算出最低能力"
+  />
+);
+
+const AdventureQuest12: Page = () => (
+  <QuestStep
+    color={questColor.s03}
+    stage="03_戰力鑑定"
+    step={['最後把C欄及F欄公式往下填滿']}
+    src={qs12}
+    alt="戰力鑑定最後一步：把 C 欄及 F 欄公式往下填滿"
+  />
+);
+
+const AdventureQuest13: Page = () => (
+  <QuestStep
+    color={questColor.s04}
+    stage="04_水晶增幅"
+    step={['任務①在 G9 計算基礎戰力（攻擊、防禦、魔力、速度加總）並向下填滿']}
+    formulas={['=SUM(C9:F9)']}
+    formulaScale={1.5}
+    src={qs13}
+    alt="水晶增幅任務①：G9 計算基礎戰力＝攻擊＋防禦＋魔力＋速度，向下填滿"
+  />
+);
+
+const AdventureQuest14: Page = () => (
+  <QuestStep
+    color={questColor.s04}
+    stage="04_水晶增幅"
+    step={['任務②在 H9 計算增幅後戰力，公式必須以絕對參照鎖定 $B$7，再向下填滿']}
+    formulas={['=G9*(1+$B$7)']}
+    formulaScale={1.5}
+    src={qs14}
+    alt="水晶增幅任務②：H9 用絕對參照 $B$7 鎖定固定增幅率，計算增幅後戰力"
+  />
+);
+
+const AdventureQuest15: Page = () => (
+  <QuestStep
+    color={questColor.s05}
+    stage="05_命運判定"
+    step={['任務①階級規則：總戰力≥400 且完成任務≥8 → 黃金；', '否則總戰力≥300 → 白銀；其餘 → 青銅']}
+    formulas={['=IF(AND(D9>=400,E9>=8),"黃金",IF(D9>=300,"白銀","青銅"))']}
+    formulaScale={1.5}
+    src={qs15}
+    alt="命運判定任務①：用巢狀 IF 與 AND 判斷冒險者階級為黃金／白銀／青銅"
+  />
+);
+
+const AdventureQuest16: Page = () => (
+  <QuestStep
+    color={questColor.s05}
+    stage="05_命運判定"
+    step={['任務② S 級資格：階級為黃金且等級≥15 → 可接；否則不可接。請用 IF、AND 完成']}
+    formulas={['=IF(AND(F9="黃金",C9>=15),"可接","不可接")']}
+    formulaScale={1.5}
+    src={qs16}
+    alt="命運判定任務②：用 IF、AND 判斷 S 級資格是否可接"
+  />
+);
+
+const AdventureQuest17: Page = () => (
+  <QuestStep
+    color={questColor.s06}
+    stage="06_委託統計"
+    step={['任務①使用 COUNTIF 與 SUMIF計算 任務筆數']}
+    formulas={['=COUNTIF(C9:C40,G9)']}
+    formulaScale={1.5}
+    src={qs17}
+    alt="委託統計任務①：用 COUNTIF 依難度星等計算任務筆數"
+  />
+);
+
+const AdventureQuest18: Page = () => (
+  <QuestStep
+    color={questColor.s06}
+    stage="06_委託統計"
+    step={['任務②使用 COUNTIF 與 SUMIF計算 報酬總額']}
+    formulas={['=SUMIF($C$9:$C$40,G9,$D$9:$D$40)']}
+    formulaScale={1.5}
+    src={qs18}
+    alt="委託統計任務②：用 SUMIF 依難度星等加總報酬總額"
+  />
+);
+
+const AdventureQuest19: Page = () => (
+  <QuestStep
+    color={questColor.s07}
+    stage="07_追蹤魔法"
+    step={['任務①用 XLOOKUP 查找左表 編號 對應的 姓名']}
+    formulas={['=IFERROR(XLOOKUP(A9,$J$9:$J$28,$K$9:$K$28),"查無資料")']}
+    formulaScale={1.5}
+    src={qs19}
+    alt="追蹤魔法任務①：用 XLOOKUP 依編號查找對應姓名，查無資料時顯示提示文字"
+  />
+);
+
+const AdventureQuest20: Page = () => (
+  <QuestStep
+    color={questColor.s07}
+    stage="07_追蹤魔法"
+    step={['任務②用 XLOOKUP 查找左表 編號 對應的 職業']}
+    formulas={['=IFERROR(XLOOKUP(A9,$J$9:$J$28,$L$9:$L$28),"查無資料")']}
+    formulaScale={1.5}
+    src={qs20}
+    alt="追蹤魔法任務②：用 XLOOKUP 依編號查找對應職業"
+  />
+);
+
+const AdventureQuest21: Page = () => (
+  <QuestStep
+    color={questColor.s07}
+    stage="07_追蹤魔法"
+    step={['任務③用 XLOOKUP 查找左表 編號 對應的 地區']}
+    formulas={['=IFERROR(XLOOKUP(A9,$J$9:$J$28,$M$9:$M$28),"查無資料")']}
+    formulaScale={1.5}
+    src={qs21}
+    alt="追蹤魔法任務③：用 XLOOKUP 依編號查找對應地區"
+  />
+);
+
+const AdventureQuest22: Page = () => (
+  <QuestStep
+    color={questColor.s08}
+    stage="08_倉庫危機"
+    step={['任務①在 G 欄用公式計算庫存價值＝庫存量×單價']}
+    formulas={['=D9*F9']}
+    formulaScale={1.5}
+    src={qs22}
+    alt="倉庫危機任務①：用公式計算庫存價值＝庫存量乘以單價"
+  />
+);
+
+const AdventureQuest23: Page = () => (
+  <QuestStep
+    color={questColor.s08}
+    stage="08_倉庫危機"
+    step={['任務②用條件式格式標示庫存量低於安全庫存的列']}
+    src={qs23}
+    alt="倉庫危機任務②：新增條件式格式規則，標示庫存量低於安全庫存的列"
+  />
+);
+
+const AdventureQuest24: Page = () => (
+  <QuestStep
+    color={questColor.s08}
+    stage="08_倉庫危機"
+    step={['任務②用條件式格式標示庫存量低於安全庫存的列']}
+    formulas={['=$D9<$E9']}
+    formulaScale={1.5}
+    src={qs24}
+    alt="倉庫危機任務②：條件式格式公式 =$D9<$E9，套用喜歡的格式"
+  />
+);
+
+const AdventureQuest25: Page = () => (
+  <QuestStep
+    color={questColor.s08}
+    stage="08_倉庫危機"
+    step={['任務②用條件式格式標示庫存量低於安全庫存的列']}
+    formulas={['=$A$9:$H$28']}
+    formulaScale={1.5}
+    src={qs25}
+    alt="倉庫危機任務②：條件式格式規則管理員，套用到整個物品表格範圍"
+  />
+);
+
+const AdventureQuest26: Page = () => (
+  <QuestStep
+    color={questColor.s08}
+    stage="08_倉庫危機"
+    step={['任務③在 盤點結果欄(H9:H28)', '建立下拉選單：正常／待補貨／停用']}
+    src={qs26}
+    alt="倉庫危機任務③：資料驗證設定下拉選單，來源為正常、待補貨、停用"
+  />
+);
+
+const AdventureQuest27: Page = () => (
+  <QuestStep
+    color={questColor.s08}
+    stage="08_倉庫危機"
+    step={['將所有缺貨物品編號填入右側答案區，順序不限']}
+    src={qs27}
+    alt="倉庫危機最後一步：缺貨物品編號填入答案區，人工檢核完成"
+  />
+);
+
+const AdventureQuest28: Page = () => (
+  <QuestStep
+    color={questColor.s09}
+    stage="09_王國戰況"
+    step={['任務①建立樞紐分析表']}
+    src={qs28}
+    alt="王國戰況任務①：插入樞紐分析表"
+  />
+);
+
+const AdventureQuest29: Page = () => (
+  <QuestStep
+    color={questColor.s09}
+    stage="09_王國戰況"
+    step={['任務①建立樞紐分析表']}
+    src={qs29}
+    alt="王國戰況任務①：來自表格或範圍的樞紐分析表設定視窗"
+  />
+);
+
+const AdventureQuest30: Page = () => (
+  <QuestStep
+    color={questColor.s09}
+    stage="09_王國戰況"
+    step={['填入正確答案', '下拉選單改完成']}
+    src={qs30}
+    alt="王國戰況正解：戰況問題答案全部判定正確，人工檢核完成"
+  />
+);
+
+const AdventureQuest31: Page = () => (
+  <QuestStep
+    color={questColor.s10}
+    stage="10_魔王討伐"
+    step={['任務：從名冊中為五種職業各選一人組成戰隊。', '條件：狀態＝出勤、等級≥10，並選該職業中總戰力最高者。', '方法１：建立篩選']}
+    src={qs31}
+    alt="魔王討伐方法一：用排序與篩選找出各職業中出勤且等級達標的最高戰力者"
+  />
+);
+
+const AdventureQuest32: Page = () => (
+  <QuestStep
+    color={questColor.s10}
+    stage="10_魔王討伐"
+    step={['任務：從名冊中為五種職業各選一人組成戰隊。', '條件：狀態＝出勤、等級≥10，並選該職業中總戰力最高者。', '方法２：建立樞紐分析']}
+    src={qs32}
+    alt="魔王討伐方法二：用樞紐分析表找出各職業中出勤且等級達標的最高戰力者"
+  />
+);
+
+const AdventureQuest33: Page = () => (
+  <QuestStep
+    color={questColor.s09}
+    stage="09_王國戰況"
+    step={['填入正確答案']}
+    src={qs33}
+    alt="王國戰況正解：戰況問題答案全部判定正確"
+  />
+);
+
+const JourneyStage = ({
+  part,
+  icon,
+  title,
+  items,
+  result,
+  color,
+}: {
+  part: string;
+  icon: string;
+  title: string;
+  items: string;
+  result: string;
+  color: string;
+}) => (
+  <div
+    style={{
+      height: 300,
+      borderRadius: 24,
+      background: '#fff',
+      border: `1px solid ${cardBorder}`,
+      borderTop: `8px solid ${color}`,
+      boxShadow: '0 10px 26px rgba(28,35,31,0.07)',
+      padding: '24px 24px 22px',
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 12,
+    }}
+  >
+    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+      <span style={{ fontSize: 42 }}>{icon}</span>
+      <span style={{ fontSize: 23, fontWeight: 900, color, letterSpacing: '0.06em' }}>{part}</span>
+    </div>
+    <div style={{ fontSize: 34, fontWeight: 900, color: 'var(--osd-text)' }}>{title}</div>
+    <div style={{ fontSize: 27, lineHeight: 1.35, color: muted, minHeight: 74 }}>{items}</div>
+    <div style={{ height: 1, background: cardBorder, marginTop: 'auto' }} />
+    <div style={{ fontSize: 25, lineHeight: 1.3, fontWeight: 800, color }}>{result}</div>
+  </div>
+);
+
+const JourneyArrow = () => (
+  <div style={{ fontSize: 42, color: '#B9B5AA', fontWeight: 900, alignSelf: 'center', paddingBottom: 8 }}>→</div>
+);
+
+const AutomationRoute = ({
+  part,
+  title,
+  detail,
+  color,
+}: {
+  part: string;
+  title: string;
+  detail: string;
+  color: string;
+}) => (
+  <div
+    style={{
+      flex: 1,
+      display: 'flex',
+      alignItems: 'center',
+      gap: 18,
+      borderRadius: 18,
+      padding: '19px 22px',
+      background: `${color}10`,
+      border: `1px solid ${color}44`,
+    }}
+  >
+    <div
+      style={{
+        width: 56,
+        height: 56,
+        borderRadius: 18,
+        display: 'grid',
+        placeItems: 'center',
+        background: color,
+        color: '#fff',
+        fontSize: 23,
+        fontWeight: 900,
+        flexShrink: 0,
+      }}
+    >
+      {part}
+    </div>
+    <div>
+      <div style={{ fontSize: 29, fontWeight: 900, color }}>{title}</div>
+      <div style={{ fontSize: 23, color: muted, marginTop: 3 }}>{detail}</div>
+    </div>
+  </div>
+);
+
+const CourseJourneyOverview: Page = () => (
+  <div style={page}>
+    <GridTexture />
+    <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', height: '100%' }}>
+      <Eyebrow color={design.palette.accent}>課程全貌｜PART 1–7</Eyebrow>
+      <PageHeading maxWidth={1700}>一份資料，從日常記錄一路長成決策系統</PageHeading>
+      <p style={{ fontSize: 31, lineHeight: 1.45, color: muted, margin: '18px 0 0' }}>
+        前四段建立核心系統；完成後，再選擇雲端、桌面或跨檔案自動化。
+      </p>
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: '1fr auto 1fr auto 1fr auto 1fr',
+          gap: 16,
+          alignItems: 'center',
+          marginTop: 34,
+        }}
+      >
+        <JourneyStage
+          part="PART 1"
+          icon="🗂️"
+          title="建立資料基礎"
+          items="商品、原物料、供應商、BOM"
+          result="用 ID 建立穩定關聯"
+          color={partColor.p1}
+        />
+        <JourneyArrow />
+        <JourneyStage
+          part="PART 2"
+          icon="🧾"
+          title="留下每日紀錄"
+          items="銷售紀錄、進貨紀錄"
+          result="每筆交易都可追蹤"
+          color={partColor.p2}
+        />
+        <JourneyArrow />
+        <JourneyStage
+          part="PART 3"
+          icon="⚙️"
+          title="啟動計算引擎"
+          items="商品成本、庫存、營收毛利"
+          result="公式設定一次，自動更新"
+          color={partColor.p3}
+        />
+        <JourneyArrow />
+        <JourneyStage
+          part="PART 4"
+          icon="📊"
+          title="變成決策畫面"
+          items="KPI、商品排行、庫存警示"
+          result="一眼掌握經營狀況"
+          color={partColor.p4}
+        />
+      </div>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 20, marginTop: 26 }}>
+        <div style={{ width: 230, fontSize: 27, lineHeight: 1.35, fontWeight: 900, color: 'var(--osd-text)' }}>
+          核心完成後
+          <br />
+          延伸三種自動化
+        </div>
+        <AutomationRoute part="5" title="雲端網頁" detail="Google Sheets＋GAS" color={partColor.p5} />
+        <AutomationRoute part="6" title="桌面按鈕" detail="VBA 一鍵完成重複工作" color={partColor.p6} />
+        <AutomationRoute part="7" title="跨檔彙總" detail="多份月報自動整併" color={partColor.p7} />
+      </div>
+    </div>
+    <PageFooter />
+  </div>
+);
+
 export default [
   Cover,
-  Overview,
+  AdventureSectionTitle,
+  AdventureExcelIntro,
+  AdventureIntroRules,
+  AdventureQuest02,
+  AdventureQuest03,
+  AdventureQuest04,
+  AdventureQuest05,
+  AdventureQuest06,
+  AdventureQuest07,
+  AdventureQuest08,
+  AdventureQuest09,
+  AdventureQuest10,
+  AdventureQuest11,
+  AdventureQuest12,
+  AdventureQuest13,
+  AdventureQuest14,
+  AdventureQuest15,
+  AdventureQuest16,
+  AdventureQuest17,
+  AdventureQuest18,
+  AdventureQuest19,
+  AdventureQuest20,
+  AdventureQuest21,
+  AdventureQuest22,
+  AdventureQuest23,
+  AdventureQuest24,
+  AdventureQuest25,
+  AdventureQuest26,
+  AdventureQuest27,
+  AdventureQuest28,
+  AdventureQuest29,
+  AdventureQuest30,
+  AdventureQuest31,
+  AdventureQuest32,
+  AdventureQuest33,
+  OperationsRecapTitle,
   OwnerMoneyBasics,
-  OwnerFlowDiagram,
-  CaseIntro,
-  QuizExcelBasics,
+  CourseJourneyOverview,
+  MasterDataTitle,
   Part1Tables,
   PptxProductMaster,
   Part1PromptTechniques,
+  AiToolsTitle,
   ClaudeGuideAddin,
   ClaudeGuideSkills,
   ClaudeSkillsTry,
@@ -8108,6 +9583,7 @@ export default [
   ClaudeGuideToolbar,
   ClaudeGuideTopRight,
   ClaudeGuideConnectorsTask,
+  BackToMastersTitle,
   Part1TaskDropdownCheck,
   Part1TaskDropdownFix,
   Part1Task567,
@@ -8117,22 +9593,27 @@ export default [
   Part1Task9Tools,
   Part1SupplierIntro,
   Part1SupplierTasks,
+  BomSectionTitle,
   Part1BomSetup,
   Part1BomSampleData,
-  Part2Transactions,
-  Part2Purchases,
+  TransactionsTitle,
   Part1SalesSetup,
   Part1SalesSampleData,
   Part1PurchaseSetup,
   Part1PurchaseSampleData,
+  ReportsTitle,
   Part3Engine,
+  Part3SpillHash,
   Part3CostGuide,
   Part3CostTableGuide,
   Part3InventoryGuide,
   Part3InventoryTableGuide,
   Part3RevenueGuide,
   Part3RevenueTableGuide,
-  Part3Style,
+  FormattingTitle,
+  Part3FormatRules,
+  Part3TabOrder,
+  DashboardTitle,
   Part4DashboardMaskSplit,
   Part4DashboardKpiSplit,
   Part4DashboardRanking,
@@ -8140,6 +9621,7 @@ export default [
   Part4FunctionsUniqueFilterSplit,
   Part4FunctionsSortLetSplit,
   Part4DashboardCascade,
+  VbaSectionTitle,
   Part6Vba,
   PptxMacroStep1,
   PptxMacroStep2,
@@ -8170,6 +9652,7 @@ export default [
   Part7ReportsDecisionSplit,
   Part7ReportsControlSplit,
   Part7RollupRecap,
+  CloudSectionTitle,
   Part5Cloud,
   Part5FrontBack,
   Part5CloudConcepts,

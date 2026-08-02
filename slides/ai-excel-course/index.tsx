@@ -1,6 +1,28 @@
 import type { DesignSystem, Page, SlideMeta } from '@open-slide/core';
 import { Step, Steps, useSlidePageNumber } from '@open-slide/core';
 import quizQrCode from './assets/quiz-qrcode.png';
+import gasBasics01 from './assets/gas-basics/img_001.png';
+import gasBasics02 from './assets/gas-basics/img_002_top.png';
+import gasBasics03 from './assets/gas-basics/img_003.png';
+import gasBasics04 from './assets/gas-basics/img_004.png';
+import gasBasics05 from './assets/gas-basics/img_005.png';
+import gasBasics06 from './assets/gas-basics/img_006.png';
+import gasBasics07 from './assets/gas-basics/img_007.png';
+import gasBasics08 from './assets/gas-basics/img_008.png';
+import gasBasics09 from './assets/gas-basics/img_009.png';
+import gasBasics10 from './assets/gas-basics/img_010.png';
+import gasBasics11 from './assets/gas-basics/img_011.png';
+import gasBasics12 from './assets/gas-basics/img_012_top.png';
+import gasBasics13 from './assets/gas-basics/img_013.png';
+import gasBasics14 from './assets/gas-basics/img_014.png';
+import gasBasics15 from './assets/gas-basics/img_015.png';
+import gasBasics16 from './assets/gas-basics/img_016.png';
+import gasBasics17 from './assets/gas-basics/img_017.png';
+import gasBasics18 from './assets/gas-basics/img_018.png';
+import gasBasics19 from './assets/gas-basics/img_019.png';
+import gasBasics20 from './assets/gas-basics/img_020.png';
+import gasBasics21 from './assets/gas-basics/img_021.png';
+import gasBasics22 from './assets/gas-basics/img_022.png';
 import pptx_s1_5 from './assets/pptx/s1_5.png';
 import pptx_s1_7 from './assets/pptx/s1_7.png';
 import pptx_s1_9 from './assets/pptx/s1_9.png';
@@ -6072,6 +6094,440 @@ const Part5FrontBack: Page = () => (
   </div>
 );
 
+// ─── 補充教學：從基礎的 html、.gs 開始學習 ──────────────────────────────────
+const GasCodeBlock = ({
+  maxHeight,
+  fontSize,
+  truncated,
+  children,
+}: {
+  maxHeight?: number;
+  fontSize?: number;
+  truncated?: boolean;
+  children: string;
+}) => (
+  <div style={{ position: 'relative' }}>
+    <pre
+      style={{
+        margin: 0,
+        background: '#1E1E1E',
+        color: '#D4D4D4',
+        borderRadius: 10,
+        padding: '14px 16px',
+        fontFamily: 'Consolas, monospace',
+        fontSize: fontSize ?? 21,
+        lineHeight: 1.45,
+        whiteSpace: 'pre-wrap',
+        overflowWrap: 'anywhere',
+        maxHeight: maxHeight ?? 260,
+        overflow: 'hidden',
+      }}
+    >
+      {children}
+    </pre>
+    {truncated && (
+      <div
+        style={{
+          position: 'absolute',
+          left: 0,
+          right: 0,
+          bottom: 0,
+          height: 48,
+          borderRadius: '0 0 10px 10px',
+          background: 'linear-gradient(rgba(30,30,30,0), rgba(30,30,30,0.95))',
+        }}
+      />
+    )}
+  </div>
+);
+
+const GasBasicsStep = ({
+  section,
+  n,
+  desc,
+  code,
+  codeMaxHeight,
+  codeFontSize,
+  codeTruncated,
+  src,
+  alt,
+}: {
+  section: string;
+  n: number;
+  desc: string;
+  code?: string;
+  codeMaxHeight?: number;
+  codeFontSize?: number;
+  codeTruncated?: boolean;
+  src: string;
+  alt: string;
+}) => (
+  <div style={page}>
+    <Eyebrow color={partColor.p5}>補充教學 · {section}</Eyebrow>
+    <div style={{ marginTop: 20, display: 'flex', alignItems: 'center', gap: 14 }}>
+      <span
+        style={{
+          width: 40,
+          height: 40,
+          borderRadius: '50%',
+          background: partColor.p5,
+          color: '#fff',
+          fontSize: 23,
+          fontWeight: 800,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          flexShrink: 0,
+        }}
+      >
+        {n}
+      </span>
+      <div style={{ fontSize: 34, fontWeight: 800, color: 'var(--osd-text)' }}>{desc}</div>
+    </div>
+    {code && (
+      <div style={{ marginTop: 16 }}>
+        <GasCodeBlock maxHeight={codeMaxHeight} fontSize={codeFontSize} truncated={codeTruncated}>
+          {code}
+        </GasCodeBlock>
+      </div>
+    )}
+    <div style={{ flex: 1, minHeight: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: 16 }}>
+      <img src={src} alt={alt} style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain', borderRadius: 12, boxShadow: '0 8px 24px rgba(0,0,0,0.1)' }} />
+    </div>
+    <PageFooter />
+  </div>
+);
+
+const GasBasics01: Page = () => (
+  <GasBasicsStep
+    section="1. 最基礎的本地端 html 網頁"
+    n={1}
+    desc="在桌面點擊右鍵→新增→文字文件"
+    src={gasBasics01}
+    alt="在桌面點擊右鍵，選擇新增→文字文件"
+  />
+);
+
+const GasBasics02: Page = () => (
+  <GasBasicsStep
+    section="1. 最基礎的本地端 html 網頁"
+    n={2}
+    desc="貼上 HTML 程式碼"
+    code={'<!DOCTYPE html>\n<html>\n<body>\n  <p>哈囉，這是我的第一個網頁！</p>\n</body>\n</html>'}
+    codeMaxHeight={155}
+    codeFontSize={17}
+    src={gasBasics02}
+    alt="在文字文件裡貼上最基礎的 HTML 程式碼"
+  />
+);
+
+const GasBasics03: Page = () => (
+  <GasBasicsStep
+    section="1. 最基礎的本地端 html 網頁"
+    n={3}
+    desc="點擊檔案→另存新檔"
+    src={gasBasics03}
+    alt="點擊檔案選單，選擇另存新檔"
+  />
+);
+
+const GasBasics04: Page = () => (
+  <GasBasicsStep
+    section="1. 最基礎的本地端 html 網頁"
+    n={4}
+    desc="檔名存 test.html，存檔類型選「所有檔案」"
+    src={gasBasics04}
+    alt="另存新檔視窗：檔名輸入 test.html，存檔類型選所有檔案"
+  />
+);
+
+const GasBasics05: Page = () => (
+  <GasBasicsStep
+    section="1. 最基礎的本地端 html 網頁"
+    n={5}
+    desc="雙擊打開"
+    src={gasBasics05}
+    alt="桌面上出現 test 網頁檔案，雙擊打開"
+  />
+);
+
+const GasBasics06: Page = () => (
+  <GasBasicsStep
+    section="1. 最基礎的本地端 html 網頁"
+    n={6}
+    desc="瀏覽器顯示網頁內容，完成第一個本地端 html 網頁"
+    src={gasBasics06}
+    alt="瀏覽器打開 test.html，顯示：哈囉，這是我的第一個網頁！"
+  />
+);
+
+const GasBasics07: Page = () => (
+  <GasBasicsStep
+    section="2. GAS 前端＋Google Sheets 後端"
+    n={1}
+    desc="點擊創建新的 Google Sheet"
+    src={gasBasics07}
+    alt="Google 搜尋 google sheet，找到 Google 試算表建立頁面"
+  />
+);
+
+const GasBasics08: Page = () => (
+  <GasBasicsStep
+    section="2. GAS 前端＋Google Sheets 後端"
+    n={2}
+    desc="填入內容"
+    src={gasBasics08}
+    alt="新的 Google 試算表填入範例內容：顏色、季節、蔬菜"
+  />
+);
+
+const GasBasics09: Page = () => (
+  <GasBasicsStep
+    section="2. GAS 前端＋Google Sheets 後端"
+    n={3}
+    desc="點選 擴充功能→Apps Script"
+    src={gasBasics09}
+    alt="試算表點選擴充功能選單，選擇 Apps Script"
+  />
+);
+
+const GasBasics10: Page = () => (
+  <GasBasicsStep
+    section="2. GAS 前端＋Google Sheets 後端"
+    n={4}
+    desc="點選「+」→HTML"
+    src={gasBasics10}
+    alt="Apps Script 編輯器點選新增檔案，選擇 HTML"
+  />
+);
+
+const GasBasics11: Page = () => (
+  <GasBasicsStep
+    section="2. GAS 前端＋Google Sheets 後端"
+    n={5}
+    desc="名稱輸入「test」，然後按 Enter"
+    src={gasBasics11}
+    alt="新增 HTML 檔案，名稱輸入 test 並按 Enter"
+  />
+);
+
+const GasBasics12: Page = () => (
+  <GasBasicsStep
+    section="2. GAS 前端＋Google Sheets 後端"
+    n={6}
+    desc="貼上 html 程式碼後儲存"
+    code={
+      '<!DOCTYPE html>\n<html>\n<body>\n  <button onclick="showData(\'A\')">顏色</button>\n  <button onclick="showData(\'B\')">季節</button>\n  <button onclick="showData(\'C\')">蔬菜</button>\n  <p id="result"></p>\n\n  <script>\n    function showData(col) {\n      google.script.run\n        .withSuccessHandler(displayResult)\n        .getColumnData(col);\n    }\n    function displayResult(message) {\n      document.getElementById(\'result\').innerText = message;\n    }\n  </script>\n</body>\n</html>'
+    }
+    codeMaxHeight={150}
+    codeFontSize={15}
+    codeTruncated
+    src={gasBasics12}
+    alt="test.html 貼上前端程式碼，用按鈕呼叫後端並顯示結果"
+  />
+);
+
+const GasBasics13: Page = () => (
+  <GasBasicsStep
+    section="2. GAS 前端＋Google Sheets 後端"
+    n={7}
+    desc="貼上 .gs 程式碼後儲存"
+    code={
+      'function doGet() {\n  return HtmlService.createHtmlOutputFromFile(\'test\');\n}\n\nfunction getColumnData(col) {\n  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();\n  var question = sheet.getRange(col + \'1\').getValue();\n  var answer = sheet.getRange(col + \'2\').getValue();\n  return question + \': \' + answer;\n}'
+    }
+    src={gasBasics13}
+    alt="程式碼.gs 貼上後端程式碼，讀取試算表欄位資料"
+  />
+);
+
+const GasBasics14: Page = () => (
+  <GasBasicsStep
+    section="2. GAS 前端＋Google Sheets 後端"
+    n={8}
+    desc="點選「部署」→新增部署作業"
+    src={gasBasics14}
+    alt="Apps Script 右上角點選部署，選擇新增部署作業"
+  />
+);
+
+const GasBasics15: Page = () => (
+  <GasBasicsStep
+    section="2. GAS 前端＋Google Sheets 後端"
+    n={9}
+    desc="部屬類型選「網頁應用程式」、執行身分選「我」、存取權選「所有人」"
+    src={gasBasics15}
+    alt="新增部署作業設定：類型網頁應用程式、執行身分我、存取權所有人"
+  />
+);
+
+const GasBasics16: Page = () => (
+  <GasBasicsStep
+    section="2. GAS 前端＋Google Sheets 後端"
+    n={10}
+    desc="新增說明（版本標題）"
+    src={gasBasics16}
+    alt="新增部署作業，填寫版本說明：我的第一個 GAS 網頁"
+  />
+);
+
+const GasBasics17: Page = () => (
+  <GasBasicsStep
+    section="2. GAS 前端＋Google Sheets 後端"
+    n={11}
+    desc="部署成功，點選並複製網址"
+    src={gasBasics17}
+    alt="部署成功，顯示網頁應用程式網址"
+  />
+);
+
+const GasBasics18: Page = () => (
+  <GasBasicsStep
+    section="2. GAS 前端＋Google Sheets 後端"
+    n={12}
+    desc="開啟網址，出現「應用程式未經驗證」提示，點選 REVIEW PERMISSIONS"
+    src={gasBasics18}
+    alt="Google Apps Script 未驗證提示，點選 REVIEW PERMISSIONS"
+  />
+);
+
+const GasBasics19: Page = () => (
+  <GasBasicsStep
+    section="2. GAS 前端＋Google Sheets 後端"
+    n={13}
+    desc="這個應用程式未經 Google 驗證，點選「進階」"
+    src={gasBasics19}
+    alt="這個應用程式未經 Google 驗證警告畫面，點選進階"
+  />
+);
+
+const GasBasics20: Page = () => (
+  <GasBasicsStep
+    section="2. GAS 前端＋Google Sheets 後端"
+    n={14}
+    desc="點選「前往「未命名的專案」(不安全)」"
+    src={gasBasics20}
+    alt="展開進階設定後，點選前往未命名的專案（不安全）"
+  />
+);
+
+const GasBasics21: Page = () => (
+  <GasBasicsStep
+    section="2. GAS 前端＋Google Sheets 後端"
+    n={15}
+    desc="確認授權範圍，點選「繼續」"
+    src={gasBasics21}
+    alt="確認應用程式要求存取 Google 帳戶的權限，點選繼續"
+  />
+);
+
+const GasBasics22: Page = () => (
+  <GasBasicsStep
+    section="2. GAS 前端＋Google Sheets 後端"
+    n={16}
+    desc="完成！網頁儀表板正常運作，三個按鈕都能點"
+    src={gasBasics22}
+    alt="部署完成的網頁應用程式，三個按鈕都能點擊並顯示對應資料"
+  />
+);
+
+const CloudPracticeNode = ({
+  icon,
+  title,
+  role,
+  example,
+  color,
+}: {
+  icon: string;
+  title: string;
+  role: string;
+  example: string;
+  color: string;
+}) => (
+  <div
+    style={{
+      borderRadius: 24,
+      border: `2px solid ${color}55`,
+      background: '#FFFFFF',
+      padding: '22px 24px',
+      boxShadow: '0 12px 30px rgba(39,45,42,0.09)',
+      minHeight: 260,
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      textAlign: 'center',
+    }}
+  >
+    <div
+      style={{
+        width: 92,
+        height: 92,
+        borderRadius: 26,
+        background: `${color}16`,
+        color,
+        display: 'grid',
+        placeItems: 'center',
+        fontSize: 46,
+        fontWeight: 900,
+      }}
+    >
+      {icon}
+    </div>
+    <div style={{ marginTop: 14, fontSize: 32, fontWeight: 900, color }}>{title}</div>
+    <div style={{ marginTop: 6, fontSize: 25, lineHeight: 1.4, color: '#3F4743' }}>{role}</div>
+    <div style={{ marginTop: 14, borderRadius: 999, background: `${color}12`, color, padding: '7px 16px', fontSize: 22, fontWeight: 900 }}>
+      {example}
+    </div>
+  </div>
+);
+
+const GasPracticeBridge: Page = () => (
+  <div style={page}>
+    <Eyebrow color={partColor.p5}>補充教學 · 練習小結</Eyebrow>
+    <PageHeading>你剛做的，就是雲端 POS 的縮小版</PageHeading>
+    <p style={{ fontSize: 30, color: muted, margin: '12px 0 0' }}>
+      「顏色、季節、蔬菜」三個按鈕，已經走完一次完整的雲端資料流程。
+    </p>
+
+    <div style={{ display: 'grid', gridTemplateColumns: '1fr 82px 1fr 82px 1fr', alignItems: 'center', gap: 16, marginTop: 28 }}>
+      <CloudPracticeNode icon="▣" title="HTML 前端" role="讓使用者點按鈕、看結果" example="顏色／季節／蔬菜" color="#604294" />
+      <div style={{ textAlign: 'center', color: partColor.p5 }}>
+        <div style={{ fontSize: 54, fontWeight: 900 }}>→</div>
+        <div style={{ fontSize: 18, fontWeight: 900, whiteSpace: 'nowrap' }}>送出指令</div>
+      </div>
+      <CloudPracticeNode icon="{ }" title="Apps Script 後端" role="收到指令後，決定要讀哪一欄" example="getColumnData()" color="#2B72B8" />
+      <div style={{ textAlign: 'center', color: partColor.p5 }}>
+        <div style={{ fontSize: 54, fontWeight: 900 }}>→</div>
+        <div style={{ fontSize: 18, fontWeight: 900, whiteSpace: 'nowrap' }}>讀取資料</div>
+      </div>
+      <CloudPracticeNode icon="▦" title="Google Sheets" role="保存問題與答案，讓程式讀取" example="第 1 列問題／第 2 列答案" color="#1F7A4B" />
+    </div>
+
+    <div style={{ marginTop: 16, borderRadius: 16, background: '#EAF3FF', border: '1px solid #AFC9EA', padding: '14px 24px', textAlign: 'center', fontSize: 25, color: '#1859A8', fontWeight: 900 }}>
+      ← 回傳結果：網頁顯示「我最喜歡的顏色：紅色」
+    </div>
+
+    <div style={{ display: 'grid', gridTemplateColumns: '1fr 130px 1fr', alignItems: 'center', gap: 18, marginTop: 20 }}>
+      <div style={{ borderRadius: 18, background: '#F4F1FA', border: '1px solid #D4C9E5', padding: '17px 22px' }}>
+        <div style={{ fontSize: 23, fontWeight: 900, color: '#604294' }}>剛才的練習版</div>
+        <div style={{ marginTop: 5, fontSize: 28, fontWeight: 900 }}>三個按鈕＋簡單答案</div>
+      </div>
+      <div style={{ textAlign: 'center', color: '#C0902E' }}>
+        <div style={{ fontSize: 42, fontWeight: 900 }}>→</div>
+        <div style={{ fontSize: 20, fontWeight: 900 }}>同一套架構</div>
+      </div>
+      <div style={{ borderRadius: 18, background: '#EAF6EF', border: '2px solid #76B98E', padding: '17px 22px' }}>
+        <div style={{ fontSize: 23, fontWeight: 900, color: '#1F7A4B' }}>接下來的營業版</div>
+        <div style={{ marginTop: 5, fontSize: 28, fontWeight: 900 }}>銷售、庫存、毛利與儀表板</div>
+      </div>
+    </div>
+
+    <div style={{ marginTop: 16, borderRadius: 14, background: '#FFF5E5', border: '1px solid #E8C77F', padding: '11px 18px', fontSize: 22, color: '#805A10', textAlign: 'center' }}>
+      安全提醒：只有自己建立或確認可信的 Apps Script，才進行進階授權。
+    </div>
+    <PageFooter />
+  </div>
+);
+
 // ─── Page 10b — Google 試算表當資料庫＋為什麼要上雲 ──────────────────────────
 const Part5CloudConcepts: Page = () => (
   <div style={page}>
@@ -9655,6 +10111,29 @@ export default [
   CloudSectionTitle,
   Part5Cloud,
   Part5FrontBack,
+  GasBasics01,
+  GasBasics02,
+  GasBasics03,
+  GasBasics04,
+  GasBasics05,
+  GasBasics06,
+  GasBasics07,
+  GasBasics08,
+  GasBasics09,
+  GasBasics10,
+  GasBasics11,
+  GasBasics12,
+  GasBasics13,
+  GasBasics14,
+  GasBasics15,
+  GasBasics16,
+  GasBasics17,
+  GasBasics18,
+  GasBasics19,
+  GasBasics20,
+  GasBasics21,
+  GasBasics22,
+  GasPracticeBridge,
   Part5CloudConcepts,
   Part5Goals,
   Part5UploadConvert,

@@ -9322,11 +9322,11 @@ const CloudSectionTitle: Page = () => (
   <CourseSectionTitle
     chapter="CHAPTER 12 · 雲端部署"
     title="雲端部署"
-    subtitle="Google AppScript"
+    subtitle="Google Apps Script"
     color="#2B72B8"
     symbol="</>"
     kicker="把 Excel 的營運邏輯搬到 Google Sheets，並部署成可使用的網頁工具。"
-    chips={['Google Sheets', 'AppScript', '網頁部署']}
+    chips={['Google Sheets', 'Apps Script', '網頁部署']}
   />
 );
 

@@ -518,6 +518,91 @@ const Part4SectionTitle: Page = () => (
   />
 );
 
+const GasOverviewCard = ({
+  step,
+  icon,
+  title,
+  description,
+  accent,
+  width = 300,
+}: {
+  step: string;
+  icon: string;
+  title: string;
+  description: string;
+  accent: string;
+  width?: number;
+}) => (
+  <div
+    style={{
+      width,
+      minHeight: 220,
+      padding: '24px 26px',
+      borderRadius: 24,
+      background: '#FFFFFF',
+      border: `2px solid ${accent}28`,
+      boxShadow: '0 14px 36px rgba(28, 35, 31, 0.08)',
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 12,
+    }}
+  >
+    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+      <span style={{ fontSize: 22, fontWeight: 900, color: accent, letterSpacing: '0.08em' }}>{step}</span>
+      <span
+        style={{
+          width: 52,
+          height: 52,
+          borderRadius: 16,
+          background: `${accent}16`,
+          display: 'grid',
+          placeItems: 'center',
+          fontSize: 28,
+        }}
+      >
+        {icon}
+      </span>
+    </div>
+    <div style={{ fontSize: 31, fontWeight: 900, color: 'var(--osd-text)', lineHeight: 1.2 }}>{title}</div>
+    <div style={{ fontSize: 24, color: muted, lineHeight: 1.45 }}>{description}</div>
+  </div>
+);
+
+const GasSystemOverview: Page = () => (
+  <div style={page}>
+    <Eyebrow color={gasTeal}>PART 4 · GAS 排班系統</Eyebrow>
+    <PageHeading maxWidth={1650} marginTop={16}>一個入口，完成排班日常的 5 件事</PageHeading>
+    <div style={{ fontSize: 28, color: muted, marginTop: 10 }}>
+      員工從確認身分開始，一路查看班表、申請請假、維護資料，再把班表帶進自己的行事曆。
+    </div>
+
+    <div style={{ position: 'relative', marginTop: 44, display: 'flex', justifyContent: 'center', gap: 26 }}>
+      <div style={{ position: 'absolute', left: 150, right: 150, top: 110, height: 4, background: `${gasTeal}20` }} />
+      <GasOverviewCard step="01" icon="✓" title="確認身分" description="從員工主檔選擇自己，進入個人化首頁。" accent={gasTeal} />
+      <GasOverviewCard step="02" icon="▦" title="查看月班表" description="只看自己的當月班別，快速掌握上班日期。" accent={sheetColor.schedule} />
+      <GasOverviewCard step="03" icon="＋" title="申請請假" description="填寫假別與日期，送出後直接寫回試算表。" accent={sheetColor.leave} />
+      <GasOverviewCard step="04" icon="↻" title="維護班別" description="管理個人班別資料，讓後續排班保持一致。" accent={sheetColor.settings} />
+      <GasOverviewCard step="05" icon="↗" title="匯出行事曆" description="同步 Google 行事曆，也能下載 .ics 給 iPhone。" accent={formulaBlue} />
+    </div>
+
+    <div
+      style={{
+        marginTop: 34,
+        padding: '20px 30px',
+        borderRadius: 18,
+        background: `${gasTeal}10`,
+        borderLeft: `8px solid ${gasTeal}`,
+        fontSize: 27,
+        fontWeight: 800,
+        color: 'var(--osd-text)',
+      }}
+    >
+      核心價值：把「問主管、翻班表、手動登記」變成員工可以自己完成的網頁流程。
+    </div>
+    <PageFooter />
+  </div>
+);
+
 // ─── Page 1 — Cover ────────────────────────────────────────────────────────────
 const Cover: Page = () => (
   <div style={{ ...page, justifyContent: 'center' }}>
@@ -4250,6 +4335,7 @@ export default [
   LeaveDeductToSalaryDetail,
   SalaryDeductionsNetPayFormula,
   Part4SectionTitle,
+  GasSystemOverview,
   GasTask46Skeleton,
   GasTask47StaffList,
   GasTask48IdentityPicker,

@@ -387,6 +387,137 @@ export const transition = {
   },
 };
 
+// ─── Shared — PART section divider ────────────────────────────────────────────
+const CourseSectionTitle = ({
+  chapter,
+  title,
+  subtitle,
+  color,
+  symbol,
+  kicker,
+  chips,
+}: {
+  chapter: string;
+  title: string;
+  subtitle?: string;
+  color: string;
+  symbol: string;
+  kicker: string;
+  chips: string[];
+}) => (
+  <div
+    style={{
+      ...page,
+      justifyContent: 'center',
+      background: `linear-gradient(135deg, #FBF9F3 0%, ${color}0C 58%, ${color}18 100%)`,
+      overflow: 'hidden',
+    }}
+  >
+    <GridTexture />
+    <div style={{ position: 'absolute', width: 780, height: 780, borderRadius: '50%', background: `${color}0D`, right: -180, top: -250 }} />
+    <div style={{ position: 'absolute', width: 430, height: 430, borderRadius: '50%', background: `${color}0A`, right: 330, bottom: -260 }} />
+
+    <div style={{ position: 'relative', display: 'grid', gridTemplateColumns: '1.08fr 0.92fr', gap: 78, alignItems: 'center', height: '100%' }}>
+      <div>
+        <div style={{ display: 'inline-flex', alignItems: 'center', borderRadius: 999, background: `${color}14`, color, border: `1px solid ${color}45`, padding: '10px 22px', fontSize: 25, fontWeight: 900, letterSpacing: 1 }}>
+          {chapter}
+        </div>
+        <div style={{ width: 100, height: 8, borderRadius: 99, background: color, marginTop: 34 }} />
+        <h1 style={{ margin: '28px 0 0', fontFamily: 'var(--osd-font-display)', fontSize: 78, lineHeight: 1.08, fontWeight: 900, color: '#2B2D2B' }}>
+          {title}
+        </h1>
+        {subtitle ? (
+          <div style={{ marginTop: 18, fontSize: 48, lineHeight: 1.18, fontWeight: 900, color }}>
+            {subtitle}
+          </div>
+        ) : null}
+        <p style={{ margin: '28px 0 0', maxWidth: 790, fontSize: 30, lineHeight: 1.55, color: muted }}>
+          {kicker}
+        </p>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 14, marginTop: 34 }}>
+          {chips.map((chip) => <Tag key={chip}>{chip}</Tag>)}
+        </div>
+      </div>
+
+      <div style={{ position: 'relative', height: 650 }}>
+        <div style={{ position: 'absolute', inset: '34px 10px 34px 44px', borderRadius: 44, background: '#FFFFFF', border: `2px solid ${color}38`, boxShadow: '0 28px 70px rgba(39,45,42,0.15)', overflow: 'hidden' }}>
+          <div style={{ height: 72, background: color, color: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 28px', fontSize: 24, fontWeight: 900, letterSpacing: 1 }}>
+            <span>NEXT SECTION</span>
+            <span>排班與薪資</span>
+          </div>
+          <div style={{ position: 'relative', height: 'calc(100% - 72px)', background: `linear-gradient(155deg, #FFFFFF 0%, ${color}0D 100%)` }}>
+            <div style={{ position: 'absolute', width: 350, height: 350, borderRadius: '50%', background: `${color}16`, left: '50%', top: 42, transform: 'translateX(-50%)', display: 'grid', placeItems: 'center', border: `2px solid ${color}28` }}>
+              <div style={{ fontFamily: 'var(--osd-font-display)', fontSize: symbol.length > 4 ? 92 : symbol.length > 2 ? 120 : 170, fontWeight: 900, color, letterSpacing: -4 }}>
+                {symbol}
+              </div>
+            </div>
+
+            <div style={{ position: 'absolute', left: 34, right: 34, bottom: 30, display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12 }}>
+              {chips.slice(0, 3).map((chip, index) => (
+                <div key={chip} style={{ borderRadius: 16, background: '#FFFFFF', border: `1px solid ${color}35`, boxShadow: '0 8px 20px rgba(39,45,42,0.08)', padding: '14px 10px', textAlign: 'center' }}>
+                  <div style={{ width: 34, height: 34, margin: '0 auto 7px', borderRadius: 10, background: `${color}18`, color, display: 'grid', placeItems: 'center', fontSize: 19, fontWeight: 900 }}>
+                    {index + 1}
+                  </div>
+                  <div style={{ fontSize: 21, fontWeight: 900, color: '#3A423E' }}>{chip}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <PageFooter />
+  </div>
+);
+
+const Part1SectionTitle: Page = () => (
+  <CourseSectionTitle
+    chapter="CHAPTER 01 · 情境導入"
+    title="排班表是什麼？"
+    subtitle="情境與限制"
+    color={design.palette.accent}
+    symbol="序"
+    kicker="從鍋貼店的真實痛點出發，理解排班表要解決什麼問題、有哪些限制。"
+    chips={['要素與限制', '案例情境', '人力限制']}
+  />
+);
+
+const Part2SectionTitle: Page = () => (
+  <CourseSectionTitle
+    chapter="CHAPTER 02 · 排班表實作"
+    title="排班表實作"
+    subtitle="從主檔到公式"
+    color={sheetColor.leave}
+    symbol="表"
+    kicker="建立員工主檔、休假申請、排班表，並用公式自動判斷合理性。"
+    chips={['員工主檔', '排班公式', '工時彙總']}
+  />
+);
+
+const Part3SectionTitle: Page = () => (
+  <CourseSectionTitle
+    chapter="CHAPTER 03 · 薪水怎麼算？"
+    title="薪水怎麼算？"
+    subtitle="從工時到實發"
+    color={sheetColor.monthly}
+    symbol="$"
+    kicker="把工時、加班、獎金、勞健保與請假扣款，串成完整的薪資明細。"
+    chips={['薪資設定', '加班獎金', '應扣項目']}
+  />
+);
+
+const Part4SectionTitle: Page = () => (
+  <CourseSectionTitle
+    chapter="CHAPTER 04 · 雲端部署"
+    title="GAS 排班系統"
+    subtitle="從 Excel 到網頁"
+    color={gasTeal}
+    symbol="</>"
+    kicker="把排班與請假邏輯搬上 Google Apps Script，做成員工能自己操作的網頁工具。"
+    chips={['身分登入', '請假申請', '匯出行事曆']}
+  />
+);
+
 // ─── Page 1 — Cover ────────────────────────────────────────────────────────────
 const Cover: Page = () => (
   <div style={{ ...page, justifyContent: 'center' }}>
@@ -4044,6 +4175,7 @@ export const meta: SlideMeta = {
 
 export default [
   Cover,
+  Part1SectionTitle,
   WhyModule1,
   WhyModule2,
   Elements,
@@ -4054,6 +4186,7 @@ export default [
   StaffingLimits,
   WorkHoursTable,
   AntiErrorNeeds,
+  Part2SectionTitle,
   Task1EmployeeSetup,
   Task1SettingsDropdown,
   EmployeeDataTable,
@@ -4078,6 +4211,7 @@ export default [
   OvertimeCheck,
   HoursSummary,
   HoursSummaryComplete,
+  Part3SectionTitle,
   Part2Logic,
   Part2OurCase,
   SalarySetup,
@@ -4115,6 +4249,7 @@ export default [
   InsuranceAmountsToSalaryDetail,
   LeaveDeductToSalaryDetail,
   SalaryDeductionsNetPayFormula,
+  Part4SectionTitle,
   GasTask46Skeleton,
   GasTask47StaffList,
   GasTask48IdentityPicker,

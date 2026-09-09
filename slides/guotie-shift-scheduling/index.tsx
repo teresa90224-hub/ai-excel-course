@@ -37,6 +37,25 @@ import asset3 from './assets/排班圖解_下.png';
 import asset4 from './assets/排班圖解_上.png';
 import gasTask46Skeleton from './assets/gas-schedule-task46-skeleton.png';
 import gasTask47StaffList from './assets/gas-schedule/task47-staff-list.png';
+import gasCloud01 from './assets/gas-cloud-setup/step01-project-settings.png';
+import gasCloud02 from './assets/gas-cloud-setup/step02-change-project.png';
+import gasCloud03 from './assets/gas-cloud-setup/step03-change-project-link.png';
+import gasCloud04 from './assets/gas-cloud-setup/step04-new-project-select.png';
+import gasCloud05 from './assets/gas-cloud-setup/step05-new-project-name.png';
+import gasCloud06 from './assets/gas-cloud-setup/step06-new-project-created.png';
+import gasCloud07 from './assets/gas-cloud-setup/step07-project-number.png';
+import gasCloud08 from './assets/gas-cloud-setup/step08-paste-project-number.png';
+import gasCloud09 from './assets/gas-cloud-setup/step09-oauth-consent-menu.png';
+import gasCloud10 from './assets/gas-cloud-setup/step10-audience-start.png';
+import gasCloud11 from './assets/gas-cloud-setup/step11-app-info.png';
+import gasCloud12 from './assets/gas-cloud-setup/step12-audience-external.png';
+import gasCloud13 from './assets/gas-cloud-setup/step13-contact-info.png';
+import gasCloud14 from './assets/gas-cloud-setup/step14-finish-create.png';
+import gasCloud15 from './assets/gas-cloud-setup/step15-publish-app.png';
+import gasCloud16 from './assets/gas-cloud-setup/step16-publish-confirm.png';
+import gasCloud17 from './assets/gas-cloud-setup/step17-back-to-appsscript.png';
+import gasCloud18 from './assets/gas-cloud-setup/step18-new-deployment.png';
+import gasCloud19 from './assets/gas-cloud-setup/step19-deployment-settings.png';
 import gasTask49SidebarSkeleton from './assets/gas-schedule/task49-sidebar-skeleton.png';
 import gasTask48IdentityPicker from './assets/gas-schedule/task48-identity-picker.png';
 import gasTask48Welcome from './assets/gas-schedule/task48-welcome.png';
@@ -3043,7 +3062,7 @@ const VbaStep1: Page = () => (
       <Eyebrow color={sheetColor.monthly}>PART 3 · 薪水怎麼算？</Eyebrow>
       <Eyebrow color={taskColor}>操作手冊 · P.28 · Prompt 19</Eyebrow>
     </div>
-    <PageHeading maxWidth={1650} marginTop={16}>任務23	讓AI產出第一段VBA－打開報表</PageHeading>
+    <PageHeading maxWidth={1650} marginTop={16}>任務24 讓AI產出第一段VBA－打開報表</PageHeading>
     <div style={{ fontSize: 27, fontWeight: 800, color: sheetColor.monthly, marginTop: 6 }}>
       ① 跳出視窗，選擇月報 .xlsx 檔案（唯讀開啟，背景不顯示）
     </div>
@@ -3059,7 +3078,7 @@ const VbaStep2: Page = () => (
       <Eyebrow color={sheetColor.monthly}>PART 3 · 薪水怎麼算？</Eyebrow>
       <Eyebrow color={taskColor}>操作手冊 · P.28 · Prompt 20</Eyebrow>
     </div>
-    <PageHeading maxWidth={1650} marginTop={16} style={{ fontSize: '51px' }}>任務24 產出第二段VBA－找到tbl_DailyTrend，<br />讀取日期與營業額</PageHeading>
+    <PageHeading maxWidth={1650} marginTop={16} style={{ fontSize: '51px' }}>任務25 產出第二段VBA－找到tbl_DailyTrend，<br />讀取日期與營業額</PageHeading>
     <div style={{ fontSize: 27, fontWeight: 800, color: sheetColor.monthly, marginTop: 6 }}>
       ② 在月報裡找到表格 tbl_DailyTrend，讀出「日期」與「營業額」
     </div>
@@ -3075,7 +3094,7 @@ const VbaStep3: Page = () => (
       <Eyebrow color={sheetColor.monthly}>PART 3 · 薪水怎麼算？</Eyebrow>
       <Eyebrow color={taskColor}>操作手冊 · P.29 · Prompt 21</Eyebrow>
     </div>
-    <PageHeading maxWidth={1650} marginTop={16}>任務25 產出第三段VBA－找出達標日期</PageHeading>
+    <PageHeading maxWidth={1650} marginTop={16}>任務26 產出第三段VBA－找出達標日期</PageHeading>
     <div style={{ fontSize: 27, fontWeight: 800, color: sheetColor.monthly, marginTop: 6 }}>
       ③ 篩出營業額 ≥ $25,000 的達標日期
     </div>
@@ -3091,9 +3110,7 @@ const VbaBackgroundSafety: Page = () => (
       <Eyebrow color={sheetColor.monthly}>PART 3 · 薪水怎麼算？</Eyebrow>
       <Eyebrow color={taskColor}>操作手冊 · P.29 · Prompt 22</Eyebrow>
     </div>
-    <PageHeading maxWidth={1650} marginTop={16} style={{ fontSize: '51px' }}>
-      任務26 產出第四段VBA－讓巨集背景執行與錯誤示警
-    </PageHeading>
+    <PageHeading maxWidth={1650} marginTop={16} style={{ fontSize: '51px' }}>任務27 產出第四段VBA－讓巨集背景執行與錯誤示警</PageHeading>
     <div style={{ fontSize: 27, fontWeight: 800, color: sheetColor.monthly, marginTop: 6 }}>
       ④ 背景開啟月報；成功或失敗，都必須關閉月報且不儲存
     </div>
@@ -3112,7 +3129,7 @@ const VbaStep4: Page = () => (
       <Eyebrow color={sheetColor.monthly}>PART 3 · 薪水怎麼算？</Eyebrow>
       <Eyebrow color={taskColor}>操作手冊 · P.30 · Prompt 25</Eyebrow>
     </div>
-    <PageHeading maxWidth={1650} marginTop={16}>任務29 產出第七段VBA－抓出達標日有上班的員工</PageHeading>
+    <PageHeading maxWidth={1650} marginTop={16}>任務30 產出第七段VBA－抓出達標日有上班的員工</PageHeading>
     <div style={{ fontSize: 27, fontWeight: 800, color: sheetColor.monthly, marginTop: 6 }}>⑥ 比對 tbl_排班，找出達標日當天有上班的員工</div>
     <div
       style={{
@@ -3153,7 +3170,7 @@ const VbaStep6ScheduleFields: Page = () => (
       <Eyebrow color={taskColor}>操作手冊 · P.30 · Prompt 24</Eyebrow>
     </div>
     <PageHeading maxWidth={1650} marginTop={16} style={{ fontSize: '51px' }}>
-      任務28 產出第六段VBA－抓出 tbl_排班 的<br />
+      任務29 產出第六段VBA－抓出 tbl_排班 的<br />
       日期、員工ID、員工姓名
     </PageHeading>
     <div style={{ fontSize: 27, fontWeight: 800, color: sheetColor.monthly, marginTop: 6 }}>
@@ -3174,7 +3191,7 @@ const VbaStep5: Page = () => (
       <Eyebrow color={sheetColor.monthly}>PART 3 · 薪水怎麼算？</Eyebrow>
       <Eyebrow color={taskColor}>操作手冊 · P.30 · Prompt 23</Eyebrow>
     </div>
-    <PageHeading maxWidth={1650} marginTop={16}>任務27 產出第五段VBA－從薪資設定取得業績獎金金額</PageHeading>
+    <PageHeading maxWidth={1650} marginTop={16}>任務28 產出第五段VBA－從薪資設定取得業績獎金金額</PageHeading>
     <div style={{ fontSize: 27, fontWeight: 800, color: sheetColor.monthly, marginTop: 6 }}>⑤ 從 薪資設定！C8 取得業績獎金金額</div>
     <VbaStepImage src={vbaStep5SalarySetting} alt="薪資設定頁籤的業績獎金基數" scale={1.2} />
     <PageFooter />
@@ -3188,7 +3205,7 @@ const VbaWriteBack: Page = () => (
       <Eyebrow color={sheetColor.monthly}>PART 3 · 薪水怎麼算？</Eyebrow>
       <Eyebrow color={taskColor}>操作手冊 · P.31 · Prompt 26</Eyebrow>
     </div>
-    <PageHeading maxWidth={1650}>任務30 產出最後一段VBA－輸入業績獎金資料</PageHeading>
+    <PageHeading maxWidth={1650}>任務31 產出最後一段VBA－輸入業績獎金資料</PageHeading>
     <VbaStepImage
       src={bonusInputFieldCallouts}
       alt="獎金輸入明細表五個欄位的手繪引線標註：日期、員工ID、員工姓名、獎金項目與金額"
@@ -4228,6 +4245,95 @@ const GasTask55FinalUi: Page = () => (
   </div>
 );
 
+// ─── PART 4 進階設定：把 GAS 網頁應用程式正式發布 ────────────────────────────
+const GasCloudStep = ({ n, title, src, alt }: { n: number; title: string; src: string; alt: string }) => (
+  <div style={page}>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+      <Eyebrow color={gasTeal}>PART 4 · GAS 排班系統</Eyebrow>
+      <Eyebrow color={taskColor}>進階設定 · 步驟 {n}/19</Eyebrow>
+    </div>
+    <PageHeading maxWidth={1650} marginTop={16}>{title}</PageHeading>
+    <VbaStepImage src={src} alt={alt} />
+    <PageFooter />
+  </div>
+);
+
+const GasCloud01: Page = () => (
+  <GasCloudStep n={1} title="進入專案設定" src={gasCloud01} alt="Apps Script 編輯器左側選單，點選專案設定齒輪圖示" />
+);
+
+const GasCloud02: Page = () => (
+  <GasCloudStep n={2} title="變更 Google Cloud Platform 專案" src={gasCloud02} alt="專案設定頁面，捲到 GCP 專案區塊，點選變更專案" />
+);
+
+const GasCloud03: Page = () => (
+  <GasCloudStep n={3} title="前往「這裡」選擇或新建 GCP 專案" src={gasCloud03} alt="變更 GCP 專案步驟說明，點選這裡的連結前往 Google Cloud" />
+);
+
+const GasCloud04: Page = () => (
+  <GasCloudStep n={4} title="新增專案：開啟選取專案視窗" src={gasCloud04} alt="Google Cloud 選取專案視窗，點選新增專案" />
+);
+
+const GasCloud05: Page = () => (
+  <GasCloudStep n={5} title="新增專案：輸入專案名稱" src={gasCloud05} alt="新增專案表單，輸入專案名稱 potstickers-shift-system 並建立" />
+);
+
+const GasCloud06: Page = () => (
+  <GasCloudStep n={6} title="新增專案：完成建立" src={gasCloud06} alt="選取專案視窗，新建立的專案出現在清單中" />
+);
+
+const GasCloud07: Page = () => (
+  <GasCloudStep n={7} title="取得專案編號" src={gasCloud07} alt="Google Cloud 專案資訊卡片，標示專案編號位置" />
+);
+
+const GasCloud08: Page = () => (
+  <GasCloudStep n={8} title="將專案編號貼回 Apps Script" src={gasCloud08} alt="回到 Apps Script 專案設定，貼上 GCP 專案編號，先不要按設定專案" />
+);
+
+const GasCloud09: Page = () => (
+  <GasCloudStep n={9} title="回到 Google Cloud，前往 OAuth 同意畫面" src={gasCloud09} alt="Google Cloud API 和服務選單，點選 OAuth 同意畫面" />
+);
+
+const GasCloud10: Page = () => (
+  <GasCloudStep n={10} title="設定目標對象：開始設定驗證平台" src={gasCloud10} alt="目標對象頁面，尚未設定 Google 驗證平台，點選開始" />
+);
+
+const GasCloud11: Page = () => (
+  <GasCloudStep n={11} title="設定應用程式資訊" src={gasCloud11} alt="填寫應用程式名稱與使用者支援電子郵件（填自己的 gmail）" />
+);
+
+const GasCloud12: Page = () => (
+  <GasCloudStep n={12} title="設定目標對象：選擇「外部」" src={gasCloud12} alt="目標對象步驟，選擇外部使用者類型" />
+);
+
+const GasCloud13: Page = () => (
+  <GasCloudStep n={13} title="設定聯絡資訊" src={gasCloud13} alt="填寫聯絡資訊電子郵件地址（填自己的 gmail）" />
+);
+
+const GasCloud14: Page = () => (
+  <GasCloudStep n={14} title="完成並建立" src={gasCloud14} alt="勾選同意 Google API 服務使用者資料政策，點選建立" />
+);
+
+const GasCloud15: Page = () => (
+  <GasCloudStep n={15} title="發布應用程式（給別人用）" src={gasCloud15} alt="目標對象總覽，發布狀態為測試，點選發布應用程式" />
+);
+
+const GasCloud16: Page = () => (
+  <GasCloudStep n={16} title="確認推送到正式環境" src={gasCloud16} alt="確認要推送至正式環境的對話框，點選確認" />
+);
+
+const GasCloud17: Page = () => (
+  <GasCloudStep n={17} title="回到 Apps Script，點選「設定專案」" src={gasCloud17} alt="回到 Apps Script 專案設定，這次真的按下設定專案" />
+);
+
+const GasCloud18: Page = () => (
+  <GasCloudStep n={18} title="新增部署作業" src={gasCloud18} alt="Apps Script 部署選單，點選新增部署作業" />
+);
+
+const GasCloud19: Page = () => (
+  <GasCloudStep n={19} title="完成部署設定" src={gasCloud19} alt="新增部署作業視窗，設定說明、執行身分與存取權，點選部署" />
+);
+
 // ─── Page 57 — Closing ──────────────────────────────────────────────────────────
 const Closing: Page = () => (
   <div style={{ ...page, justifyContent: 'center' }}>
@@ -4353,5 +4459,24 @@ export default [
   GasTask54GoogleCalendar,
   GasTask54Iphone,
   GasTask55FinalUi,
+  GasCloud01,
+  GasCloud02,
+  GasCloud03,
+  GasCloud04,
+  GasCloud05,
+  GasCloud06,
+  GasCloud07,
+  GasCloud08,
+  GasCloud09,
+  GasCloud10,
+  GasCloud11,
+  GasCloud12,
+  GasCloud13,
+  GasCloud14,
+  GasCloud15,
+  GasCloud16,
+  GasCloud17,
+  GasCloud18,
+  GasCloud19,
   Closing,
 ] satisfies Page[];

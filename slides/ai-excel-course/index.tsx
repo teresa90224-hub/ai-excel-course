@@ -1,6 +1,7 @@
 import type { DesignSystem, Page, SlideMeta } from '@open-slide/core';
 import { Step, Steps, useSlidePageNumber } from '@open-slide/core';
 import quizQrCode from './assets/quiz-qrcode.png';
+import manualNavigationPane from './assets/manual-navigation-pane.png';
 import gasBasics01 from './assets/gas-basics/img_001.png';
 import gasBasics02 from './assets/gas-basics/img_002_top.png';
 import gasBasics03 from './assets/gas-basics/img_003.png';
@@ -426,7 +427,23 @@ const RoadmapChip = ({ num, color, label, sub }: { num: string; color: string; l
 
 const RoadmapArrow = () => <div style={{ alignSelf: 'flex-start', marginTop: 14, fontSize: 31, color: muted }}>→</div>;
 
-const TaskCard = ({ num, title, desc }: { num: string; title: string; desc: string }) => (
+const PromptTag = ({ children }: { children: React.ReactNode }) => (
+  <span
+    style={{
+      fontSize: 25,
+      fontWeight: 800,
+      color: taskColor,
+      background: `${taskColor}14`,
+      borderRadius: 999,
+      padding: '5px 14px',
+      whiteSpace: 'nowrap',
+    }}
+  >
+    {children}
+  </span>
+);
+
+const TaskCard = ({ num, title, desc, prompt }: { num: string; title: string; desc: string; prompt?: string }) => (
   <div
     style={{
       background: cardBg,
@@ -438,7 +455,10 @@ const TaskCard = ({ num, title, desc }: { num: string; title: string; desc: stri
       gap: 10,
     }}
   >
-    <div style={{ fontSize: 33, fontWeight: 800, color: taskColor }}>{`任務 ${num}：${title}`}</div>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
+      <div style={{ fontSize: 33, fontWeight: 800, color: taskColor }}>{`任務 ${num}：${title}`}</div>
+      {prompt && <PromptTag>{prompt}</PromptTag>}
+    </div>
     <div style={{ fontSize: 34, color: muted, lineHeight: 1.5 }}>{desc}</div>
   </div>
 );
@@ -960,6 +980,73 @@ Cover.transition = {
   },
 };
 
+// ─── 操作手冊使用說明 ──────────────────────────────────────────────────────────
+const ManualStep = ({ num, children }: { num: string; children: React.ReactNode }) => (
+  <div style={{ display: 'flex', alignItems: 'center', gap: 24 }}>
+    <div
+      style={{
+        flexShrink: 0,
+        width: 64,
+        height: 64,
+        borderRadius: '50%',
+        background: 'var(--osd-accent)',
+        color: '#FFFFFF',
+        fontSize: 34,
+        fontWeight: 800,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
+    >
+      {num}
+    </div>
+    <div style={{ fontSize: 36, fontWeight: 600, lineHeight: 1.4 }}>{children}</div>
+  </div>
+);
+
+const ManualGuide: Page = () => (
+  <div style={page}>
+    <GridTexture />
+    <PageFooter />
+    <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', height: '100%' }}>
+      <Eyebrow color={design.palette.accent}>課前準備</Eyebrow>
+      <PageHeading>搭配「操作手冊」一起上課</PageHeading>
+      <div style={{ display: 'flex', gap: 56, marginTop: 40, flex: 1, alignItems: 'flex-start' }}>
+        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 36 }}>
+          <p style={{ fontSize: 34, lineHeight: 1.6, color: muted, margin: 0 }}>
+            每個單元用到的 <b style={{ color: 'var(--osd-text)' }}>Prompt</b> 與
+            <b style={{ color: 'var(--osd-text)' }}>固定資料</b>，都放在操作手冊裡，到對應單元直接複製使用。
+          </p>
+          <ManualStep num="1">打開操作手冊</ManualStep>
+          <ManualStep num="2">點選上方功能列「檢視」</ManualStep>
+          <ManualStep num="3">勾選「功能窗格」</ManualStep>
+          <div
+            style={{
+              padding: '20px 28px',
+              borderRadius: 'var(--osd-radius)',
+              background: `${design.palette.accent}12`,
+              border: `1px solid ${design.palette.accent}40`,
+              fontSize: 32,
+              lineHeight: 1.5,
+            }}
+          >
+            ✅ 左半邊出現目錄側欄，點標題就能跳到對應單元
+          </div>
+        </div>
+        <img
+          src={manualNavigationPane}
+          style={{
+            width: 900,
+            borderRadius: 'var(--osd-radius)',
+            border: `1px solid ${cardBorder}`,
+            boxShadow: '0 12px 32px rgba(0,0,0,0.10)',
+          }}
+        />
+      </div>
+    </div>
+  </div>
+);
+
 // ─── Page 2 — 課程總覽 ─────────────────────────────────────────────────────────
 const Overview: Page = () => (
   <div style={page}>
@@ -1329,8 +1416,11 @@ const Part1Tables: Page = () => (
         </Step>
         <Step>
           <Callout color={taskColor}>
-            <div style={{ fontWeight: 800 }}>任務 1：請 AI 產出三張主檔</div>
-            <div style={{ fontSize: 32, color: muted, marginTop: 6 }}>請同學打開操作手冊.doc 第 3 頁</div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
+              <div style={{ fontWeight: 800 }}>任務 1：請 AI 產出三張主檔</div>
+              <PromptTag>PROMPT 1</PromptTag>
+            </div>
+            <div style={{ fontSize: 32, color: muted, marginTop: 6 }}>請同學打開操作手冊</div>
           </Callout>
         </Step>
       </Steps>
@@ -1494,7 +1584,7 @@ const ClaudeSkillsTry: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={claudeAccent}>Claude 介面導覽 · 任務 2-1</Eyebrow>
-      <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.8</Eyebrow>
+      <Eyebrow color={taskColor}>課堂練習</Eyebrow>
     </div>
     <PageHeading>任務 2-1：試用 Skill（/audit-xls、/clean-data-xls）</PageHeading>
     <div style={{ display: 'flex', flexDirection: 'column', gap: 20, marginTop: 24 }}>
@@ -1668,7 +1758,7 @@ const ClaudeGuideAddin: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={claudeAccent}>Claude 介面導覽 · 任務 2</Eyebrow>
-      <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.8</Eyebrow>
+      <Eyebrow color={taskColor}>課堂練習</Eyebrow>
     </div>
     <PageHeading>在 Excel 內建立增益集</PageHeading>
     <div style={{ marginTop: 24 }}>
@@ -1716,7 +1806,7 @@ const ClaudeGuideConnectorsTask: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={claudeAccent}>Claude 介面導覽 · 任務 3</Eyebrow>
-      <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.8</Eyebrow>
+      <Eyebrow color={taskColor}>課堂練習</Eyebrow>
     </div>
     <PageHeading>試用 Connectors 功能</PageHeading>
     <div style={{ display: 'flex', gap: 40, marginTop: 30, alignItems: 'flex-start' }}>
@@ -1772,7 +1862,7 @@ const ClaudeGuideConnectorsTask: Page = () => (
 // ─── Page 4b — 課堂練習：完成三張主檔 ──────────────────────────────────────────
 const Part1Task567: Page = () => (
   <div style={page}>
-    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.10-11</Eyebrow>
+    <Eyebrow color={taskColor}>課堂練習</Eyebrow>
     <PageHeading>四、請完成三張主檔的內容</PageHeading>
     <div style={{ display: 'flex', flexDirection: 'column', gap: 20, marginTop: 44 }}>
       <Steps>
@@ -1781,6 +1871,7 @@ const Part1Task567: Page = () => (
           <TaskCard
             num="8"
             title="完成原物料主檔"
+            prompt="PROMPT 5"
             desc="請依照您的菜單品項，整理出所有需要用到的原物料名稱、分類、單位、庫存等資料"
           />
         </Step>
@@ -1788,6 +1879,7 @@ const Part1Task567: Page = () => (
           <TaskCard
             num="9"
             title="完成供應商主檔"
+            prompt="PROMPT 6"
             desc="請產出 5～10 筆供應商資料（供應商名稱、主要供應品項、聯絡人、電話、付款方式、狀態）"
           />
         </Step>
@@ -1800,7 +1892,7 @@ const Part1Task567: Page = () => (
 // ─── Page 4b — 課堂練習：檢查下拉選單 ──────────────────────────────────────────
 const Part1TaskDropdownCheck: Page = () => (
   <div style={page}>
-    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.9</Eyebrow>
+    <Eyebrow color={taskColor}>課堂練習</Eyebrow>
     <PageHeading>三、如何讓下拉選單變得聰明？</PageHeading>
     <div style={{ display: 'flex', flexDirection: 'column', gap: 20, marginTop: 44 }}>
       <Steps>
@@ -1833,7 +1925,7 @@ const Part1TaskDropdownCheck: Page = () => (
 const Part1TaskDropdownFix: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
-      <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.9</Eyebrow>
+      <Eyebrow color={taskColor}>課堂練習</Eyebrow>
       <div
         style={{
           display: 'inline-flex',
@@ -1871,7 +1963,7 @@ const Part1TaskDropdownFix: Page = () => (
 // ─── Page 6 — 課堂練習：動手認識表格 ───────────────────────────────────────────
 const Part1Task8: Page = () => (
   <div style={page}>
-    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.11</Eyebrow>
+    <Eyebrow color={taskColor}>課堂練習</Eyebrow>
     <PageHeading>五、動手認識表格</PageHeading>
     <div style={{ fontSize: 31, fontWeight: 800, color: taskColor, marginTop: 20 }}>任務 10：在商品主檔新增項目，觀察一般範圍的問題</div>
     <Steps>
@@ -1908,7 +2000,7 @@ const RangeVsTableAnalogy: Page = () => (
 // ─── Page 5a — 課堂練習：設定表格 ───────────────────────────────────────────────
 const Part1Task9: Page = () => (
   <div style={page}>
-    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.12</Eyebrow>
+    <Eyebrow color={taskColor}>課堂練習</Eyebrow>
     <PageHeading>設定表格實作</PageHeading>
     <div style={{ fontSize: 31, fontWeight: 800, color: taskColor, marginTop: 20 }}>任務 11：把範圍轉成 Excel 表格並正確命名</div>
     <Steps>
@@ -2167,7 +2259,7 @@ const Part1SupplierIntro: Page = () => (
 // ─── Page 5d — 任務 10–12：讓下拉選單一路變聰明 ───────────────────────────────
 const Part1SupplierTasks: Page = () => (
   <div style={page}>
-    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.13–14</Eyebrow>
+    <Eyebrow color={taskColor}>課堂練習</Eyebrow>
     <PageHeading>下拉選單，讓它一路變聰明</PageHeading>
     <div style={{ flex: 1, minHeight: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: 16 }}>
       <img
@@ -2270,7 +2362,7 @@ const Cross = () => <span style={{ color: painRed, fontWeight: 800, fontSize: 25
 // ─── Page 5e — 七、新增「商品配方BOM」工作表 ───────────────────────────────────
 const Part1BomSetup: Page = () => (
   <div style={page}>
-    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.14</Eyebrow>
+    <Eyebrow color={taskColor}>課堂練習</Eyebrow>
     <PageHeading>七、賣一份商品，要用多少料，BOM 表一次看懂</PageHeading>
     <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginTop: 24 }}>
       <div style={{ fontSize: 31, fontWeight: 800, color: taskColor }}>任務 15：讓 AI 建立「商品配方BOM」工作表</div>
@@ -2379,9 +2471,12 @@ const Part1BomSetup: Page = () => (
 // ─── Page 5f — 任務16：填入 BOM 範例資料 ───────────────────────────────────────
 const Part1BomSampleData: Page = () => (
   <div style={page}>
-    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.15</Eyebrow>
+    <Eyebrow color={taskColor}>課堂練習</Eyebrow>
     <PageHeading>讓 AI 填入「商品配方BOM」範例資料</PageHeading>
-    <div style={{ fontSize: 31, fontWeight: 800, color: taskColor, marginTop: 24 }}>任務 16：請 AI 填入範例資料</div>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginTop: 24 }}>
+      <div style={{ fontSize: 31, fontWeight: 800, color: taskColor }}>任務 16：請 AI 填入範例資料</div>
+      <PromptTag>依 PROMPT 11 建立</PromptTag>
+    </div>
     <Steps>
       <Step>
         <div style={{ height: 650, marginTop: 16, display: 'flex', alignItems: 'flex-start', justifyContent: 'center', overflow: 'hidden' }}>
@@ -2457,10 +2552,10 @@ const Part1BomSampleData: Page = () => (
 // ─── Page 5g — 八、新增「銷售紀錄」工作表 ──────────────────────────────────────
 const Part1SalesSetup: Page = () => (
   <div style={page}>
-    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.15-16</Eyebrow>
+    <Eyebrow color={taskColor}>課堂練習</Eyebrow>
     <PageHeading>一、顧客下單，系統自動算好這一筆多少錢</PageHeading>
     <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginTop: 24 }}>
-      <div style={{ fontSize: 31, fontWeight: 800, color: taskColor }}>任務 17：讓 AI 建立「銷售紀錄」工作表</div>
+      <div style={{ fontSize: 31, fontWeight: 800, color: taskColor }}>任務 18：讓 AI 建立「銷售紀錄」工作表</div>
       <span
         style={{
           fontSize: 25,
@@ -2471,7 +2566,7 @@ const Part1SalesSetup: Page = () => (
           padding: '5px 14px',
         }}
       >
-        依 PROMPT 12 建立
+        依 PROMPT 13 建立
       </span>
     </div>
     <div style={{ flex: 1, minHeight: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: 16 }}>
@@ -2488,7 +2583,10 @@ const Part1SalesSetup: Page = () => (
 // ─── Page 5h — 任務18：填入銷售紀錄範例資料 ───────────────────────────────────
 const Part1SalesSampleData: Page = () => (
   <div style={page}>
-    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.16</Eyebrow>
+<div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
+      <Eyebrow color={taskColor}>課堂練習</Eyebrow>
+      <Eyebrow color={taskColor}>任務 19 · PROMPT 14</Eyebrow>
+    </div>
     <PageHeading>讓 AI 填入「銷售紀錄」範例資料</PageHeading>
     <div style={{ flex: 1, minHeight: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: 16 }}>
       <img
@@ -2504,10 +2602,10 @@ const Part1SalesSampleData: Page = () => (
 // ─── Page 5i — 九、新增「進貨紀錄」工作表 ──────────────────────────────────────
 const Part1PurchaseSetup: Page = () => (
   <div style={page}>
-    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.17</Eyebrow>
+    <Eyebrow color={taskColor}>課堂練習</Eyebrow>
     <PageHeading>二、叫貨進來的每一批料，自動算多少錢</PageHeading>
     <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginTop: 24 }}>
-      <div style={{ fontSize: 31, fontWeight: 800, color: taskColor }}>任務 19：讓 AI 建立「進貨紀錄」工作表</div>
+      <div style={{ fontSize: 31, fontWeight: 800, color: taskColor }}>任務 20：讓 AI 建立「進貨紀錄」工作表</div>
       <span
         style={{
           fontSize: 25,
@@ -2518,7 +2616,7 @@ const Part1PurchaseSetup: Page = () => (
           padding: '5px 14px',
         }}
       >
-        依 PROMPT 14 建立
+        依 PROMPT 15 建立
       </span>
     </div>
     <div style={{ flex: 1, minHeight: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: 16 }}>
@@ -2535,7 +2633,10 @@ const Part1PurchaseSetup: Page = () => (
 // ─── Page 5j — 任務20：填入進貨紀錄範例資料 ───────────────────────────────────
 const Part1PurchaseSampleData: Page = () => (
   <div style={page}>
-    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.18</Eyebrow>
+<div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
+      <Eyebrow color={taskColor}>課堂練習</Eyebrow>
+      <Eyebrow color={taskColor}>任務 21 · PROMPT 16</Eyebrow>
+    </div>
     <PageHeading>讓 AI 填入「進貨紀錄」範例資料</PageHeading>
     <div style={{ flex: 1, minHeight: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: 16 }}>
       <img
@@ -3095,7 +3196,7 @@ const Part3SpillHash: Page = () => (
 
 const Part3CostSetup: Page = () => (
   <div style={page}>
-    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.19-20</Eyebrow>
+    <Eyebrow color={taskColor}>課堂練習</Eyebrow>
     <PageHeading>一、同一個商品，內用外帶算出的獲利不一樣</PageHeading>
     <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginTop: 24 }}>
       <div style={{ fontSize: 31, fontWeight: 800, color: taskColor }}>任務 21：讓 AI 建立「商品成本」計算表</div>
@@ -3223,8 +3324,8 @@ const Part3CostSetup: Page = () => (
 // ─── Page 7b — 十一、新增「庫存管理」計算表 ───────────────────────────────────
 const Part3InventorySetup: Page = () => (
   <div style={page}>
-    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.20</Eyebrow>
-    <PageHeading>二、庫存不用兜帳，公式自動幫你算好</PageHeading>
+    <Eyebrow color={taskColor}>課堂練習</Eyebrow>
+    <PageHeading>一、庫存不用兜帳，公式自動幫你算好</PageHeading>
     <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginTop: 24 }}>
       <div style={{ fontSize: 31, fontWeight: 800, color: taskColor }}>任務 22：讓 AI 建立「庫存管理」計算表</div>
       <span
@@ -3370,8 +3471,8 @@ const Part3InventorySetup: Page = () => (
 // ─── Page 7c — 十二、新增「營收毛利」計算表 ───────────────────────────────────
 const Part3RevenueSetup: Page = () => (
   <div style={page}>
-    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.22</Eyebrow>
-    <PageHeading>三、每一筆銷售，自動算出賺多少</PageHeading>
+    <Eyebrow color={taskColor}>課堂練習</Eyebrow>
+    <PageHeading>二、每一筆銷售，自動算出賺多少</PageHeading>
     <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginTop: 24 }}>
       <div style={{ fontSize: 31, fontWeight: 800, color: taskColor }}>任務 23：讓 AI 建立「營收毛利」計算表</div>
       <span
@@ -3503,8 +3604,11 @@ const Part3RevenueSetup: Page = () => (
 
 const Part3CostGuide: Page = () => (
   <div style={page}>
-    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.19</Eyebrow>
-    <PageHeading>一、每份商品的成本，從 BOM 自動算出來</PageHeading>
+<div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
+      <Eyebrow color={taskColor}>課堂練習</Eyebrow>
+      <Eyebrow color={taskColor}>任務 17 · PROMPT 12</Eyebrow>
+    </div>
+    <PageHeading>八、每份商品的成本，從 BOM 自動算出來</PageHeading>
     <div style={{ flex: 1, minHeight: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: 16 }}>
       <img
         src={productCostGuide}
@@ -3518,8 +3622,11 @@ const Part3CostGuide: Page = () => (
 
 const Part3InventoryGuide: Page = () => (
   <div style={page}>
-    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.20</Eyebrow>
-    <PageHeading>二、庫存不用兜帳，公式自動幫你算好</PageHeading>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
+      <Eyebrow color={taskColor}>課堂練習</Eyebrow>
+      <Eyebrow color={taskColor}>任務 22 · PROMPT 17</Eyebrow>
+    </div>
+    <PageHeading>一、庫存不用兜帳，公式自動幫你算好</PageHeading>
     <div style={{ flex: 1, minHeight: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: 16 }}>
       <img
         src={inventoryManagementGuide}
@@ -3533,8 +3640,11 @@ const Part3InventoryGuide: Page = () => (
 
 const Part3RevenueGuide: Page = () => (
   <div style={page}>
-    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.22</Eyebrow>
-    <PageHeading>三、每一筆銷售，自動算出賺多少</PageHeading>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
+      <Eyebrow color={taskColor}>課堂練習</Eyebrow>
+      <Eyebrow color={taskColor}>任務 23 · PROMPT 18</Eyebrow>
+    </div>
+    <PageHeading>二、每一筆銷售，自動算出賺多少</PageHeading>
     <div style={{ flex: 1, minHeight: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: 16 }}>
       <img
         src={revenueMarginGuide}
@@ -3548,7 +3658,7 @@ const Part3RevenueGuide: Page = () => (
 
 const Part3CostTableGuide: Page = () => (
   <div style={page}>
-    <Eyebrow color={partColor.p3}>PART 3 · 真實表格對照</Eyebrow>
+    <Eyebrow color={partColor.p1}>PART 1 · 真實表格對照</Eyebrow>
     <PageHeading>商品成本：概念怎麼落到 Excel 欄位</PageHeading>
     <div style={{ flex: 1, minHeight: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: 16 }}>
       <img
@@ -3727,7 +3837,7 @@ const Part3TabOrder: Page = () => (
   <div style={page}>
     <Eyebrow color={partColor.p3}>PART 3 · 成本與利潤</Eyebrow>
     <PageHeading>頁籤順序與顏色：先分類，再固定位置</PageHeading>
-    <div style={{ fontSize: 31, fontWeight: 800, color: taskColor, marginTop: 12 }}>任務 24：讓 AI 整理工作表頁籤</div>
+    <div style={{ fontSize: 31, fontWeight: 800, color: taskColor, marginTop: 12 }}>任務 24（續）：讓 AI 整理工作表頁籤</div>
     <p style={{ fontSize: 29, color: muted, margin: '10px 0 22px' }}>
       開檔後由左到右閱讀：先設定、再查主檔、接著輸入交易，最後看計算結果。
     </p>
@@ -3821,7 +3931,7 @@ const Part4DashboardSetup: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={partColor.p4}>PART 4 · 儀表板</Eyebrow>
-      <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.23</Eyebrow>
+      <Eyebrow color={taskColor}>課堂練習</Eyebrow>
     </div>
     <PageHeading>篩選一按，儀表板全部指標跟著動</PageHeading>
     <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginTop: 24 }}>
@@ -3878,7 +3988,7 @@ const Part4DashboardSetup: Page = () => (
 // ─── Page 9b — 十四、AI 幫你排出商品排行榜與通路熱區 ──────────────────────────
 const Part4DashboardRanking: Page = () => (
   <div style={page}>
-    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.24</Eyebrow>
+    <Eyebrow color={taskColor}>課堂練習</Eyebrow>
     <PageHeading>AI 幫你排出商品排行榜與通路熱區</PageHeading>
     <div style={{ fontSize: 31, fontWeight: 800, color: taskColor, marginTop: 24 }}>
       任務 25（續）：② 商品銷售排行 ／ ③ 通路別分析
@@ -3955,7 +4065,7 @@ const Part4DashboardRanking: Page = () => (
 // ─── Page 9c — 十五、庫存燈號 + 練習：讓下拉自己連動縮小選項 ──────────────────
 const Part4DashboardInventoryDrill: Page = () => (
   <div style={page}>
-    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.24-25</Eyebrow>
+    <Eyebrow color={taskColor}>課堂練習</Eyebrow>
     <PageHeading>庫存燈號一看就懂，下拉還能連動</PageHeading>
     <div style={{ fontSize: 31, fontWeight: 800, color: taskColor, marginTop: 24 }}>
       任務 25（續）：④ 庫存重點 ＋ 練習：連動篩選
@@ -4214,7 +4324,7 @@ const CascadeExampleCard = ({ month, day }: { month: string; day: string }) => (
 // ─── Page 9d — 十六、下拉選單也要「連動」，才不會選到空清單 ──────────────────
 const Part4DashboardCascade: Page = () => (
   <div style={page}>
-    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.25</Eyebrow>
+    <Eyebrow color={taskColor}>課堂練習</Eyebrow>
     <PageHeading>下拉選單也要「連動」，才不會選到空清單</PageHeading>
     <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginTop: 24 }}>
       <div style={{ fontSize: 31, fontWeight: 800, color: taskColor }}>任務 26：讓 AI 幫你把下拉選單自動「連動」</div>
@@ -4562,7 +4672,7 @@ const MiniColumnStrip = ({ col, values }: { col: string; values: number[] }) => 
 // ─── Page 11a0 — 一、試試看寫簡單的VBA（一）：MsgBox ───────────────────────────
 const Part6VbaFirstTryMsgBox: Page = () => (
   <div style={page}>
-    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.25</Eyebrow>
+    <Eyebrow color={taskColor}>課堂練習</Eyebrow>
     <PageHeading>一、試試看寫簡單的VBA：先讓巨集跳出一句話</PageHeading>
     <div style={{ fontSize: 31, fontWeight: 800, color: taskColor, marginTop: 20 }}>
       任務 27：建立 Module 1，貼上以下程式碼，點選執行（綠色三角形）或按 F5
@@ -4614,7 +4724,7 @@ const Part6VbaFirstTryMsgBox: Page = () => (
 // ─── Page 11a0-2 — 一、試試看寫簡單的VBA（二）：寫入儲存格 ─────────────────────
 const Part6VbaFirstTryRange: Page = () => (
   <div style={page}>
-    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.25</Eyebrow>
+    <Eyebrow color={taskColor}>課堂練習</Eyebrow>
     <PageHeading>把固定值直接寫進儲存格</PageHeading>
     <div style={{ fontSize: 31, fontWeight: 800, color: taskColor, marginTop: 20 }}>
       任務 27（續）：覆蓋為以下程式碼，再次執行
@@ -4680,7 +4790,7 @@ const Part6VbaFirstTryRange: Page = () => (
 // ─── Page 11a0-3 — 一、試試看寫簡單的VBA（三）：呼叫內建函數 ───────────────────
 const Part6VbaFirstTrySum: Page = () => (
   <div style={page}>
-    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.25</Eyebrow>
+    <Eyebrow color={taskColor}>課堂練習</Eyebrow>
     <PageHeading>呼叫 Excel 內建函數，算出結果再寫回儲存格</PageHeading>
     <div style={{ fontSize: 31, fontWeight: 800, color: taskColor, marginTop: 20 }}>
       任務 27（續）：再次覆蓋為以下程式碼，執行後查看 I1
@@ -4757,7 +4867,7 @@ const Part6VbaFirstTrySum: Page = () => (
 // ─── Page 11a — 二、牛刀小試：先用一句話試試看 ──────────────────────────────
 const Part6VbaLazyTry: Page = () => (
   <div style={page}>
-    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.26</Eyebrow>
+    <Eyebrow color={taskColor}>課堂練習</Eyebrow>
     <PageHeading>二、牛刀小試：先用一句話試試看</PageHeading>
     <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginTop: 24 }}>
       <div style={{ fontSize: 31, fontWeight: 800, color: taskColor }}>任務 28：分開輸入兩句話，要求 AI 產出結果</div>
@@ -4909,7 +5019,7 @@ const XlDataRow = ({ cols }: { cols: string[] }) => (
 // ─── Page 11a-2 — 三、銷售日報：打烊後，一鍵生出當天的營運報告 ────────────────
 const Part6VbaSalesReport: Page = () => (
   <div style={page}>
-    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.27</Eyebrow>
+    <Eyebrow color={taskColor}>課堂練習</Eyebrow>
     <PageHeading>三、銷售日報：打烊後，一鍵生出當天的營運報告</PageHeading>
     <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginTop: 10 }}>
       <div style={{ fontSize: 31, fontWeight: 800, color: taskColor }}>任務 29：一鍵產生銷售日報</div>
@@ -4970,7 +5080,7 @@ const Part6VbaSalesReport: Page = () => (
 // ─── Page 11a-3 — 四、叫貨單：庫存不夠，訊息自動生好幫你傳 ───────────────────
 const Part6VbaPurchaseMessage: Page = () => (
   <div style={page}>
-    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.27-28</Eyebrow>
+    <Eyebrow color={taskColor}>課堂練習</Eyebrow>
     <PageHeading>四、叫貨單：庫存不夠，訊息自動生好幫你傳</PageHeading>
     <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginTop: 10 }}>
       <div style={{ fontSize: 31, fontWeight: 800, color: taskColor }}>任務 30：一鍵產出叫貨單（給供應商的訊息）</div>
@@ -5112,7 +5222,7 @@ const DialogInput = ({ value, highlight }: { value?: string; highlight?: boolean
 // ─── Page 11a-4 — 練習：讓叫貨單更聰明 ────────────────────────────────────
 const Part6VbaPurchaseSmart: Page = () => (
   <div style={page}>
-    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.28-29</Eyebrow>
+    <Eyebrow color={taskColor}>課堂練習</Eyebrow>
     <PageHeading>練習：讓叫貨單更聰明</PageHeading>
     <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginTop: 20 }}>
       <div style={{ fontSize: 31, fontWeight: 800, color: taskColor }}>任務 31：[練習] 讓叫貨單更聰明</div>
@@ -5230,7 +5340,7 @@ const MiniStep = ({ n, children }: { n: number; children: React.ReactNode }) => 
 // ─── Page 11a-5 — 五、關檔前防呆檢查＋待補貨提醒 ──────────────────────────────
 const Part6VbaCloseCheck: Page = () => (
   <div style={page}>
-    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.29</Eyebrow>
+    <Eyebrow color={taskColor}>課堂練習</Eyebrow>
     <PageHeading>五、關檔前防呆檢查＋待補貨提醒</PageHeading>
     <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginTop: 10 }}>
       <div style={{ fontSize: 31, fontWeight: 800, color: taskColor }}>任務 32：關閉前防呆檢查＋待補貨提醒</div>
@@ -5409,7 +5519,7 @@ const RibbonButton = ({ glyph, label }: { glyph: string; label: string }) => (
 
 const Part6VbaRibbon: Page = () => (
   <div style={page}>
-    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.30</Eyebrow>
+    <Eyebrow color={taskColor}>課堂練習</Eyebrow>
     <PageHeading>六、把巨集設定成「自訂功能區」按鈕</PageHeading>
     <div style={{ marginTop: 8 }}>
       <Steps>
@@ -5746,7 +5856,7 @@ const CheckColumn = ({
 // ─── Page 12b — 六、月底跨檔案彙總，先把資料讀對、抓錯 ───────────────────────
 const Part7RollupRead: Page = () => (
   <div style={page}>
-    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.31</Eyebrow>
+    <Eyebrow color={taskColor}>課堂練習</Eyebrow>
     <PageHeading>一、月底跨檔案彙總，先把資料讀對、抓錯</PageHeading>
     <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginTop: 16 }}>
       <div style={{ fontSize: 31, fontWeight: 800, color: taskColor }}>任務 33：一鍵產出鍋貼店營業月報（讀取與檢查）</div>
@@ -5818,7 +5928,7 @@ const Part7RollupRead: Page = () => (
 // ─── Page 12c — 七、一次產出七頁月報表，圖表也要跟著做好 ─────────────────────
 const Part7RollupReports: Page = () => (
   <div style={page}>
-    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.32</Eyebrow>
+    <Eyebrow color={taskColor}>課堂練習</Eyebrow>
     <PageHeading>一次產出七頁月報表，圖表也要跟著做好</PageHeading>
     <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginTop: 16 }}>
       <div style={{ fontSize: 31, fontWeight: 800, color: taskColor }}>任務 33（續）：彙總後自動產出的 7 份報表</div>
@@ -6735,7 +6845,7 @@ const MenuChip = ({ children, highlight }: { children: React.ReactNode; highligh
 // ─── Page 13a — 三、前置作業：上傳並轉換成 Google 試算表 ───────────────────────
 const Part5UploadConvert: Page = () => (
   <div style={page}>
-    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.34</Eyebrow>
+    <Eyebrow color={taskColor}>課堂練習</Eyebrow>
     <PageHeading>三、前置作業：把 Excel 搬上雲端，變成 Google 試算表</PageHeading>
     <div style={{ fontSize: 31, fontWeight: 800, color: taskColor, marginTop: 20 }}>
       任務 34：把 Excel 上傳到雲端，並轉換為 Google Sheets
@@ -6784,7 +6894,7 @@ const Part5UploadConvert: Page = () => (
 // ─── Page 13b — 三、前置作業：安裝 ChatGPT for Google Sheets ──────────────────
 const Part5ChatGptSheets: Page = () => (
   <div style={page}>
-    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.34</Eyebrow>
+    <Eyebrow color={taskColor}>課堂練習</Eyebrow>
     <PageHeading>安裝外掛，讓 ChatGPT 直接在 Google 試算表裡工作</PageHeading>
     <div style={{ fontSize: 31, fontWeight: 800, color: taskColor, marginTop: 20 }}>
       任務 35：下載 ChatGPT for Google Sheets
@@ -7163,7 +7273,7 @@ const DarkSubmitButton = ({ label }: { label: string }) => (
 // ─── Page 13a — 讓 AI 修改公式與下拉清單 ───────────────────────────────────────
 const Part5FixFormulas: Page = () => (
   <div style={page}>
-    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.36</Eyebrow>
+    <Eyebrow color={taskColor}>課堂練習</Eyebrow>
     <PageHeading>轉檔後先體檢：讓 AI 修好公式與下拉清單</PageHeading>
     <div style={{ fontSize: 31, fontWeight: 800, color: taskColor, marginTop: 18 }}>
       任務 36：讓 AI 修改公式與下拉清單
@@ -7241,7 +7351,7 @@ const Part5FixFormulas: Page = () => (
 // ─── Page 13b — 四、產生後端 Apps Script（一）：對齊試算表位置 ─────────────────
 const Part5BackendMap: Page = () => (
   <div style={page}>
-    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.36-37</Eyebrow>
+    <Eyebrow color={taskColor}>課堂練習</Eyebrow>
     <PageHeading>四、產生後端 Apps Script：先把「位置」對齊</PageHeading>
     <div style={{ fontSize: 33, fontWeight: 800, color: taskColor, marginTop: 16 }}>
       任務 37：讓 AI 產出後端 Apps Script（Code.gs）
@@ -7283,7 +7393,7 @@ const Part5BackendMap: Page = () => (
 // ─── Page 13c — 四、產生後端 Apps Script（二）：5 個核心函式 ───────────────────
 const Part5BackendFunctions: Page = () => (
   <div style={page}>
-    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.37</Eyebrow>
+    <Eyebrow color={taskColor}>課堂練習</Eyebrow>
     <PageHeading>任務 37（續）：Code.gs 要寫出的 5 個函式</PageHeading>
     <div style={{ display: 'flex', gap: 40, marginTop: 30, alignItems: 'flex-start' }}>
       <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 22 }}>
@@ -7330,7 +7440,10 @@ const Part5BackendFunctions: Page = () => (
 // ─── Page 13d — 五、產生前端網頁（一）：視覺風格與版面 ─────────────────────────
 const Part5FrontendLayout: Page = () => (
   <div style={page}>
-    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.37-38</Eyebrow>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
+      <Eyebrow color={taskColor}>課堂練習</Eyebrow>
+      <Eyebrow color={taskColor}>任務 38 · PROMPT 29</Eyebrow>
+    </div>
     <PageHeading>五、產生前端網頁：深色科技風儀表板長這樣</PageHeading>
     <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginTop: 8, flexWrap: 'wrap' }}>
       <RuleChip text="深藍底 #0D1B2A" />
@@ -7366,8 +7479,8 @@ const Part5FrontendLayout: Page = () => (
 // ─── Page 13e — 五、產生前端網頁（二）：三大區塊與互動行為 ─────────────────────
 const Part5FrontendSections: Page = () => (
   <div style={page}>
-    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.37-38</Eyebrow>
-    <PageHeading>任務 37（續）：商品／通路／庫存三大區塊</PageHeading>
+    <Eyebrow color={taskColor}>課堂練習</Eyebrow>
+    <PageHeading>任務 38（續）：商品／通路／庫存三大區塊</PageHeading>
     <div style={{ marginTop: 12 }}>
       <DarkMock>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
@@ -7497,7 +7610,7 @@ const EmailItemRow = ({ name, status }: { name: string; status: '缺料' | '低�
 // ─── Page 13a — 六、部署步驟：讓網頁應用程式真正上線 ───────────────────────────
 const Part5Deploy: Page = () => (
   <div style={page}>
-    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.38</Eyebrow>
+    <Eyebrow color={taskColor}>課堂練習</Eyebrow>
     <PageHeading>六、部署步驟：讓網頁應用程式真正上線</PageHeading>
     <div style={{ fontSize: 30, fontWeight: 800, color: taskColor, marginTop: 16 }}>任務 39：部署網頁應用程式</div>
     <div style={{ marginTop: 14 }}>
@@ -7567,7 +7680,7 @@ const Part5Deploy: Page = () => (
 // ─── Page 13b — 七、進階：做一個把資料寫回試算表的輸入頁面 ─────────────────────
 const Part5WriteBack: Page = () => (
   <div style={page}>
-    <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.39-40</Eyebrow>
+    <Eyebrow color={taskColor}>課堂練習</Eyebrow>
     <PageHeading>七、進階：做一個把資料「寫回」試算表的輸入頁面</PageHeading>
     <div style={{ fontSize: 32, fontWeight: 800, color: taskColor, marginTop: 14 }}>
       任務 40：[作業] 跟 AI 討論，做出一個能把資料寫回試算表的輸入頁面
@@ -7652,7 +7765,7 @@ const Part5AutoEmail: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={partColor.p5}>PART 5 · 雲端 POS 系統</Eyebrow>
-      <Eyebrow color={taskColor}>課堂練習 · 操作手冊 P.41</Eyebrow>
+      <Eyebrow color={taskColor}>課堂練習</Eyebrow>
     </div>
     <PageHeading>九、缺料自動 Email 通知：主動預警，不用一直盯著看</PageHeading>
     <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginTop: 10 }}>
@@ -7666,7 +7779,7 @@ const Part5AutoEmail: Page = () => (
           padding: '5px 14px',
         }}
       >
-        Prompt 29
+        Prompt 30
       </span>
     </div>
     <div style={{ marginTop: 10 }}>
@@ -8729,7 +8842,10 @@ const PptxPurchaseOrderOnlySplit: Page = () => (
 
 const Part6CloseCheckOnlySplit: Page = () => (
   <div style={page}>
-    <Eyebrow color={partColor.p6}>VBA · 關檔前防呆</Eyebrow>
+<div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
+      <Eyebrow color={partColor.p6}>VBA · 關檔前防呆</Eyebrow>
+      <Eyebrow color={taskColor}>任務 32 · PROMPT 25</Eyebrow>
+    </div>
     <PageHeading>先擋下錯誤資料，再允許關閉檔案</PageHeading>
     <div style={{ display: 'flex', gap: 22, marginTop: 40 }}>
       <CheckTile icon="ID" title="商品 ID" desc="不可空白，而且必須存在於商品主檔。" color={partColor.p6} />
@@ -8786,7 +8902,10 @@ const Part6ReorderReminderSplit: Page = () => (
 
 const Part7RollupFlowSplit: Page = () => (
   <div style={page}>
-    <Eyebrow color={partColor.p7}>跨檔案彙總</Eyebrow>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
+      <Eyebrow color={partColor.p7}>跨檔案彙總</Eyebrow>
+      <Eyebrow color={taskColor}>任務 33 · PROMPT 26</Eyebrow>
+    </div>
     <PageHeading>月報不是把檔案疊起來，而是逐份讀取、檢查、再彙總</PageHeading>
     <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: 34, marginTop: 28, flex: 1 }}>
       <div style={{ overflow: 'hidden', borderRadius: 24, border: `1px solid ${cardBorder}`, background: '#fff' }}>
@@ -8892,7 +9011,10 @@ const Part7ReportsControlSplit: Page = () => (
 
 const Part5BackendRangesSplit: Page = () => (
   <div style={page}>
-    <Eyebrow color={partColor.p5}>Apps Script 後端</Eyebrow>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
+      <Eyebrow color={partColor.p5}>Apps Script 後端</Eyebrow>
+      <Eyebrow color={taskColor}>任務 37 · PROMPT 28</Eyebrow>
+    </div>
     <PageHeading>先把工作表位置對齊：後端才知道去哪裡讀資料</PageHeading>
     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 30, marginTop: 32 }}>
       <div style={{ background: '#fff', border: `1px solid ${cardBorder}`, borderRadius: 22, padding: 28 }}>
@@ -8948,7 +9070,10 @@ const Part5BackendFlowSplit: Page = () => (
 
 const Part5WriteBackFlowSplit: Page = () => (
   <div style={page}>
-    <Eyebrow color={partColor.p5}>網頁寫回試算表</Eyebrow>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
+      <Eyebrow color={partColor.p5}>網頁寫回試算表</Eyebrow>
+      <Eyebrow color={taskColor}>任務 40（作業）</Eyebrow>
+    </div>
     <PageHeading>送出表單後，一筆銷售資料如何安全寫回 Excel 結構？</PageHeading>
     <div style={{ display: 'grid', gridTemplateColumns: '1.25fr 0.75fr', gap: 34, marginTop: 28, flex: 1 }}>
       <div style={{ overflow: 'hidden', borderRadius: 24, border: `1px solid ${cardBorder}`, background: '#fff' }}>
@@ -9989,6 +10114,7 @@ const CourseJourneyOverview: Page = () => (
 
 export default [
   Cover,
+  ManualGuide,
   AdventureSectionTitle,
   AdventureExcelIntro,
   AdventureIntroRules,
@@ -10052,6 +10178,8 @@ export default [
   BomSectionTitle,
   Part1BomSetup,
   Part1BomSampleData,
+  Part3CostGuide,
+  Part3CostTableGuide,
   TransactionsTitle,
   Part1SalesSetup,
   Part1SalesSampleData,
@@ -10060,8 +10188,6 @@ export default [
   ReportsTitle,
   Part3Engine,
   Part3SpillHash,
-  Part3CostGuide,
-  Part3CostTableGuide,
   Part3InventoryGuide,
   Part3InventoryTableGuide,
   Part3RevenueGuide,

@@ -65,9 +65,11 @@ import tableToolsGuide from './assets/table-tools-guide.png';
 import supplierMasterLink from './assets/supplier-master-link.png';
 import smartSupplierDropdown from './assets/smart-supplier-dropdown.png';
 import salesRecordFlow from './assets/sales-record-flow.png';
+import salesRecordFixedValues from './assets/sales-record-fixed-values.webp';
 import purchaseRecordFlow from './assets/purchase-record-flow.png';
-import salesSampleDataGuide from './assets/sales-sample-data-guide.png';
-import purchaseSampleDataGuide from './assets/purchase-sample-data-guide.png';
+import purchaseRecordFixedValues from './assets/purchase-record-fixed-values.webp';
+import salesSampleDataGuide from './assets/sales-sample-data-fixed-values.webp';
+import purchaseSampleDataGuide from './assets/purchase-sample-data-fixed-values.webp';
 import productCostGuide from './assets/product-cost-guide.png';
 import inventoryManagementGuide from './assets/inventory-management-guide.png';
 import revenueMarginGuide from './assets/revenue-margin-guide.png';
@@ -2553,7 +2555,7 @@ const Part1BomSampleData: Page = () => (
 const Part1SalesSetup: Page = () => (
   <div style={page}>
     <Eyebrow color={taskColor}>課堂練習</Eyebrow>
-    <PageHeading>一、顧客下單，系統自動算好這一筆多少錢</PageHeading>
+    <PageHeading>一、顧客下單，每一筆銷售都留下不會變的紀錄</PageHeading>
     <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginTop: 24 }}>
       <div style={{ fontSize: 31, fontWeight: 800, color: taskColor }}>任務 18：讓 AI 建立「銷售紀錄」工作表</div>
       <span
@@ -2571,8 +2573,8 @@ const Part1SalesSetup: Page = () => (
     </div>
     <div style={{ flex: 1, minHeight: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: 16 }}>
       <img
-        src={salesRecordFlow}
-        alt="銷售紀錄教學圖：下拉選商品 ID，自動取得名稱與單價，計算每筆銷售金額"
+        src={salesRecordFixedValues}
+        alt="銷售紀錄範例：所有欄位皆為輸入當下的固定值，不設定任何公式"
         style={{ width: '100%', height: '100%', objectFit: 'contain', mixBlendMode: 'multiply' }}
       />
     </div>
@@ -2591,7 +2593,7 @@ const Part1SalesSampleData: Page = () => (
     <div style={{ flex: 1, minHeight: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: 16 }}>
       <img
         src={salesSampleDataGuide}
-        alt="銷售紀錄範例資料教學圖：日期分布、編號規則、公式驗證與合法下拉值"
+        alt="銷售紀錄範例資料教學圖：日期分布、編號不重複，所有欄位皆為輸入當下的固定值"
         style={{ width: '100%', height: '100%', objectFit: 'contain', mixBlendMode: 'multiply' }}
       />
     </div>
@@ -2603,7 +2605,7 @@ const Part1SalesSampleData: Page = () => (
 const Part1PurchaseSetup: Page = () => (
   <div style={page}>
     <Eyebrow color={taskColor}>課堂練習</Eyebrow>
-    <PageHeading>二、叫貨進來的每一批料，自動算多少錢</PageHeading>
+    <PageHeading>二、叫貨進來的每一批料，都留下不會變的紀錄</PageHeading>
     <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginTop: 24 }}>
       <div style={{ fontSize: 31, fontWeight: 800, color: taskColor }}>任務 20：讓 AI 建立「進貨紀錄」工作表</div>
       <span
@@ -2621,8 +2623,8 @@ const Part1PurchaseSetup: Page = () => (
     </div>
     <div style={{ flex: 1, minHeight: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: 16 }}>
       <img
-        src={purchaseRecordFlow}
-        alt="進貨紀錄教學圖：選擇供應商與物料，自動帶出名稱、計算進貨金額並追蹤入庫"
+        src={purchaseRecordFixedValues}
+        alt="進貨紀錄範例：除入庫狀態為下拉選單外，所有欄位皆為輸入當下的固定值"
         style={{ width: '100%', height: '100%', objectFit: 'contain', mixBlendMode: 'multiply' }}
       />
     </div>
@@ -2641,7 +2643,7 @@ const Part1PurchaseSampleData: Page = () => (
     <div style={{ flex: 1, minHeight: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: 16 }}>
       <img
         src={purchaseSampleDataGuide}
-        alt="進貨紀錄範例資料教學圖：日期單號、主檔合法性、供應商物料對應與入庫追蹤"
+        alt="進貨紀錄範例資料：除入庫狀態為下拉選單外，所有欄位皆為輸入當下的固定值"
         style={{ width: '100%', height: '100%', objectFit: 'contain', mixBlendMode: 'multiply' }}
       />
     </div>

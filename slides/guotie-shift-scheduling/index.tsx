@@ -1366,7 +1366,7 @@ const Task1EmployeeSetup: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={sheetColor.leave}>PART 2 · 排班表實作</Eyebrow>
-      <Eyebrow color={taskColor}>操作手冊 · P.5 · Prompt 1</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · Prompt 1</Eyebrow>
     </div>
     <PageHeading maxWidth={1600}>任務 1：建立「員工主檔」欄位</PageHeading>
     <p style={{ fontSize: 27, color: muted, lineHeight: 1.5, margin: '16px 0 0', maxWidth: 1650 }}>
@@ -1421,7 +1421,7 @@ const Task1SettingsDropdown: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={sheetColor.leave}>PART 2 · 排班表實作</Eyebrow>
-      <Eyebrow color={taskColor}>操作手冊 · P.5 · Prompt 1</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · 任務 1 · Prompt 1</Eyebrow>
     </div>
     <PageHeading maxWidth={1600}>「排班設定」：下拉選單集中管理</PageHeading>
     <p style={{ fontSize: 27, color: muted, lineHeight: 1.5, margin: '16px 0 0', maxWidth: 1650 }}>
@@ -1447,7 +1447,7 @@ const EmployeeDataTable: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={sheetColor.leave}>PART 2 · 排班表實作</Eyebrow>
-      <Eyebrow color={taskColor}>操作手冊 · P.6</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · 任務 2</Eyebrow>
     </div>
     <PageHeading maxWidth={1600}>7 位員工，各自能上哪些班？</PageHeading>
     <Steps>
@@ -1502,7 +1502,7 @@ const Task2LeaveSetup: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={sheetColor.leave}>PART 2 · 排班表實作</Eyebrow>
-      <Eyebrow color={taskColor}>操作手冊 · P.7 · Prompt 2</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · Prompt 2</Eyebrow>
     </div>
     <PageHeading maxWidth={1600}>任務 3：休假是「事件」，獨立一張表</PageHeading>
     <p style={{ fontSize: 27, color: muted, lineHeight: 1.5, margin: '16px 0 0', maxWidth: 1650 }}>
@@ -1529,7 +1529,7 @@ const LeaveDataTable: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={sheetColor.leave}>PART 2 · 排班表實作</Eyebrow>
-      <Eyebrow color={taskColor}>操作手冊 · P.7</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · 任務 4</Eyebrow>
     </div>
     <PageHeading maxWidth={1600}>先填 5 筆休假申請，驗證下拉與公式</PageHeading>
     <div style={{ marginTop: 32, borderRadius: 16, overflow: 'hidden', border: `1px solid ${cardBorder}`, boxShadow: '0 4px 14px rgba(0,0,0,0.06)' }}>
@@ -1582,7 +1582,7 @@ const Task3ScheduleSetup: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={sheetColor.leave}>PART 2 · 排班表實作</Eyebrow>
-      <Eyebrow color={taskColor}>操作手冊 · P.8-9 · Prompt 3</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · Prompt 3</Eyebrow>
     </div>
     <PageHeading maxWidth={1650}>任務 5：排班表——承先啟後的核心</PageHeading>
     <p style={{ fontSize: 26, color: muted, lineHeight: 1.5, margin: '14px 0 0', maxWidth: 1660 }}>
@@ -1631,7 +1631,7 @@ const Task3ShiftRef: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={sheetColor.leave}>PART 2 · 排班表實作</Eyebrow>
-      <Eyebrow color={taskColor}>操作手冊 · P.8-9 · Prompt 3</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · 任務 5 · Prompt 3</Eyebrow>
     </div>
     <PageHeading maxWidth={1650}>班別對照表，四個欄位一次自動帶出</PageHeading>
     <div style={{ marginTop: 28, borderRadius: 16, overflow: 'hidden', border: `1px solid ${cardBorder}`, boxShadow: '0 4px 14px rgba(0,0,0,0.06)' }}>
@@ -1680,7 +1680,7 @@ const Task6TryManual: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={sheetColor.leave}>PART 2 · 排班表實作</Eyebrow>
-      <Eyebrow color={taskColor}>操作手冊 · P.9</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊</Eyebrow>
     </div>
     <PageHeading maxWidth={1650}>任務 6：先手動試排 7/1 的班</PageHeading>
     <p style={{ fontSize: 27, color: muted, lineHeight: 1.5, margin: '16px 0 0', maxWidth: 1650 }}>
@@ -1709,7 +1709,7 @@ const Task7Weekday: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={sheetColor.leave}>PART 2 · 排班表實作</Eyebrow>
-      <Eyebrow color={taskColor}>操作手冊 · P.9 · Prompt 4</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · Prompt 4</Eyebrow>
     </div>
     <PageHeading maxWidth={1650}>任務 7：只看日期，很難判斷要排幾個人</PageHeading>
     <p style={{ fontSize: 27, color: muted, lineHeight: 1.5, margin: '16px 0 0', maxWidth: 1650 }}>
@@ -1737,7 +1737,7 @@ const Task5CheckFormula: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={sheetColor.leave}>PART 2 · 排班表實作</Eyebrow>
-      <Eyebrow color={taskColor}>操作手冊 · P.10 · Prompt 5</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · Prompt 5</Eyebrow>
     </div>
     <PageHeading maxWidth={1650}>任務 8：一條公式，同時檢查三種問題</PageHeading>
     <p style={{ fontSize: 26, color: muted, lineHeight: 1.5, margin: '14px 0 0', maxWidth: 1660 }}>
@@ -1789,7 +1789,7 @@ const Task6RulesPart1: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={sheetColor.leave}>PART 2 · 排班表實作</Eyebrow>
-      <Eyebrow color={taskColor}>操作手冊 · P.10 · Prompt 6</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · Prompt 6</Eyebrow>
     </div>
     <PageHeading maxWidth={1650}>任務 9：把排班規則整理成 Prompt（1／2）</PageHeading>
     <p style={{ fontSize: 26, color: muted, lineHeight: 1.5, margin: '14px 0 0' }}>資格與防重複——先確保排的班本身合法</p>
@@ -1810,7 +1810,7 @@ const Task6RulesPart2: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={sheetColor.leave}>PART 2 · 排班表實作</Eyebrow>
-      <Eyebrow color={taskColor}>操作手冊 · P.10 · Prompt 6</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · Prompt 6</Eyebrow>
     </div>
     <PageHeading maxWidth={1650}>任務 9：把排班規則整理成 Prompt（2／2）</PageHeading>
     <p style={{ fontSize: 26, color: muted, lineHeight: 1.5, margin: '14px 0 0' }}>人力與休假天數——精準到人</p>
@@ -1836,7 +1836,7 @@ const Task7SkillResult: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={sheetColor.leave}>PART 2 · 排班表實作</Eyebrow>
-      <Eyebrow color={taskColor}>操作手冊 · P.11 · Prompt 7</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · Prompt 7</Eyebrow>
     </div>
     <PageHeading maxWidth={1650}>任務 10：打一個指令，套用整套排班規則</PageHeading>
     <div style={{ display: 'flex', gap: 32, marginTop: 40 }}>
@@ -1875,7 +1875,7 @@ const Task8DailyCheck: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={sheetColor.leave}>PART 2 · 排班表實作</Eyebrow>
-      <Eyebrow color={taskColor}>操作手冊 · P.11 · Prompt 8</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · Prompt 8</Eyebrow>
     </div>
     <PageHeading maxWidth={1650}>任務 11：沒有 AI 額度時，也要能人工核對</PageHeading>
     <p style={{ fontSize: 26, color: muted, lineHeight: 1.5, margin: '14px 0 0', maxWidth: 1660 }}>
@@ -1934,7 +1934,7 @@ const Task9MonthlyWhy: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={sheetColor.leave}>PART 2 · 排班表實作</Eyebrow>
-      <Eyebrow color={taskColor}>操作手冊 · P.12 · Prompt 9</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · Prompt 9</Eyebrow>
     </div>
     <PageHeading maxWidth={1650}>任務 12：排班表結構完成 8 成，最後一哩路</PageHeading>
     <div style={{ marginTop: 32 }}>
@@ -2068,7 +2068,7 @@ const Task9MonthlyExample: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={sheetColor.leave}>PART 2 · 排班表實作</Eyebrow>
-      <Eyebrow color={taskColor}>操作手冊 · P.12 · Prompt 9</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · 任務 12 · Prompt 9</Eyebrow>
     </div>
     <PageHeading maxWidth={1650}>月班表長這樣——一眼看懂全月人力</PageHeading>
     <Steps>
@@ -2162,7 +2162,7 @@ const Task13ProxyScenarios: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={sheetColor.leave}>PART 2 · 排班表實作</Eyebrow>
-      <Eyebrow color={taskColor}>操作手冊 · P.14</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊</Eyebrow>
     </div>
     <PageHeading maxWidth={1650}>任務 13：突發請假，誰能來代班？</PageHeading>
     <div style={{ display: 'flex', gap: 32, marginTop: 36 }}>
@@ -2207,7 +2207,7 @@ const Task13LeaveFields: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={sheetColor.leave}>PART 2 · 排班表實作</Eyebrow>
-      <Eyebrow color={taskColor}>操作手冊 · P.13</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · 任務 13</Eyebrow>
     </div>
     <PageHeading maxWidth={1650}>先把「請多久的假」記清楚</PageHeading>
     <p style={{ fontSize: 27, color: muted, lineHeight: 1.5, margin: '16px 0 0', maxWidth: 1650 }}>
@@ -2241,7 +2241,7 @@ const Task14CandidateSetup: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={sheetColor.leave}>PART 2 · 排班表實作</Eyebrow>
-      <Eyebrow color={taskColor}>操作手冊 · P.14 · Prompt 10</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · Prompt 10</Eyebrow>
     </div>
     <PageHeading maxWidth={1650}>任務 14：休假衝突自動偵測與候補建議</PageHeading>
     <p style={{ fontSize: 26, color: muted, lineHeight: 1.5, margin: '14px 0 0', maxWidth: 1660 }}>
@@ -2285,7 +2285,7 @@ const Task14CandidateRules: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={sheetColor.leave}>PART 2 · 排班表實作</Eyebrow>
-      <Eyebrow color={taskColor}>操作手冊 · P.15 · Prompt 10</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · 任務 14 · Prompt 10</Eyebrow>
     </div>
     <PageHeading maxWidth={1650}>候補人員，要同時符合 5 個條件</PageHeading>
     <div style={{ display: 'flex', flexDirection: 'column', gap: 14, marginTop: 28 }}>
@@ -2426,7 +2426,7 @@ const SalarySetup: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={sheetColor.monthly}>PART 3 · 薪水怎麼算？</Eyebrow>
-      <Eyebrow color={taskColor}>操作手冊 · P.21</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · 任務 20</Eyebrow>
     </div>
     <PageHeading maxWidth={1650}>員工薪資設定：先把月薪／時薪記到主檔</PageHeading>
     <p style={{ fontSize: 26, color: muted, lineHeight: 1.5, margin: '14px 0 0', maxWidth: 1660 }}>
@@ -2480,7 +2480,7 @@ const HoursSummary: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={sheetColor.leave}>PART 2 · 排班表實作</Eyebrow>
-      <Eyebrow color={taskColor}>操作手冊 · P.17-18 · Prompt 14</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · 任務 18 · Prompt 14</Eyebrow>
     </div>
     <PageHeading maxWidth={1650}>工時彙總，彙總成「一人一整月」的總時數</PageHeading>
     <div style={{ display: 'flex', gap: 32, marginTop: 20 }}>
@@ -2542,7 +2542,7 @@ const SalaryDetail: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={sheetColor.monthly}>PART 3 · 薪水怎麼算？</Eyebrow>
-      <Eyebrow color={taskColor}>操作手冊 · P.22 · Prompt 16</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · 任務 21 · Prompt 16</Eyebrow>
     </div>
     <PageHeading maxWidth={1650}>薪資明細：先算出員工每個月的底薪</PageHeading>
     <div style={{ display: 'flex', gap: 32, marginTop: 20 }}>
@@ -2610,7 +2610,7 @@ const OvertimeDetail: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={sheetColor.leave}>PART 2 · 排班表實作</Eyebrow>
-      <Eyebrow color={taskColor}>操作手冊 · P.14-15 · Prompt 11</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · 任務 15 · Prompt 11</Eyebrow>
     </div>
     <PageHeading maxWidth={1650}>超出正常工時的部分，另外算加班</PageHeading>
     <p style={{ fontSize: 26, color: muted, lineHeight: 1.5, margin: '14px 0 0', maxWidth: 1660 }}>
@@ -2651,7 +2651,7 @@ const OvertimeCheck: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={sheetColor.leave}>PART 2 · 排班表實作</Eyebrow>
-      <Eyebrow color={taskColor}>操作手冊 · P.16-17 · Prompt 12、13</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · 任務 16、17 · Prompt 12、13</Eyebrow>
     </div>
     <PageHeading maxWidth={1650}>兩欄防呆：別讓工時被算兩次</PageHeading>
     <div style={{ display: 'flex', gap: 32, marginTop: 32 }}>
@@ -2810,7 +2810,7 @@ const BonusDetailSetup: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={sheetColor.monthly}>PART 3 · 薪水怎麼算？</Eyebrow>
-      <Eyebrow color={taskColor}>操作手冊 · P.25 · Prompt 17</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · 任務 22 · Prompt 17</Eyebrow>
     </div>
     <PageHeading maxWidth={1650}>建立「獎金明細」，用動態陣列自動算全勤</PageHeading>
     <div style={{ marginTop: 24, borderRadius: 16, overflow: 'hidden', border: `1px solid ${cardBorder}`, boxShadow: '0 4px 14px rgba(0,0,0,0.06)' }}>
@@ -2941,7 +2941,7 @@ const BonusDetailExpandTable: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={sheetColor.monthly}>PART 3 · 薪水怎麼算？</Eyebrow>
-      <Eyebrow color={taskColor}>操作手冊 · P.32 · Prompt 28</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · 任務 33 · Prompt 28</Eyebrow>
     </div>
     <PageHeading maxWidth={1650}>「獎金合計」－－每個人總共領多少獎金？</PageHeading>
     <div style={{ position: 'relative', marginTop: 24 }}>
@@ -2982,7 +2982,7 @@ const BonusInputTable: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={sheetColor.monthly}>PART 3 · 薪水怎麼算？</Eyebrow>
-      <Eyebrow color={taskColor}>操作手冊 · P.27 · Prompt 18</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · 任務 23 · Prompt 18</Eyebrow>
     </div>
     <PageHeading maxWidth={1650}>獎金輸入明細表（tbl_獎金輸入）</PageHeading>
     <p style={{ fontSize: 26, color: muted, lineHeight: 1.5, margin: '14px 0 0', maxWidth: 1660 }}>
@@ -3044,7 +3044,7 @@ const VbaStep1: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={sheetColor.monthly}>PART 3 · 薪水怎麼算？</Eyebrow>
-      <Eyebrow color={taskColor}>操作手冊 · P.28 · Prompt 19</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · Prompt 19</Eyebrow>
     </div>
     <PageHeading maxWidth={1650} marginTop={16}>任務24 讓AI產出第一段VBA－打開報表</PageHeading>
     <div style={{ fontSize: 27, fontWeight: 800, color: sheetColor.monthly, marginTop: 6 }}>
@@ -3060,7 +3060,7 @@ const VbaStep2: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={sheetColor.monthly}>PART 3 · 薪水怎麼算？</Eyebrow>
-      <Eyebrow color={taskColor}>操作手冊 · P.28 · Prompt 20</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · Prompt 20</Eyebrow>
     </div>
     <PageHeading maxWidth={1650} marginTop={16} style={{ fontSize: '51px' }}>任務25 產出第二段VBA－找到tbl_DailyTrend，<br />讀取日期與營業額</PageHeading>
     <div style={{ fontSize: 27, fontWeight: 800, color: sheetColor.monthly, marginTop: 6 }}>
@@ -3076,7 +3076,7 @@ const VbaStep3: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={sheetColor.monthly}>PART 3 · 薪水怎麼算？</Eyebrow>
-      <Eyebrow color={taskColor}>操作手冊 · P.29 · Prompt 21</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · Prompt 21</Eyebrow>
     </div>
     <PageHeading maxWidth={1650} marginTop={16}>任務26 產出第三段VBA－找出達標日期</PageHeading>
     <div style={{ fontSize: 27, fontWeight: 800, color: sheetColor.monthly, marginTop: 6 }}>
@@ -3092,7 +3092,7 @@ const VbaBackgroundSafety: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={sheetColor.monthly}>PART 3 · 薪水怎麼算？</Eyebrow>
-      <Eyebrow color={taskColor}>操作手冊 · P.29 · Prompt 22</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · Prompt 22</Eyebrow>
     </div>
     <PageHeading maxWidth={1650} marginTop={16} style={{ fontSize: '51px' }}>任務27 產出第四段VBA－讓巨集背景執行與錯誤示警</PageHeading>
     <div style={{ fontSize: 27, fontWeight: 800, color: sheetColor.monthly, marginTop: 6 }}>
@@ -3111,7 +3111,7 @@ const VbaStep4: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={sheetColor.monthly}>PART 3 · 薪水怎麼算？</Eyebrow>
-      <Eyebrow color={taskColor}>操作手冊 · P.30 · Prompt 25</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · Prompt 25</Eyebrow>
     </div>
     <PageHeading maxWidth={1650} marginTop={16}>任務30 產出第七段VBA－抓出達標日有上班的員工</PageHeading>
     <div style={{ fontSize: 27, fontWeight: 800, color: sheetColor.monthly, marginTop: 6 }}>⑥ 比對 tbl_排班，找出達標日當天有上班的員工</div>
@@ -3129,7 +3129,7 @@ const VbaStep4: Page = () => (
         <div style={{ fontSize: 25, fontWeight: 800, color: sheetColor.monthly }}>• 達標日期</div>
         <img
           src={vbaStep3Filtered}
-          alt="第49頁篩出的營業額達標日期"
+          alt="任務26 篩出的營業額達標日期"
           style={{ ...imageOnSlideBackground, width: '100%', flex: 1, minHeight: 0, objectFit: 'contain', borderRadius: 14, boxShadow: '0 10px 32px rgba(0,0,0,0.12)' }}
         />
       </div>
@@ -3151,7 +3151,7 @@ const VbaStep6ScheduleFields: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={sheetColor.monthly}>PART 3 · 薪水怎麼算？</Eyebrow>
-      <Eyebrow color={taskColor}>操作手冊 · P.30 · Prompt 24</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · Prompt 24</Eyebrow>
     </div>
     <PageHeading maxWidth={1650} marginTop={16} style={{ fontSize: '51px' }}>
       任務29 產出第六段VBA－抓出 tbl_排班 的<br />
@@ -3173,7 +3173,7 @@ const VbaStep5: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={sheetColor.monthly}>PART 3 · 薪水怎麼算？</Eyebrow>
-      <Eyebrow color={taskColor}>操作手冊 · P.30 · Prompt 23</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · Prompt 23</Eyebrow>
     </div>
     <PageHeading maxWidth={1650} marginTop={16}>任務28 產出第五段VBA－從薪資設定取得業績獎金金額</PageHeading>
     <div style={{ fontSize: 27, fontWeight: 800, color: sheetColor.monthly, marginTop: 6 }}>⑤ 從 薪資設定！C8 取得業績獎金金額</div>
@@ -3187,7 +3187,7 @@ const VbaWriteBack: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={sheetColor.monthly}>PART 3 · 薪水怎麼算？</Eyebrow>
-      <Eyebrow color={taskColor}>操作手冊 · P.31 · Prompt 26</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · Prompt 26</Eyebrow>
     </div>
     <PageHeading maxWidth={1650}>任務31 產出最後一段VBA－輸入業績獎金資料</PageHeading>
     <VbaStepImage
@@ -3210,7 +3210,7 @@ const BonusFormulaLink: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={sheetColor.monthly}>PART 3 · 薪水怎麼算？</Eyebrow>
-      <Eyebrow color={taskColor}>操作手冊 · P.32 · Prompt 27</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · 任務 32 · Prompt 27</Eyebrow>
     </div>
     <PageHeading maxWidth={1650}>把算好的獎金，串回獎金明細</PageHeading>
     <div style={{ fontSize: 27, fontWeight: 800, color: formulaBlue, marginTop: 6 }}>
@@ -3229,7 +3229,7 @@ const SalaryFormulaLink: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={sheetColor.monthly}>PART 3 · 薪水怎麼算？</Eyebrow>
-      <Eyebrow color={taskColor}>操作手冊 · P.36 · Prompt 31</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · 任務 36 · Prompt 31</Eyebrow>
     </div>
     <PageHeading maxWidth={1650}>把算好的獎金合計，串回薪資明細</PageHeading>
     <div style={{ fontSize: 27, fontWeight: 800, color: formulaBlue, marginTop: 6 }}>依員工ID，將獎金合計顯示在薪資明細</div>
@@ -3451,7 +3451,7 @@ const OvertimeBaseFormula: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={sheetColor.monthly}>PART 3 · 薪水怎麼算？</Eyebrow>
-      <Eyebrow color={taskColor}>操作手冊 · P.35、36 · Prompt 29、30</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · 任務 34、35 · Prompt 29、30</Eyebrow>
     </div>
     <PageHeading maxWidth={1650}>把三大要素，接回 tbl_加班 表格</PageHeading>
     <Steps>
@@ -3501,7 +3501,7 @@ const OvertimeToSalaryLink: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={sheetColor.monthly}>PART 3 · 薪水怎麼算？</Eyebrow>
-      <Eyebrow color={taskColor}>操作手冊 · P.37 · Prompt 32</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · 任務 37 · Prompt 32</Eyebrow>
     </div>
     <PageHeading maxWidth={1650}>把算好的加班費，串回薪資明細</PageHeading>
     <div style={{ fontSize: 27, fontWeight: 800, color: formulaBlue, marginTop: 6 }}>
@@ -3534,7 +3534,7 @@ const SalaryGrossPayFormula: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={sheetColor.monthly}>PART 3 · 薪水怎麼算？</Eyebrow>
-      <Eyebrow color={taskColor}>操作手冊 · P.37 · Prompt 33</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · 任務 38 · Prompt 33</Eyebrow>
     </div>
     <PageHeading maxWidth={1650}>三個欄位加起來，就是應發合計</PageHeading>
     <Steps>
@@ -3563,7 +3563,7 @@ const OvertimeRateSource: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={sheetColor.monthly}>PART 3 · 薪水怎麼算？</Eyebrow>
-      <Eyebrow color={taskColor}>操作手冊 · P.36 · Prompt 30</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · 任務 35 · Prompt 30</Eyebrow>
     </div>
     <PageHeading maxWidth={1650}>費率倍率，統一引用「薪資設定」，不寫死在公式裡</PageHeading>
     <div style={{ marginTop: 32 }}>
@@ -3727,7 +3727,7 @@ const InsuranceAmountsToSalaryDetail: Page = () => (
     <div style={{ width: '100%', position: 'relative', zIndex: 1 }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
         <Eyebrow color={sheetColor.monthly}>PART 3 · 薪水怎麼算？</Eyebrow>
-        <Eyebrow color={taskColor}>操作手冊 · P.41 · Prompt 36、37</Eyebrow>
+        <Eyebrow color={taskColor}>操作手冊 · 任務 41、42 · Prompt 36、37</Eyebrow>
       </div>
     </div>
     <Steps>
@@ -3828,7 +3828,7 @@ const LeaveDeductToSalaryDetail: Page = () => (
     <div style={{ width: '100%', position: 'relative', zIndex: 1 }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
         <Eyebrow color={sheetColor.monthly}>PART 3 · 薪水怎麼算？</Eyebrow>
-        <Eyebrow color={taskColor}>操作手冊 · P.42 · Prompt 38</Eyebrow>
+        <Eyebrow color={taskColor}>操作手冊 · 任務 43 · Prompt 38</Eyebrow>
       </div>
     </div>
     <Steps>
@@ -3857,7 +3857,7 @@ const LeaveDeductFormulaLogic: Page = () => (
     <div style={{ width: '100%', position: 'relative', zIndex: 1 }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
         <Eyebrow color={sheetColor.monthly}>PART 3 · 薪水怎麼算？</Eyebrow>
-        <Eyebrow color={taskColor}>操作手冊 · P.40、41 · Prompt 34、35</Eyebrow>
+        <Eyebrow color={taskColor}>操作手冊 · 任務 39、40 · Prompt 34、35</Eyebrow>
       </div>
     </div>
     <Steps>
@@ -3886,7 +3886,7 @@ const SalaryDeductionsNetPayFormula: Page = () => (
     <div style={{ width: '100%', position: 'relative', zIndex: 1 }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
         <Eyebrow color={sheetColor.monthly}>PART 3 · 薪水怎麼算？</Eyebrow>
-        <Eyebrow color={taskColor}>操作手冊 · P.42 · Prompt 39、40</Eyebrow>
+        <Eyebrow color={taskColor}>操作手冊 · 任務 44、45 · Prompt 39、40</Eyebrow>
       </div>
     </div>
     <Steps>
@@ -3939,7 +3939,7 @@ const HoursSummaryComplete: Page = () => (
     <div style={{ width: '100%', position: 'relative', zIndex: 1 }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
         <Eyebrow color={sheetColor.leave}>PART 2 · 排班表實作</Eyebrow>
-        <Eyebrow color={taskColor}>操作手冊 · P.18 · Prompt 15</Eyebrow>
+        <Eyebrow color={taskColor}>操作手冊 · 任務 19 · Prompt 15</Eyebrow>
       </div>
       <PageHeading maxWidth={1650}>回頭補完「工時彙總」，變成完整出勤報表</PageHeading>
     </div>
@@ -3969,7 +3969,7 @@ const GasTask46Skeleton: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={gasTeal}>PART 4 · GAS 排班系統</Eyebrow>
-      <Eyebrow color={taskColor}>操作手冊 · P.43 · Prompt 41</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · Prompt 41</Eyebrow>
     </div>
     <PageHeading maxWidth={1650} marginTop={16}>任務46：Apps Script 骨架</PageHeading>
     <div style={{ fontSize: 27, fontWeight: 800, color: gasTeal, marginTop: 6 }}>
@@ -3984,7 +3984,7 @@ const GasTask47StaffList: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={gasTeal}>PART 4 · GAS 排班系統</Eyebrow>
-      <Eyebrow color={taskColor}>操作手冊 · P.43 · Prompt 42</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · Prompt 42</Eyebrow>
     </div>
     <PageHeading maxWidth={1650} marginTop={16}>任務47：讀員工主檔</PageHeading>
     <div style={{ fontSize: 27, fontWeight: 800, color: gasTeal, marginTop: 6 }}>
@@ -3999,7 +3999,7 @@ const GasTask48IdentityPicker: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={gasTeal}>PART 4 · GAS 排班系統</Eyebrow>
-      <Eyebrow color={taskColor}>操作手冊 · P.44 · Prompt 43</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · Prompt 43</Eyebrow>
     </div>
     <PageHeading maxWidth={1650} marginTop={16}>任務48：身分選擇畫面</PageHeading>
     <div style={{ fontSize: 27, fontWeight: 800, color: gasTeal, marginTop: 6 }}>
@@ -4014,7 +4014,7 @@ const GasTask48Welcome: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={gasTeal}>PART 4 · GAS 排班系統</Eyebrow>
-      <Eyebrow color={taskColor}>操作手冊 · P.44 · Prompt 43</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · Prompt 43</Eyebrow>
     </div>
     <PageHeading maxWidth={1650} marginTop={16}>任務48：身分選擇畫面</PageHeading>
     <div style={{ fontSize: 27, fontWeight: 800, color: gasTeal, marginTop: 6 }}>
@@ -4029,7 +4029,7 @@ const GasTask49SidebarSkeleton: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={gasTeal}>PART 4 · GAS 排班系統</Eyebrow>
-      <Eyebrow color={taskColor}>操作手冊 · P.44 · Prompt 44</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · Prompt 44</Eyebrow>
     </div>
     <PageHeading maxWidth={1650} marginTop={16}>任務49：側邊欄導覽（先做空殼）</PageHeading>
     <div style={{ fontSize: 27, fontWeight: 800, color: gasTeal, marginTop: 6 }}>
@@ -4044,7 +4044,7 @@ const GasTask50MonthlySchedule: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={gasTeal}>PART 4 · GAS 排班系統</Eyebrow>
-      <Eyebrow color={taskColor}>操作手冊 · P.44 · Prompt 45</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · Prompt 45</Eyebrow>
     </div>
     <PageHeading maxWidth={1650} marginTop={16}>任務50：月班表唯讀顯示</PageHeading>
     <div style={{ fontSize: 27, fontWeight: 800, color: gasTeal, marginTop: 6 }}>
@@ -4059,7 +4059,7 @@ const GasTask51LeaveList: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={gasTeal}>PART 4 · GAS 排班系統</Eyebrow>
-      <Eyebrow color={taskColor}>操作手冊 · P.45 · Prompt 46</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · Prompt 46</Eyebrow>
     </div>
     <PageHeading maxWidth={1650} marginTop={16}>任務51：請假申請——查詢</PageHeading>
     <div style={{ fontSize: 27, fontWeight: 800, color: gasTeal, marginTop: 6 }}>
@@ -4074,7 +4074,7 @@ const GasTask52AddButton: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={gasTeal}>PART 4 · GAS 排班系統</Eyebrow>
-      <Eyebrow color={taskColor}>操作手冊 · P.45 · Prompt 47</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · Prompt 47</Eyebrow>
     </div>
     <PageHeading maxWidth={1650} marginTop={16}>任務52：請假申請——送出</PageHeading>
     <div style={{ fontSize: 27, fontWeight: 800, color: gasTeal, marginTop: 6 }}>
@@ -4089,7 +4089,7 @@ const GasTask52FormEmpty: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={gasTeal}>PART 4 · GAS 排班系統</Eyebrow>
-      <Eyebrow color={taskColor}>操作手冊 · P.45 · Prompt 47</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · Prompt 47</Eyebrow>
     </div>
     <PageHeading maxWidth={1650} marginTop={16}>任務52：請假申請——送出</PageHeading>
     <div style={{ fontSize: 27, fontWeight: 800, color: gasTeal, marginTop: 6 }}>
@@ -4104,7 +4104,7 @@ const GasTask52FormFilled: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={gasTeal}>PART 4 · GAS 排班系統</Eyebrow>
-      <Eyebrow color={taskColor}>操作手冊 · P.45 · Prompt 47</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · Prompt 47</Eyebrow>
     </div>
     <PageHeading maxWidth={1650} marginTop={16}>任務52：請假申請——送出</PageHeading>
     <div style={{ fontSize: 27, fontWeight: 800, color: gasTeal, marginTop: 6 }}>
@@ -4119,7 +4119,7 @@ const GasTask52Result: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={gasTeal}>PART 4 · GAS 排班系統</Eyebrow>
-      <Eyebrow color={taskColor}>操作手冊 · P.45 · Prompt 47</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · Prompt 47</Eyebrow>
     </div>
     <PageHeading maxWidth={1650} marginTop={16}>任務52：請假申請——送出</PageHeading>
     <div style={{ fontSize: 27, fontWeight: 800, color: gasTeal, marginTop: 6 }}>
@@ -4134,7 +4134,7 @@ const GasTask52SheetVerify: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={gasTeal}>PART 4 · GAS 排班系統</Eyebrow>
-      <Eyebrow color={taskColor}>操作手冊 · P.45 · Prompt 47</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · Prompt 47</Eyebrow>
     </div>
     <PageHeading maxWidth={1650} marginTop={16}>任務52：請假申請——送出</PageHeading>
     <div style={{ fontSize: 27, fontWeight: 800, color: gasTeal, marginTop: 6 }}>
@@ -4149,7 +4149,7 @@ const GasTask53ShiftMaintenance: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={gasTeal}>PART 4 · GAS 排班系統</Eyebrow>
-      <Eyebrow color={taskColor}>操作手冊 · P.45 · Prompt 48</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · Prompt 48</Eyebrow>
     </div>
     <PageHeading maxWidth={1650} marginTop={16}>任務53：班別維護</PageHeading>
     <div style={{ fontSize: 27, fontWeight: 800, color: gasTeal, marginTop: 6 }}>
@@ -4164,7 +4164,7 @@ const GasTask54ExportButtons: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={gasTeal}>PART 4 · GAS 排班系統</Eyebrow>
-      <Eyebrow color={taskColor}>操作手冊 · P.46 · Prompt 49</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · Prompt 49</Eyebrow>
     </div>
     <PageHeading maxWidth={1650} marginTop={16}>任務54：匯出行事曆</PageHeading>
     <div style={{ fontSize: 27, fontWeight: 800, color: gasTeal, marginTop: 6 }}>
@@ -4179,7 +4179,7 @@ const GasTask54GoogleCalendar: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={gasTeal}>PART 4 · GAS 排班系統</Eyebrow>
-      <Eyebrow color={taskColor}>操作手冊 · P.46 · Prompt 49</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · Prompt 49</Eyebrow>
     </div>
     <PageHeading maxWidth={1650} marginTop={16}>任務54：匯出行事曆</PageHeading>
     <div style={{ fontSize: 27, fontWeight: 800, color: gasTeal, marginTop: 6 }}>
@@ -4194,7 +4194,7 @@ const GasTask54Iphone: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={gasTeal}>PART 4 · GAS 排班系統</Eyebrow>
-      <Eyebrow color={taskColor}>操作手冊 · P.46 · Prompt 49</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊 · Prompt 49</Eyebrow>
     </div>
     <PageHeading maxWidth={1650} marginTop={16}>任務54：匯出行事曆</PageHeading>
     <div style={{ fontSize: 27, fontWeight: 800, color: gasTeal, marginTop: 6 }}>
@@ -4220,7 +4220,7 @@ const GasTask55FinalUi: Page = () => (
   <div style={page}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <Eyebrow color={gasTeal}>PART 4 · GAS 排班系統</Eyebrow>
-      <Eyebrow color={taskColor}>操作手冊 · P.46</Eyebrow>
+      <Eyebrow color={taskColor}>操作手冊</Eyebrow>
     </div>
     <PageHeading maxWidth={1650} marginTop={16}>任務55：介面優化</PageHeading>
     <div style={{ fontSize: 27, fontWeight: 800, color: gasTeal, marginTop: 6 }}>① 換上深色主題、液態玻璃效果，整體介面更完整、更像一套正式上線的系統</div>
